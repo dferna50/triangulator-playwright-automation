@@ -1,0 +1,224 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+    - listitem:
+      - link "Skip to primary content" [ref=e5] [cursor=pointer]:
+        - /url: "#primary-content"
+  - generic [ref=e10]:
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "logo" [ref=e14] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e15] [cursor=pointer]
+            - paragraph [ref=e32] [cursor=pointer]: Triangulator
+        - listitem [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e35] [cursor=pointer]: Dashboard
+        - listitem [ref=e36]:
+          - link "My Workplace" [ref=e37] [cursor=pointer]:
+            - /url: /app/my-workspace/inst-admin/summary
+            - generic [ref=e38] [cursor=pointer]: My Workplace
+        - listitem [ref=e39]:
+          - link "My Triangulator" [ref=e40] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e41] [cursor=pointer]: My Triangulator
+        - listitem [ref=e42]:
+          - link "Search" [ref=e43] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e44] [cursor=pointer]: Search
+        - listitem [ref=e45]:
+          - link "FAQ" [ref=e46] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e47] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e51] [cursor=pointer]:
+        - img [ref=e52] [cursor=pointer]
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - navigation [ref=e57]:
+          - heading "Users" [level=2] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "All" [ref=e61] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/users-all
+                - img [ref=e62] [cursor=pointer]
+                - generic [ref=e64] [cursor=pointer]: All
+            - listitem [ref=e65]:
+              - link "Requests" [ref=e66] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/users-requests
+                - img [ref=e67] [cursor=pointer]
+                - generic [ref=e69] [cursor=pointer]: Requests
+                - generic [ref=e72] [cursor=pointer]: "0"
+            - listitem [ref=e73]:
+              - link "General Contact" [ref=e74] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/general-contact
+                - img [ref=e75] [cursor=pointer]
+                - generic [ref=e77] [cursor=pointer]: General Contact
+          - heading "Institution" [level=2] [ref=e79]
+          - list [ref=e80]:
+            - listitem [ref=e81]:
+              - link "Summary" [ref=e82] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/summary
+                - img [ref=e83] [cursor=pointer]
+                - generic [ref=e85] [cursor=pointer]: Summary
+            - listitem [ref=e86]:
+              - link "Profile" [ref=e87] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/inst/profile
+                - img [ref=e88] [cursor=pointer]
+                - generic [ref=e90] [cursor=pointer]: Public Profile
+            - listitem [ref=e91]:
+              - link "Settings" [ref=e92] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/inst/settings/
+                - img [ref=e93] [cursor=pointer]
+                - generic [ref=e95] [cursor=pointer]: Settings
+          - heading "Institutions" [level=2] [ref=e97]
+          - list [ref=e98]:
+            - listitem [ref=e99]:
+              - link "IPEDS" [ref=e100] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/insts/ipeds
+                - img [ref=e101] [cursor=pointer]
+                - generic [ref=e103] [cursor=pointer]: IPEDS
+          - paragraph [ref=e105]: 2026 Triangulator Engine
+        - generic [ref=e109]:
+          - generic [ref=e111]:
+            - generic [ref=e113]:
+              - generic [ref=e114]:
+                - button "Return to Institution Settings" [ref=e116] [cursor=pointer]:
+                  - img [ref=e117] [cursor=pointer]
+                - paragraph [ref=e119]: Back
+              - paragraph [ref=e120]: Workflow configurations
+            - region "Manage groups" [ref=e121]:
+              - generic [ref=e122]:
+                - paragraph [ref=e123]: Manage groups
+                - paragraph [ref=e124]: Create groups and assign users.
+              - button "create group" [ref=e125] [cursor=pointer]:
+                - status [ref=e127] [cursor=pointer]:
+                  - generic [ref=e128] [cursor=pointer]: Loading...
+                - generic [ref=e130] [cursor=pointer]: Create group
+              - generic [ref=e131]:
+                - generic [ref=e133]: Group name
+                - generic [ref=e135] [cursor=pointer]:
+                  - generic [ref=e136] [cursor=pointer]:
+                    - button [ref=e138] [cursor=pointer]:
+                      - img [ref=e139] [cursor=pointer]
+                    - generic [ref=e143] [cursor=pointer]: Science Evaluation Group
+                  - button "Toggle see more" [ref=e148] [cursor=pointer]:
+                    - img [ref=e149] [cursor=pointer]
+                - generic [ref=e152] [cursor=pointer]:
+                  - generic [ref=e153] [cursor=pointer]:
+                    - button [ref=e155] [cursor=pointer]:
+                      - img [ref=e156] [cursor=pointer]
+                    - generic [ref=e160] [cursor=pointer]: Test 1
+                  - button "Toggle see more" [ref=e165] [cursor=pointer]:
+                    - img [ref=e166] [cursor=pointer]
+                - generic [ref=e169] [cursor=pointer]:
+                  - generic [ref=e170] [cursor=pointer]:
+                    - button [ref=e172] [cursor=pointer]:
+                      - img [ref=e173] [cursor=pointer]
+                    - generic [ref=e177] [cursor=pointer]: ddpfdkfpdkfpdk
+                  - button "Toggle see more" [ref=e182] [cursor=pointer]:
+                    - img [ref=e183] [cursor=pointer]
+                - generic [ref=e186] [cursor=pointer]:
+                  - generic [ref=e187] [cursor=pointer]:
+                    - button [ref=e189] [cursor=pointer]:
+                      - img [ref=e190] [cursor=pointer]
+                    - generic [ref=e194] [cursor=pointer]: large group test
+                  - button "Toggle see more" [ref=e199] [cursor=pointer]:
+                    - img [ref=e200] [cursor=pointer]
+                - generic [ref=e203] [cursor=pointer]:
+                  - generic [ref=e204] [cursor=pointer]:
+                    - button [ref=e206] [cursor=pointer]:
+                      - img [ref=e207] [cursor=pointer]
+                    - generic [ref=e211] [cursor=pointer]: max group
+                  - button "Toggle see more" [ref=e216] [cursor=pointer]:
+                    - img [ref=e217] [cursor=pointer]
+            - region "Manage workflow" [ref=e219]:
+              - generic [ref=e220]:
+                - paragraph [ref=e221]: Manage workflow
+                - paragraph [ref=e222]: Create workflows by picking from a list of available schemes and adding customization. Any custom workflows you create will automatically apply to new suggestions. Suggestions that are already assigned will not be affected; your new workflow will apply as new suggestions are generated.
+                - paragraph [ref=e223]:
+                  - strong [ref=e224]: "Commenters:"
+                  - text: Can be an institution administrator or a reviewer. When assigned via a workflow, they provide input on suggestions via yes/no voting and can leave optional notes. They do not make final decisions on suggestions. Groups are comprised of commenters when assigned to a workflow.
+                - paragraph [ref=e225]:
+                  - strong [ref=e226]: "Approvers:"
+                  - text: Can be an institution administrator or a reviewer. When assigned via a workflow, they provide final decisions on suggestions and can leave optional notes. They are the final step in a workflow.
+              - button "add workflow" [ref=e227] [cursor=pointer]:
+                - status [ref=e229] [cursor=pointer]:
+                  - generic [ref=e230] [cursor=pointer]: Loading...
+                - generic [ref=e232] [cursor=pointer]: Add workflow
+              - generic [ref=e233]:
+                - generic [ref=e235]: Workflow name
+                - row "all" [ref=e237] [cursor=pointer]:
+                  - generic [ref=e238] [cursor=pointer]:
+                    - button [ref=e240] [cursor=pointer]:
+                      - img [ref=e241] [cursor=pointer]
+                    - generic [ref=e245] [cursor=pointer]: all
+                  - button "Toggle see more" [ref=e250] [cursor=pointer]:
+                    - img [ref=e251] [cursor=pointer]
+          - generic [ref=e255]:
+            - img [ref=e257]
+            - paragraph [ref=e258]: University of Nevada-Reno
+            - generic [ref=e260]: Reno, Nevada
+  - dialog "Create evaluation group" [ref=e261]:
+    - generic [ref=e263]:
+      - generic [ref=e264]:
+        - paragraph [ref=e265]: Create evaluation group
+        - button "close" [ref=e267] [cursor=pointer]:
+          - img [ref=e268] [cursor=pointer]
+      - generic [ref=e270]:
+        - paragraph [ref=e271]: "Step 1: Add users"
+        - paragraph [ref=e273]: Must select at least 3 users
+        - generic [ref=e275]:
+          - generic [ref=e277] [cursor=pointer]:
+            - generic [ref=e279] [cursor=pointer]:
+              - generic [ref=e280]: Users
+              - combobox [expanded] [active] [ref=e283]
+            - button [ref=e285] [cursor=pointer]:
+              - img [ref=e286] [cursor=pointer]
+          - menu [ref=e288]:
+            - listbox "Users" [ref=e290]:
+              - option "Chris Vouga - Nevada Reno" [ref=e291] [cursor=pointer]:
+                - paragraph [ref=e293] [cursor=pointer]: Chris Vouga - Nevada Reno
+              - option "Jason Elwood" [ref=e294] [cursor=pointer]:
+                - paragraph [ref=e296] [cursor=pointer]: Jason Elwood
+              - option "Karthick N" [ref=e297] [cursor=pointer]:
+                - paragraph [ref=e299] [cursor=pointer]: Karthick N
+              - option "Kevin Maher" [ref=e300] [cursor=pointer]:
+                - paragraph [ref=e302] [cursor=pointer]: Kevin Maher
+              - option "Priya Smith" [ref=e303] [cursor=pointer]:
+                - paragraph [ref=e305] [cursor=pointer]: Priya Smith
+              - option "Riyank Mukhopadhyay" [ref=e306] [cursor=pointer]:
+                - paragraph [ref=e308] [cursor=pointer]: Riyank Mukhopadhyay
+              - option "Truman Hale" [selected] [ref=e309] [cursor=pointer]:
+                - generic [ref=e310] [cursor=pointer]:
+                  - paragraph [ref=e311] [cursor=pointer]: Truman Hale
+                  - img [ref=e312] [cursor=pointer]
+              - option "University Of Nevada Reno Inst Admin" [ref=e314] [cursor=pointer]:
+                - paragraph [ref=e316] [cursor=pointer]: University Of Nevada Reno Inst Admin
+        - list "Use arrow keys to navigate. Backspace to unselect item." [ref=e317]:
+          - listitem [ref=e318]:
+            - generic [ref=e319]:
+              - generic [ref=e320]:
+                - paragraph [ref=e321]: Truman Hale
+                - paragraph [ref=e322]: Truman.Hale@asu.edu
+              - button [ref=e324] [cursor=pointer]:
+                - img [ref=e325] [cursor=pointer]
+      - generic [ref=e327]:
+        - button "Cancel" [ref=e329] [cursor=pointer]:
+          - status [ref=e331] [cursor=pointer]:
+            - generic [ref=e332] [cursor=pointer]: Loading...
+          - generic [ref=e334] [cursor=pointer]: Cancel
+        - generic "Must select at least 3 users" [ref=e335]:
+          - button "Next" [disabled]:
+            - generic:
+              - status:
+                - generic: Loading...
+            - generic:
+              - generic: Next
+```

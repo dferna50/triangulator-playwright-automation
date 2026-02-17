@@ -1,0 +1,79 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+  - generic [ref=e9]:
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "logo" [ref=e13] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e14] [cursor=pointer]
+            - paragraph [ref=e31] [cursor=pointer]: Triangulator
+        - listitem [ref=e32]:
+          - link "Dashboard" [ref=e33] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e34] [cursor=pointer]: Dashboard
+        - listitem [ref=e35]:
+          - link "My Workplace" [ref=e36] [cursor=pointer]:
+            - /url: /app/my-workspace/inst-admin/summary
+            - generic [ref=e37] [cursor=pointer]: My Workplace
+        - listitem [ref=e38]:
+          - link "My Triangulator" [ref=e39] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e40] [cursor=pointer]: My Triangulator
+        - listitem [ref=e41]:
+          - link "Search" [active] [ref=e42] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e43] [cursor=pointer]: Search
+        - listitem [ref=e44]:
+          - link "FAQ" [ref=e45] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e46] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e50] [cursor=pointer]:
+        - img [ref=e51] [cursor=pointer]
+    - main [ref=e54]:
+      - generic [ref=e55]:
+        - img [ref=e56]
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - generic [ref=e60]:
+                - generic [ref=e61]:
+                  - paragraph [ref=e62]: Search
+                  - img [ref=e63]
+                - paragraph [ref=e64]: The Triangulator generates a list of approved transfer courses at participating institutions based on your search criteria. You can search for courses in various ways and further refine your results by selecting specific criteria such as location, course level, credit hours, and subject.
+              - paragraph [ref=e65]: Start by selecting one of these options
+              - generic [ref=e66]:
+                - link "Search course by course" [ref=e67] [cursor=pointer]:
+                  - img [ref=e68] [cursor=pointer]
+                  - paragraph [ref=e69] [cursor=pointer]: Search course by course
+                  - paragraph [ref=e70] [cursor=pointer]: If you’re a student, we recommend searching for approved course evaluations to determine how courses will transfer.
+                - link "Explore all equivalencies" [ref=e71] [cursor=pointer]:
+                  - img [ref=e72] [cursor=pointer]
+                  - paragraph [ref=e73] [cursor=pointer]: Explore all equivalencies
+                  - paragraph [ref=e74] [cursor=pointer]: If you’re an school administrator, we recommend bulk browsing to filter and download relevant course information.
+            - paragraph [ref=e75]: "Please note: Each institution determines course equivalencies and is responsible for their own transfer credit policy and acceptance of credit. Not all schools provide course information or transfer course equivalencies to the Course Triangulator. Students are responsible for working with each institution they intend to transfer, to confirm the transferability and applicability of courses."
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - img [ref=e79]
+              - paragraph [ref=e96]:
+                - generic [ref=e97]: TRI
+                - text: ANGULATOR
+            - generic [ref=e98]:
+              - paragraph [ref=e99]: Proactively identify course equivalencies through advanced algorithms and machine learning. The Triangulator builds capacity for institutions to support credit mobility through advanced methods of course evaluation. New courses are suggested through an algorithm that leverages a network approach and course comparison to rapidly and proactively identify new courses. Institutions maintain autonomy over evaluation decisions which are leveraged by technology and data.
+              - generic [ref=e100]:
+                - paragraph [ref=e101]: Be part of the community
+                - paragraph [ref=e102]:
+                  - text: "Email:"
+                  - generic "Copy to clipboard" [ref=e103] [cursor=pointer]: creditmobility@asu.edu
+            - button "Request access" [ref=e105] [cursor=pointer]:
+              - status [ref=e107] [cursor=pointer]:
+                - generic [ref=e108] [cursor=pointer]: Loading...
+              - generic [ref=e110] [cursor=pointer]: Request access
+            - img [ref=e111]
+```

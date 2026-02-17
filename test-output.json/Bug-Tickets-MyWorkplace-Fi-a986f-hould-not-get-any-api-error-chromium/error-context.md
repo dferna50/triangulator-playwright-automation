@@ -1,0 +1,274 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+  - generic [ref=e9]:
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "logo" [ref=e13] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e14] [cursor=pointer]
+            - paragraph [ref=e31] [cursor=pointer]: Triangulator
+        - listitem [ref=e32]:
+          - link "Dashboard" [ref=e33] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e34] [cursor=pointer]: Dashboard
+        - listitem [ref=e35]:
+          - link "My Workplace" [ref=e36] [cursor=pointer]:
+            - /url: /app/my-workspace/inst-admin/summary
+            - generic [ref=e37] [cursor=pointer]: My Workplace
+        - listitem [ref=e38]:
+          - link "My Triangulator" [ref=e39] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e40] [cursor=pointer]: My Triangulator
+        - listitem [ref=e41]:
+          - link "Search" [ref=e42] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e43] [cursor=pointer]: Search
+        - listitem [ref=e44]:
+          - link "FAQ" [ref=e45] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e46] [cursor=pointer]: FAQ
+      - generic [ref=e47]:
+        - button "Open account dropdown" [active] [ref=e50] [cursor=pointer]:
+          - img [ref=e51] [cursor=pointer]
+        - menu [ref=e53]:
+          - generic [ref=e54]:
+            - menuitem "Account" [ref=e56] [cursor=pointer]:
+              - generic [ref=e57] [cursor=pointer]: Account
+            - menuitem "Notifications" [ref=e59] [cursor=pointer]:
+              - generic [ref=e60] [cursor=pointer]: Notifications
+            - menuitem "Sign Out" [ref=e62] [cursor=pointer]:
+              - generic [ref=e63] [cursor=pointer]:
+                - text: Sign Out
+                - img [ref=e64] [cursor=pointer]
+    - main [ref=e67]:
+      - generic [ref=e68]:
+        - img [ref=e69]
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e73]:
+              - img [ref=e76]
+              - heading "Welcome, University Of Nevada Reno!" [level=1] [ref=e79]:
+                - generic [ref=e80]: Welcome,
+                - generic [ref=e82]: University Of Nevada Reno!
+              - list [ref=e83]:
+                - listitem [ref=e84]:
+                  - img [ref=e85]
+                  - paragraph [ref=e88]: University of Nevada-Reno
+                - listitem [ref=e89]:
+                  - img [ref=e90]
+                  - paragraph [ref=e92]: Institution Admin
+              - button "Edit account" [ref=e94] [cursor=pointer]:
+                - status [ref=e96] [cursor=pointer]:
+                  - generic [ref=e97] [cursor=pointer]: Loading...
+                - generic [ref=e99] [cursor=pointer]: Edit account
+            - generic [ref=e101]:
+              - generic [ref=e102]:
+                - heading "Triangulator suggestions" [level=2] [ref=e104]
+                - link "View all" [ref=e105] [cursor=pointer]:
+                  - /url: /app/my-triangulator/suggestions/new
+                  - text: View all
+                  - img [ref=e106] [cursor=pointer]
+              - generic [ref=e108]:
+                - generic [ref=e111]:
+                  - paragraph [ref=e112]: "390061"
+                  - paragraph [ref=e113]: Total accepted
+                - list [ref=e114]:
+                  - listitem [ref=e115]:
+                    - generic [ref=e117]:
+                      - paragraph [ref=e118]: My outstanding
+                      - generic [ref=e119]:
+                        - paragraph [ref=e120]: 3 suggestions
+                        - paragraph [ref=e122]: 0%
+                  - listitem [ref=e123]:
+                    - generic [ref=e125]:
+                      - paragraph [ref=e126]: My accepted
+                      - generic [ref=e127]:
+                        - paragraph [ref=e128]: 390,061 suggestions
+                        - paragraph [ref=e130]: 100%
+                  - listitem [ref=e131]:
+                    - generic [ref=e133]:
+                      - paragraph [ref=e134]: My rejected
+                      - generic [ref=e135]:
+                        - paragraph [ref=e136]: 23 suggestions
+                        - paragraph [ref=e138]: 0%
+          - generic [ref=e139]:
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - generic [ref=e143]:
+                  - heading "Assigned suggestions" [level=2] [ref=e144]
+                  - generic [ref=e145]: 1,862
+                - link "View all" [ref=e146] [cursor=pointer]:
+                  - /url: /app/my-triangulator/suggestions/assigned
+                  - text: View all
+                  - img [ref=e147] [cursor=pointer]
+              - generic [ref=e149]:
+                - generic [ref=e150]:
+                  - tab "My suggestions" [ref=e151] [cursor=pointer]
+                  - tab "Other suggestions" [ref=e152] [cursor=pointer]
+                - table [ref=e154]:
+                  - generic [ref=e155]:
+                    - row "University of Advancing Technology SCI 330 • Jan 22, 2026 60.0" [ref=e156] [cursor=pointer]:
+                      - generic [ref=e157] [cursor=pointer]:
+                        - paragraph [ref=e158] [cursor=pointer]: University of Advancing Technology
+                        - generic [ref=e159] [cursor=pointer]:
+                          - paragraph [ref=e160] [cursor=pointer]: SCI 330
+                          - paragraph [ref=e161] [cursor=pointer]: •
+                          - paragraph [ref=e162] [cursor=pointer]: Jan 22, 2026
+                      - generic [ref=e163] [cursor=pointer]: "60.0"
+                      - img [ref=e164] [cursor=pointer]
+                    - row "University of Advancing Technology HIS 415 • Jan 22, 2026 60.1" [ref=e166] [cursor=pointer]:
+                      - generic [ref=e167] [cursor=pointer]:
+                        - paragraph [ref=e168] [cursor=pointer]: University of Advancing Technology
+                        - generic [ref=e169] [cursor=pointer]:
+                          - paragraph [ref=e170] [cursor=pointer]: HIS 415
+                          - paragraph [ref=e171] [cursor=pointer]: •
+                          - paragraph [ref=e172] [cursor=pointer]: Jan 22, 2026
+                      - generic [ref=e173] [cursor=pointer]: "60.1"
+                      - img [ref=e174] [cursor=pointer]
+                    - row "University of Advancing Technology ART 112 • Jan 22, 2026 60.1" [ref=e176] [cursor=pointer]:
+                      - generic [ref=e177] [cursor=pointer]:
+                        - paragraph [ref=e178] [cursor=pointer]: University of Advancing Technology
+                        - generic [ref=e179] [cursor=pointer]:
+                          - paragraph [ref=e180] [cursor=pointer]: ART 112
+                          - paragraph [ref=e181] [cursor=pointer]: •
+                          - paragraph [ref=e182] [cursor=pointer]: Jan 22, 2026
+                      - generic [ref=e183] [cursor=pointer]: "60.1"
+                      - img [ref=e184] [cursor=pointer]
+                    - row "University of Advancing Technology SS 310 • Jan 22, 2026 60.3" [ref=e186] [cursor=pointer]:
+                      - generic [ref=e187] [cursor=pointer]:
+                        - paragraph [ref=e188] [cursor=pointer]: University of Advancing Technology
+                        - generic [ref=e189] [cursor=pointer]:
+                          - paragraph [ref=e190] [cursor=pointer]: SS 310
+                          - paragraph [ref=e191] [cursor=pointer]: •
+                          - paragraph [ref=e192] [cursor=pointer]: Jan 22, 2026
+                      - generic [ref=e193] [cursor=pointer]: "60.3"
+                      - img [ref=e194] [cursor=pointer]
+                    - row "University of Advancing Technology ENT 305 • Jan 22, 2026 60.4" [ref=e196] [cursor=pointer]:
+                      - generic [ref=e197] [cursor=pointer]:
+                        - paragraph [ref=e198] [cursor=pointer]: University of Advancing Technology
+                        - generic [ref=e199] [cursor=pointer]:
+                          - paragraph [ref=e200] [cursor=pointer]: ENT 305
+                          - paragraph [ref=e201] [cursor=pointer]: •
+                          - paragraph [ref=e202] [cursor=pointer]: Jan 22, 2026
+                      - generic [ref=e203] [cursor=pointer]: "60.4"
+                      - img [ref=e204] [cursor=pointer]
+                    - row "University of Advancing Technology ENT 405 • Jan 22, 2026 60.4" [ref=e206] [cursor=pointer]:
+                      - generic [ref=e207] [cursor=pointer]:
+                        - paragraph [ref=e208] [cursor=pointer]: University of Advancing Technology
+                        - generic [ref=e209] [cursor=pointer]:
+                          - paragraph [ref=e210] [cursor=pointer]: ENT 405
+                          - paragraph [ref=e211] [cursor=pointer]: •
+                          - paragraph [ref=e212] [cursor=pointer]: Jan 22, 2026
+                      - generic [ref=e213] [cursor=pointer]: "60.4"
+                      - img [ref=e214] [cursor=pointer]
+                    - generic [ref=e216]:
+                      - paragraph [ref=e217]: "Confidence score:"
+                      - generic [ref=e218]:
+                        - generic [ref=e219]:
+                          - img [ref=e220]
+                          - paragraph [ref=e222]: 0-49
+                        - generic [ref=e223]:
+                          - img [ref=e224]
+                          - paragraph [ref=e226]: 50-79
+                        - generic [ref=e227]:
+                          - img [ref=e228]
+                          - paragraph [ref=e230]: 80-100
+            - generic [ref=e232]:
+              - generic [ref=e233]:
+                - heading "Recent activity" [level=2] [ref=e234]
+                - status [ref=e235]:
+                  - generic [ref=e236]: Loading...
+              - generic [ref=e237]:
+                - generic [ref=e238]:
+                  - tab "Your institution" [ref=e239] [cursor=pointer]
+                  - tab "Network" [ref=e240] [cursor=pointer]
+                - generic [ref=e242]:
+                  - generic [ref=e243]:
+                    - generic [ref=e245]:
+                      - img [ref=e248]
+                      - paragraph [ref=e250]: University Of Nevada Reno Inst Admin accepted 1 suggestion
+                      - paragraph [ref=e251]: Jan 21
+                    - generic [ref=e254]:
+                      - img [ref=e257]
+                      - paragraph [ref=e259]: University Of Nevada Reno Inst Admin rejected 2 suggestions
+                      - paragraph [ref=e260]: Jan 19
+                    - generic [ref=e263]:
+                      - img [ref=e266]
+                      - paragraph [ref=e268]: University Of Nevada Reno Inst Admin accepted 9 suggestions
+                      - paragraph [ref=e269]: Dec 16
+                    - generic [ref=e272]:
+                      - img [ref=e275]
+                      - paragraph [ref=e277]: University Of Nevada Reno Inst Admin accepted 1 suggestion
+                      - paragraph [ref=e278]: Dec 11
+                    - generic [ref=e281]:
+                      - img [ref=e284]
+                      - paragraph [ref=e286]: University Of Nevada Reno Inst Admin accepted 1 suggestion
+                      - paragraph [ref=e287]: Dec 9
+                    - generic [ref=e290]:
+                      - img [ref=e293]
+                      - paragraph [ref=e295]: University Of Nevada Reno Inst Admin accepted 14 suggestions
+                      - paragraph [ref=e296]: Dec 5
+                  - generic [ref=e298]:
+                    - img [ref=e300]
+                    - generic [ref=e302]: Errored while loading your institution's activity
+                    - button "See error" [ref=e304] [cursor=pointer]
+          - generic [ref=e306]:
+            - heading "Rules summary" [level=2] [ref=e308]
+            - list [ref=e309]:
+              - listitem [ref=e310]:
+                - generic [ref=e312]:
+                  - generic [ref=e313]:
+                    - paragraph [ref=e314]: Institutions
+                    - img [ref=e316]
+                  - paragraph [ref=e318]: "2"
+              - listitem [ref=e319]:
+                - generic [ref=e321]:
+                  - generic [ref=e322]:
+                    - paragraph [ref=e323]: Rules
+                    - img [ref=e325]
+                  - paragraph [ref=e327]: 1,603
+              - listitem [ref=e328]:
+                - generic [ref=e330]:
+                  - generic [ref=e331]:
+                    - paragraph [ref=e332]: Last Uploaded
+                    - img [ref=e334]
+                  - paragraph [ref=e336]: 01/15/26
+              - listitem [ref=e337]:
+                - generic [ref=e339]:
+                  - generic [ref=e340]:
+                    - paragraph [ref=e341]: Next Triangulation
+                    - img [ref=e343]
+                  - paragraph [ref=e345]: 01/26/26
+          - generic [ref=e347]:
+            - heading "Bulk actions" [level=2] [ref=e348]
+            - generic [ref=e349]:
+              - generic [ref=e350]:
+                - img [ref=e351]
+                - generic [ref=e352]:
+                  - heading "Upload data" [level=3] [ref=e353]
+                  - paragraph [ref=e354]: Add, replace or update your transfer course equivalency rules, course catalog data or syllabus data by uploading a new file. The Triangulator accepts .CSV files
+                - button "Upload" [ref=e356] [cursor=pointer]:
+                  - status [ref=e358] [cursor=pointer]:
+                    - generic [ref=e359] [cursor=pointer]: Loading...
+                  - generic [ref=e360] [cursor=pointer]:
+                    - generic [ref=e361] [cursor=pointer]: Upload
+                    - img [ref=e362] [cursor=pointer]
+              - generic [ref=e364]:
+                - img [ref=e365]
+                - generic [ref=e366]:
+                  - heading "Download" [level=3] [ref=e367]
+                  - paragraph [ref=e368]: Customize your download by adding specific filters. Downloads are currently available as .CSV files.
+                - button "Download" [ref=e370] [cursor=pointer]:
+                  - status [ref=e372] [cursor=pointer]:
+                    - generic [ref=e373] [cursor=pointer]: Loading...
+                  - generic [ref=e374] [cursor=pointer]:
+                    - generic [ref=e375] [cursor=pointer]: Download
+                    - img [ref=e376] [cursor=pointer]
+```

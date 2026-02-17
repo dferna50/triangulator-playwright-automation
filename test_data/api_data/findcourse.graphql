@@ -1,0 +1,55 @@
+query courseDetails($courseId: String!) {
+  courseDetails(courseId: $courseId) {
+    institution {
+      institutionId
+      name
+      webAddress
+      siteId
+      districtId
+      label
+      ipedsInfo
+      avatarUrl
+      state
+      city
+      status
+      primaryContactFirstName
+      primaryContactLastName
+      primaryContactEmail
+      about
+      profileLinks {
+        autoId
+        url
+        label
+        order
+        __typename
+      }
+      offerings
+      __typename
+    }
+    courses {
+      courseId
+      courseSubject
+      courseNumber
+      institutionId
+      __typename
+    }
+    metadata {
+      masterCourseId
+      courseLongTitle
+      courseDescription
+      courseCreditMaxValue
+      courseLevel
+      genEdCategoryCode
+      coursePrerequisiteId
+      courseCorequisiteId
+      courseEffectiveYearMonth
+      courseExpirationYearMonth
+      providedCourseIdentifier
+      requisiteDescription
+      courseLevelCategory
+      dataSource
+      __typename
+    }
+    __typename
+  }
+}

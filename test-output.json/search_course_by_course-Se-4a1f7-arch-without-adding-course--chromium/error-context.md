@@ -1,0 +1,74 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+  - generic [ref=e9]:
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "logo" [ref=e13] [cursor=pointer]:
+            - /url: /logged-out/landing
+            - img [ref=e14] [cursor=pointer]
+            - paragraph [ref=e31] [cursor=pointer]: Triangulator
+        - listitem [ref=e32]:
+          - link "Search" [active] [ref=e33] [cursor=pointer]:
+            - /url: /logged-out/public-search
+            - generic [ref=e34] [cursor=pointer]: Search
+        - listitem [ref=e35]:
+          - link "FAQ" [ref=e36] [cursor=pointer]:
+            - /url: /logged-out/faq/
+            - generic [ref=e37] [cursor=pointer]: FAQ
+      - generic [ref=e38]:
+        - button "Login" [ref=e39] [cursor=pointer]:
+          - status [ref=e41] [cursor=pointer]:
+            - generic [ref=e42] [cursor=pointer]: Loading...
+          - generic [ref=e44] [cursor=pointer]: Login
+        - button "Request access" [ref=e45] [cursor=pointer]:
+          - status [ref=e47] [cursor=pointer]:
+            - generic [ref=e48] [cursor=pointer]: Loading...
+          - generic [ref=e50] [cursor=pointer]: Request access
+    - main [ref=e52]:
+      - generic [ref=e53]:
+        - img [ref=e54]
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - generic [ref=e58]:
+                - generic [ref=e59]:
+                  - paragraph [ref=e60]: Search
+                  - img [ref=e61]
+                - paragraph [ref=e62]: The Triangulator generates a list of approved transfer courses at participating institutions based on your search criteria. You can search for courses in various ways and further refine your results by selecting specific criteria such as location, course level, credit hours, and subject.
+              - paragraph [ref=e63]: Start by selecting one of these options
+              - generic [ref=e64]:
+                - link "Search course by course" [ref=e65] [cursor=pointer]:
+                  - img [ref=e66] [cursor=pointer]
+                  - paragraph [ref=e67] [cursor=pointer]: Search course by course
+                  - paragraph [ref=e68] [cursor=pointer]: If you’re a student, we recommend searching for approved course evaluations to determine how courses will transfer.
+                - link "Explore all equivalencies" [ref=e69] [cursor=pointer]:
+                  - img [ref=e70] [cursor=pointer]
+                  - paragraph [ref=e71] [cursor=pointer]: Explore all equivalencies
+                  - paragraph [ref=e72] [cursor=pointer]: If you’re an school administrator, we recommend bulk browsing to filter and download relevant course information.
+            - paragraph [ref=e73]: "Please note: Each institution determines course equivalencies and is responsible for their own transfer credit policy and acceptance of credit. Not all schools provide course information or transfer course equivalencies to the Course Triangulator. Students are responsible for working with each institution they intend to transfer, to confirm the transferability and applicability of courses."
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - img [ref=e77]
+              - paragraph [ref=e94]:
+                - generic [ref=e95]: TRI
+                - text: ANGULATOR
+            - generic [ref=e96]:
+              - paragraph [ref=e97]: Proactively identify course equivalencies through advanced algorithms and machine learning. The Triangulator builds capacity for institutions to support credit mobility through advanced methods of course evaluation. New courses are suggested through an algorithm that leverages a network approach and course comparison to rapidly and proactively identify new courses. Institutions maintain autonomy over evaluation decisions which are leveraged by technology and data.
+              - generic [ref=e98]:
+                - paragraph [ref=e99]: Be part of the community
+                - paragraph [ref=e100]:
+                  - text: "Email:"
+                  - generic "Copy to clipboard" [ref=e101] [cursor=pointer]: creditmobility@asu.edu
+            - button "Request access" [ref=e103] [cursor=pointer]:
+              - status [ref=e105] [cursor=pointer]:
+                - generic [ref=e106] [cursor=pointer]: Loading...
+              - generic [ref=e108] [cursor=pointer]: Request access
+            - img [ref=e109]
+```

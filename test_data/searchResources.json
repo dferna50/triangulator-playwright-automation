@@ -1,0 +1,64 @@
+{
+    "Institution": [
+        {
+    "institutionName": "Arizona State University",
+    "ipedState": "104151AZ",
+    "state": "Arizona",
+    "zipCode": "85287"
+    },
+    {
+    "institutionName": "University of Nevada-Reno",
+    "ipedState": "182290NV",
+    "state": "Nevada",
+    "zipCode": "89557"
+    },
+    {
+    "institutionName": "Pima Community College",
+    "ipedState": "105525AZ",
+    "state": "Arizona",
+    "zipCode": "85709"
+    }
+],
+"Courses":[
+{
+    "courseSubject": "ENG",
+    "courseNumber": "101"
+},
+{
+    "courseSubject": "ENG",
+    "courseNumber": "102"
+},
+{
+    "courseSubject": "ART",
+    "courseNumber": "211"
+},
+{
+    "courseSubject": "ART",
+    "courseNumber": "260"
+},
+{
+    "courseSubject": "BIO",
+    "courseNumber": "188"
+},
+{
+    "courseSubject": "BIO",
+    "courseNumber": "201"
+},
+{
+    "courseSubject": "CHEM",
+    "courseNumber": "121L"
+},
+{
+    "courseSubject": "CHEM",
+    "courseNumber": "121A"
+},
+{
+    "courseSubject": "SPA",
+    "courseNumber": "101"
+},
+{
+    "courseSubject": "ZOL",
+    "courseNumber": "201"
+}
+]
+}

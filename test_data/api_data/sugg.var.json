@@ -1,0 +1,41 @@
+{
+    "limit": 250,
+    "offset": 0,
+    "sort": [
+        {
+            "columnName": "DateSuggested",
+            "desc": true
+        }
+    ],
+    "filters": {
+        "decidedByUserId": null,
+        "assignedToUserId": null,
+        "minimumConfidenceScorePercentage": 0,
+        "confidenceScoreRange": null,
+        "suggestionSetFilter": "NEW",
+        "requestingUserId": 47,
+        "dateRangeFrom": null,
+        "dateRangeTo": null,
+        "targetCourseNumbers": [],
+        "sourceStatesAbbreviated": [],
+        "targetInstitutions": [
+            182290
+        ],
+        "sourceInstitutions": [],
+        "targetSubjects": [],
+        "targetLevels": [],
+        "logicFilterIds": [],
+        "filterIds": [],
+        "suggestionRequestId": "",
+        "equivalencyCourseCardinality": [],
+        "suggestionDecision": [],
+        "suggestionType": [
+            null
+        ],
+        "sourceInstLevel": [],
+        "sourceCourseNumbers": [],
+        "sourceLevels": [],
+        "sourceSubjects": [],
+        "suggestionConfigurations": "{\"graduate\":{\"max\":\"6666\",\"min\":\"55\",\"exclude\":false},\"coursesInactive\":[{\"max\":\"\",\"min\":\"\",\"exclude\":false,\"courseSubject\":\"AAE\"}]}"
+    }
+}

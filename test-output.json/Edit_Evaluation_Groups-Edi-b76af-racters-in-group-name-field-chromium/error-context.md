@@ -1,0 +1,175 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+    - listitem:
+      - link "Skip to primary content" [ref=e5] [cursor=pointer]:
+        - /url: "#primary-content"
+  - generic [ref=e10]:
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "logo" [ref=e14] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e15] [cursor=pointer]
+            - paragraph [ref=e32] [cursor=pointer]: Triangulator
+        - listitem [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e35] [cursor=pointer]: Dashboard
+        - listitem [ref=e36]:
+          - link "My Workplace" [ref=e37] [cursor=pointer]:
+            - /url: /app/my-workspace/inst-admin/summary
+            - generic [ref=e38] [cursor=pointer]: My Workplace
+        - listitem [ref=e39]:
+          - link "My Triangulator" [ref=e40] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e41] [cursor=pointer]: My Triangulator
+        - listitem [ref=e42]:
+          - link "Search" [ref=e43] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e44] [cursor=pointer]: Search
+        - listitem [ref=e45]:
+          - link "FAQ" [ref=e46] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e47] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e51] [cursor=pointer]:
+        - img [ref=e52] [cursor=pointer]
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - navigation [ref=e57]:
+          - heading "Users" [level=2] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "All" [ref=e61] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/users-all
+                - img [ref=e62] [cursor=pointer]
+                - generic [ref=e64] [cursor=pointer]: All
+            - listitem [ref=e65]:
+              - link "Requests" [ref=e66] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/users-requests
+                - img [ref=e67] [cursor=pointer]
+                - generic [ref=e69] [cursor=pointer]: Requests
+                - generic [ref=e72] [cursor=pointer]: "0"
+            - listitem [ref=e73]:
+              - link "General Contact" [ref=e74] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/general-contact
+                - img [ref=e75] [cursor=pointer]
+                - generic [ref=e77] [cursor=pointer]: General Contact
+          - heading "Institution" [level=2] [ref=e79]
+          - list [ref=e80]:
+            - listitem [ref=e81]:
+              - link "Summary" [ref=e82] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/summary
+                - img [ref=e83] [cursor=pointer]
+                - generic [ref=e85] [cursor=pointer]: Summary
+            - listitem [ref=e86]:
+              - link "Profile" [ref=e87] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/inst/profile
+                - img [ref=e88] [cursor=pointer]
+                - generic [ref=e90] [cursor=pointer]: Public Profile
+            - listitem [ref=e91]:
+              - link "Settings" [ref=e92] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/inst/settings/
+                - img [ref=e93] [cursor=pointer]
+                - generic [ref=e95] [cursor=pointer]: Settings
+          - heading "Institutions" [level=2] [ref=e97]
+          - list [ref=e98]:
+            - listitem [ref=e99]:
+              - link "IPEDS" [ref=e100] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/insts/ipeds
+                - img [ref=e101] [cursor=pointer]
+                - generic [ref=e103] [cursor=pointer]: IPEDS
+          - paragraph [ref=e105]: 2026 Triangulator Engine
+        - generic [ref=e109]:
+          - generic [ref=e111]:
+            - generic [ref=e113]:
+              - generic [ref=e114]:
+                - button "Return to Institution Settings" [ref=e116] [cursor=pointer]:
+                  - img [ref=e117] [cursor=pointer]
+                - paragraph [ref=e119]: Back
+              - paragraph [ref=e120]: Workflow configurations
+            - region "Manage groups" [ref=e121]:
+              - generic [ref=e122]:
+                - paragraph [ref=e123]: Manage groups
+                - paragraph [ref=e124]: Create groups and assign users.
+              - button "create group" [ref=e125] [cursor=pointer]:
+                - status [ref=e127] [cursor=pointer]:
+                  - generic [ref=e128] [cursor=pointer]: Loading...
+                - generic [ref=e130] [cursor=pointer]: Create group
+              - generic [ref=e131]:
+                - generic [ref=e133]: Group name
+                - generic [ref=e135] [cursor=pointer]:
+                  - generic [ref=e136] [cursor=pointer]:
+                    - button [ref=e138] [cursor=pointer]:
+                      - img [ref=e139] [cursor=pointer]
+                    - generic [ref=e143] [cursor=pointer]: Science Evaluation Group
+                  - button "Toggle see more" [ref=e148] [cursor=pointer]:
+                    - img [ref=e149] [cursor=pointer]
+                - generic [ref=e152] [cursor=pointer]:
+                  - generic [ref=e153] [cursor=pointer]:
+                    - button [ref=e155] [cursor=pointer]:
+                      - img [ref=e156] [cursor=pointer]
+                    - generic [ref=e160] [cursor=pointer]: Test 1
+                  - generic [ref=e162] [cursor=pointer]:
+                    - button "Toggle see more" [active] [ref=e165] [cursor=pointer]:
+                      - img [ref=e166] [cursor=pointer]
+                    - menu [ref=e168] [cursor=pointer]:
+                      - generic [ref=e169] [cursor=pointer]:
+                        - menuitem "Edit" [ref=e171] [cursor=pointer]:
+                          - generic [ref=e172] [cursor=pointer]: Edit
+                        - menuitem "Delete" [ref=e174] [cursor=pointer]:
+                          - generic [ref=e175] [cursor=pointer]: Delete
+                - generic [ref=e177] [cursor=pointer]:
+                  - generic [ref=e178] [cursor=pointer]:
+                    - button [ref=e180] [cursor=pointer]:
+                      - img [ref=e181] [cursor=pointer]
+                    - generic [ref=e185] [cursor=pointer]: ddpfdkfpdkfpdk
+                  - button "Toggle see more" [ref=e190] [cursor=pointer]:
+                    - img [ref=e191] [cursor=pointer]
+                - generic [ref=e194] [cursor=pointer]:
+                  - generic [ref=e195] [cursor=pointer]:
+                    - button [ref=e197] [cursor=pointer]:
+                      - img [ref=e198] [cursor=pointer]
+                    - generic [ref=e202] [cursor=pointer]: large group test
+                  - button "Toggle see more" [ref=e207] [cursor=pointer]:
+                    - img [ref=e208] [cursor=pointer]
+                - generic [ref=e211] [cursor=pointer]:
+                  - generic [ref=e212] [cursor=pointer]:
+                    - button [ref=e214] [cursor=pointer]:
+                      - img [ref=e215] [cursor=pointer]
+                    - generic [ref=e219] [cursor=pointer]: max group
+                  - button "Toggle see more" [ref=e224] [cursor=pointer]:
+                    - img [ref=e225] [cursor=pointer]
+            - region "Manage workflow" [ref=e227]:
+              - generic [ref=e228]:
+                - paragraph [ref=e229]: Manage workflow
+                - paragraph [ref=e230]: Create workflows by picking from a list of available schemes and adding customization. Any custom workflows you create will automatically apply to new suggestions. Suggestions that are already assigned will not be affected; your new workflow will apply as new suggestions are generated.
+                - paragraph [ref=e231]:
+                  - strong [ref=e232]: "Commenters:"
+                  - text: Can be an institution administrator or a reviewer. When assigned via a workflow, they provide input on suggestions via yes/no voting and can leave optional notes. They do not make final decisions on suggestions. Groups are comprised of commenters when assigned to a workflow.
+                - paragraph [ref=e233]:
+                  - strong [ref=e234]: "Approvers:"
+                  - text: Can be an institution administrator or a reviewer. When assigned via a workflow, they provide final decisions on suggestions and can leave optional notes. They are the final step in a workflow.
+              - button "add workflow" [ref=e235] [cursor=pointer]:
+                - status [ref=e237] [cursor=pointer]:
+                  - generic [ref=e238] [cursor=pointer]: Loading...
+                - generic [ref=e240] [cursor=pointer]: Add workflow
+              - generic [ref=e241]:
+                - generic [ref=e243]: Workflow name
+                - row "all" [ref=e245] [cursor=pointer]:
+                  - generic [ref=e246] [cursor=pointer]:
+                    - button [ref=e248] [cursor=pointer]:
+                      - img [ref=e249] [cursor=pointer]
+                    - generic [ref=e253] [cursor=pointer]: all
+                  - button "Toggle see more" [ref=e258] [cursor=pointer]:
+                    - img [ref=e259] [cursor=pointer]
+          - generic [ref=e263]:
+            - img [ref=e265]
+            - paragraph [ref=e266]: University of Nevada-Reno
+            - generic [ref=e268]: Reno, Nevada
+```

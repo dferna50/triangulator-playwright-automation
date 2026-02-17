@@ -1,0 +1,2226 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+    - listitem:
+      - link "Skip to primary content" [ref=e5] [cursor=pointer]:
+        - /url: "#primary-content"
+  - generic [ref=e10]:
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "logo" [ref=e14] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e15] [cursor=pointer]
+            - paragraph [ref=e32] [cursor=pointer]: Triangulator
+        - listitem [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e35] [cursor=pointer]: Dashboard
+        - listitem [ref=e36]:
+          - link "My Workplace" [ref=e37] [cursor=pointer]:
+            - /url: /app/my-workspace/inst-admin/summary
+            - generic [ref=e38] [cursor=pointer]: My Workplace
+        - listitem [ref=e39]:
+          - link "My Triangulator" [ref=e40] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e41] [cursor=pointer]: My Triangulator
+        - listitem [ref=e42]:
+          - link "Search" [ref=e43] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e44] [cursor=pointer]: Search
+        - listitem [ref=e45]:
+          - link "FAQ" [ref=e46] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e47] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e51] [cursor=pointer]:
+        - img [ref=e52] [cursor=pointer]
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - navigation [ref=e57]:
+          - heading "Suggestions" [level=2] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "New" [ref=e61] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/new
+                - img [ref=e62] [cursor=pointer]
+                - generic [ref=e68] [cursor=pointer]: New
+            - listitem [ref=e69]:
+              - link "Assigned" [ref=e70] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/assigned
+                - img [ref=e71] [cursor=pointer]
+                - generic [ref=e73] [cursor=pointer]: Assigned
+                - generic [ref=e76] [cursor=pointer]: 1,862
+            - listitem [ref=e77]:
+              - link "History" [active] [ref=e78] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/history
+                - img [ref=e79] [cursor=pointer]
+                - generic [ref=e81] [cursor=pointer]: History
+          - heading "Requests" [level=2] [ref=e83]
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - link "Boost Suggestions" [ref=e86] [cursor=pointer]:
+                - /url: /app/my-triangulator/requests/boost-suggestions
+                - img [ref=e87] [cursor=pointer]
+                - generic [ref=e90] [cursor=pointer]: Boost Suggestions
+          - generic [ref=e92]:
+            - button "upload" [ref=e94] [cursor=pointer]:
+              - status [ref=e96] [cursor=pointer]:
+                - generic [ref=e97] [cursor=pointer]: Loading...
+              - generic [ref=e98] [cursor=pointer]:
+                - generic [ref=e99] [cursor=pointer]: Upload
+                - img [ref=e100] [cursor=pointer]
+            - button "Download" [ref=e104] [cursor=pointer]:
+              - status [ref=e106] [cursor=pointer]:
+                - generic [ref=e107] [cursor=pointer]: Loading...
+              - generic [ref=e108] [cursor=pointer]:
+                - generic [ref=e109] [cursor=pointer]: Download
+                - img [ref=e110] [cursor=pointer]
+          - paragraph [ref=e113]: 2026 Triangulator Engine
+        - generic [ref=e119]:
+          - generic [ref=e121]:
+            - paragraph [ref=e124]: Suggestions
+            - heading "History" [level=1] [ref=e125]
+          - generic [ref=e126]:
+            - navigation [ref=e127]:
+              - button "Prev" [disabled] [ref=e128]:
+                - img [ref=e129]
+                - generic [ref=e131]: Prev
+              - button "1" [ref=e132] [cursor=pointer]
+              - button "2" [ref=e133] [cursor=pointer]
+              - button "3" [ref=e134] [cursor=pointer]
+              - button "4" [ref=e135] [cursor=pointer]
+              - button "5" [ref=e136] [cursor=pointer]
+              - button "6" [ref=e137] [cursor=pointer]
+              - button "..." [disabled] [ref=e138]
+              - button "7,802" [ref=e139] [cursor=pointer]
+              - button "Next" [ref=e140] [cursor=pointer]:
+                - img [ref=e141] [cursor=pointer]
+                - generic [ref=e143] [cursor=pointer]: Next
+            - button "Filter" [ref=e145] [cursor=pointer]:
+              - img [ref=e146] [cursor=pointer]
+          - table "history" [ref=e151]:
+            - generic [ref=e153]:
+              - generic [ref=e155]:
+                - button "Select row" [ref=e156] [cursor=pointer]:
+                  - checkbox [ref=e157] [cursor=pointer]:
+                    - img [ref=e158] [cursor=pointer]
+                - generic [ref=e160]:
+                  - columnheader "Source institution" [ref=e162]:
+                    - button "Source institution" [ref=e165] [cursor=pointer]:
+                      - generic [ref=e168] [cursor=pointer]: Source institution
+                      - img [ref=e170] [cursor=pointer]
+                  - columnheader "Source state" [ref=e173]:
+                    - button "Source state" [ref=e176] [cursor=pointer]:
+                      - generic [ref=e179] [cursor=pointer]: Source state
+                      - img [ref=e181] [cursor=pointer]
+                  - columnheader "Source subject" [ref=e184]:
+                    - button "Source subject" [ref=e187] [cursor=pointer]:
+                      - generic [ref=e190] [cursor=pointer]: Source subject
+                      - img [ref=e192] [cursor=pointer]
+                  - columnheader "Source number" [ref=e195]:
+                    - button "Source number" [ref=e198] [cursor=pointer]:
+                      - generic [ref=e201] [cursor=pointer]: Source number
+                      - img [ref=e203] [cursor=pointer]
+                  - columnheader "Target subject" [ref=e206]:
+                    - button "Target subject" [ref=e209] [cursor=pointer]:
+                      - generic [ref=e212] [cursor=pointer]: Target subject
+                      - img [ref=e214] [cursor=pointer]
+                  - columnheader "Target number" [ref=e217]:
+                    - button "Target number" [ref=e220] [cursor=pointer]:
+                      - generic [ref=e223] [cursor=pointer]: Target number
+                      - img [ref=e225] [cursor=pointer]
+                  - columnheader "Score" [ref=e228]:
+                    - button "Score" [ref=e231] [cursor=pointer]:
+                      - generic [ref=e234] [cursor=pointer]: Score
+                      - img [ref=e236] [cursor=pointer]
+                  - columnheader "Request name" [ref=e239]:
+                    - button "Request name" [ref=e242] [cursor=pointer]:
+                      - generic [ref=e245] [cursor=pointer]: Request name
+                      - img [ref=e247] [cursor=pointer]
+                  - columnheader "Suggestion type" [ref=e250]:
+                    - button "Suggestion type" [ref=e253] [cursor=pointer]:
+                      - generic [ref=e256] [cursor=pointer]: Suggestion type
+                      - img [ref=e258] [cursor=pointer]
+                  - columnheader "Target institution" [ref=e261]:
+                    - button "Target institution" [ref=e264] [cursor=pointer]:
+                      - generic [ref=e267] [cursor=pointer]: Target institution
+                      - img [ref=e269] [cursor=pointer]
+                  - columnheader "Date suggested" [ref=e272]:
+                    - button "Date suggested" [ref=e275] [cursor=pointer]:
+                      - generic [ref=e278] [cursor=pointer]: Date suggested
+                      - img [ref=e280] [cursor=pointer]
+                  - columnheader "Date last modified" [ref=e283]:
+                    - button "Date last modified" [ref=e286] [cursor=pointer]:
+                      - generic [ref=e289] [cursor=pointer]: Date last modified
+                      - img [ref=e291] [cursor=pointer]
+                  - columnheader "Date decided" [ref=e294]:
+                    - button "Date decided" [ref=e297] [cursor=pointer]:
+                      - generic [ref=e300] [cursor=pointer]: Date decided
+                      - generic [ref=e301] [cursor=pointer]:
+                        - img [ref=e302] [cursor=pointer]
+                        - img [ref=e304] [cursor=pointer]
+                  - columnheader "Decided by" [ref=e307]:
+                    - button "Decided by" [ref=e310] [cursor=pointer]:
+                      - generic [ref=e313] [cursor=pointer]: Decided by
+                      - img [ref=e315] [cursor=pointer]
+                  - columnheader "Decision" [ref=e318]:
+                    - button "Decision" [ref=e321] [cursor=pointer]:
+                      - generic [ref=e324] [cursor=pointer]: Decision
+                      - img [ref=e326] [cursor=pointer]
+              - generic [ref=e328]:
+                - rowgroup [ref=e329]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e330] [cursor=pointer]:
+                    - button "Select row" [ref=e331] [cursor=pointer]:
+                      - checkbox [ref=e332] [cursor=pointer]:
+                        - img [ref=e333] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e336] [cursor=pointer]:
+                      - link "Pima Community College" [ref=e340] [cursor=pointer]:
+                        - paragraph [ref=e341] [cursor=pointer]: Pima Community College
+                    - gridcell "Source state" [ref=e343] [cursor=pointer]:
+                      - generic [ref=e348] [cursor=pointer]: Arizona
+                    - gridcell "Source subject" [ref=e350] [cursor=pointer]:
+                      - link "WRT" [ref=e354] [cursor=pointer]:
+                        - paragraph [ref=e355] [cursor=pointer]: WRT
+                    - gridcell "Source number" [ref=e357] [cursor=pointer]:
+                      - link "090" [ref=e361] [cursor=pointer]:
+                        - paragraph [ref=e362] [cursor=pointer]: "090"
+                    - gridcell "Target subject" [ref=e364] [cursor=pointer]:
+                      - link "ENG" [ref=e368] [cursor=pointer]:
+                        - paragraph [ref=e369] [cursor=pointer]: ENG
+                    - gridcell "Target number" [ref=e371] [cursor=pointer]:
+                      - link "100J" [ref=e375] [cursor=pointer]:
+                        - paragraph [ref=e376] [cursor=pointer]: 100J
+                    - gridcell "Score" [ref=e378] [cursor=pointer]:
+                      - generic [ref=e383] [cursor=pointer]: "94.1"
+                    - gridcell "Request name" [ref=e385] [cursor=pointer]:
+                      - generic [ref=e390] [cursor=pointer]: pima test asunc ma x
+                    - gridcell "Suggestion type" [ref=e392] [cursor=pointer]:
+                      - paragraph [ref=e397] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e399] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e403] [cursor=pointer]:
+                        - paragraph [ref=e404] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e406] [cursor=pointer]:
+                      - paragraph [ref=e411] [cursor=pointer]: November 21, 2025
+                    - gridcell "Date last modified" [ref=e413] [cursor=pointer]:
+                      - paragraph [ref=e418] [cursor=pointer]: November 21, 2025
+                    - gridcell "Date decided" [ref=e420] [cursor=pointer]:
+                      - paragraph [ref=e425] [cursor=pointer]: No data
+                    - gridcell "Decided by" [ref=e427] [cursor=pointer]:
+                      - paragraph [ref=e432] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e434] [cursor=pointer]:
+                      - generic [ref=e439] [cursor=pointer]: Accepted
+                - rowgroup [ref=e440]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e441] [cursor=pointer]:
+                    - button "Select row" [ref=e442] [cursor=pointer]:
+                      - checkbox [ref=e443] [cursor=pointer]:
+                        - img [ref=e444] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e447] [cursor=pointer]:
+                      - link "Arizona State University Campus Immersion" [ref=e451] [cursor=pointer]:
+                        - paragraph [ref=e452] [cursor=pointer]: Arizona State University Campus Immersion
+                    - gridcell "Source state" [ref=e454] [cursor=pointer]:
+                      - generic [ref=e459] [cursor=pointer]: Arizona
+                    - gridcell "Source subject" [ref=e461] [cursor=pointer]:
+                      - link "MAE" [ref=e465] [cursor=pointer]:
+                        - paragraph [ref=e466] [cursor=pointer]: MAE
+                    - gridcell "Source number" [ref=e468] [cursor=pointer]:
+                      - link "529" [ref=e472] [cursor=pointer]:
+                        - paragraph [ref=e473] [cursor=pointer]: "529"
+                    - gridcell "Target subject" [ref=e475] [cursor=pointer]:
+                      - link "ME" [ref=e479] [cursor=pointer]:
+                        - paragraph [ref=e480] [cursor=pointer]: ME
+                    - gridcell "Target number" [ref=e482] [cursor=pointer]:
+                      - link "720" [ref=e486] [cursor=pointer]:
+                        - paragraph [ref=e487] [cursor=pointer]: "720"
+                    - gridcell "Score" [ref=e489] [cursor=pointer]:
+                      - generic [ref=e494] [cursor=pointer]: "97.8"
+                    - gridcell "Request name" [ref=e496] [cursor=pointer]:
+                      - generic [ref=e501] [cursor=pointer]: ASU max async test
+                    - gridcell "Suggestion type" [ref=e503] [cursor=pointer]:
+                      - paragraph [ref=e508] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e510] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e514] [cursor=pointer]:
+                        - paragraph [ref=e515] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e517] [cursor=pointer]:
+                      - paragraph [ref=e522] [cursor=pointer]: November 21, 2025
+                    - gridcell "Date last modified" [ref=e524] [cursor=pointer]:
+                      - paragraph [ref=e529] [cursor=pointer]: November 21, 2025
+                    - gridcell "Date decided" [ref=e531] [cursor=pointer]:
+                      - paragraph [ref=e536] [cursor=pointer]: No data
+                    - gridcell "Decided by" [ref=e538] [cursor=pointer]:
+                      - paragraph [ref=e543] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e545] [cursor=pointer]:
+                      - generic [ref=e550] [cursor=pointer]: Accepted
+                - rowgroup [ref=e551]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e552] [cursor=pointer]:
+                    - button "Select row" [ref=e553] [cursor=pointer]:
+                      - checkbox [ref=e554] [cursor=pointer]:
+                        - img [ref=e555] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e558] [cursor=pointer]:
+                      - link "Arizona State University Campus Immersion" [ref=e562] [cursor=pointer]:
+                        - paragraph [ref=e563] [cursor=pointer]: Arizona State University Campus Immersion
+                    - gridcell "Source state" [ref=e565] [cursor=pointer]:
+                      - generic [ref=e570] [cursor=pointer]: Arizona
+                    - gridcell "Source subject" [ref=e572] [cursor=pointer]:
+                      - link "MKT" [ref=e576] [cursor=pointer]:
+                        - paragraph [ref=e577] [cursor=pointer]: MKT
+                    - gridcell "Source number" [ref=e579] [cursor=pointer]:
+                      - link "398" [ref=e583] [cursor=pointer]:
+                        - paragraph [ref=e584] [cursor=pointer]: "398"
+                    - gridcell "Target subject" [ref=e586] [cursor=pointer]:
+                      - link "SPTM" [ref=e590] [cursor=pointer]:
+                        - paragraph [ref=e591] [cursor=pointer]: SPTM
+                    - gridcell "Target number" [ref=e593] [cursor=pointer]:
+                      - link "650" [ref=e597] [cursor=pointer]:
+                        - paragraph [ref=e598] [cursor=pointer]: "650"
+                    - gridcell "Score" [ref=e600] [cursor=pointer]:
+                      - generic [ref=e605] [cursor=pointer]: "97.8"
+                    - gridcell "Request name" [ref=e607] [cursor=pointer]:
+                      - generic [ref=e612] [cursor=pointer]: ASU max async test
+                    - gridcell "Suggestion type" [ref=e614] [cursor=pointer]:
+                      - paragraph [ref=e619] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e621] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e625] [cursor=pointer]:
+                        - paragraph [ref=e626] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e628] [cursor=pointer]:
+                      - paragraph [ref=e633] [cursor=pointer]: November 21, 2025
+                    - gridcell "Date last modified" [ref=e635] [cursor=pointer]:
+                      - paragraph [ref=e640] [cursor=pointer]: November 21, 2025
+                    - gridcell "Date decided" [ref=e642] [cursor=pointer]:
+                      - paragraph [ref=e647] [cursor=pointer]: No data
+                    - gridcell "Decided by" [ref=e649] [cursor=pointer]:
+                      - paragraph [ref=e654] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e656] [cursor=pointer]:
+                      - generic [ref=e661] [cursor=pointer]: Accepted
+                - rowgroup [ref=e662]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e663] [cursor=pointer]:
+                    - button "Select row" [ref=e664] [cursor=pointer]:
+                      - checkbox [ref=e665] [cursor=pointer]:
+                        - img [ref=e666] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e669] [cursor=pointer]:
+                      - link "Arizona State University Campus Immersion" [ref=e673] [cursor=pointer]:
+                        - paragraph [ref=e674] [cursor=pointer]: Arizona State University Campus Immersion
+                    - gridcell "Source state" [ref=e676] [cursor=pointer]:
+                      - generic [ref=e681] [cursor=pointer]: Arizona
+                    - gridcell "Source subject" [ref=e683] [cursor=pointer]:
+                      - link "CIS" [ref=e687] [cursor=pointer]:
+                        - paragraph [ref=e688] [cursor=pointer]: CIS
+                    - gridcell "Source number" [ref=e690] [cursor=pointer]:
+                      - link "235" [ref=e694] [cursor=pointer]:
+                        - paragraph [ref=e695] [cursor=pointer]: "235"
+                    - gridcell "Target subject" [ref=e697] [cursor=pointer]:
+                      - link "IS" [ref=e701] [cursor=pointer]:
+                        - paragraph [ref=e702] [cursor=pointer]: IS
+                    - gridcell "Target number" [ref=e704] [cursor=pointer]:
+                      - link "301" [ref=e708] [cursor=pointer]:
+                        - paragraph [ref=e709] [cursor=pointer]: "301"
+                    - gridcell "Score" [ref=e711] [cursor=pointer]:
+                      - generic [ref=e716] [cursor=pointer]: "97.8"
+                    - gridcell "Request name" [ref=e718] [cursor=pointer]:
+                      - generic [ref=e723] [cursor=pointer]: ASU max async test
+                    - gridcell "Suggestion type" [ref=e725] [cursor=pointer]:
+                      - paragraph [ref=e730] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e732] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e736] [cursor=pointer]:
+                        - paragraph [ref=e737] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e739] [cursor=pointer]:
+                      - paragraph [ref=e744] [cursor=pointer]: November 21, 2025
+                    - gridcell "Date last modified" [ref=e746] [cursor=pointer]:
+                      - paragraph [ref=e751] [cursor=pointer]: November 21, 2025
+                    - gridcell "Date decided" [ref=e753] [cursor=pointer]:
+                      - paragraph [ref=e758] [cursor=pointer]: No data
+                    - gridcell "Decided by" [ref=e760] [cursor=pointer]:
+                      - paragraph [ref=e765] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e767] [cursor=pointer]:
+                      - generic [ref=e772] [cursor=pointer]: Accepted
+                - rowgroup [ref=e773]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e774] [cursor=pointer]:
+                    - button "Select row" [ref=e775] [cursor=pointer]:
+                      - checkbox [ref=e776] [cursor=pointer]:
+                        - img [ref=e777] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e780] [cursor=pointer]:
+                      - link "Alabama A & M University" [ref=e784] [cursor=pointer]:
+                        - paragraph [ref=e785] [cursor=pointer]: Alabama A & M University
+                    - gridcell "Source state" [ref=e787] [cursor=pointer]:
+                      - generic [ref=e792] [cursor=pointer]: Alabama
+                    - gridcell "Source subject" [ref=e794] [cursor=pointer]:
+                      - link "ENG" [ref=e798] [cursor=pointer]:
+                        - paragraph [ref=e799] [cursor=pointer]: ENG
+                    - gridcell "Source number" [ref=e801] [cursor=pointer]:
+                      - link "101" [ref=e805] [cursor=pointer]:
+                        - paragraph [ref=e806] [cursor=pointer]: "101"
+                    - gridcell "Target subject" [ref=e808] [cursor=pointer]:
+                      - link "ENG" [ref=e812] [cursor=pointer]:
+                        - paragraph [ref=e813] [cursor=pointer]: ENG
+                    - gridcell "Target number" [ref=e815] [cursor=pointer]:
+                      - link "101" [ref=e819] [cursor=pointer]:
+                        - paragraph [ref=e820] [cursor=pointer]: "101"
+                    - gridcell "Score" [ref=e822] [cursor=pointer]:
+                      - generic [ref=e827] [cursor=pointer]: "50.0"
+                    - gridcell "Request name" [ref=e829] [cursor=pointer]:
+                      - generic [ref=e834] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e836] [cursor=pointer]:
+                      - paragraph [ref=e841] [cursor=pointer]: New alignment
+                    - gridcell "Target institution" [ref=e843] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e847] [cursor=pointer]:
+                        - paragraph [ref=e848] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e850] [cursor=pointer]:
+                      - paragraph [ref=e855] [cursor=pointer]: January 16, 2026
+                    - gridcell "Date last modified" [ref=e857] [cursor=pointer]:
+                      - paragraph [ref=e862] [cursor=pointer]: January 21, 2026
+                    - gridcell "Date decided" [ref=e864] [cursor=pointer]:
+                      - paragraph [ref=e869] [cursor=pointer]: January 21, 2026
+                    - gridcell "Decided by" [ref=e871] [cursor=pointer]:
+                      - paragraph [ref=e876] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e878] [cursor=pointer]:
+                      - generic [ref=e883] [cursor=pointer]: Accepted
+                - rowgroup [ref=e884]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e885] [cursor=pointer]:
+                    - button "Select row" [ref=e886] [cursor=pointer]:
+                      - checkbox [ref=e887] [cursor=pointer]:
+                        - img [ref=e888] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e891] [cursor=pointer]:
+                      - link "Troy University" [ref=e895] [cursor=pointer]:
+                        - paragraph [ref=e896] [cursor=pointer]: Troy University
+                    - gridcell "Source state" [ref=e898] [cursor=pointer]:
+                      - generic [ref=e903] [cursor=pointer]: Alabama
+                    - gridcell "Source subject" [ref=e905] [cursor=pointer]:
+                      - link "HIS" [ref=e909] [cursor=pointer]:
+                        - paragraph [ref=e910] [cursor=pointer]: HIS
+                    - gridcell "Source number" [ref=e912] [cursor=pointer]:
+                      - link "111" [ref=e916] [cursor=pointer]:
+                        - paragraph [ref=e917] [cursor=pointer]: "111"
+                    - gridcell "Target subject" [ref=e919] [cursor=pointer]:
+                      - link "HIST" [ref=e923] [cursor=pointer]:
+                        - paragraph [ref=e924] [cursor=pointer]: HIST
+                    - gridcell "Target number" [ref=e926] [cursor=pointer]:
+                      - link "101" [ref=e930] [cursor=pointer]:
+                        - paragraph [ref=e931] [cursor=pointer]: "101"
+                    - gridcell "Score" [ref=e933] [cursor=pointer]:
+                      - generic [ref=e938] [cursor=pointer]: "50.0"
+                    - gridcell "Request name" [ref=e940] [cursor=pointer]:
+                      - generic [ref=e945] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e947] [cursor=pointer]:
+                      - paragraph [ref=e952] [cursor=pointer]: Out of alignment
+                    - gridcell "Target institution" [ref=e954] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e958] [cursor=pointer]:
+                        - paragraph [ref=e959] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e961] [cursor=pointer]:
+                      - paragraph [ref=e966] [cursor=pointer]: January 15, 2026
+                    - gridcell "Date last modified" [ref=e968] [cursor=pointer]:
+                      - paragraph [ref=e973] [cursor=pointer]: January 19, 2026
+                    - gridcell "Date decided" [ref=e975] [cursor=pointer]:
+                      - paragraph [ref=e980] [cursor=pointer]: January 19, 2026
+                    - gridcell "Decided by" [ref=e982] [cursor=pointer]:
+                      - paragraph [ref=e987] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e989] [cursor=pointer]:
+                      - generic [ref=e994] [cursor=pointer]: Rejected
+                - rowgroup [ref=e995]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e996] [cursor=pointer]:
+                    - button "Select row" [ref=e997] [cursor=pointer]:
+                      - checkbox [ref=e998] [cursor=pointer]:
+                        - img [ref=e999] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e1002] [cursor=pointer]:
+                      - link "Shelton State Community College" [ref=e1006] [cursor=pointer]:
+                        - paragraph [ref=e1007] [cursor=pointer]: Shelton State Community College
+                    - gridcell "Source state" [ref=e1009] [cursor=pointer]:
+                      - generic [ref=e1014] [cursor=pointer]: Alabama
+                    - gridcell "Source subject" [ref=e1016] [cursor=pointer]:
+                      - link "HIS" [ref=e1020] [cursor=pointer]:
+                        - paragraph [ref=e1021] [cursor=pointer]: HIS
+                    - gridcell "Source number" [ref=e1023] [cursor=pointer]:
+                      - link "201" [ref=e1027] [cursor=pointer]:
+                        - paragraph [ref=e1028] [cursor=pointer]: "201"
+                    - gridcell "Target subject" [ref=e1030] [cursor=pointer]:
+                      - link "HIST" [ref=e1034] [cursor=pointer]:
+                        - paragraph [ref=e1035] [cursor=pointer]: HIST
+                    - gridcell "Target number" [ref=e1037] [cursor=pointer]:
+                      - link "101" [ref=e1041] [cursor=pointer]:
+                        - paragraph [ref=e1042] [cursor=pointer]: "101"
+                    - gridcell "Score" [ref=e1044] [cursor=pointer]:
+                      - generic [ref=e1049] [cursor=pointer]: "50.0"
+                    - gridcell "Request name" [ref=e1051] [cursor=pointer]:
+                      - generic [ref=e1056] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e1058] [cursor=pointer]:
+                      - paragraph [ref=e1063] [cursor=pointer]: New alignment
+                    - gridcell "Target institution" [ref=e1065] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e1069] [cursor=pointer]:
+                        - paragraph [ref=e1070] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e1072] [cursor=pointer]:
+                      - paragraph [ref=e1077] [cursor=pointer]: January 15, 2026
+                    - gridcell "Date last modified" [ref=e1079] [cursor=pointer]:
+                      - paragraph [ref=e1084] [cursor=pointer]: January 19, 2026
+                    - gridcell "Date decided" [ref=e1086] [cursor=pointer]:
+                      - paragraph [ref=e1091] [cursor=pointer]: January 19, 2026
+                    - gridcell "Decided by" [ref=e1093] [cursor=pointer]:
+                      - paragraph [ref=e1098] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e1100] [cursor=pointer]:
+                      - generic [ref=e1105] [cursor=pointer]: Rejected
+                - rowgroup [ref=e1106]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e1107] [cursor=pointer]:
+                    - button "Select row" [ref=e1108] [cursor=pointer]:
+                      - checkbox [ref=e1109] [cursor=pointer]:
+                        - img [ref=e1110] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e1113] [cursor=pointer]:
+                      - link "University of Alaska Anchorage" [ref=e1117] [cursor=pointer]:
+                        - paragraph [ref=e1118] [cursor=pointer]: University of Alaska Anchorage
+                    - gridcell "Source state" [ref=e1120] [cursor=pointer]:
+                      - generic [ref=e1125] [cursor=pointer]: Alaska
+                    - gridcell "Source subject" [ref=e1127] [cursor=pointer]:
+                      - link "GER" [ref=e1131] [cursor=pointer]:
+                        - paragraph [ref=e1132] [cursor=pointer]: GER
+                    - gridcell "Source number" [ref=e1134] [cursor=pointer]:
+                      - link "A102" [ref=e1138] [cursor=pointer]:
+                        - paragraph [ref=e1139] [cursor=pointer]: A102
+                    - gridcell "Target subject" [ref=e1141] [cursor=pointer]:
+                      - link "GER" [ref=e1145] [cursor=pointer]:
+                        - paragraph [ref=e1146] [cursor=pointer]: GER
+                    - gridcell "Target number" [ref=e1148] [cursor=pointer]:
+                      - link "112" [ref=e1152] [cursor=pointer]:
+                        - paragraph [ref=e1153] [cursor=pointer]: "112"
+                    - gridcell "Score" [ref=e1155] [cursor=pointer]:
+                      - generic [ref=e1160] [cursor=pointer]: "100.0"
+                    - gridcell "Request name" [ref=e1162] [cursor=pointer]:
+                      - generic [ref=e1167] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e1169] [cursor=pointer]:
+                      - paragraph [ref=e1174] [cursor=pointer]: New alignment
+                    - gridcell "Target institution" [ref=e1176] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e1180] [cursor=pointer]:
+                        - paragraph [ref=e1181] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e1183] [cursor=pointer]:
+                      - paragraph [ref=e1188] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date last modified" [ref=e1190] [cursor=pointer]:
+                      - paragraph [ref=e1195] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date decided" [ref=e1197] [cursor=pointer]:
+                      - paragraph [ref=e1202] [cursor=pointer]: December 16, 2025
+                    - gridcell "Decided by" [ref=e1204] [cursor=pointer]:
+                      - paragraph [ref=e1209] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e1211] [cursor=pointer]:
+                      - generic [ref=e1216] [cursor=pointer]: Accepted
+                - rowgroup [ref=e1217]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e1218] [cursor=pointer]:
+                    - button "Select row" [ref=e1219] [cursor=pointer]:
+                      - checkbox [ref=e1220] [cursor=pointer]:
+                        - img [ref=e1221] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e1224] [cursor=pointer]:
+                      - link "Biola University" [ref=e1228] [cursor=pointer]:
+                        - paragraph [ref=e1229] [cursor=pointer]: Biola University
+                    - gridcell "Source state" [ref=e1231] [cursor=pointer]:
+                      - generic [ref=e1236] [cursor=pointer]: California
+                    - gridcell "Source subject" [ref=e1238] [cursor=pointer]:
+                      - link "HIST" [ref=e1242] [cursor=pointer]:
+                        - paragraph [ref=e1243] [cursor=pointer]: HIST
+                    - gridcell "Source number" [ref=e1245] [cursor=pointer]:
+                      - link "108" [ref=e1249] [cursor=pointer]:
+                        - paragraph [ref=e1250] [cursor=pointer]: "108"
+                    - gridcell "Target subject" [ref=e1252] [cursor=pointer]:
+                      - link "HIST" [ref=e1256] [cursor=pointer]:
+                        - paragraph [ref=e1257] [cursor=pointer]: HIST
+                    - gridcell "Target number" [ref=e1259] [cursor=pointer]:
+                      - link "101" [ref=e1263] [cursor=pointer]:
+                        - paragraph [ref=e1264] [cursor=pointer]: "101"
+                    - gridcell "Score" [ref=e1266] [cursor=pointer]:
+                      - generic [ref=e1271] [cursor=pointer]: "50.0"
+                    - gridcell "Request name" [ref=e1273] [cursor=pointer]:
+                      - generic [ref=e1278] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e1280] [cursor=pointer]:
+                      - paragraph [ref=e1285] [cursor=pointer]: New alignment
+                    - gridcell "Target institution" [ref=e1287] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e1291] [cursor=pointer]:
+                        - paragraph [ref=e1292] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e1294] [cursor=pointer]:
+                      - paragraph [ref=e1299] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date last modified" [ref=e1301] [cursor=pointer]:
+                      - paragraph [ref=e1306] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date decided" [ref=e1308] [cursor=pointer]:
+                      - paragraph [ref=e1313] [cursor=pointer]: December 16, 2025
+                    - gridcell "Decided by" [ref=e1315] [cursor=pointer]:
+                      - paragraph [ref=e1320] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e1322] [cursor=pointer]:
+                      - generic [ref=e1327] [cursor=pointer]: Accepted
+                - rowgroup [ref=e1328]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e1329] [cursor=pointer]:
+                    - button "Select row" [ref=e1330] [cursor=pointer]:
+                      - checkbox [ref=e1331] [cursor=pointer]:
+                        - img [ref=e1332] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e1335] [cursor=pointer]:
+                      - link "Dine College" [ref=e1339] [cursor=pointer]:
+                        - paragraph [ref=e1340] [cursor=pointer]: Dine College
+                    - gridcell "Source state" [ref=e1342] [cursor=pointer]:
+                      - generic [ref=e1347] [cursor=pointer]: Arizona
+                    - gridcell "Source subject" [ref=e1349] [cursor=pointer]:
+                      - link "HST" [ref=e1353] [cursor=pointer]:
+                        - paragraph [ref=e1354] [cursor=pointer]: HST
+                    - gridcell "Source number" [ref=e1356] [cursor=pointer]:
+                      - link "135" [ref=e1360] [cursor=pointer]:
+                        - paragraph [ref=e1361] [cursor=pointer]: "135"
+                    - gridcell "Target subject" [ref=e1363] [cursor=pointer]:
+                      - link "HIST" [ref=e1367] [cursor=pointer]:
+                        - paragraph [ref=e1368] [cursor=pointer]: HIST
+                    - gridcell "Target number" [ref=e1370] [cursor=pointer]:
+                      - link "101" [ref=e1374] [cursor=pointer]:
+                        - paragraph [ref=e1375] [cursor=pointer]: "101"
+                    - gridcell "Score" [ref=e1377] [cursor=pointer]:
+                      - generic [ref=e1382] [cursor=pointer]: "50.0"
+                    - gridcell "Request name" [ref=e1384] [cursor=pointer]:
+                      - generic [ref=e1389] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e1391] [cursor=pointer]:
+                      - paragraph [ref=e1396] [cursor=pointer]: New alignment
+                    - gridcell "Target institution" [ref=e1398] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e1402] [cursor=pointer]:
+                        - paragraph [ref=e1403] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e1405] [cursor=pointer]:
+                      - paragraph [ref=e1410] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date last modified" [ref=e1412] [cursor=pointer]:
+                      - paragraph [ref=e1417] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date decided" [ref=e1419] [cursor=pointer]:
+                      - paragraph [ref=e1424] [cursor=pointer]: December 16, 2025
+                    - gridcell "Decided by" [ref=e1426] [cursor=pointer]:
+                      - paragraph [ref=e1431] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e1433] [cursor=pointer]:
+                      - generic [ref=e1438] [cursor=pointer]: Accepted
+                - rowgroup [ref=e1439]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e1440] [cursor=pointer]:
+                    - button "Select row" [ref=e1441] [cursor=pointer]:
+                      - checkbox [ref=e1442] [cursor=pointer]:
+                        - img [ref=e1443] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e1446] [cursor=pointer]:
+                      - link "California State University-Fresno" [ref=e1450] [cursor=pointer]:
+                        - paragraph [ref=e1451] [cursor=pointer]: California State University-Fresno
+                    - gridcell "Source state" [ref=e1453] [cursor=pointer]:
+                      - generic [ref=e1458] [cursor=pointer]: California
+                    - gridcell "Source subject" [ref=e1460] [cursor=pointer]:
+                      - link "BIOL" [ref=e1464] [cursor=pointer]:
+                        - paragraph [ref=e1465] [cursor=pointer]: BIOL
+                    - gridcell "Source number" [ref=e1467] [cursor=pointer]:
+                      - link "67A" [ref=e1471] [cursor=pointer]:
+                        - paragraph [ref=e1472] [cursor=pointer]: 67A
+                    - gridcell "Target subject" [ref=e1474] [cursor=pointer]:
+                      - link "BIOL" [ref=e1478] [cursor=pointer]:
+                        - paragraph [ref=e1479] [cursor=pointer]: BIOL
+                    - gridcell "Target number" [ref=e1481] [cursor=pointer]:
+                      - link "223L" [ref=e1485] [cursor=pointer]:
+                        - paragraph [ref=e1486] [cursor=pointer]: 223L
+                    - gridcell "Score" [ref=e1488] [cursor=pointer]:
+                      - generic [ref=e1493] [cursor=pointer]: "75.0"
+                    - gridcell "Request name" [ref=e1495] [cursor=pointer]:
+                      - generic [ref=e1500] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e1502] [cursor=pointer]:
+                      - paragraph [ref=e1507] [cursor=pointer]: Out of alignment
+                    - gridcell "Target institution" [ref=e1509] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e1513] [cursor=pointer]:
+                        - paragraph [ref=e1514] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e1516] [cursor=pointer]:
+                      - paragraph [ref=e1521] [cursor=pointer]: December 15, 2025
+                    - gridcell "Date last modified" [ref=e1523] [cursor=pointer]:
+                      - paragraph [ref=e1528] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date decided" [ref=e1530] [cursor=pointer]:
+                      - paragraph [ref=e1535] [cursor=pointer]: December 16, 2025
+                    - gridcell "Decided by" [ref=e1537] [cursor=pointer]:
+                      - paragraph [ref=e1542] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e1544] [cursor=pointer]:
+                      - generic [ref=e1549] [cursor=pointer]: Accepted
+                - rowgroup [ref=e1550]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e1551] [cursor=pointer]:
+                    - button "Select row" [ref=e1552] [cursor=pointer]:
+                      - checkbox [ref=e1553] [cursor=pointer]:
+                        - img [ref=e1554] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e1557] [cursor=pointer]:
+                      - link "California State University-Fresno" [ref=e1561] [cursor=pointer]:
+                        - paragraph [ref=e1562] [cursor=pointer]: California State University-Fresno
+                    - gridcell "Source state" [ref=e1564] [cursor=pointer]:
+                      - generic [ref=e1569] [cursor=pointer]: California
+                    - gridcell "Source subject" [ref=e1571] [cursor=pointer]:
+                      - link "BIOL" [ref=e1575] [cursor=pointer]:
+                        - paragraph [ref=e1576] [cursor=pointer]: BIOL
+                    - gridcell "Source number" [ref=e1578] [cursor=pointer]:
+                      - link "67A" [ref=e1582] [cursor=pointer]:
+                        - paragraph [ref=e1583] [cursor=pointer]: 67A
+                    - gridcell "Target subject" [ref=e1585] [cursor=pointer]:
+                      - link "BIOL" [ref=e1589] [cursor=pointer]:
+                        - paragraph [ref=e1590] [cursor=pointer]: BIOL
+                    - gridcell "Target number" [ref=e1592] [cursor=pointer]:
+                      - link "223A" [ref=e1596] [cursor=pointer]:
+                        - paragraph [ref=e1597] [cursor=pointer]: 223A
+                    - gridcell "Score" [ref=e1599] [cursor=pointer]:
+                      - generic [ref=e1604] [cursor=pointer]: "75.0"
+                    - gridcell "Request name" [ref=e1606] [cursor=pointer]:
+                      - generic [ref=e1611] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e1613] [cursor=pointer]:
+                      - paragraph [ref=e1618] [cursor=pointer]: Out of alignment
+                    - gridcell "Target institution" [ref=e1620] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e1624] [cursor=pointer]:
+                        - paragraph [ref=e1625] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e1627] [cursor=pointer]:
+                      - paragraph [ref=e1632] [cursor=pointer]: December 15, 2025
+                    - gridcell "Date last modified" [ref=e1634] [cursor=pointer]:
+                      - paragraph [ref=e1639] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date decided" [ref=e1641] [cursor=pointer]:
+                      - paragraph [ref=e1646] [cursor=pointer]: December 16, 2025
+                    - gridcell "Decided by" [ref=e1648] [cursor=pointer]:
+                      - paragraph [ref=e1653] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e1655] [cursor=pointer]:
+                      - generic [ref=e1660] [cursor=pointer]: Accepted
+                - rowgroup [ref=e1661]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e1662] [cursor=pointer]:
+                    - button "Select row" [ref=e1663] [cursor=pointer]:
+                      - checkbox [ref=e1664] [cursor=pointer]:
+                        - img [ref=e1665] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e1668] [cursor=pointer]:
+                      - link "Highland Community College (Highland, IL)" [ref=e1672] [cursor=pointer]:
+                        - paragraph [ref=e1673] [cursor=pointer]: Highland Community College (Highland, IL)
+                    - gridcell "Source state" [ref=e1675] [cursor=pointer]:
+                      - generic [ref=e1680] [cursor=pointer]: Kansas
+                    - gridcell "Source subject" [ref=e1682] [cursor=pointer]:
+                      - link "PSY" [ref=e1686] [cursor=pointer]:
+                        - paragraph [ref=e1687] [cursor=pointer]: PSY
+                    - gridcell "Source number" [ref=e1689] [cursor=pointer]:
+                      - link "101" [ref=e1693] [cursor=pointer]:
+                        - paragraph [ref=e1694] [cursor=pointer]: "101"
+                    - gridcell "Target subject" [ref=e1696] [cursor=pointer]:
+                      - link "PSY" [ref=e1700] [cursor=pointer]:
+                        - paragraph [ref=e1701] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e1703] [cursor=pointer]:
+                      - link "101" [ref=e1707] [cursor=pointer]:
+                        - paragraph [ref=e1708] [cursor=pointer]: "101"
+                    - gridcell "Score" [ref=e1710] [cursor=pointer]:
+                      - generic [ref=e1715] [cursor=pointer]: "62.5"
+                    - gridcell "Request name" [ref=e1717] [cursor=pointer]:
+                      - generic [ref=e1722] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e1724] [cursor=pointer]:
+                      - paragraph [ref=e1729] [cursor=pointer]: Improve rules boost
+                    - gridcell "Target institution" [ref=e1731] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e1735] [cursor=pointer]:
+                        - paragraph [ref=e1736] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e1738] [cursor=pointer]:
+                      - paragraph [ref=e1743] [cursor=pointer]: December 15, 2025
+                    - gridcell "Date last modified" [ref=e1745] [cursor=pointer]:
+                      - paragraph [ref=e1750] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date decided" [ref=e1752] [cursor=pointer]:
+                      - paragraph [ref=e1757] [cursor=pointer]: December 16, 2025
+                    - gridcell "Decided by" [ref=e1759] [cursor=pointer]:
+                      - paragraph [ref=e1764] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e1766] [cursor=pointer]:
+                      - generic [ref=e1771] [cursor=pointer]: Accepted
+                - rowgroup [ref=e1772]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e1773] [cursor=pointer]:
+                    - button "Select row" [ref=e1774] [cursor=pointer]:
+                      - checkbox [ref=e1775] [cursor=pointer]:
+                        - img [ref=e1776] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e1779] [cursor=pointer]:
+                      - link "Cloud County Community College" [ref=e1783] [cursor=pointer]:
+                        - paragraph [ref=e1784] [cursor=pointer]: Cloud County Community College
+                    - gridcell "Source state" [ref=e1786] [cursor=pointer]:
+                      - generic [ref=e1791] [cursor=pointer]: Kansas
+                    - gridcell "Source subject" [ref=e1793] [cursor=pointer]:
+                      - link "SS" [ref=e1797] [cursor=pointer]:
+                        - paragraph [ref=e1798] [cursor=pointer]: SS
+                    - gridcell "Source number" [ref=e1800] [cursor=pointer]:
+                      - link "101" [ref=e1804] [cursor=pointer]:
+                        - paragraph [ref=e1805] [cursor=pointer]: "101"
+                    - gridcell "Target subject" [ref=e1807] [cursor=pointer]:
+                      - link "PSY" [ref=e1811] [cursor=pointer]:
+                        - paragraph [ref=e1812] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e1814] [cursor=pointer]:
+                      - link "101" [ref=e1818] [cursor=pointer]:
+                        - paragraph [ref=e1819] [cursor=pointer]: "101"
+                    - gridcell "Score" [ref=e1821] [cursor=pointer]:
+                      - generic [ref=e1826] [cursor=pointer]: "62.5"
+                    - gridcell "Request name" [ref=e1828] [cursor=pointer]:
+                      - generic [ref=e1833] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e1835] [cursor=pointer]:
+                      - paragraph [ref=e1840] [cursor=pointer]: Improve rules boost
+                    - gridcell "Target institution" [ref=e1842] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e1846] [cursor=pointer]:
+                        - paragraph [ref=e1847] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e1849] [cursor=pointer]:
+                      - paragraph [ref=e1854] [cursor=pointer]: December 15, 2025
+                    - gridcell "Date last modified" [ref=e1856] [cursor=pointer]:
+                      - paragraph [ref=e1861] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date decided" [ref=e1863] [cursor=pointer]:
+                      - paragraph [ref=e1868] [cursor=pointer]: December 16, 2025
+                    - gridcell "Decided by" [ref=e1870] [cursor=pointer]:
+                      - paragraph [ref=e1875] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e1877] [cursor=pointer]:
+                      - generic [ref=e1882] [cursor=pointer]: Accepted
+                - rowgroup [ref=e1883]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e1884] [cursor=pointer]:
+                    - button "Select row" [ref=e1885] [cursor=pointer]:
+                      - checkbox [ref=e1886] [cursor=pointer]:
+                        - img [ref=e1887] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e1890] [cursor=pointer]:
+                      - link "Colby Community College" [ref=e1894] [cursor=pointer]:
+                        - paragraph [ref=e1895] [cursor=pointer]: Colby Community College
+                    - gridcell "Source state" [ref=e1897] [cursor=pointer]:
+                      - generic [ref=e1902] [cursor=pointer]: Kansas
+                    - gridcell "Source subject" [ref=e1904] [cursor=pointer]:
+                      - link "PS" [ref=e1908] [cursor=pointer]:
+                        - paragraph [ref=e1909] [cursor=pointer]: PS
+                    - gridcell "Source number" [ref=e1911] [cursor=pointer]:
+                      - link "176" [ref=e1915] [cursor=pointer]:
+                        - paragraph [ref=e1916] [cursor=pointer]: "176"
+                    - gridcell "Target subject" [ref=e1918] [cursor=pointer]:
+                      - link "PSY" [ref=e1922] [cursor=pointer]:
+                        - paragraph [ref=e1923] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e1925] [cursor=pointer]:
+                      - link "101" [ref=e1929] [cursor=pointer]:
+                        - paragraph [ref=e1930] [cursor=pointer]: "101"
+                    - gridcell "Score" [ref=e1932] [cursor=pointer]:
+                      - generic [ref=e1937] [cursor=pointer]: "62.5"
+                    - gridcell "Request name" [ref=e1939] [cursor=pointer]:
+                      - generic [ref=e1944] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e1946] [cursor=pointer]:
+                      - paragraph [ref=e1951] [cursor=pointer]: Improve rules boost
+                    - gridcell "Target institution" [ref=e1953] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e1957] [cursor=pointer]:
+                        - paragraph [ref=e1958] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e1960] [cursor=pointer]:
+                      - paragraph [ref=e1965] [cursor=pointer]: December 15, 2025
+                    - gridcell "Date last modified" [ref=e1967] [cursor=pointer]:
+                      - paragraph [ref=e1972] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date decided" [ref=e1974] [cursor=pointer]:
+                      - paragraph [ref=e1979] [cursor=pointer]: December 16, 2025
+                    - gridcell "Decided by" [ref=e1981] [cursor=pointer]:
+                      - paragraph [ref=e1986] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e1988] [cursor=pointer]:
+                      - generic [ref=e1993] [cursor=pointer]: Accepted
+                - rowgroup [ref=e1994]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e1995] [cursor=pointer]:
+                    - button "Select row" [ref=e1996] [cursor=pointer]:
+                      - checkbox [ref=e1997] [cursor=pointer]:
+                        - img [ref=e1998] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e2001] [cursor=pointer]:
+                      - link "Fort Hays State University" [ref=e2005] [cursor=pointer]:
+                        - paragraph [ref=e2006] [cursor=pointer]: Fort Hays State University
+                    - gridcell "Source state" [ref=e2008] [cursor=pointer]:
+                      - generic [ref=e2013] [cursor=pointer]: Kansas
+                    - gridcell "Source subject" [ref=e2015] [cursor=pointer]:
+                      - link "PSY" [ref=e2019] [cursor=pointer]:
+                        - paragraph [ref=e2020] [cursor=pointer]: PSY
+                    - gridcell "Source number" [ref=e2022] [cursor=pointer]:
+                      - link "100" [ref=e2026] [cursor=pointer]:
+                        - paragraph [ref=e2027] [cursor=pointer]: "100"
+                    - gridcell "Target subject" [ref=e2029] [cursor=pointer]:
+                      - link "PSY" [ref=e2033] [cursor=pointer]:
+                        - paragraph [ref=e2034] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e2036] [cursor=pointer]:
+                      - link "101" [ref=e2040] [cursor=pointer]:
+                        - paragraph [ref=e2041] [cursor=pointer]: "101"
+                    - gridcell "Score" [ref=e2043] [cursor=pointer]:
+                      - generic [ref=e2048] [cursor=pointer]: "62.5"
+                    - gridcell "Request name" [ref=e2050] [cursor=pointer]:
+                      - generic [ref=e2055] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e2057] [cursor=pointer]:
+                      - paragraph [ref=e2062] [cursor=pointer]: Improve rules boost
+                    - gridcell "Target institution" [ref=e2064] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e2068] [cursor=pointer]:
+                        - paragraph [ref=e2069] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e2071] [cursor=pointer]:
+                      - paragraph [ref=e2076] [cursor=pointer]: December 15, 2025
+                    - gridcell "Date last modified" [ref=e2078] [cursor=pointer]:
+                      - paragraph [ref=e2083] [cursor=pointer]: December 16, 2025
+                    - gridcell "Date decided" [ref=e2085] [cursor=pointer]:
+                      - paragraph [ref=e2090] [cursor=pointer]: December 16, 2025
+                    - gridcell "Decided by" [ref=e2092] [cursor=pointer]:
+                      - paragraph [ref=e2097] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e2099] [cursor=pointer]:
+                      - generic [ref=e2104] [cursor=pointer]: Accepted
+                - rowgroup [ref=e2105]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e2106] [cursor=pointer]:
+                    - button "Select row" [ref=e2107] [cursor=pointer]:
+                      - checkbox [ref=e2108] [cursor=pointer]:
+                        - img [ref=e2109] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e2112] [cursor=pointer]:
+                      - link "Henderson State University" [ref=e2116] [cursor=pointer]:
+                        - paragraph [ref=e2117] [cursor=pointer]: Henderson State University
+                    - gridcell "Source state" [ref=e2119] [cursor=pointer]:
+                      - generic [ref=e2124] [cursor=pointer]: Arkansas
+                    - gridcell "Source subject" [ref=e2126] [cursor=pointer]:
+                      - link "COM" [ref=e2130] [cursor=pointer]:
+                        - paragraph [ref=e2131] [cursor=pointer]: COM
+                    - gridcell "Source number" [ref=e2133] [cursor=pointer]:
+                      - link "2013" [ref=e2137] [cursor=pointer]:
+                        - paragraph [ref=e2138] [cursor=pointer]: "2013"
+                    - gridcell "Target subject" [ref=e2140] [cursor=pointer]:
+                      - link "COM" [ref=e2144] [cursor=pointer]:
+                        - paragraph [ref=e2145] [cursor=pointer]: COM
+                    - gridcell "Target number" [ref=e2147] [cursor=pointer]:
+                      - link "113" [ref=e2151] [cursor=pointer]:
+                        - paragraph [ref=e2152] [cursor=pointer]: "113"
+                    - gridcell "Score" [ref=e2154] [cursor=pointer]:
+                      - generic [ref=e2159] [cursor=pointer]: "50.0"
+                    - gridcell "Request name" [ref=e2161] [cursor=pointer]:
+                      - generic [ref=e2166] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e2168] [cursor=pointer]:
+                      - paragraph [ref=e2173] [cursor=pointer]: New alignment
+                    - gridcell "Target institution" [ref=e2175] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e2179] [cursor=pointer]:
+                        - paragraph [ref=e2180] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e2182] [cursor=pointer]:
+                      - paragraph [ref=e2187] [cursor=pointer]: December 10, 2025
+                    - gridcell "Date last modified" [ref=e2189] [cursor=pointer]:
+                      - paragraph [ref=e2194] [cursor=pointer]: December 11, 2025
+                    - gridcell "Date decided" [ref=e2196] [cursor=pointer]:
+                      - paragraph [ref=e2201] [cursor=pointer]: December 11, 2025
+                    - gridcell "Decided by" [ref=e2203] [cursor=pointer]:
+                      - paragraph [ref=e2208] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e2210] [cursor=pointer]:
+                      - generic [ref=e2215] [cursor=pointer]: Accepted
+                - rowgroup [ref=e2216]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e2217] [cursor=pointer]:
+                    - button "Select row" [ref=e2218] [cursor=pointer]:
+                      - checkbox [ref=e2219] [cursor=pointer]:
+                        - img [ref=e2220] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e2223] [cursor=pointer]:
+                      - link "Sonoma State University" [ref=e2227] [cursor=pointer]:
+                        - paragraph [ref=e2228] [cursor=pointer]: Sonoma State University
+                    - gridcell "Source state" [ref=e2230] [cursor=pointer]:
+                      - generic [ref=e2235] [cursor=pointer]: California
+                    - gridcell "Source subject" [ref=e2237] [cursor=pointer]:
+                      - link "SPAN" [ref=e2241] [cursor=pointer]:
+                        - paragraph [ref=e2242] [cursor=pointer]: SPAN
+                    - gridcell "Source number" [ref=e2244] [cursor=pointer]:
+                      - link "202" [ref=e2248] [cursor=pointer]:
+                        - paragraph [ref=e2249] [cursor=pointer]: "202"
+                    - gridcell "Target subject" [ref=e2251] [cursor=pointer]:
+                      - link "SPAN" [ref=e2255] [cursor=pointer]:
+                        - paragraph [ref=e2256] [cursor=pointer]: SPAN
+                    - gridcell "Target number" [ref=e2258] [cursor=pointer]:
+                      - link "212" [ref=e2262] [cursor=pointer]:
+                        - paragraph [ref=e2263] [cursor=pointer]: "212"
+                    - gridcell "Score" [ref=e2265] [cursor=pointer]:
+                      - generic [ref=e2270] [cursor=pointer]: "50.0"
+                    - gridcell "Request name" [ref=e2272] [cursor=pointer]:
+                      - generic [ref=e2277] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e2279] [cursor=pointer]:
+                      - paragraph [ref=e2284] [cursor=pointer]: Out of alignment
+                    - gridcell "Target institution" [ref=e2286] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e2290] [cursor=pointer]:
+                        - paragraph [ref=e2291] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e2293] [cursor=pointer]:
+                      - paragraph [ref=e2298] [cursor=pointer]: November 14, 2025
+                    - gridcell "Date last modified" [ref=e2300] [cursor=pointer]:
+                      - paragraph [ref=e2305] [cursor=pointer]: December 9, 2025
+                    - gridcell "Date decided" [ref=e2307] [cursor=pointer]:
+                      - paragraph [ref=e2312] [cursor=pointer]: December 9, 2025
+                    - gridcell "Decided by" [ref=e2314] [cursor=pointer]:
+                      - paragraph [ref=e2319] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e2321] [cursor=pointer]:
+                      - generic [ref=e2326] [cursor=pointer]: Accepted
+                - rowgroup [ref=e2327]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e2328] [cursor=pointer]:
+                    - button "Select row" [ref=e2329] [cursor=pointer]:
+                      - checkbox [ref=e2330] [cursor=pointer]:
+                        - img [ref=e2331] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e2334] [cursor=pointer]:
+                      - link "Central Arizona College" [ref=e2338] [cursor=pointer]:
+                        - paragraph [ref=e2339] [cursor=pointer]: Central Arizona College
+                    - gridcell "Source state" [ref=e2341] [cursor=pointer]:
+                      - generic [ref=e2346] [cursor=pointer]: Arizona
+                    - gridcell "Source subject" [ref=e2348] [cursor=pointer]:
+                      - link "CHM" [ref=e2352] [cursor=pointer]:
+                        - paragraph [ref=e2353] [cursor=pointer]: CHM
+                    - gridcell "Source number" [ref=e2355] [cursor=pointer]:
+                      - link "151" [ref=e2359] [cursor=pointer]:
+                        - paragraph [ref=e2360] [cursor=pointer]: "151"
+                    - gridcell "Target subject" [ref=e2362] [cursor=pointer]:
+                      - link "CHEM" [ref=e2366] [cursor=pointer]:
+                        - paragraph [ref=e2367] [cursor=pointer]: CHEM
+                    - gridcell "Target number" [ref=e2369] [cursor=pointer]:
+                      - link "100" [ref=e2373] [cursor=pointer]:
+                        - paragraph [ref=e2374] [cursor=pointer]: "100"
+                    - gridcell "Score" [ref=e2376] [cursor=pointer]:
+                      - generic [ref=e2381] [cursor=pointer]: "85.0"
+                    - gridcell "Request name" [ref=e2383] [cursor=pointer]:
+                      - generic [ref=e2388] [cursor=pointer]: No data
+                    - gridcell "Suggestion type" [ref=e2390] [cursor=pointer]:
+                      - paragraph [ref=e2395] [cursor=pointer]: Triangulation
+                    - gridcell "Target institution" [ref=e2397] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e2401] [cursor=pointer]:
+                        - paragraph [ref=e2402] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e2404] [cursor=pointer]:
+                      - paragraph [ref=e2409] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e2411] [cursor=pointer]:
+                      - paragraph [ref=e2416] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e2418] [cursor=pointer]:
+                      - paragraph [ref=e2423] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e2425] [cursor=pointer]:
+                      - paragraph [ref=e2430] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e2432] [cursor=pointer]:
+                      - generic [ref=e2437] [cursor=pointer]: Accepted
+                - rowgroup [ref=e2438]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e2439] [cursor=pointer]:
+                    - button "Select row" [ref=e2440] [cursor=pointer]:
+                      - checkbox [ref=e2441] [cursor=pointer]:
+                        - img [ref=e2442] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e2445] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e2449] [cursor=pointer]:
+                        - paragraph [ref=e2450] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e2452] [cursor=pointer]:
+                      - generic [ref=e2457] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e2459] [cursor=pointer]:
+                      - link "JOURN" [ref=e2463] [cursor=pointer]:
+                        - paragraph [ref=e2464] [cursor=pointer]: JOURN
+                    - gridcell "Source number" [ref=e2466] [cursor=pointer]:
+                      - link "7252" [ref=e2470] [cursor=pointer]:
+                        - paragraph [ref=e2471] [cursor=pointer]: "7252"
+                    - gridcell "Target subject" [ref=e2473] [cursor=pointer]:
+                      - link "MKT" [ref=e2477] [cursor=pointer]:
+                        - paragraph [ref=e2478] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e2480] [cursor=pointer]:
+                      - link "651" [ref=e2484] [cursor=pointer]:
+                        - paragraph [ref=e2485] [cursor=pointer]: "651"
+                    - gridcell "Score" [ref=e2487] [cursor=pointer]:
+                      - generic [ref=e2492] [cursor=pointer]: "89.5"
+                    - gridcell "Request name" [ref=e2494] [cursor=pointer]:
+                      - generic [ref=e2499] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e2501] [cursor=pointer]:
+                      - paragraph [ref=e2506] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e2508] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e2512] [cursor=pointer]:
+                        - paragraph [ref=e2513] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e2515] [cursor=pointer]:
+                      - paragraph [ref=e2520] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e2522] [cursor=pointer]:
+                      - paragraph [ref=e2527] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e2529] [cursor=pointer]:
+                      - paragraph [ref=e2534] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e2536] [cursor=pointer]:
+                      - paragraph [ref=e2541] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e2543] [cursor=pointer]:
+                      - generic [ref=e2548] [cursor=pointer]: Accepted
+                - rowgroup [ref=e2549]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e2550] [cursor=pointer]:
+                    - button "Select row" [ref=e2551] [cursor=pointer]:
+                      - checkbox [ref=e2552] [cursor=pointer]:
+                        - img [ref=e2553] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e2556] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e2560] [cursor=pointer]:
+                        - paragraph [ref=e2561] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e2563] [cursor=pointer]:
+                      - generic [ref=e2568] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e2570] [cursor=pointer]:
+                      - link "JOURN" [ref=e2574] [cursor=pointer]:
+                        - paragraph [ref=e2575] [cursor=pointer]: JOURN
+                    - gridcell "Source number" [ref=e2577] [cursor=pointer]:
+                      - link "4252" [ref=e2581] [cursor=pointer]:
+                        - paragraph [ref=e2582] [cursor=pointer]: "4252"
+                    - gridcell "Target subject" [ref=e2584] [cursor=pointer]:
+                      - link "MKT" [ref=e2588] [cursor=pointer]:
+                        - paragraph [ref=e2589] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e2591] [cursor=pointer]:
+                      - link "651" [ref=e2595] [cursor=pointer]:
+                        - paragraph [ref=e2596] [cursor=pointer]: "651"
+                    - gridcell "Score" [ref=e2598] [cursor=pointer]:
+                      - generic [ref=e2603] [cursor=pointer]: "89.5"
+                    - gridcell "Request name" [ref=e2605] [cursor=pointer]:
+                      - generic [ref=e2610] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e2612] [cursor=pointer]:
+                      - paragraph [ref=e2617] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e2619] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e2623] [cursor=pointer]:
+                        - paragraph [ref=e2624] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e2626] [cursor=pointer]:
+                      - paragraph [ref=e2631] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e2633] [cursor=pointer]:
+                      - paragraph [ref=e2638] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e2640] [cursor=pointer]:
+                      - paragraph [ref=e2645] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e2647] [cursor=pointer]:
+                      - paragraph [ref=e2652] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e2654] [cursor=pointer]:
+                      - generic [ref=e2659] [cursor=pointer]: Accepted
+                - rowgroup [ref=e2660]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e2661] [cursor=pointer]:
+                    - button "Select row" [ref=e2662] [cursor=pointer]:
+                      - checkbox [ref=e2663] [cursor=pointer]:
+                        - img [ref=e2664] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e2667] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e2671] [cursor=pointer]:
+                        - paragraph [ref=e2672] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e2674] [cursor=pointer]:
+                      - generic [ref=e2679] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e2681] [cursor=pointer]:
+                      - link "T_A_M" [ref=e2685] [cursor=pointer]:
+                        - paragraph [ref=e2686] [cursor=pointer]: T_A_M
+                    - gridcell "Source number" [ref=e2688] [cursor=pointer]:
+                      - link "7300" [ref=e2692] [cursor=pointer]:
+                        - paragraph [ref=e2693] [cursor=pointer]: "7300"
+                    - gridcell "Target subject" [ref=e2695] [cursor=pointer]:
+                      - link "MKT" [ref=e2699] [cursor=pointer]:
+                        - paragraph [ref=e2700] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e2702] [cursor=pointer]:
+                      - link "651" [ref=e2706] [cursor=pointer]:
+                        - paragraph [ref=e2707] [cursor=pointer]: "651"
+                    - gridcell "Score" [ref=e2709] [cursor=pointer]:
+                      - generic [ref=e2714] [cursor=pointer]: "93.8"
+                    - gridcell "Request name" [ref=e2716] [cursor=pointer]:
+                      - generic [ref=e2721] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e2723] [cursor=pointer]:
+                      - paragraph [ref=e2728] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e2730] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e2734] [cursor=pointer]:
+                        - paragraph [ref=e2735] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e2737] [cursor=pointer]:
+                      - paragraph [ref=e2742] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e2744] [cursor=pointer]:
+                      - paragraph [ref=e2749] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e2751] [cursor=pointer]:
+                      - paragraph [ref=e2756] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e2758] [cursor=pointer]:
+                      - paragraph [ref=e2763] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e2765] [cursor=pointer]:
+                      - generic [ref=e2770] [cursor=pointer]: Accepted
+                - rowgroup [ref=e2771]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e2772] [cursor=pointer]:
+                    - button "Select row" [ref=e2773] [cursor=pointer]:
+                      - checkbox [ref=e2774] [cursor=pointer]:
+                        - img [ref=e2775] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e2778] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e2782] [cursor=pointer]:
+                        - paragraph [ref=e2783] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e2785] [cursor=pointer]:
+                      - generic [ref=e2790] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e2792] [cursor=pointer]:
+                      - link "T_A_M" [ref=e2796] [cursor=pointer]:
+                        - paragraph [ref=e2797] [cursor=pointer]: T_A_M
+                    - gridcell "Source number" [ref=e2799] [cursor=pointer]:
+                      - link "4300" [ref=e2803] [cursor=pointer]:
+                        - paragraph [ref=e2804] [cursor=pointer]: "4300"
+                    - gridcell "Target subject" [ref=e2806] [cursor=pointer]:
+                      - link "MKT" [ref=e2810] [cursor=pointer]:
+                        - paragraph [ref=e2811] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e2813] [cursor=pointer]:
+                      - link "651" [ref=e2817] [cursor=pointer]:
+                        - paragraph [ref=e2818] [cursor=pointer]: "651"
+                    - gridcell "Score" [ref=e2820] [cursor=pointer]:
+                      - generic [ref=e2825] [cursor=pointer]: "93.8"
+                    - gridcell "Request name" [ref=e2827] [cursor=pointer]:
+                      - generic [ref=e2832] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e2834] [cursor=pointer]:
+                      - paragraph [ref=e2839] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e2841] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e2845] [cursor=pointer]:
+                        - paragraph [ref=e2846] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e2848] [cursor=pointer]:
+                      - paragraph [ref=e2853] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e2855] [cursor=pointer]:
+                      - paragraph [ref=e2860] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e2862] [cursor=pointer]:
+                      - paragraph [ref=e2867] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e2869] [cursor=pointer]:
+                      - paragraph [ref=e2874] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e2876] [cursor=pointer]:
+                      - generic [ref=e2881] [cursor=pointer]: Accepted
+                - rowgroup [ref=e2882]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e2883] [cursor=pointer]:
+                    - button "Select row" [ref=e2884] [cursor=pointer]:
+                      - checkbox [ref=e2885] [cursor=pointer]:
+                        - img [ref=e2886] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e2889] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e2893] [cursor=pointer]:
+                        - paragraph [ref=e2894] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e2896] [cursor=pointer]:
+                      - generic [ref=e2901] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e2903] [cursor=pointer]:
+                      - link "MRKTNG" [ref=e2907] [cursor=pointer]:
+                        - paragraph [ref=e2908] [cursor=pointer]: MRKTNG
+                    - gridcell "Source number" [ref=e2910] [cursor=pointer]:
+                      - link "8750" [ref=e2914] [cursor=pointer]:
+                        - paragraph [ref=e2915] [cursor=pointer]: "8750"
+                    - gridcell "Target subject" [ref=e2917] [cursor=pointer]:
+                      - link "MKT" [ref=e2921] [cursor=pointer]:
+                        - paragraph [ref=e2922] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e2924] [cursor=pointer]:
+                      - link "651" [ref=e2928] [cursor=pointer]:
+                        - paragraph [ref=e2929] [cursor=pointer]: "651"
+                    - gridcell "Score" [ref=e2931] [cursor=pointer]:
+                      - generic [ref=e2936] [cursor=pointer]: "94.7"
+                    - gridcell "Request name" [ref=e2938] [cursor=pointer]:
+                      - generic [ref=e2943] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e2945] [cursor=pointer]:
+                      - paragraph [ref=e2950] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e2952] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e2956] [cursor=pointer]:
+                        - paragraph [ref=e2957] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e2959] [cursor=pointer]:
+                      - paragraph [ref=e2964] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e2966] [cursor=pointer]:
+                      - paragraph [ref=e2971] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e2973] [cursor=pointer]:
+                      - paragraph [ref=e2978] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e2980] [cursor=pointer]:
+                      - paragraph [ref=e2985] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e2987] [cursor=pointer]:
+                      - generic [ref=e2992] [cursor=pointer]: Accepted
+                - rowgroup [ref=e2993]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e2994] [cursor=pointer]:
+                    - button "Select row" [ref=e2995] [cursor=pointer]:
+                      - checkbox [ref=e2996] [cursor=pointer]:
+                        - img [ref=e2997] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3000] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e3004] [cursor=pointer]:
+                        - paragraph [ref=e3005] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e3007] [cursor=pointer]:
+                      - generic [ref=e3012] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e3014] [cursor=pointer]:
+                      - link "DATA_SCI" [ref=e3018] [cursor=pointer]:
+                        - paragraph [ref=e3019] [cursor=pointer]: DATA_SCI
+                    - gridcell "Source number" [ref=e3021] [cursor=pointer]:
+                      - link "4087" [ref=e3025] [cursor=pointer]:
+                        - paragraph [ref=e3026] [cursor=pointer]: "4087"
+                    - gridcell "Target subject" [ref=e3028] [cursor=pointer]:
+                      - link "MGT" [ref=e3032] [cursor=pointer]:
+                        - paragraph [ref=e3033] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e3035] [cursor=pointer]:
+                      - link "691" [ref=e3039] [cursor=pointer]:
+                        - paragraph [ref=e3040] [cursor=pointer]: "691"
+                    - gridcell "Score" [ref=e3042] [cursor=pointer]:
+                      - generic [ref=e3047] [cursor=pointer]: "92.7"
+                    - gridcell "Request name" [ref=e3049] [cursor=pointer]:
+                      - generic [ref=e3054] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e3056] [cursor=pointer]:
+                      - paragraph [ref=e3061] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e3063] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e3067] [cursor=pointer]:
+                        - paragraph [ref=e3068] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e3070] [cursor=pointer]:
+                      - paragraph [ref=e3075] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e3077] [cursor=pointer]:
+                      - paragraph [ref=e3082] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e3084] [cursor=pointer]:
+                      - paragraph [ref=e3089] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e3091] [cursor=pointer]:
+                      - paragraph [ref=e3096] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e3098] [cursor=pointer]:
+                      - generic [ref=e3103] [cursor=pointer]: Accepted
+                - rowgroup [ref=e3104]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e3105] [cursor=pointer]:
+                    - button "Select row" [ref=e3106] [cursor=pointer]:
+                      - checkbox [ref=e3107] [cursor=pointer]:
+                        - img [ref=e3108] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3111] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e3115] [cursor=pointer]:
+                        - paragraph [ref=e3116] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e3118] [cursor=pointer]:
+                      - generic [ref=e3123] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e3125] [cursor=pointer]:
+                      - link "ED_LPA" [ref=e3129] [cursor=pointer]:
+                        - paragraph [ref=e3130] [cursor=pointer]: ED_LPA
+                    - gridcell "Source number" [ref=e3132] [cursor=pointer]:
+                      - link "9408" [ref=e3136] [cursor=pointer]:
+                        - paragraph [ref=e3137] [cursor=pointer]: "9408"
+                    - gridcell "Target subject" [ref=e3139] [cursor=pointer]:
+                      - link "MGT" [ref=e3143] [cursor=pointer]:
+                        - paragraph [ref=e3144] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e3146] [cursor=pointer]:
+                      - link "691" [ref=e3150] [cursor=pointer]:
+                        - paragraph [ref=e3151] [cursor=pointer]: "691"
+                    - gridcell "Score" [ref=e3153] [cursor=pointer]:
+                      - generic [ref=e3158] [cursor=pointer]: "92.8"
+                    - gridcell "Request name" [ref=e3160] [cursor=pointer]:
+                      - generic [ref=e3165] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e3167] [cursor=pointer]:
+                      - paragraph [ref=e3172] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e3174] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e3178] [cursor=pointer]:
+                        - paragraph [ref=e3179] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e3181] [cursor=pointer]:
+                      - paragraph [ref=e3186] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e3188] [cursor=pointer]:
+                      - paragraph [ref=e3193] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e3195] [cursor=pointer]:
+                      - paragraph [ref=e3200] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e3202] [cursor=pointer]:
+                      - paragraph [ref=e3207] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e3209] [cursor=pointer]:
+                      - generic [ref=e3214] [cursor=pointer]: Accepted
+                - rowgroup [ref=e3215]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e3216] [cursor=pointer]:
+                    - button "Select row" [ref=e3217] [cursor=pointer]:
+                      - checkbox [ref=e3218] [cursor=pointer]:
+                        - img [ref=e3219] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3222] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e3226] [cursor=pointer]:
+                        - paragraph [ref=e3227] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e3229] [cursor=pointer]:
+                      - generic [ref=e3234] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e3236] [cursor=pointer]:
+                      - link "MANGMT" [ref=e3240] [cursor=pointer]:
+                        - paragraph [ref=e3241] [cursor=pointer]: MANGMT
+                    - gridcell "Source number" [ref=e3243] [cursor=pointer]:
+                      - link "3901" [ref=e3247] [cursor=pointer]:
+                        - paragraph [ref=e3248] [cursor=pointer]: "3901"
+                    - gridcell "Target subject" [ref=e3250] [cursor=pointer]:
+                      - link "MGT" [ref=e3254] [cursor=pointer]:
+                        - paragraph [ref=e3255] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e3257] [cursor=pointer]:
+                      - link "691" [ref=e3261] [cursor=pointer]:
+                        - paragraph [ref=e3262] [cursor=pointer]: "691"
+                    - gridcell "Score" [ref=e3264] [cursor=pointer]:
+                      - generic [ref=e3269] [cursor=pointer]: "92.9"
+                    - gridcell "Request name" [ref=e3271] [cursor=pointer]:
+                      - generic [ref=e3276] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e3278] [cursor=pointer]:
+                      - paragraph [ref=e3283] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e3285] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e3289] [cursor=pointer]:
+                        - paragraph [ref=e3290] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e3292] [cursor=pointer]:
+                      - paragraph [ref=e3297] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e3299] [cursor=pointer]:
+                      - paragraph [ref=e3304] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e3306] [cursor=pointer]:
+                      - paragraph [ref=e3311] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e3313] [cursor=pointer]:
+                      - paragraph [ref=e3318] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e3320] [cursor=pointer]:
+                      - generic [ref=e3325] [cursor=pointer]: Accepted
+                - rowgroup [ref=e3326]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e3327] [cursor=pointer]:
+                    - button "Select row" [ref=e3328] [cursor=pointer]:
+                      - checkbox [ref=e3329] [cursor=pointer]:
+                        - img [ref=e3330] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3333] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e3337] [cursor=pointer]:
+                        - paragraph [ref=e3338] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e3340] [cursor=pointer]:
+                      - generic [ref=e3345] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e3347] [cursor=pointer]:
+                      - link "ED_LPA" [ref=e3351] [cursor=pointer]:
+                        - paragraph [ref=e3352] [cursor=pointer]: ED_LPA
+                    - gridcell "Source number" [ref=e3354] [cursor=pointer]:
+                      - link "9406" [ref=e3358] [cursor=pointer]:
+                        - paragraph [ref=e3359] [cursor=pointer]: "9406"
+                    - gridcell "Target subject" [ref=e3361] [cursor=pointer]:
+                      - link "MGT" [ref=e3365] [cursor=pointer]:
+                        - paragraph [ref=e3366] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e3368] [cursor=pointer]:
+                      - link "691" [ref=e3372] [cursor=pointer]:
+                        - paragraph [ref=e3373] [cursor=pointer]: "691"
+                    - gridcell "Score" [ref=e3375] [cursor=pointer]:
+                      - generic [ref=e3380] [cursor=pointer]: "93.1"
+                    - gridcell "Request name" [ref=e3382] [cursor=pointer]:
+                      - generic [ref=e3387] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e3389] [cursor=pointer]:
+                      - paragraph [ref=e3394] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e3396] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e3400] [cursor=pointer]:
+                        - paragraph [ref=e3401] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e3403] [cursor=pointer]:
+                      - paragraph [ref=e3408] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e3410] [cursor=pointer]:
+                      - paragraph [ref=e3415] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e3417] [cursor=pointer]:
+                      - paragraph [ref=e3422] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e3424] [cursor=pointer]:
+                      - paragraph [ref=e3429] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e3431] [cursor=pointer]:
+                      - generic [ref=e3436] [cursor=pointer]: Accepted
+                - rowgroup [ref=e3437]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e3438] [cursor=pointer]:
+                    - button "Select row" [ref=e3439] [cursor=pointer]:
+                      - checkbox [ref=e3440] [cursor=pointer]:
+                        - img [ref=e3441] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3444] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e3448] [cursor=pointer]:
+                        - paragraph [ref=e3449] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e3451] [cursor=pointer]:
+                      - generic [ref=e3456] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e3458] [cursor=pointer]:
+                      - link "MANGMT" [ref=e3462] [cursor=pointer]:
+                        - paragraph [ref=e3463] [cursor=pointer]: MANGMT
+                    - gridcell "Source number" [ref=e3465] [cursor=pointer]:
+                      - link "9087" [ref=e3469] [cursor=pointer]:
+                        - paragraph [ref=e3470] [cursor=pointer]: "9087"
+                    - gridcell "Target subject" [ref=e3472] [cursor=pointer]:
+                      - link "MGT" [ref=e3476] [cursor=pointer]:
+                        - paragraph [ref=e3477] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e3479] [cursor=pointer]:
+                      - link "691" [ref=e3483] [cursor=pointer]:
+                        - paragraph [ref=e3484] [cursor=pointer]: "691"
+                    - gridcell "Score" [ref=e3486] [cursor=pointer]:
+                      - generic [ref=e3491] [cursor=pointer]: "96.4"
+                    - gridcell "Request name" [ref=e3493] [cursor=pointer]:
+                      - generic [ref=e3498] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e3500] [cursor=pointer]:
+                      - paragraph [ref=e3505] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e3507] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e3511] [cursor=pointer]:
+                        - paragraph [ref=e3512] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e3514] [cursor=pointer]:
+                      - paragraph [ref=e3519] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e3521] [cursor=pointer]:
+                      - paragraph [ref=e3526] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e3528] [cursor=pointer]:
+                      - paragraph [ref=e3533] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e3535] [cursor=pointer]:
+                      - paragraph [ref=e3540] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e3542] [cursor=pointer]:
+                      - generic [ref=e3547] [cursor=pointer]: Accepted
+                - rowgroup [ref=e3548]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e3549] [cursor=pointer]:
+                    - button "Select row" [ref=e3550] [cursor=pointer]:
+                      - checkbox [ref=e3551] [cursor=pointer]:
+                        - img [ref=e3552] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3555] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e3559] [cursor=pointer]:
+                        - paragraph [ref=e3560] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e3562] [cursor=pointer]:
+                      - generic [ref=e3567] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e3569] [cursor=pointer]:
+                      - link "LTC_V" [ref=e3573] [cursor=pointer]:
+                        - paragraph [ref=e3574] [cursor=pointer]: LTC_V
+                    - gridcell "Source number" [ref=e3576] [cursor=pointer]:
+                      - link "1110" [ref=e3580] [cursor=pointer]:
+                        - paragraph [ref=e3581] [cursor=pointer]: "1110"
+                    - gridcell "Target subject" [ref=e3583] [cursor=pointer]:
+                      - link "MKT" [ref=e3587] [cursor=pointer]:
+                        - paragraph [ref=e3588] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e3590] [cursor=pointer]:
+                      - link "641" [ref=e3594] [cursor=pointer]:
+                        - paragraph [ref=e3595] [cursor=pointer]: "641"
+                    - gridcell "Score" [ref=e3597] [cursor=pointer]:
+                      - generic [ref=e3602] [cursor=pointer]: "88.2"
+                    - gridcell "Request name" [ref=e3604] [cursor=pointer]:
+                      - generic [ref=e3609] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e3611] [cursor=pointer]:
+                      - paragraph [ref=e3616] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e3618] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e3622] [cursor=pointer]:
+                        - paragraph [ref=e3623] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e3625] [cursor=pointer]:
+                      - paragraph [ref=e3630] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e3632] [cursor=pointer]:
+                      - paragraph [ref=e3637] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e3639] [cursor=pointer]:
+                      - paragraph [ref=e3644] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e3646] [cursor=pointer]:
+                      - paragraph [ref=e3651] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e3653] [cursor=pointer]:
+                      - generic [ref=e3658] [cursor=pointer]: Accepted
+                - rowgroup [ref=e3659]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e3660] [cursor=pointer]:
+                    - button "Select row" [ref=e3661] [cursor=pointer]:
+                      - checkbox [ref=e3662] [cursor=pointer]:
+                        - img [ref=e3663] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3666] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e3670] [cursor=pointer]:
+                        - paragraph [ref=e3671] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e3673] [cursor=pointer]:
+                      - generic [ref=e3678] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e3680] [cursor=pointer]:
+                      - link "ISE" [ref=e3684] [cursor=pointer]:
+                        - paragraph [ref=e3685] [cursor=pointer]: ISE
+                    - gridcell "Source number" [ref=e3687] [cursor=pointer]:
+                      - link "3030" [ref=e3691] [cursor=pointer]:
+                        - paragraph [ref=e3692] [cursor=pointer]: "3030"
+                    - gridcell "Target subject" [ref=e3694] [cursor=pointer]:
+                      - link "MKT" [ref=e3698] [cursor=pointer]:
+                        - paragraph [ref=e3699] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e3701] [cursor=pointer]:
+                      - link "641" [ref=e3705] [cursor=pointer]:
+                        - paragraph [ref=e3706] [cursor=pointer]: "641"
+                    - gridcell "Score" [ref=e3708] [cursor=pointer]:
+                      - generic [ref=e3713] [cursor=pointer]: "88.5"
+                    - gridcell "Request name" [ref=e3715] [cursor=pointer]:
+                      - generic [ref=e3720] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e3722] [cursor=pointer]:
+                      - paragraph [ref=e3727] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e3729] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e3733] [cursor=pointer]:
+                        - paragraph [ref=e3734] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e3736] [cursor=pointer]:
+                      - paragraph [ref=e3741] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e3743] [cursor=pointer]:
+                      - paragraph [ref=e3748] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e3750] [cursor=pointer]:
+                      - paragraph [ref=e3755] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e3757] [cursor=pointer]:
+                      - paragraph [ref=e3762] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e3764] [cursor=pointer]:
+                      - generic [ref=e3769] [cursor=pointer]: Accepted
+                - rowgroup [ref=e3770]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e3771] [cursor=pointer]:
+                    - button "Select row" [ref=e3772] [cursor=pointer]:
+                      - checkbox [ref=e3773] [cursor=pointer]:
+                        - img [ref=e3774] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3777] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e3781] [cursor=pointer]:
+                        - paragraph [ref=e3782] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e3784] [cursor=pointer]:
+                      - generic [ref=e3789] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e3791] [cursor=pointer]:
+                      - link "ISE" [ref=e3795] [cursor=pointer]:
+                        - paragraph [ref=e3796] [cursor=pointer]: ISE
+                    - gridcell "Source number" [ref=e3798] [cursor=pointer]:
+                      - link "7330" [ref=e3802] [cursor=pointer]:
+                        - paragraph [ref=e3803] [cursor=pointer]: "7330"
+                    - gridcell "Target subject" [ref=e3805] [cursor=pointer]:
+                      - link "MKT" [ref=e3809] [cursor=pointer]:
+                        - paragraph [ref=e3810] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e3812] [cursor=pointer]:
+                      - link "641" [ref=e3816] [cursor=pointer]:
+                        - paragraph [ref=e3817] [cursor=pointer]: "641"
+                    - gridcell "Score" [ref=e3819] [cursor=pointer]:
+                      - generic [ref=e3824] [cursor=pointer]: "88.8"
+                    - gridcell "Request name" [ref=e3826] [cursor=pointer]:
+                      - generic [ref=e3831] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e3833] [cursor=pointer]:
+                      - paragraph [ref=e3838] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e3840] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e3844] [cursor=pointer]:
+                        - paragraph [ref=e3845] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e3847] [cursor=pointer]:
+                      - paragraph [ref=e3852] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e3854] [cursor=pointer]:
+                      - paragraph [ref=e3859] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e3861] [cursor=pointer]:
+                      - paragraph [ref=e3866] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e3868] [cursor=pointer]:
+                      - paragraph [ref=e3873] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e3875] [cursor=pointer]:
+                      - generic [ref=e3880] [cursor=pointer]: Accepted
+                - rowgroup [ref=e3881]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e3882] [cursor=pointer]:
+                    - button "Select row" [ref=e3883] [cursor=pointer]:
+                      - checkbox [ref=e3884] [cursor=pointer]:
+                        - img [ref=e3885] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3888] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e3892] [cursor=pointer]:
+                        - paragraph [ref=e3893] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e3895] [cursor=pointer]:
+                      - generic [ref=e3900] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e3902] [cursor=pointer]:
+                      - link "ISE" [ref=e3906] [cursor=pointer]:
+                        - paragraph [ref=e3907] [cursor=pointer]: ISE
+                    - gridcell "Source number" [ref=e3909] [cursor=pointer]:
+                      - link "4330" [ref=e3913] [cursor=pointer]:
+                        - paragraph [ref=e3914] [cursor=pointer]: "4330"
+                    - gridcell "Target subject" [ref=e3916] [cursor=pointer]:
+                      - link "MKT" [ref=e3920] [cursor=pointer]:
+                        - paragraph [ref=e3921] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e3923] [cursor=pointer]:
+                      - link "641" [ref=e3927] [cursor=pointer]:
+                        - paragraph [ref=e3928] [cursor=pointer]: "641"
+                    - gridcell "Score" [ref=e3930] [cursor=pointer]:
+                      - generic [ref=e3935] [cursor=pointer]: "88.9"
+                    - gridcell "Request name" [ref=e3937] [cursor=pointer]:
+                      - generic [ref=e3942] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e3944] [cursor=pointer]:
+                      - paragraph [ref=e3949] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e3951] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e3955] [cursor=pointer]:
+                        - paragraph [ref=e3956] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e3958] [cursor=pointer]:
+                      - paragraph [ref=e3963] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e3965] [cursor=pointer]:
+                      - paragraph [ref=e3970] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e3972] [cursor=pointer]:
+                      - paragraph [ref=e3977] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e3979] [cursor=pointer]:
+                      - paragraph [ref=e3984] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e3986] [cursor=pointer]:
+                      - generic [ref=e3991] [cursor=pointer]: Accepted
+                - rowgroup [ref=e3992]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e3993] [cursor=pointer]:
+                    - button "Select row" [ref=e3994] [cursor=pointer]:
+                      - checkbox [ref=e3995] [cursor=pointer]:
+                        - img [ref=e3996] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e3999] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e4003] [cursor=pointer]:
+                        - paragraph [ref=e4004] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e4006] [cursor=pointer]:
+                      - generic [ref=e4011] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e4013] [cursor=pointer]:
+                      - link "SOC_WK" [ref=e4017] [cursor=pointer]:
+                        - paragraph [ref=e4018] [cursor=pointer]: SOC_WK
+                    - gridcell "Source number" [ref=e4020] [cursor=pointer]:
+                      - link "7971" [ref=e4024] [cursor=pointer]:
+                        - paragraph [ref=e4025] [cursor=pointer]: "7971"
+                    - gridcell "Target subject" [ref=e4027] [cursor=pointer]:
+                      - link "PSY" [ref=e4031] [cursor=pointer]:
+                        - paragraph [ref=e4032] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e4034] [cursor=pointer]:
+                      - link "447" [ref=e4038] [cursor=pointer]:
+                        - paragraph [ref=e4039] [cursor=pointer]: "447"
+                    - gridcell "Score" [ref=e4041] [cursor=pointer]:
+                      - generic [ref=e4046] [cursor=pointer]: "90.8"
+                    - gridcell "Request name" [ref=e4048] [cursor=pointer]:
+                      - generic [ref=e4053] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e4055] [cursor=pointer]:
+                      - paragraph [ref=e4060] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e4062] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e4066] [cursor=pointer]:
+                        - paragraph [ref=e4067] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e4069] [cursor=pointer]:
+                      - paragraph [ref=e4074] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e4076] [cursor=pointer]:
+                      - paragraph [ref=e4081] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e4083] [cursor=pointer]:
+                      - paragraph [ref=e4088] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e4090] [cursor=pointer]:
+                      - paragraph [ref=e4095] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e4097] [cursor=pointer]:
+                      - generic [ref=e4102] [cursor=pointer]: Accepted
+                - rowgroup [ref=e4103]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e4104] [cursor=pointer]:
+                    - button "Select row" [ref=e4105] [cursor=pointer]:
+                      - checkbox [ref=e4106] [cursor=pointer]:
+                        - img [ref=e4107] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e4110] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e4114] [cursor=pointer]:
+                        - paragraph [ref=e4115] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e4117] [cursor=pointer]:
+                      - generic [ref=e4122] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e4124] [cursor=pointer]:
+                      - link "ISE" [ref=e4128] [cursor=pointer]:
+                        - paragraph [ref=e4129] [cursor=pointer]: ISE
+                    - gridcell "Source number" [ref=e4131] [cursor=pointer]:
+                      - link "8370" [ref=e4135] [cursor=pointer]:
+                        - paragraph [ref=e4136] [cursor=pointer]: "8370"
+                    - gridcell "Target subject" [ref=e4138] [cursor=pointer]:
+                      - link "MKT" [ref=e4142] [cursor=pointer]:
+                        - paragraph [ref=e4143] [cursor=pointer]: MKT
+                    - gridcell "Target number" [ref=e4145] [cursor=pointer]:
+                      - link "641" [ref=e4149] [cursor=pointer]:
+                        - paragraph [ref=e4150] [cursor=pointer]: "641"
+                    - gridcell "Score" [ref=e4152] [cursor=pointer]:
+                      - generic [ref=e4157] [cursor=pointer]: "89.5"
+                    - gridcell "Request name" [ref=e4159] [cursor=pointer]:
+                      - generic [ref=e4164] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e4166] [cursor=pointer]:
+                      - paragraph [ref=e4171] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e4173] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e4177] [cursor=pointer]:
+                        - paragraph [ref=e4178] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e4180] [cursor=pointer]:
+                      - paragraph [ref=e4185] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e4187] [cursor=pointer]:
+                      - paragraph [ref=e4192] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e4194] [cursor=pointer]:
+                      - paragraph [ref=e4199] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e4201] [cursor=pointer]:
+                      - paragraph [ref=e4206] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e4208] [cursor=pointer]:
+                      - generic [ref=e4213] [cursor=pointer]: Accepted
+                - rowgroup [ref=e4214]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e4215] [cursor=pointer]:
+                    - button "Select row" [ref=e4216] [cursor=pointer]:
+                      - checkbox [ref=e4217] [cursor=pointer]:
+                        - img [ref=e4218] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e4221] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e4225] [cursor=pointer]:
+                        - paragraph [ref=e4226] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e4228] [cursor=pointer]:
+                      - generic [ref=e4233] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e4235] [cursor=pointer]:
+                      - link "HLTH_ADM" [ref=e4239] [cursor=pointer]:
+                        - paragraph [ref=e4240] [cursor=pointer]: HLTH_ADM
+                    - gridcell "Source number" [ref=e4242] [cursor=pointer]:
+                      - link "8689" [ref=e4246] [cursor=pointer]:
+                        - paragraph [ref=e4247] [cursor=pointer]: "8689"
+                    - gridcell "Target subject" [ref=e4249] [cursor=pointer]:
+                      - link "PSY" [ref=e4253] [cursor=pointer]:
+                        - paragraph [ref=e4254] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e4256] [cursor=pointer]:
+                      - link "447" [ref=e4260] [cursor=pointer]:
+                        - paragraph [ref=e4261] [cursor=pointer]: "447"
+                    - gridcell "Score" [ref=e4263] [cursor=pointer]:
+                      - generic [ref=e4268] [cursor=pointer]: "91.0"
+                    - gridcell "Request name" [ref=e4270] [cursor=pointer]:
+                      - generic [ref=e4275] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e4277] [cursor=pointer]:
+                      - paragraph [ref=e4282] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e4284] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e4288] [cursor=pointer]:
+                        - paragraph [ref=e4289] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e4291] [cursor=pointer]:
+                      - paragraph [ref=e4296] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e4298] [cursor=pointer]:
+                      - paragraph [ref=e4303] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e4305] [cursor=pointer]:
+                      - paragraph [ref=e4310] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e4312] [cursor=pointer]:
+                      - paragraph [ref=e4317] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e4319] [cursor=pointer]:
+                      - generic [ref=e4324] [cursor=pointer]: Accepted
+                - rowgroup [ref=e4325]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e4326] [cursor=pointer]:
+                    - button "Select row" [ref=e4327] [cursor=pointer]:
+                      - checkbox [ref=e4328] [cursor=pointer]:
+                        - img [ref=e4329] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e4332] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e4336] [cursor=pointer]:
+                        - paragraph [ref=e4337] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e4339] [cursor=pointer]:
+                      - generic [ref=e4344] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e4346] [cursor=pointer]:
+                      - link "MANGMT" [ref=e4350] [cursor=pointer]:
+                        - paragraph [ref=e4351] [cursor=pointer]: MANGMT
+                    - gridcell "Source number" [ref=e4353] [cursor=pointer]:
+                      - link "4970W" [ref=e4357] [cursor=pointer]:
+                        - paragraph [ref=e4358] [cursor=pointer]: 4970W
+                    - gridcell "Target subject" [ref=e4360] [cursor=pointer]:
+                      - link "MGT" [ref=e4364] [cursor=pointer]:
+                        - paragraph [ref=e4365] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e4367] [cursor=pointer]:
+                      - link "680" [ref=e4371] [cursor=pointer]:
+                        - paragraph [ref=e4372] [cursor=pointer]: "680"
+                    - gridcell "Score" [ref=e4374] [cursor=pointer]:
+                      - generic [ref=e4379] [cursor=pointer]: "91.0"
+                    - gridcell "Request name" [ref=e4381] [cursor=pointer]:
+                      - generic [ref=e4386] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e4388] [cursor=pointer]:
+                      - paragraph [ref=e4393] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e4395] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e4399] [cursor=pointer]:
+                        - paragraph [ref=e4400] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e4402] [cursor=pointer]:
+                      - paragraph [ref=e4407] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e4409] [cursor=pointer]:
+                      - paragraph [ref=e4414] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e4416] [cursor=pointer]:
+                      - paragraph [ref=e4421] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e4423] [cursor=pointer]:
+                      - paragraph [ref=e4428] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e4430] [cursor=pointer]:
+                      - generic [ref=e4435] [cursor=pointer]: Accepted
+                - rowgroup [ref=e4436]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e4437] [cursor=pointer]:
+                    - button "Select row" [ref=e4438] [cursor=pointer]:
+                      - checkbox [ref=e4439] [cursor=pointer]:
+                        - img [ref=e4440] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e4443] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e4447] [cursor=pointer]:
+                        - paragraph [ref=e4448] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e4450] [cursor=pointer]:
+                      - generic [ref=e4455] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e4457] [cursor=pointer]:
+                      - link "SOC_WK" [ref=e4461] [cursor=pointer]:
+                        - paragraph [ref=e4462] [cursor=pointer]: SOC_WK
+                    - gridcell "Source number" [ref=e4464] [cursor=pointer]:
+                      - link "4971" [ref=e4468] [cursor=pointer]:
+                        - paragraph [ref=e4469] [cursor=pointer]: "4971"
+                    - gridcell "Target subject" [ref=e4471] [cursor=pointer]:
+                      - link "PSY" [ref=e4475] [cursor=pointer]:
+                        - paragraph [ref=e4476] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e4478] [cursor=pointer]:
+                      - link "447" [ref=e4482] [cursor=pointer]:
+                        - paragraph [ref=e4483] [cursor=pointer]: "447"
+                    - gridcell "Score" [ref=e4485] [cursor=pointer]:
+                      - generic [ref=e4490] [cursor=pointer]: "91.2"
+                    - gridcell "Request name" [ref=e4492] [cursor=pointer]:
+                      - generic [ref=e4497] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e4499] [cursor=pointer]:
+                      - paragraph [ref=e4504] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e4506] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e4510] [cursor=pointer]:
+                        - paragraph [ref=e4511] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e4513] [cursor=pointer]:
+                      - paragraph [ref=e4518] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e4520] [cursor=pointer]:
+                      - paragraph [ref=e4525] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e4527] [cursor=pointer]:
+                      - paragraph [ref=e4532] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e4534] [cursor=pointer]:
+                      - paragraph [ref=e4539] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e4541] [cursor=pointer]:
+                      - generic [ref=e4546] [cursor=pointer]: Accepted
+                - rowgroup [ref=e4547]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e4548] [cursor=pointer]:
+                    - button "Select row" [ref=e4549] [cursor=pointer]:
+                      - checkbox [ref=e4550] [cursor=pointer]:
+                        - img [ref=e4551] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e4554] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e4558] [cursor=pointer]:
+                        - paragraph [ref=e4559] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e4561] [cursor=pointer]:
+                      - generic [ref=e4566] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e4568] [cursor=pointer]:
+                      - link "MANGMT" [ref=e4572] [cursor=pointer]:
+                        - paragraph [ref=e4573] [cursor=pointer]: MANGMT
+                    - gridcell "Source number" [ref=e4575] [cursor=pointer]:
+                      - link "4970" [ref=e4579] [cursor=pointer]:
+                        - paragraph [ref=e4580] [cursor=pointer]: "4970"
+                    - gridcell "Target subject" [ref=e4582] [cursor=pointer]:
+                      - link "MGT" [ref=e4586] [cursor=pointer]:
+                        - paragraph [ref=e4587] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e4589] [cursor=pointer]:
+                      - link "680" [ref=e4593] [cursor=pointer]:
+                        - paragraph [ref=e4594] [cursor=pointer]: "680"
+                    - gridcell "Score" [ref=e4596] [cursor=pointer]:
+                      - generic [ref=e4601] [cursor=pointer]: "91.0"
+                    - gridcell "Request name" [ref=e4603] [cursor=pointer]:
+                      - generic [ref=e4608] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e4610] [cursor=pointer]:
+                      - paragraph [ref=e4615] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e4617] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e4621] [cursor=pointer]:
+                        - paragraph [ref=e4622] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e4624] [cursor=pointer]:
+                      - paragraph [ref=e4629] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e4631] [cursor=pointer]:
+                      - paragraph [ref=e4636] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e4638] [cursor=pointer]:
+                      - paragraph [ref=e4643] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e4645] [cursor=pointer]:
+                      - paragraph [ref=e4650] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e4652] [cursor=pointer]:
+                      - generic [ref=e4657] [cursor=pointer]: Accepted
+                - rowgroup [ref=e4658]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e4659] [cursor=pointer]:
+                    - button "Select row" [ref=e4660] [cursor=pointer]:
+                      - checkbox [ref=e4661] [cursor=pointer]:
+                        - img [ref=e4662] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e4665] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e4669] [cursor=pointer]:
+                        - paragraph [ref=e4670] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e4672] [cursor=pointer]:
+                      - generic [ref=e4677] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e4679] [cursor=pointer]:
+                      - link "F_C_MD" [ref=e4683] [cursor=pointer]:
+                        - paragraph [ref=e4684] [cursor=pointer]: F_C_MD
+                    - gridcell "Source number" [ref=e4686] [cursor=pointer]:
+                      - link "8491" [ref=e4690] [cursor=pointer]:
+                        - paragraph [ref=e4691] [cursor=pointer]: "8491"
+                    - gridcell "Target subject" [ref=e4693] [cursor=pointer]:
+                      - link "PSY" [ref=e4697] [cursor=pointer]:
+                        - paragraph [ref=e4698] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e4700] [cursor=pointer]:
+                      - link "447" [ref=e4704] [cursor=pointer]:
+                        - paragraph [ref=e4705] [cursor=pointer]: "447"
+                    - gridcell "Score" [ref=e4707] [cursor=pointer]:
+                      - generic [ref=e4712] [cursor=pointer]: "91.2"
+                    - gridcell "Request name" [ref=e4714] [cursor=pointer]:
+                      - generic [ref=e4719] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e4721] [cursor=pointer]:
+                      - paragraph [ref=e4726] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e4728] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e4732] [cursor=pointer]:
+                        - paragraph [ref=e4733] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e4735] [cursor=pointer]:
+                      - paragraph [ref=e4740] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e4742] [cursor=pointer]:
+                      - paragraph [ref=e4747] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e4749] [cursor=pointer]:
+                      - paragraph [ref=e4754] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e4756] [cursor=pointer]:
+                      - paragraph [ref=e4761] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e4763] [cursor=pointer]:
+                      - generic [ref=e4768] [cursor=pointer]: Accepted
+                - rowgroup [ref=e4769]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e4770] [cursor=pointer]:
+                    - button "Select row" [ref=e4771] [cursor=pointer]:
+                      - checkbox [ref=e4772] [cursor=pointer]:
+                        - img [ref=e4773] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e4776] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e4780] [cursor=pointer]:
+                        - paragraph [ref=e4781] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e4783] [cursor=pointer]:
+                      - generic [ref=e4788] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e4790] [cursor=pointer]:
+                      - link "MANGMT" [ref=e4794] [cursor=pointer]:
+                        - paragraph [ref=e4795] [cursor=pointer]: MANGMT
+                    - gridcell "Source number" [ref=e4797] [cursor=pointer]:
+                      - link "3975" [ref=e4801] [cursor=pointer]:
+                        - paragraph [ref=e4802] [cursor=pointer]: "3975"
+                    - gridcell "Target subject" [ref=e4804] [cursor=pointer]:
+                      - link "MGT" [ref=e4808] [cursor=pointer]:
+                        - paragraph [ref=e4809] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e4811] [cursor=pointer]:
+                      - link "680" [ref=e4815] [cursor=pointer]:
+                        - paragraph [ref=e4816] [cursor=pointer]: "680"
+                    - gridcell "Score" [ref=e4818] [cursor=pointer]:
+                      - generic [ref=e4823] [cursor=pointer]: "91.3"
+                    - gridcell "Request name" [ref=e4825] [cursor=pointer]:
+                      - generic [ref=e4830] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e4832] [cursor=pointer]:
+                      - paragraph [ref=e4837] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e4839] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e4843] [cursor=pointer]:
+                        - paragraph [ref=e4844] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e4846] [cursor=pointer]:
+                      - paragraph [ref=e4851] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e4853] [cursor=pointer]:
+                      - paragraph [ref=e4858] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e4860] [cursor=pointer]:
+                      - paragraph [ref=e4865] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e4867] [cursor=pointer]:
+                      - paragraph [ref=e4872] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e4874] [cursor=pointer]:
+                      - generic [ref=e4879] [cursor=pointer]: Accepted
+                - rowgroup [ref=e4880]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e4881] [cursor=pointer]:
+                    - button "Select row" [ref=e4882] [cursor=pointer]:
+                      - checkbox [ref=e4883] [cursor=pointer]:
+                        - img [ref=e4884] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e4887] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e4891] [cursor=pointer]:
+                        - paragraph [ref=e4892] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e4894] [cursor=pointer]:
+                      - generic [ref=e4899] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e4901] [cursor=pointer]:
+                      - link "BBME" [ref=e4905] [cursor=pointer]:
+                        - paragraph [ref=e4906] [cursor=pointer]: BBME
+                    - gridcell "Source number" [ref=e4908] [cursor=pointer]:
+                      - link "8689" [ref=e4912] [cursor=pointer]:
+                        - paragraph [ref=e4913] [cursor=pointer]: "8689"
+                    - gridcell "Target subject" [ref=e4915] [cursor=pointer]:
+                      - link "PSY" [ref=e4919] [cursor=pointer]:
+                        - paragraph [ref=e4920] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e4922] [cursor=pointer]:
+                      - link "447" [ref=e4926] [cursor=pointer]:
+                        - paragraph [ref=e4927] [cursor=pointer]: "447"
+                    - gridcell "Score" [ref=e4929] [cursor=pointer]:
+                      - generic [ref=e4934] [cursor=pointer]: "91.5"
+                    - gridcell "Request name" [ref=e4936] [cursor=pointer]:
+                      - generic [ref=e4941] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e4943] [cursor=pointer]:
+                      - paragraph [ref=e4948] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e4950] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e4954] [cursor=pointer]:
+                        - paragraph [ref=e4955] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e4957] [cursor=pointer]:
+                      - paragraph [ref=e4962] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e4964] [cursor=pointer]:
+                      - paragraph [ref=e4969] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e4971] [cursor=pointer]:
+                      - paragraph [ref=e4976] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e4978] [cursor=pointer]:
+                      - paragraph [ref=e4983] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e4985] [cursor=pointer]:
+                      - generic [ref=e4990] [cursor=pointer]: Accepted
+                - rowgroup [ref=e4991]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e4992] [cursor=pointer]:
+                    - button "Select row" [ref=e4993] [cursor=pointer]:
+                      - checkbox [ref=e4994] [cursor=pointer]:
+                        - img [ref=e4995] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e4998] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e5002] [cursor=pointer]:
+                        - paragraph [ref=e5003] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e5005] [cursor=pointer]:
+                      - generic [ref=e5010] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e5012] [cursor=pointer]:
+                      - link "MANGMT" [ref=e5016] [cursor=pointer]:
+                        - paragraph [ref=e5017] [cursor=pointer]: MANGMT
+                    - gridcell "Source number" [ref=e5019] [cursor=pointer]:
+                      - link "3900" [ref=e5023] [cursor=pointer]:
+                        - paragraph [ref=e5024] [cursor=pointer]: "3900"
+                    - gridcell "Target subject" [ref=e5026] [cursor=pointer]:
+                      - link "MGT" [ref=e5030] [cursor=pointer]:
+                        - paragraph [ref=e5031] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e5033] [cursor=pointer]:
+                      - link "680" [ref=e5037] [cursor=pointer]:
+                        - paragraph [ref=e5038] [cursor=pointer]: "680"
+                    - gridcell "Score" [ref=e5040] [cursor=pointer]:
+                      - generic [ref=e5045] [cursor=pointer]: "91.7"
+                    - gridcell "Request name" [ref=e5047] [cursor=pointer]:
+                      - generic [ref=e5052] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e5054] [cursor=pointer]:
+                      - paragraph [ref=e5059] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e5061] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e5065] [cursor=pointer]:
+                        - paragraph [ref=e5066] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e5068] [cursor=pointer]:
+                      - paragraph [ref=e5073] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e5075] [cursor=pointer]:
+                      - paragraph [ref=e5080] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e5082] [cursor=pointer]:
+                      - paragraph [ref=e5087] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e5089] [cursor=pointer]:
+                      - paragraph [ref=e5094] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e5096] [cursor=pointer]:
+                      - generic [ref=e5101] [cursor=pointer]: Accepted
+                - rowgroup [ref=e5102]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e5103] [cursor=pointer]:
+                    - button "Select row" [ref=e5104] [cursor=pointer]:
+                      - checkbox [ref=e5105] [cursor=pointer]:
+                        - img [ref=e5106] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e5109] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e5113] [cursor=pointer]:
+                        - paragraph [ref=e5114] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e5116] [cursor=pointer]:
+                      - generic [ref=e5121] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e5123] [cursor=pointer]:
+                      - link "F_W" [ref=e5127] [cursor=pointer]:
+                        - paragraph [ref=e5128] [cursor=pointer]: F_W
+                    - gridcell "Source number" [ref=e5130] [cursor=pointer]:
+                      - link "8300" [ref=e5134] [cursor=pointer]:
+                        - paragraph [ref=e5135] [cursor=pointer]: "8300"
+                    - gridcell "Target subject" [ref=e5137] [cursor=pointer]:
+                      - link "PSY" [ref=e5141] [cursor=pointer]:
+                        - paragraph [ref=e5142] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e5144] [cursor=pointer]:
+                      - link "712" [ref=e5148] [cursor=pointer]:
+                        - paragraph [ref=e5149] [cursor=pointer]: "712"
+                    - gridcell "Score" [ref=e5151] [cursor=pointer]:
+                      - generic [ref=e5156] [cursor=pointer]: "91.8"
+                    - gridcell "Request name" [ref=e5158] [cursor=pointer]:
+                      - generic [ref=e5163] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e5165] [cursor=pointer]:
+                      - paragraph [ref=e5170] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e5172] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e5176] [cursor=pointer]:
+                        - paragraph [ref=e5177] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e5179] [cursor=pointer]:
+                      - paragraph [ref=e5184] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e5186] [cursor=pointer]:
+                      - paragraph [ref=e5191] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e5193] [cursor=pointer]:
+                      - paragraph [ref=e5198] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e5200] [cursor=pointer]:
+                      - paragraph [ref=e5205] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e5207] [cursor=pointer]:
+                      - generic [ref=e5212] [cursor=pointer]: Accepted
+                - rowgroup [ref=e5213]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e5214] [cursor=pointer]:
+                    - button "Select row" [ref=e5215] [cursor=pointer]:
+                      - checkbox [ref=e5216] [cursor=pointer]:
+                        - img [ref=e5217] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e5220] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e5224] [cursor=pointer]:
+                        - paragraph [ref=e5225] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e5227] [cursor=pointer]:
+                      - generic [ref=e5232] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e5234] [cursor=pointer]:
+                      - link "MRKTNG" [ref=e5238] [cursor=pointer]:
+                        - paragraph [ref=e5239] [cursor=pointer]: MRKTNG
+                    - gridcell "Source number" [ref=e5241] [cursor=pointer]:
+                      - link "4720" [ref=e5245] [cursor=pointer]:
+                        - paragraph [ref=e5246] [cursor=pointer]: "4720"
+                    - gridcell "Target subject" [ref=e5248] [cursor=pointer]:
+                      - link "MGT" [ref=e5252] [cursor=pointer]:
+                        - paragraph [ref=e5253] [cursor=pointer]: MGT
+                    - gridcell "Target number" [ref=e5255] [cursor=pointer]:
+                      - link "680" [ref=e5259] [cursor=pointer]:
+                        - paragraph [ref=e5260] [cursor=pointer]: "680"
+                    - gridcell "Score" [ref=e5262] [cursor=pointer]:
+                      - generic [ref=e5267] [cursor=pointer]: "91.7"
+                    - gridcell "Request name" [ref=e5269] [cursor=pointer]:
+                      - generic [ref=e5274] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e5276] [cursor=pointer]:
+                      - paragraph [ref=e5281] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e5283] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e5287] [cursor=pointer]:
+                        - paragraph [ref=e5288] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e5290] [cursor=pointer]:
+                      - paragraph [ref=e5295] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e5297] [cursor=pointer]:
+                      - paragraph [ref=e5302] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e5304] [cursor=pointer]:
+                      - paragraph [ref=e5309] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e5311] [cursor=pointer]:
+                      - paragraph [ref=e5316] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e5318] [cursor=pointer]:
+                      - generic [ref=e5323] [cursor=pointer]: Accepted
+                - rowgroup [ref=e5324]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e5325] [cursor=pointer]:
+                    - button "Select row" [ref=e5326] [cursor=pointer]:
+                      - checkbox [ref=e5327] [cursor=pointer]:
+                        - img [ref=e5328] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e5331] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e5335] [cursor=pointer]:
+                        - paragraph [ref=e5336] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e5338] [cursor=pointer]:
+                      - generic [ref=e5343] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e5345] [cursor=pointer]:
+                      - link "GRAD" [ref=e5349] [cursor=pointer]:
+                        - paragraph [ref=e5350] [cursor=pointer]: GRAD
+                    - gridcell "Source number" [ref=e5352] [cursor=pointer]:
+                      - link "7000" [ref=e5356] [cursor=pointer]:
+                        - paragraph [ref=e5357] [cursor=pointer]: "7000"
+                    - gridcell "Target subject" [ref=e5359] [cursor=pointer]:
+                      - link "PSY" [ref=e5363] [cursor=pointer]:
+                        - paragraph [ref=e5364] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e5366] [cursor=pointer]:
+                      - link "712" [ref=e5370] [cursor=pointer]:
+                        - paragraph [ref=e5371] [cursor=pointer]: "712"
+                    - gridcell "Score" [ref=e5373] [cursor=pointer]:
+                      - generic [ref=e5378] [cursor=pointer]: "91.9"
+                    - gridcell "Request name" [ref=e5380] [cursor=pointer]:
+                      - generic [ref=e5385] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e5387] [cursor=pointer]:
+                      - paragraph [ref=e5392] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e5394] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e5398] [cursor=pointer]:
+                        - paragraph [ref=e5399] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e5401] [cursor=pointer]:
+                      - paragraph [ref=e5406] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e5408] [cursor=pointer]:
+                      - paragraph [ref=e5413] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e5415] [cursor=pointer]:
+                      - paragraph [ref=e5420] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e5422] [cursor=pointer]:
+                      - paragraph [ref=e5427] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e5429] [cursor=pointer]:
+                      - generic [ref=e5434] [cursor=pointer]: Accepted
+                - rowgroup [ref=e5435]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e5436] [cursor=pointer]:
+                    - button "Select row" [ref=e5437] [cursor=pointer]:
+                      - checkbox [ref=e5438] [cursor=pointer]:
+                        - img [ref=e5439] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e5442] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e5446] [cursor=pointer]:
+                        - paragraph [ref=e5447] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e5449] [cursor=pointer]:
+                      - generic [ref=e5454] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e5456] [cursor=pointer]:
+                      - link "MAE" [ref=e5460] [cursor=pointer]:
+                        - paragraph [ref=e5461] [cursor=pointer]: MAE
+                    - gridcell "Source number" [ref=e5463] [cursor=pointer]:
+                      - link "1000" [ref=e5467] [cursor=pointer]:
+                        - paragraph [ref=e5468] [cursor=pointer]: "1000"
+                    - gridcell "Target subject" [ref=e5470] [cursor=pointer]:
+                      - link "MSE" [ref=e5474] [cursor=pointer]:
+                        - paragraph [ref=e5475] [cursor=pointer]: MSE
+                    - gridcell "Target number" [ref=e5477] [cursor=pointer]:
+                      - link "102" [ref=e5481] [cursor=pointer]:
+                        - paragraph [ref=e5482] [cursor=pointer]: "102"
+                    - gridcell "Score" [ref=e5484] [cursor=pointer]:
+                      - generic [ref=e5489] [cursor=pointer]: "90.1"
+                    - gridcell "Request name" [ref=e5491] [cursor=pointer]:
+                      - generic [ref=e5496] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e5498] [cursor=pointer]:
+                      - paragraph [ref=e5503] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e5505] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e5509] [cursor=pointer]:
+                        - paragraph [ref=e5510] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e5512] [cursor=pointer]:
+                      - paragraph [ref=e5517] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e5519] [cursor=pointer]:
+                      - paragraph [ref=e5524] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e5526] [cursor=pointer]:
+                      - paragraph [ref=e5531] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e5533] [cursor=pointer]:
+                      - paragraph [ref=e5538] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e5540] [cursor=pointer]:
+                      - generic [ref=e5545] [cursor=pointer]: Accepted
+                - rowgroup [ref=e5546]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e5547] [cursor=pointer]:
+                    - button "Select row" [ref=e5548] [cursor=pointer]:
+                      - checkbox [ref=e5549] [cursor=pointer]:
+                        - img [ref=e5550] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e5553] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e5557] [cursor=pointer]:
+                        - paragraph [ref=e5558] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e5560] [cursor=pointer]:
+                      - generic [ref=e5565] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e5567] [cursor=pointer]:
+                      - link "BIO_SC" [ref=e5571] [cursor=pointer]:
+                        - paragraph [ref=e5572] [cursor=pointer]: BIO_SC
+                    - gridcell "Source number" [ref=e5574] [cursor=pointer]:
+                      - link "8070" [ref=e5578] [cursor=pointer]:
+                        - paragraph [ref=e5579] [cursor=pointer]: "8070"
+                    - gridcell "Target subject" [ref=e5581] [cursor=pointer]:
+                      - link "PSY" [ref=e5585] [cursor=pointer]:
+                        - paragraph [ref=e5586] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e5588] [cursor=pointer]:
+                      - link "712" [ref=e5592] [cursor=pointer]:
+                        - paragraph [ref=e5593] [cursor=pointer]: "712"
+                    - gridcell "Score" [ref=e5595] [cursor=pointer]:
+                      - generic [ref=e5600] [cursor=pointer]: "92.4"
+                    - gridcell "Request name" [ref=e5602] [cursor=pointer]:
+                      - generic [ref=e5607] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e5609] [cursor=pointer]:
+                      - paragraph [ref=e5614] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e5616] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e5620] [cursor=pointer]:
+                        - paragraph [ref=e5621] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e5623] [cursor=pointer]:
+                      - paragraph [ref=e5628] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e5630] [cursor=pointer]:
+                      - paragraph [ref=e5635] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e5637] [cursor=pointer]:
+                      - paragraph [ref=e5642] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e5644] [cursor=pointer]:
+                      - paragraph [ref=e5649] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e5651] [cursor=pointer]:
+                      - generic [ref=e5656] [cursor=pointer]: Accepted
+                - rowgroup [ref=e5657]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e5658] [cursor=pointer]:
+                    - button "Select row" [ref=e5659] [cursor=pointer]:
+                      - checkbox [ref=e5660] [cursor=pointer]:
+                        - img [ref=e5661] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e5664] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e5668] [cursor=pointer]:
+                        - paragraph [ref=e5669] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e5671] [cursor=pointer]:
+                      - generic [ref=e5676] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e5678] [cursor=pointer]:
+                      - link "CH_ENG" [ref=e5682] [cursor=pointer]:
+                        - paragraph [ref=e5683] [cursor=pointer]: CH_ENG
+                    - gridcell "Source number" [ref=e5685] [cursor=pointer]:
+                      - link "3075" [ref=e5689] [cursor=pointer]:
+                        - paragraph [ref=e5690] [cursor=pointer]: "3075"
+                    - gridcell "Target subject" [ref=e5692] [cursor=pointer]:
+                      - link "MSE" [ref=e5696] [cursor=pointer]:
+                        - paragraph [ref=e5697] [cursor=pointer]: MSE
+                    - gridcell "Target number" [ref=e5699] [cursor=pointer]:
+                      - link "102" [ref=e5703] [cursor=pointer]:
+                        - paragraph [ref=e5704] [cursor=pointer]: "102"
+                    - gridcell "Score" [ref=e5706] [cursor=pointer]:
+                      - generic [ref=e5711] [cursor=pointer]: "90.4"
+                    - gridcell "Request name" [ref=e5713] [cursor=pointer]:
+                      - generic [ref=e5718] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e5720] [cursor=pointer]:
+                      - paragraph [ref=e5725] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e5727] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e5731] [cursor=pointer]:
+                        - paragraph [ref=e5732] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e5734] [cursor=pointer]:
+                      - paragraph [ref=e5739] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e5741] [cursor=pointer]:
+                      - paragraph [ref=e5746] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e5748] [cursor=pointer]:
+                      - paragraph [ref=e5753] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e5755] [cursor=pointer]:
+                      - paragraph [ref=e5760] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e5762] [cursor=pointer]:
+                      - generic [ref=e5767] [cursor=pointer]: Accepted
+                - rowgroup [ref=e5768]:
+                  - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Date decided Decided by Decision" [ref=e5769] [cursor=pointer]:
+                    - button "Select row" [ref=e5770] [cursor=pointer]:
+                      - checkbox [ref=e5771] [cursor=pointer]:
+                        - img [ref=e5772] [cursor=pointer]
+                    - gridcell "Source institution" [ref=e5775] [cursor=pointer]:
+                      - link "University of Missouri-Columbia" [ref=e5779] [cursor=pointer]:
+                        - paragraph [ref=e5780] [cursor=pointer]: University of Missouri-Columbia
+                    - gridcell "Source state" [ref=e5782] [cursor=pointer]:
+                      - generic [ref=e5787] [cursor=pointer]: Missouri
+                    - gridcell "Source subject" [ref=e5789] [cursor=pointer]:
+                      - link "MICROB" [ref=e5793] [cursor=pointer]:
+                        - paragraph [ref=e5794] [cursor=pointer]: MICROB
+                    - gridcell "Source number" [ref=e5796] [cursor=pointer]:
+                      - link "8070" [ref=e5800] [cursor=pointer]:
+                        - paragraph [ref=e5801] [cursor=pointer]: "8070"
+                    - gridcell "Target subject" [ref=e5803] [cursor=pointer]:
+                      - link "PSY" [ref=e5807] [cursor=pointer]:
+                        - paragraph [ref=e5808] [cursor=pointer]: PSY
+                    - gridcell "Target number" [ref=e5810] [cursor=pointer]:
+                      - link "712" [ref=e5814] [cursor=pointer]:
+                        - paragraph [ref=e5815] [cursor=pointer]: "712"
+                    - gridcell "Score" [ref=e5817] [cursor=pointer]:
+                      - generic [ref=e5822] [cursor=pointer]: "92.4"
+                    - gridcell "Request name" [ref=e5824] [cursor=pointer]:
+                      - generic [ref=e5829] [cursor=pointer]: columbai update
+                    - gridcell "Suggestion type" [ref=e5831] [cursor=pointer]:
+                      - paragraph [ref=e5836] [cursor=pointer]: Partner institution boost
+                    - gridcell "Target institution" [ref=e5838] [cursor=pointer]:
+                      - link "University of Nevada-Reno" [ref=e5842] [cursor=pointer]:
+                        - paragraph [ref=e5843] [cursor=pointer]: University of Nevada-Reno
+                    - gridcell "Date suggested" [ref=e5845] [cursor=pointer]:
+                      - paragraph [ref=e5850] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date last modified" [ref=e5852] [cursor=pointer]:
+                      - paragraph [ref=e5857] [cursor=pointer]: December 5, 2025
+                    - gridcell "Date decided" [ref=e5859] [cursor=pointer]:
+                      - paragraph [ref=e5864] [cursor=pointer]: December 7, 2025
+                    - gridcell "Decided by" [ref=e5866] [cursor=pointer]:
+                      - paragraph [ref=e5871] [cursor=pointer]: University Of Nevada Reno Inst Admin
+                    - gridcell "Decision" [ref=e5873] [cursor=pointer]:
+                      - generic [ref=e5878] [cursor=pointer]: Accepted
+```

@@ -1,0 +1,147 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+    - listitem:
+      - link "Skip to primary content" [ref=e5] [cursor=pointer]:
+        - /url: "#primary-content"
+  - generic [ref=e10]:
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "logo" [ref=e14] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e15] [cursor=pointer]
+            - paragraph [ref=e32] [cursor=pointer]: Triangulator
+        - listitem [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e35] [cursor=pointer]: Dashboard
+        - listitem [ref=e36]:
+          - link "My Workplace" [ref=e37] [cursor=pointer]:
+            - /url: /app/my-workspace/reviewer/general-contact
+            - generic [ref=e38] [cursor=pointer]: My Workplace
+        - listitem [ref=e39]:
+          - link "My Triangulator" [ref=e40] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/assigned
+            - generic [ref=e41] [cursor=pointer]: My Triangulator
+        - listitem [ref=e42]:
+          - link "Search" [ref=e43] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e44] [cursor=pointer]: Search
+        - listitem [ref=e45]:
+          - link "FAQ" [ref=e46] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e47] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e51] [cursor=pointer]:
+        - img [ref=e52] [cursor=pointer]
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - navigation [ref=e57]:
+          - heading "Suggestions" [level=2] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "Assigned" [ref=e61] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/assigned
+                - img [ref=e62] [cursor=pointer]
+                - generic [ref=e64] [cursor=pointer]: Assigned
+                - generic [ref=e67] [cursor=pointer]: "0"
+            - listitem [ref=e68]:
+              - link "History" [active] [ref=e69] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/history
+                - img [ref=e70] [cursor=pointer]
+                - generic [ref=e72] [cursor=pointer]: History
+          - paragraph [ref=e76]: 2026 Triangulator Engine
+        - generic [ref=e82]:
+          - generic [ref=e84]:
+            - paragraph [ref=e87]: Suggestions
+            - heading "History" [level=1] [ref=e88]
+          - generic [ref=e89]:
+            - navigation [ref=e90]:
+              - button "Prev" [disabled] [ref=e91]:
+                - img [ref=e92]
+                - generic [ref=e94]: Prev
+              - paragraph [ref=e95]: No pages
+              - button "Next" [disabled] [ref=e96]:
+                - img [ref=e97]
+                - generic [ref=e99]: Next
+            - button "Filter" [ref=e101] [cursor=pointer]:
+              - img [ref=e102] [cursor=pointer]
+          - table "history" [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e111]:
+                - button "Select row" [ref=e112] [cursor=pointer]:
+                  - checkbox [ref=e113] [cursor=pointer]:
+                    - img [ref=e114] [cursor=pointer]
+                - generic [ref=e116]:
+                  - columnheader "Source institution" [ref=e118]:
+                    - button "Source institution" [ref=e121] [cursor=pointer]:
+                      - generic [ref=e124] [cursor=pointer]: Source institution
+                      - img [ref=e126] [cursor=pointer]
+                  - columnheader "Source state" [ref=e129]:
+                    - button "Source state" [ref=e132] [cursor=pointer]:
+                      - generic [ref=e135] [cursor=pointer]: Source state
+                      - img [ref=e137] [cursor=pointer]
+                  - columnheader "Source subject" [ref=e140]:
+                    - button "Source subject" [ref=e143] [cursor=pointer]:
+                      - generic [ref=e146] [cursor=pointer]: Source subject
+                      - img [ref=e148] [cursor=pointer]
+                  - columnheader "Source number" [ref=e151]:
+                    - button "Source number" [ref=e154] [cursor=pointer]:
+                      - generic [ref=e157] [cursor=pointer]: Source number
+                      - img [ref=e159] [cursor=pointer]
+                  - columnheader "Target subject" [ref=e162]:
+                    - button "Target subject" [ref=e165] [cursor=pointer]:
+                      - generic [ref=e168] [cursor=pointer]: Target subject
+                      - img [ref=e170] [cursor=pointer]
+                  - columnheader "Target number" [ref=e173]:
+                    - button "Target number" [ref=e176] [cursor=pointer]:
+                      - generic [ref=e179] [cursor=pointer]: Target number
+                      - img [ref=e181] [cursor=pointer]
+                  - columnheader "Score" [ref=e184]:
+                    - button "Score" [ref=e187] [cursor=pointer]:
+                      - generic [ref=e190] [cursor=pointer]: Score
+                      - img [ref=e192] [cursor=pointer]
+                  - columnheader "Request name" [ref=e195]:
+                    - button "Request name" [ref=e198] [cursor=pointer]:
+                      - generic [ref=e201] [cursor=pointer]: Request name
+                      - img [ref=e203] [cursor=pointer]
+                  - columnheader "Suggestion type" [ref=e206]:
+                    - button "Suggestion type" [ref=e209] [cursor=pointer]:
+                      - generic [ref=e212] [cursor=pointer]: Suggestion type
+                      - img [ref=e214] [cursor=pointer]
+                  - columnheader "Target institution" [ref=e217]:
+                    - button "Target institution" [ref=e220] [cursor=pointer]:
+                      - generic [ref=e223] [cursor=pointer]: Target institution
+                      - img [ref=e225] [cursor=pointer]
+                  - columnheader "Date suggested" [ref=e228]:
+                    - button "Date suggested" [ref=e231] [cursor=pointer]:
+                      - generic [ref=e234] [cursor=pointer]: Date suggested
+                      - img [ref=e236] [cursor=pointer]
+                  - columnheader "Date last modified" [ref=e239]:
+                    - button "Date last modified" [ref=e242] [cursor=pointer]:
+                      - generic [ref=e245] [cursor=pointer]: Date last modified
+                      - img [ref=e247] [cursor=pointer]
+                  - columnheader "Date decided" [ref=e250]:
+                    - button "Date decided" [ref=e253] [cursor=pointer]:
+                      - generic [ref=e256] [cursor=pointer]: Date decided
+                      - generic [ref=e257] [cursor=pointer]:
+                        - img [ref=e258] [cursor=pointer]
+                        - img [ref=e260] [cursor=pointer]
+                  - columnheader "Decided by" [ref=e263]:
+                    - button "Decided by" [ref=e266] [cursor=pointer]:
+                      - generic [ref=e269] [cursor=pointer]: Decided by
+                      - img [ref=e271] [cursor=pointer]
+                  - columnheader "Decision" [ref=e274]:
+                    - button "Decision" [ref=e277] [cursor=pointer]:
+                      - generic [ref=e280] [cursor=pointer]: Decision
+                      - img [ref=e282] [cursor=pointer]
+              - generic:
+                - generic:
+                  - img
+                  - paragraph: No suggestions in your history. Review some suggestions to see them here.
+```

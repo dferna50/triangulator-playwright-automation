@@ -1,0 +1,48 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+  - generic [ref=e9]:
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "logo" [ref=e13] [cursor=pointer]:
+            - /url: /logged-out/landing
+            - img [ref=e14] [cursor=pointer]
+            - paragraph [ref=e31] [cursor=pointer]: Triangulator
+        - listitem [ref=e32]:
+          - link "Search" [ref=e33] [cursor=pointer]:
+            - /url: /logged-out/public-search
+            - generic [ref=e34] [cursor=pointer]: Search
+        - listitem [ref=e35]:
+          - link "FAQ" [ref=e36] [cursor=pointer]:
+            - /url: /logged-out/faq/
+            - generic [ref=e37] [cursor=pointer]: FAQ
+      - generic [ref=e38]:
+        - button "Login" [ref=e39] [cursor=pointer]:
+          - status [ref=e41] [cursor=pointer]:
+            - generic [ref=e42] [cursor=pointer]: Loading...
+          - generic [ref=e44] [cursor=pointer]: Login
+        - button "Request access" [active] [ref=e45] [cursor=pointer]:
+          - status [ref=e47] [cursor=pointer]:
+            - generic [ref=e48] [cursor=pointer]: Loading...
+          - generic [ref=e50] [cursor=pointer]: Request access
+    - main [ref=e52]:
+      - generic [ref=e53]:
+        - img [ref=e55]
+        - generic [ref=e58]:
+          - heading "What are you activating?" [level=1] [ref=e59]
+          - generic [ref=e60]:
+            - link "Institution" [ref=e61] [cursor=pointer]:
+              - img [ref=e62] [cursor=pointer]
+              - paragraph [ref=e65] [cursor=pointer]: Institution
+              - img [ref=e66] [cursor=pointer]
+            - link "User" [ref=e68] [cursor=pointer]:
+              - img [ref=e69] [cursor=pointer]
+              - paragraph [ref=e71] [cursor=pointer]: User
+              - img [ref=e72] [cursor=pointer]
+```

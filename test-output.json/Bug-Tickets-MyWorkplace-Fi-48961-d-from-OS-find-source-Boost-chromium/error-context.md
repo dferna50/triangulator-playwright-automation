@@ -1,0 +1,282 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+    - listitem:
+      - link "Skip to primary content" [ref=e5] [cursor=pointer]:
+        - /url: "#primary-content"
+  - generic [ref=e10]:
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "logo" [ref=e14] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e15] [cursor=pointer]
+            - paragraph [ref=e32] [cursor=pointer]: Triangulator
+        - listitem [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e35] [cursor=pointer]: Dashboard
+        - listitem [ref=e36]:
+          - link "My Workplace" [ref=e37] [cursor=pointer]:
+            - /url: /app/my-workspace/inst-admin/summary
+            - generic [ref=e38] [cursor=pointer]: My Workplace
+        - listitem [ref=e39]:
+          - link "My Triangulator" [ref=e40] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e41] [cursor=pointer]: My Triangulator
+        - listitem [ref=e42]:
+          - link "Search" [ref=e43] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e44] [cursor=pointer]: Search
+        - listitem [ref=e45]:
+          - link "FAQ" [ref=e46] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e47] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e51] [cursor=pointer]:
+        - img [ref=e52] [cursor=pointer]
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - navigation [ref=e57]:
+          - heading "Suggestions" [level=2] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "New" [ref=e61] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/new
+                - img [ref=e62] [cursor=pointer]
+                - generic [ref=e68] [cursor=pointer]: New
+            - listitem [ref=e69]:
+              - link "Assigned" [ref=e70] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/assigned
+                - img [ref=e71] [cursor=pointer]
+                - generic [ref=e73] [cursor=pointer]: Assigned
+                - generic [ref=e76] [cursor=pointer]: 1,862
+            - listitem [ref=e77]:
+              - link "History" [ref=e78] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/history
+                - img [ref=e79] [cursor=pointer]
+                - generic [ref=e81] [cursor=pointer]: History
+          - heading "Requests" [level=2] [ref=e83]
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - link "Boost Suggestions" [active] [ref=e86] [cursor=pointer]:
+                - /url: /app/my-triangulator/requests/boost-suggestions
+                - img [ref=e87] [cursor=pointer]
+                - generic [ref=e90] [cursor=pointer]: Boost Suggestions
+          - generic [ref=e92]:
+            - button "upload" [ref=e94] [cursor=pointer]:
+              - status [ref=e96] [cursor=pointer]:
+                - generic [ref=e97] [cursor=pointer]: Loading...
+              - generic [ref=e98] [cursor=pointer]:
+                - generic [ref=e99] [cursor=pointer]: Upload
+                - img [ref=e100] [cursor=pointer]
+            - button "Download" [ref=e104] [cursor=pointer]:
+              - status [ref=e106] [cursor=pointer]:
+                - generic [ref=e107] [cursor=pointer]: Loading...
+              - generic [ref=e108] [cursor=pointer]:
+                - generic [ref=e109] [cursor=pointer]: Download
+                - img [ref=e110] [cursor=pointer]
+          - paragraph [ref=e113]: 2026 Triangulator Engine
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: Requests
+              - heading "Boost Suggestions" [level=1] [ref=e123]
+            - paragraph [ref=e124]: Actively generate suggestions based on similarities between courses by selecting the parameters that support transfer course evaluation priorities at your institution.
+          - generic [ref=e125]:
+            - link "Partner Institution" [ref=e127] [cursor=pointer]:
+              - img [ref=e129] [cursor=pointer]
+              - paragraph [ref=e131] [cursor=pointer]: Partner Institution
+              - paragraph [ref=e132] [cursor=pointer]: Boost suggestions for an institution
+            - link "Improve Rules" [ref=e134] [cursor=pointer]:
+              - img [ref=e136] [cursor=pointer]
+              - paragraph [ref=e138] [cursor=pointer]: Improve Rules
+              - paragraph [ref=e139] [cursor=pointer]: Boost suggestions to improve existing rules
+            - link "Find Course" [ref=e141] [cursor=pointer]:
+              - img [ref=e143] [cursor=pointer]
+              - paragraph [ref=e145] [cursor=pointer]: Find Course
+              - paragraph [ref=e146] [cursor=pointer]: Boost suggestions for courses
+          - generic [ref=e147]:
+            - generic [ref=e148]:
+              - paragraph [ref=e150]: Request log
+              - button "Refresh" [ref=e151] [cursor=pointer]:
+                - status [ref=e153] [cursor=pointer]:
+                  - generic [ref=e154] [cursor=pointer]: Loading...
+                - generic [ref=e155] [cursor=pointer]:
+                  - img [ref=e156] [cursor=pointer]
+                  - generic [ref=e158] [cursor=pointer]: Refresh
+            - table "requestLog" [ref=e159]:
+              - generic [ref=e160]:
+                - generic [ref=e161]:
+                  - generic [ref=e164]:
+                    - columnheader "Name" [ref=e166]:
+                      - generic [ref=e168]: Name
+                    - columnheader "Type" [ref=e170]:
+                      - generic [ref=e172]: Type
+                    - columnheader "Request Date" [ref=e174]:
+                      - button "Request Date" [ref=e177] [cursor=pointer]:
+                        - generic [ref=e179] [cursor=pointer]: Request Date
+                        - generic [ref=e180] [cursor=pointer]:
+                          - img [ref=e181] [cursor=pointer]
+                          - img [ref=e183] [cursor=pointer]
+                    - columnheader "Status" [ref=e186]:
+                      - generic [ref=e188]: Status
+                    - columnheader "Suggestions" [ref=e190]:
+                      - generic [ref=e192]: Suggestions
+                    - columnheader "Visible Suggestions" [ref=e194]:
+                      - generic [ref=e196]: Visible Suggestions
+                  - generic [ref=e198]:
+                    - rowgroup [ref=e199]:
+                      - row "Name Type Request Date Status Suggestions Visible Suggestions" [ref=e200]:
+                        - gridcell "Name" [ref=e202]:
+                          - button "Advanced uni" [ref=e204] [cursor=pointer]:
+                            - generic [ref=e206] [cursor=pointer]: Advanced uni
+                        - gridcell "Type" [ref=e208]:
+                          - generic [ref=e213]: Partner Institution
+                        - gridcell "Request Date" [ref=e215]:
+                          - generic [ref=e220]: 01/22/26
+                        - gridcell "Status" [ref=e222]:
+                          - generic [ref=e226]: Processing complete
+                        - gridcell "Suggestions" [ref=e228]:
+                          - generic [ref=e233]: "393"
+                        - gridcell "Visible Suggestions" [ref=e235]:
+                          - button "393" [ref=e237] [cursor=pointer]:
+                            - generic [ref=e239] [cursor=pointer]: "393"
+                    - rowgroup [ref=e240]:
+                      - row "Name Type Request Date Status Suggestions Visible Suggestions" [ref=e241]:
+                        - gridcell "Name" [ref=e243]:
+                          - button "north texas" [ref=e245] [cursor=pointer]:
+                            - generic [ref=e247] [cursor=pointer]: north texas
+                        - gridcell "Type" [ref=e249]:
+                          - generic [ref=e254]: Partner Institution
+                        - gridcell "Request Date" [ref=e256]:
+                          - generic [ref=e261]: 01/09/26
+                        - gridcell "Status" [ref=e263]:
+                          - generic [ref=e267]: Processing complete
+                        - gridcell "Suggestions" [ref=e269]:
+                          - generic [ref=e274]: "0"
+                        - gridcell "Visible Suggestions" [ref=e276]:
+                          - button "0" [ref=e278] [cursor=pointer]:
+                            - generic [ref=e280] [cursor=pointer]: "0"
+                    - rowgroup [ref=e281]:
+                      - row "Name Type Request Date Status Suggestions Visible Suggestions" [ref=e282]:
+                        - gridcell "Name" [ref=e284]:
+                          - button "Texas multi" [ref=e286] [cursor=pointer]:
+                            - generic [ref=e288] [cursor=pointer]: Texas multi
+                        - gridcell "Type" [ref=e290]:
+                          - generic [ref=e295]: Improve Rules
+                        - gridcell "Request Date" [ref=e297]:
+                          - generic [ref=e302]: 01/09/26
+                        - gridcell "Status" [ref=e304]:
+                          - generic [ref=e308]: Processing complete
+                        - gridcell "Suggestions" [ref=e310]:
+                          - generic [ref=e315]: "0"
+                        - gridcell "Visible Suggestions" [ref=e317]:
+                          - button "0" [ref=e319] [cursor=pointer]:
+                            - generic [ref=e321] [cursor=pointer]: "0"
+                    - rowgroup [ref=e322]:
+                      - row "Name Type Request Date Status Suggestions Visible Suggestions" [ref=e323]:
+                        - gridcell "Name" [ref=e325]:
+                          - button "test single" [ref=e327] [cursor=pointer]:
+                            - generic [ref=e329] [cursor=pointer]: test single
+                        - gridcell "Type" [ref=e331]:
+                          - generic [ref=e336]: Improve Rules
+                        - gridcell "Request Date" [ref=e338]:
+                          - generic [ref=e343]: 01/09/26
+                        - gridcell "Status" [ref=e345]:
+                          - generic [ref=e349]: Processing complete
+                        - gridcell "Suggestions" [ref=e351]:
+                          - generic [ref=e356]: "0"
+                        - gridcell "Visible Suggestions" [ref=e358]:
+                          - button "0" [ref=e360] [cursor=pointer]:
+                            - generic [ref=e362] [cursor=pointer]: "0"
+                    - rowgroup [ref=e363]:
+                      - row "Name Type Request Date Status Suggestions Visible Suggestions" [ref=e364]:
+                        - gridcell "Name" [ref=e366]:
+                          - button "test delewaew" [ref=e368] [cursor=pointer]:
+                            - generic [ref=e370] [cursor=pointer]: test delewaew
+                        - gridcell "Type" [ref=e372]:
+                          - generic [ref=e377]: Partner Institution
+                        - gridcell "Request Date" [ref=e379]:
+                          - generic [ref=e384]: 01/09/26
+                        - gridcell "Status" [ref=e386]:
+                          - generic [ref=e390]: Processing complete
+                        - gridcell "Suggestions" [ref=e392]:
+                          - generic [ref=e397]: "169"
+                        - gridcell "Visible Suggestions" [ref=e399]:
+                          - button "169" [ref=e401] [cursor=pointer]:
+                            - generic [ref=e403] [cursor=pointer]: "169"
+                    - rowgroup [ref=e404]:
+                      - row "Name Type Request Date Status Suggestions Visible Suggestions" [ref=e405]:
+                        - gridcell "Name" [ref=e407]:
+                          - button "matchinh" [ref=e409] [cursor=pointer]:
+                            - generic [ref=e411] [cursor=pointer]: matchinh
+                        - gridcell "Type" [ref=e413]:
+                          - generic [ref=e418]: Find Course
+                        - gridcell "Request Date" [ref=e420]:
+                          - generic [ref=e425]: 01/09/26
+                        - gridcell "Status" [ref=e427]:
+                          - generic [ref=e431]: Processing complete
+                        - gridcell "Suggestions" [ref=e433]:
+                          - generic [ref=e438]: "0"
+                        - gridcell "Visible Suggestions" [ref=e440]:
+                          - button "0" [ref=e442] [cursor=pointer]:
+                            - generic [ref=e444] [cursor=pointer]: "0"
+                    - rowgroup [ref=e445]:
+                      - row "Name Type Request Date Status Suggestions Visible Suggestions" [ref=e446]:
+                        - gridcell "Name" [ref=e448]:
+                          - button "test bakersfileds" [ref=e450] [cursor=pointer]:
+                            - generic [ref=e452] [cursor=pointer]: test bakersfileds
+                        - gridcell "Type" [ref=e454]:
+                          - generic [ref=e459]: Partner Institution
+                        - gridcell "Request Date" [ref=e461]:
+                          - generic [ref=e466]: 01/09/26
+                        - gridcell "Status" [ref=e468]:
+                          - generic [ref=e472]: Processing complete
+                        - gridcell "Suggestions" [ref=e474]:
+                          - generic [ref=e479]: "985"
+                        - gridcell "Visible Suggestions" [ref=e481]:
+                          - button "985" [ref=e483] [cursor=pointer]:
+                            - generic [ref=e485] [cursor=pointer]: "985"
+                    - rowgroup [ref=e486]:
+                      - row "Name Type Request Date Status Suggestions Visible Suggestions" [ref=e487]:
+                        - gridcell "Name" [ref=e489]:
+                          - button "allan hanhook college test" [ref=e491] [cursor=pointer]:
+                            - generic [ref=e493] [cursor=pointer]: allan hanhook college test
+                        - gridcell "Type" [ref=e495]:
+                          - generic [ref=e500]: Partner Institution
+                        - gridcell "Request Date" [ref=e502]:
+                          - generic [ref=e507]: 01/09/26
+                        - gridcell "Status" [ref=e509]:
+                          - generic [ref=e513]: Processing complete
+                        - gridcell "Suggestions" [ref=e515]:
+                          - generic [ref=e520]: "312"
+                        - gridcell "Visible Suggestions" [ref=e522]:
+                          - button "312" [ref=e524] [cursor=pointer]:
+                            - generic [ref=e526] [cursor=pointer]: "312"
+                - generic:
+                  - button "Row action menu" [ref=e527] [cursor=pointer]:
+                    - img [ref=e528] [cursor=pointer]
+                  - generic:
+                    - button "Row action menu" [ref=e530] [cursor=pointer]:
+                      - img [ref=e531] [cursor=pointer]
+                    - button "Row action menu" [ref=e533] [cursor=pointer]:
+                      - img [ref=e534] [cursor=pointer]
+                    - button "Row action menu" [ref=e536] [cursor=pointer]:
+                      - img [ref=e537] [cursor=pointer]
+                    - button "Row action menu" [ref=e539] [cursor=pointer]:
+                      - img [ref=e540] [cursor=pointer]
+                    - button "Row action menu" [ref=e542] [cursor=pointer]:
+                      - img [ref=e543] [cursor=pointer]
+                    - button "Row action menu" [ref=e545] [cursor=pointer]:
+                      - img [ref=e546] [cursor=pointer]
+                    - button "Row action menu" [ref=e548] [cursor=pointer]:
+                      - img [ref=e549] [cursor=pointer]
+                    - button "Row action menu" [ref=e551] [cursor=pointer]:
+                      - img [ref=e552] [cursor=pointer]
+              - paragraph [ref=e554]: Requests remain in log for 30 days.
+```

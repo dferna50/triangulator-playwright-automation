@@ -1,0 +1,236 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+  - generic [ref=e5]:
+    - generic [ref=e9]:
+      - navigation [ref=e10]:
+        - list [ref=e11]:
+          - listitem [ref=e12]:
+            - link "logo" [ref=e13] [cursor=pointer]:
+              - /url: /app/dashboard
+              - img [ref=e14] [cursor=pointer]
+              - paragraph [ref=e31] [cursor=pointer]: Triangulator
+          - listitem [ref=e32]:
+            - link "Dashboard" [ref=e33] [cursor=pointer]:
+              - /url: /app/dashboard
+              - generic [ref=e34] [cursor=pointer]: Dashboard
+          - listitem [ref=e35]:
+            - link "My Workplace" [ref=e36] [cursor=pointer]:
+              - /url: /app/my-workspace/inst-admin/summary
+              - generic [ref=e37] [cursor=pointer]: My Workplace
+          - listitem [ref=e38]:
+            - link "My Triangulator" [ref=e39] [cursor=pointer]:
+              - /url: /app/my-triangulator/suggestions/new
+              - generic [ref=e40] [cursor=pointer]: My Triangulator
+          - listitem [ref=e41]:
+            - link "Search" [ref=e42] [cursor=pointer]:
+              - /url: /app/public-search
+              - generic [ref=e43] [cursor=pointer]: Search
+          - listitem [ref=e44]:
+            - link "FAQ" [ref=e45] [cursor=pointer]:
+              - /url: /app/faq/
+              - generic [ref=e46] [cursor=pointer]: FAQ
+        - button "Open account dropdown" [ref=e50] [cursor=pointer]:
+          - img [ref=e51] [cursor=pointer]
+      - main [ref=e54]:
+        - generic [ref=e55]:
+          - img [ref=e56]
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e60]:
+                - heading "Welcome, University Of Nevada Reno!" [level=1] [ref=e65]:
+                  - generic [ref=e66]: Welcome,
+                  - generic [ref=e68]: University Of Nevada Reno!
+                - list [ref=e69]:
+                  - listitem [ref=e70]:
+                    - img [ref=e71]
+                    - paragraph [ref=e74]: University of Nevada-Reno
+                  - listitem [ref=e75]:
+                    - img [ref=e76]
+                    - paragraph [ref=e78]: Institution Admin
+                - button "Edit account" [ref=e80] [cursor=pointer]:
+                  - status [ref=e82] [cursor=pointer]:
+                    - generic [ref=e83] [cursor=pointer]: Loading...
+                  - generic [ref=e85] [cursor=pointer]: Edit account
+              - generic [ref=e87]:
+                - generic [ref=e88]:
+                  - generic [ref=e89]:
+                    - heading "Triangulator suggestions" [level=2] [ref=e90]
+                    - status [ref=e91]:
+                      - generic [ref=e92]: Loading...
+                  - link "View all" [ref=e93] [cursor=pointer]:
+                    - /url: /app/my-triangulator/suggestions/new
+                    - text: View all
+                    - img [ref=e94] [cursor=pointer]
+                - generic [ref=e96]:
+                  - generic [ref=e99]:
+                    - paragraph [ref=e100]: "0"
+                    - paragraph [ref=e101]: Total accepted
+                  - list [ref=e102]:
+                    - listitem [ref=e103]:
+                      - generic [ref=e105]:
+                        - paragraph [ref=e106]: My outstanding
+                        - generic [ref=e107]:
+                          - paragraph [ref=e108]: 0 suggestions
+                          - paragraph [ref=e110]: 0%
+                    - listitem [ref=e111]:
+                      - generic [ref=e113]:
+                        - paragraph [ref=e114]: My accepted
+                        - generic [ref=e115]:
+                          - paragraph [ref=e116]: 0 suggestions
+                          - paragraph [ref=e118]: 0%
+                    - listitem [ref=e119]:
+                      - generic [ref=e121]:
+                        - paragraph [ref=e122]: My rejected
+                        - generic [ref=e123]:
+                          - paragraph [ref=e124]: 0 suggestions
+                          - paragraph [ref=e126]: 0%
+            - generic [ref=e127]:
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - generic [ref=e131]:
+                    - heading "Assigned suggestions" [level=2] [ref=e132]
+                    - status [ref=e133]:
+                      - generic [ref=e134]: Loading...
+                  - link "View all" [ref=e135] [cursor=pointer]:
+                    - /url: /app/my-triangulator/suggestions/assigned
+                    - text: View all
+                    - img [ref=e136] [cursor=pointer]
+                - generic [ref=e138]:
+                  - generic [ref=e139]:
+                    - tab "My suggestions" [ref=e140] [cursor=pointer]
+                    - tab "Other suggestions" [ref=e141] [cursor=pointer]
+                  - table [ref=e143]:
+                    - generic [ref=e144]:
+                      - row "Loading content 0.0" [disabled] [ref=e145]:
+                        - status "Loading content" [ref=e146]:
+                          - paragraph [ref=e147]: Placeholder inst name
+                          - generic [ref=e148]:
+                            - paragraph [ref=e149]: Placeholder course name
+                            - paragraph [ref=e150]: •
+                            - paragraph [ref=e151]: MMM DD YY
+                        - generic [ref=e152]: "0.0"
+                        - img [ref=e153]
+                      - row "Loading content 0.0" [disabled] [ref=e155]:
+                        - status "Loading content" [ref=e156]:
+                          - paragraph [ref=e157]: Placeholder inst name
+                          - generic [ref=e158]:
+                            - paragraph [ref=e159]: Placeholder course name
+                            - paragraph [ref=e160]: •
+                            - paragraph [ref=e161]: MMM DD YY
+                        - generic [ref=e162]: "0.0"
+                        - img [ref=e163]
+                      - row "Loading content 0.0" [disabled] [ref=e165]:
+                        - status "Loading content" [ref=e166]:
+                          - paragraph [ref=e167]: Placeholder inst name
+                          - generic [ref=e168]:
+                            - paragraph [ref=e169]: Placeholder course name
+                            - paragraph [ref=e170]: •
+                            - paragraph [ref=e171]: MMM DD YY
+                        - generic [ref=e172]: "0.0"
+                        - img [ref=e173]
+                      - row "Loading content 0.0" [disabled] [ref=e175]:
+                        - status "Loading content" [ref=e176]:
+                          - paragraph [ref=e177]: Placeholder inst name
+                          - generic [ref=e178]:
+                            - paragraph [ref=e179]: Placeholder course name
+                            - paragraph [ref=e180]: •
+                            - paragraph [ref=e181]: MMM DD YY
+                        - generic [ref=e182]: "0.0"
+                        - img [ref=e183]
+                      - row "Loading content 0.0" [disabled] [ref=e185]:
+                        - status "Loading content" [ref=e186]:
+                          - paragraph [ref=e187]: Placeholder inst name
+                          - generic [ref=e188]:
+                            - paragraph [ref=e189]: Placeholder course name
+                            - paragraph [ref=e190]: •
+                            - paragraph [ref=e191]: MMM DD YY
+                        - generic [ref=e192]: "0.0"
+                        - img [ref=e193]
+                      - row "Loading content 0.0" [disabled] [ref=e195]:
+                        - status "Loading content" [ref=e196]:
+                          - paragraph [ref=e197]: Placeholder inst name
+                          - generic [ref=e198]:
+                            - paragraph [ref=e199]: Placeholder course name
+                            - paragraph [ref=e200]: •
+                            - paragraph [ref=e201]: MMM DD YY
+                        - generic [ref=e202]: "0.0"
+                        - img [ref=e203]
+                      - generic [ref=e205]:
+                        - paragraph [ref=e206]: "Confidence score:"
+                        - generic [ref=e207]:
+                          - generic [ref=e208]:
+                            - img [ref=e209]
+                            - paragraph [ref=e211]: 0-49
+                          - generic [ref=e212]:
+                            - img [ref=e213]
+                            - paragraph [ref=e215]: 50-79
+                          - generic [ref=e216]:
+                            - img [ref=e217]
+                            - paragraph [ref=e219]: 80-100
+              - generic [ref=e221]:
+                - generic [ref=e222]:
+                  - heading "Recent activity" [level=2] [ref=e223]
+                  - status [ref=e224]:
+                    - generic [ref=e225]: Loading...
+                - generic [ref=e227]:
+                  - tab "Your institution" [ref=e228] [cursor=pointer]
+                  - tab "Network" [ref=e229] [cursor=pointer]
+            - generic [ref=e293]:
+              - generic [ref=e294]:
+                - heading "Rules summary" [level=2] [ref=e295]
+                - status [ref=e296]:
+                  - generic [ref=e297]: Loading...
+              - list [ref=e298]:
+                - listitem [ref=e299]:
+                  - generic [ref=e302]:
+                    - paragraph [ref=e303]: Institutions
+                    - img [ref=e305]
+                - listitem [ref=e308]:
+                  - generic [ref=e311]:
+                    - paragraph [ref=e312]: Rules
+                    - img [ref=e314]
+                - listitem [ref=e317]:
+                  - generic [ref=e320]:
+                    - paragraph [ref=e321]: Last Uploaded
+                    - img [ref=e323]
+                - listitem [ref=e326]:
+                  - generic [ref=e329]:
+                    - paragraph [ref=e330]: Next Triangulation
+                    - img [ref=e332]
+            - generic [ref=e336]:
+              - heading "Bulk actions" [level=2] [ref=e337]
+              - generic [ref=e338]:
+                - generic [ref=e339]:
+                  - img [ref=e340]
+                  - generic [ref=e341]:
+                    - heading "Upload data" [level=3] [ref=e342]
+                    - paragraph [ref=e343]: Add, replace or update your transfer course equivalency rules, course catalog data or syllabus data by uploading a new file. The Triangulator accepts .CSV files
+                  - button "Upload" [ref=e345] [cursor=pointer]:
+                    - status [ref=e347] [cursor=pointer]:
+                      - generic [ref=e348] [cursor=pointer]: Loading...
+                    - generic [ref=e349] [cursor=pointer]:
+                      - generic [ref=e350] [cursor=pointer]: Upload
+                      - img [ref=e351] [cursor=pointer]
+                - generic [ref=e353]:
+                  - img [ref=e354]
+                  - generic [ref=e355]:
+                    - heading "Download" [level=3] [ref=e356]
+                    - paragraph [ref=e357]: Customize your download by adding specific filters. Downloads are currently available as .CSV files.
+                  - button "Download" [ref=e359] [cursor=pointer]:
+                    - status [ref=e361] [cursor=pointer]:
+                      - generic [ref=e362] [cursor=pointer]: Loading...
+                    - generic [ref=e363] [cursor=pointer]:
+                      - generic [ref=e364] [cursor=pointer]: Download
+                      - img [ref=e365] [cursor=pointer]
+    - alert [ref=e368]:
+      - generic [ref=e369]:
+        - generic [ref=e370]: Logged in as testtriangulator+109@gmail.com
+        - button "dismiss" [ref=e371] [cursor=pointer]:
+          - img [ref=e372] [cursor=pointer]
+```

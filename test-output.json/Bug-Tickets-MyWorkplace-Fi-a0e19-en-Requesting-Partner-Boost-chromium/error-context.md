@@ -1,0 +1,213 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+    - listitem:
+      - link "Skip to primary content" [ref=e5] [cursor=pointer]:
+        - /url: "#primary-content"
+  - generic [ref=e10]:
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "logo" [ref=e14] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e15] [cursor=pointer]
+            - paragraph [ref=e32] [cursor=pointer]: Triangulator
+        - listitem [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e35] [cursor=pointer]: Dashboard
+        - listitem [ref=e36]:
+          - link "My Workplace" [active] [ref=e37] [cursor=pointer]:
+            - /url: /app/my-workspace/inst-admin/summary
+            - generic [ref=e38] [cursor=pointer]: My Workplace
+        - listitem [ref=e39]:
+          - link "My Triangulator" [ref=e40] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e41] [cursor=pointer]: My Triangulator
+        - listitem [ref=e42]:
+          - link "Search" [ref=e43] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e44] [cursor=pointer]: Search
+        - listitem [ref=e45]:
+          - link "FAQ" [ref=e46] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e47] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e51] [cursor=pointer]:
+        - img [ref=e52] [cursor=pointer]
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - navigation [ref=e57]:
+          - heading "Users" [level=2] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "All" [ref=e61] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/users-all
+                - img [ref=e62] [cursor=pointer]
+                - generic [ref=e64] [cursor=pointer]: All
+            - listitem [ref=e65]:
+              - link "Requests" [ref=e66] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/users-requests
+                - img [ref=e67] [cursor=pointer]
+                - generic [ref=e69] [cursor=pointer]: Requests
+                - generic [ref=e72] [cursor=pointer]: "0"
+            - listitem [ref=e73]:
+              - link "General Contact" [ref=e74] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/general-contact
+                - img [ref=e75] [cursor=pointer]
+                - generic [ref=e77] [cursor=pointer]: General Contact
+          - heading "Institution" [level=2] [ref=e79]
+          - list [ref=e80]:
+            - listitem [ref=e81]:
+              - link "Summary" [ref=e82] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/summary
+                - img [ref=e83] [cursor=pointer]
+                - generic [ref=e85] [cursor=pointer]: Summary
+            - listitem [ref=e86]:
+              - link "Profile" [ref=e87] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/inst/profile
+                - img [ref=e88] [cursor=pointer]
+                - generic [ref=e90] [cursor=pointer]: Public Profile
+            - listitem [ref=e91]:
+              - link "Settings" [ref=e92] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/inst/settings/
+                - img [ref=e93] [cursor=pointer]
+                - generic [ref=e95] [cursor=pointer]: Settings
+          - heading "Institutions" [level=2] [ref=e97]
+          - list [ref=e98]:
+            - listitem [ref=e99]:
+              - link "IPEDS" [ref=e100] [cursor=pointer]:
+                - /url: /app/my-workspace/inst-admin/insts/ipeds
+                - img [ref=e101] [cursor=pointer]
+                - generic [ref=e103] [cursor=pointer]: IPEDS
+          - paragraph [ref=e105]: 2026 Triangulator Engine
+        - generic [ref=e110]:
+          - generic [ref=e111]:
+            - generic [ref=e112]: Institution
+            - heading "Summary" [level=1] [ref=e114]
+          - generic [ref=e115]:
+            - generic [ref=e116]:
+              - generic [ref=e117]:
+                - paragraph [ref=e118]: Triangulation
+                - generic [ref=e119]:
+                  - generic [ref=e121]:
+                    - paragraph [ref=e122]: Next triangulation date
+                    - paragraph [ref=e124]: 01/26/26
+                  - generic [ref=e126]:
+                    - paragraph [ref=e127]: Last triangulation date
+                    - paragraph [ref=e129]: 01/23/26
+              - generic [ref=e131]:
+                - paragraph [ref=e132]: Suggestions
+                - generic [ref=e133]:
+                  - generic [ref=e136]:
+                    - paragraph [ref=e137]: "390061"
+                    - paragraph [ref=e138]: Total accepted
+                  - generic [ref=e139]:
+                    - generic [ref=e142]:
+                      - paragraph [ref=e143]: Open
+                      - generic [ref=e144]:
+                        - paragraph [ref=e145]: 1938 suggestions
+                        - paragraph [ref=e147]: 0%
+                    - generic [ref=e150]:
+                      - paragraph [ref=e151]: Accepted
+                      - generic [ref=e152]:
+                        - paragraph [ref=e153]: 390061 suggestions
+                        - paragraph [ref=e155]: 99%
+                    - generic [ref=e158]:
+                      - paragraph [ref=e159]: Rejected
+                      - generic [ref=e160]:
+                        - paragraph [ref=e161]: 25 suggestions
+                        - paragraph [ref=e163]: 0%
+            - generic [ref=e164]:
+              - paragraph [ref=e165]: Rules
+              - generic [ref=e166]:
+                - generic [ref=e168]:
+                  - generic [ref=e169]:
+                    - paragraph [ref=e170]: Institutions
+                    - img [ref=e172]
+                  - paragraph [ref=e174]: "2"
+                - generic [ref=e176]:
+                  - generic [ref=e177]:
+                    - paragraph [ref=e178]: Total uploaded rules
+                    - img [ref=e180]
+                  - paragraph [ref=e182]: 1,603
+                - generic [ref=e184]:
+                  - generic [ref=e185]:
+                    - paragraph [ref=e186]: Last upload date
+                    - img [ref=e188]
+                  - paragraph [ref=e190]: 01/15/26
+            - generic [ref=e191]:
+              - paragraph [ref=e192]: Courses
+              - generic [ref=e193]:
+                - generic [ref=e195]:
+                  - generic [ref=e196]:
+                    - paragraph [ref=e197]: Total uploaded courses
+                    - img [ref=e199]
+                  - paragraph [ref=e201]: 33,464
+                - generic [ref=e203]:
+                  - generic [ref=e204]:
+                    - paragraph [ref=e205]: Total active courses
+                    - img [ref=e207]
+                  - paragraph [ref=e209]: 8,833
+                - generic [ref=e211]:
+                  - generic [ref=e212]:
+                    - paragraph [ref=e213]: Last upload date
+                    - img [ref=e215]
+                  - paragraph [ref=e217]: 01/20/26
+          - generic [ref=e218]:
+            - generic [ref=e219]:
+              - paragraph [ref=e221]: File Uploads
+              - button "Refresh" [ref=e222] [cursor=pointer]:
+                - status [ref=e224] [cursor=pointer]:
+                  - generic [ref=e225] [cursor=pointer]: Loading...
+                - generic [ref=e226] [cursor=pointer]:
+                  - img [ref=e227] [cursor=pointer]
+                  - generic [ref=e229] [cursor=pointer]: Refresh
+            - generic [ref=e230]:
+              - paragraph [ref=e231]: The records displayed below will be archived 30 days from now.
+              - navigation [ref=e232]:
+                - button "Prev" [disabled] [ref=e233]:
+                  - img [ref=e234]
+                  - generic [ref=e236]: Prev
+                - paragraph [ref=e237]: No pages
+                - button "Next" [disabled] [ref=e238]:
+                  - img [ref=e239]
+                  - generic [ref=e241]: Next
+            - generic [ref=e242]:
+              - generic [ref=e243]:
+                - tab "File Uploads" [ref=e244] [cursor=pointer]:
+                  - generic [ref=e245] [cursor=pointer]:
+                    - img [ref=e246] [cursor=pointer]
+                    - paragraph [ref=e248] [cursor=pointer]: File Uploads
+                - tab "File Normalizations" [ref=e251] [cursor=pointer]:
+                  - generic [ref=e252] [cursor=pointer]:
+                    - img [ref=e253] [cursor=pointer]
+                    - paragraph [ref=e255] [cursor=pointer]: File Normalizations
+              - table "fileUploadJobs" [ref=e259]:
+                - generic [ref=e260]:
+                  - generic [ref=e264]:
+                    - columnheader "File name" [ref=e266]:
+                      - generic [ref=e269]: File name
+                    - columnheader "File type" [ref=e271]:
+                      - generic [ref=e274]: File type
+                    - columnheader "Upload date" [ref=e276]:
+                      - button "Upload date" [ref=e279] [cursor=pointer]:
+                        - generic [ref=e282] [cursor=pointer]: Upload date
+                        - img [ref=e284] [cursor=pointer]
+                    - columnheader "Upload time" [ref=e287]:
+                      - generic [ref=e290]: Upload time
+                    - columnheader "Uploaded by" [ref=e292]:
+                      - generic [ref=e295]: Uploaded by
+                    - columnheader "Uploaded by institution" [ref=e297]:
+                      - generic [ref=e299]: Uploaded by institution
+                    - columnheader "Status" [ref=e301]:
+                      - generic [ref=e304]: Status
+                  - generic:
+                    - generic:
+                      - img
+                      - paragraph: No uploads found
+```

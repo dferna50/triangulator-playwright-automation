@@ -1,0 +1,2180 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+    - listitem:
+      - link "Skip to primary content" [ref=e5] [cursor=pointer]:
+        - /url: "#primary-content"
+  - generic [ref=e10]:
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "logo" [ref=e14] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e15] [cursor=pointer]
+            - paragraph [ref=e32] [cursor=pointer]: Triangulator
+        - listitem [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e35] [cursor=pointer]: Dashboard
+        - listitem [ref=e36]:
+          - link "My Workplace" [ref=e37] [cursor=pointer]:
+            - /url: /app/my-workspace/inst-admin/summary
+            - generic [ref=e38] [cursor=pointer]: My Workplace
+        - listitem [ref=e39]:
+          - link "My Triangulator" [ref=e40] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e41] [cursor=pointer]: My Triangulator
+        - listitem [ref=e42]:
+          - link "Search" [ref=e43] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e44] [cursor=pointer]: Search
+        - listitem [ref=e45]:
+          - link "FAQ" [ref=e46] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e47] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e51] [cursor=pointer]:
+        - img [ref=e52] [cursor=pointer]
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - navigation [ref=e57]:
+          - heading "Suggestions" [level=2] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "New" [ref=e61] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/new
+                - img [ref=e62] [cursor=pointer]
+                - generic [ref=e68] [cursor=pointer]: New
+            - listitem [ref=e69]:
+              - link "Assigned" [active] [ref=e70] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/assigned
+                - img [ref=e71] [cursor=pointer]
+                - generic [ref=e73] [cursor=pointer]: Assigned
+                - generic [ref=e76] [cursor=pointer]: 1,862
+            - listitem [ref=e77]:
+              - link "History" [ref=e78] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/history
+                - img [ref=e79] [cursor=pointer]
+                - generic [ref=e81] [cursor=pointer]: History
+          - heading "Requests" [level=2] [ref=e83]
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - link "Boost Suggestions" [ref=e86] [cursor=pointer]:
+                - /url: /app/my-triangulator/requests/boost-suggestions
+                - img [ref=e87] [cursor=pointer]
+                - generic [ref=e90] [cursor=pointer]: Boost Suggestions
+          - generic [ref=e92]:
+            - button "upload" [ref=e94] [cursor=pointer]:
+              - status [ref=e96] [cursor=pointer]:
+                - generic [ref=e97] [cursor=pointer]: Loading...
+              - generic [ref=e98] [cursor=pointer]:
+                - generic [ref=e99] [cursor=pointer]: Upload
+                - img [ref=e100] [cursor=pointer]
+            - button "Download" [ref=e104] [cursor=pointer]:
+              - status [ref=e106] [cursor=pointer]:
+                - generic [ref=e107] [cursor=pointer]: Loading...
+              - generic [ref=e108] [cursor=pointer]:
+                - generic [ref=e109] [cursor=pointer]: Download
+                - img [ref=e110] [cursor=pointer]
+          - paragraph [ref=e113]: 2026 Triangulator Engine
+        - generic [ref=e119]:
+          - generic [ref=e121]:
+            - paragraph [ref=e124]: Suggestions
+            - heading "Assigned" [level=1] [ref=e125]
+          - generic [ref=e126]:
+            - navigation [ref=e127]:
+              - button "Prev" [disabled] [ref=e128]:
+                - img [ref=e129]
+                - generic [ref=e131]: Prev
+              - button "1" [ref=e132] [cursor=pointer]
+              - button "2" [ref=e133] [cursor=pointer]
+              - button "3" [ref=e134] [cursor=pointer]
+              - button "4" [ref=e135] [cursor=pointer]
+              - button "5" [ref=e136] [cursor=pointer]
+              - button "6" [ref=e137] [cursor=pointer]
+              - button "..." [disabled] [ref=e138]
+              - button "38" [ref=e139] [cursor=pointer]
+              - button "Next" [ref=e140] [cursor=pointer]:
+                - img [ref=e141] [cursor=pointer]
+                - generic [ref=e143] [cursor=pointer]: Next
+            - button "Filter" [ref=e145] [cursor=pointer]:
+              - img [ref=e146] [cursor=pointer]
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - tab "My Suggestions" [ref=e151] [cursor=pointer]:
+                - generic [ref=e152] [cursor=pointer]:
+                  - img [ref=e153] [cursor=pointer]
+                  - paragraph [ref=e155] [cursor=pointer]: My Suggestions
+                - paragraph [ref=e158] [cursor=pointer]: 1,862
+              - tab "Other Suggestions" [ref=e160] [cursor=pointer]:
+                - generic [ref=e161] [cursor=pointer]:
+                  - img [ref=e162] [cursor=pointer]
+                  - paragraph [ref=e164] [cursor=pointer]: Other Suggestions
+                - paragraph [ref=e167] [cursor=pointer]: "0"
+            - table "assignedMySuggestions" [ref=e170]:
+              - generic [ref=e172]:
+                - generic [ref=e174]:
+                  - button "Select row" [ref=e175] [cursor=pointer]:
+                    - checkbox [ref=e176] [cursor=pointer]:
+                      - img [ref=e177] [cursor=pointer]
+                  - generic [ref=e179]:
+                    - columnheader "Source institution" [ref=e181]:
+                      - button "Source institution" [ref=e184] [cursor=pointer]:
+                        - generic [ref=e187] [cursor=pointer]: Source institution
+                        - img [ref=e189] [cursor=pointer]
+                    - columnheader "Source state" [ref=e192]:
+                      - button "Source state" [ref=e195] [cursor=pointer]:
+                        - generic [ref=e198] [cursor=pointer]: Source state
+                        - img [ref=e200] [cursor=pointer]
+                    - columnheader "Source subject" [ref=e203]:
+                      - button "Source subject" [ref=e206] [cursor=pointer]:
+                        - generic [ref=e209] [cursor=pointer]: Source subject
+                        - img [ref=e211] [cursor=pointer]
+                    - columnheader "Source number" [ref=e214]:
+                      - button "Source number" [ref=e217] [cursor=pointer]:
+                        - generic [ref=e220] [cursor=pointer]: Source number
+                        - img [ref=e222] [cursor=pointer]
+                    - columnheader "Target subject" [ref=e225]:
+                      - button "Target subject" [ref=e228] [cursor=pointer]:
+                        - generic [ref=e231] [cursor=pointer]: Target subject
+                        - img [ref=e233] [cursor=pointer]
+                    - columnheader "Target number" [ref=e236]:
+                      - button "Target number" [ref=e239] [cursor=pointer]:
+                        - generic [ref=e242] [cursor=pointer]: Target number
+                        - img [ref=e244] [cursor=pointer]
+                    - columnheader "Score" [ref=e247]:
+                      - button "Score" [ref=e250] [cursor=pointer]:
+                        - generic [ref=e253] [cursor=pointer]: Score
+                        - img [ref=e255] [cursor=pointer]
+                    - columnheader "Request name" [ref=e258]:
+                      - button "Request name" [ref=e261] [cursor=pointer]:
+                        - generic [ref=e264] [cursor=pointer]: Request name
+                        - img [ref=e266] [cursor=pointer]
+                    - columnheader "Suggestion type" [ref=e269]:
+                      - button "Suggestion type" [ref=e272] [cursor=pointer]:
+                        - generic [ref=e275] [cursor=pointer]: Suggestion type
+                        - img [ref=e277] [cursor=pointer]
+                    - columnheader "Target institution" [ref=e280]:
+                      - button "Target institution" [ref=e283] [cursor=pointer]:
+                        - generic [ref=e286] [cursor=pointer]: Target institution
+                        - img [ref=e288] [cursor=pointer]
+                    - columnheader "Date suggested" [ref=e291]:
+                      - button "Date suggested" [ref=e294] [cursor=pointer]:
+                        - generic [ref=e297] [cursor=pointer]: Date suggested
+                        - generic [ref=e298] [cursor=pointer]:
+                          - img [ref=e299] [cursor=pointer]
+                          - img [ref=e301] [cursor=pointer]
+                    - columnheader "Date last modified" [ref=e304]:
+                      - button "Date last modified" [ref=e307] [cursor=pointer]:
+                        - generic [ref=e310] [cursor=pointer]: Date last modified
+                        - img [ref=e312] [cursor=pointer]
+                    - columnheader "Assignee" [ref=e315]:
+                      - button "Assignee" [ref=e318] [cursor=pointer]:
+                        - generic [ref=e321] [cursor=pointer]: Assignee
+                        - img [ref=e323] [cursor=pointer]
+                - generic [ref=e325]:
+                  - rowgroup [ref=e326]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e327] [cursor=pointer]:
+                      - button "Select row" [ref=e328] [cursor=pointer]:
+                        - checkbox [ref=e329] [cursor=pointer]:
+                          - img [ref=e330] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e333] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e337] [cursor=pointer]:
+                          - paragraph [ref=e338] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e340] [cursor=pointer]:
+                        - generic [ref=e345] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e347] [cursor=pointer]:
+                        - link "SCI" [ref=e351] [cursor=pointer]:
+                          - paragraph [ref=e352] [cursor=pointer]: SCI
+                      - gridcell "Source number" [ref=e354] [cursor=pointer]:
+                        - link "330" [ref=e358] [cursor=pointer]:
+                          - paragraph [ref=e359] [cursor=pointer]: "330"
+                      - gridcell "Target subject" [ref=e361] [cursor=pointer]:
+                        - link "CHEM" [ref=e365] [cursor=pointer]:
+                          - paragraph [ref=e366] [cursor=pointer]: CHEM
+                      - gridcell "Target number" [ref=e368] [cursor=pointer]:
+                        - link "639" [ref=e372] [cursor=pointer]:
+                          - paragraph [ref=e373] [cursor=pointer]: "639"
+                      - gridcell "Score" [ref=e375] [cursor=pointer]:
+                        - generic [ref=e380] [cursor=pointer]: "60.0"
+                      - gridcell "Request name" [ref=e382] [cursor=pointer]:
+                        - generic [ref=e387] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e389] [cursor=pointer]:
+                        - paragraph [ref=e394] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e396] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e400] [cursor=pointer]:
+                          - paragraph [ref=e401] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e403] [cursor=pointer]:
+                        - paragraph [ref=e408] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e410] [cursor=pointer]:
+                        - paragraph [ref=e415] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e417] [cursor=pointer]:
+                        - generic [ref=e420] [cursor=pointer]:
+                          - paragraph [ref=e422] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e423] [cursor=pointer]:
+                            - img [ref=e424] [cursor=pointer]
+                  - rowgroup [ref=e426]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e427] [cursor=pointer]:
+                      - button "Select row" [ref=e428] [cursor=pointer]:
+                        - checkbox [ref=e429] [cursor=pointer]:
+                          - img [ref=e430] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e433] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e437] [cursor=pointer]:
+                          - paragraph [ref=e438] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e440] [cursor=pointer]:
+                        - generic [ref=e445] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e447] [cursor=pointer]:
+                        - link "HIS" [ref=e451] [cursor=pointer]:
+                          - paragraph [ref=e452] [cursor=pointer]: HIS
+                      - gridcell "Source number" [ref=e454] [cursor=pointer]:
+                        - link "415" [ref=e458] [cursor=pointer]:
+                          - paragraph [ref=e459] [cursor=pointer]: "415"
+                      - gridcell "Target subject" [ref=e461] [cursor=pointer]:
+                        - link "HIST" [ref=e465] [cursor=pointer]:
+                          - paragraph [ref=e466] [cursor=pointer]: HIST
+                      - gridcell "Target number" [ref=e468] [cursor=pointer]:
+                        - link "100A" [ref=e472] [cursor=pointer]:
+                          - paragraph [ref=e473] [cursor=pointer]: 100A
+                      - gridcell "Score" [ref=e475] [cursor=pointer]:
+                        - generic [ref=e480] [cursor=pointer]: "60.1"
+                      - gridcell "Request name" [ref=e482] [cursor=pointer]:
+                        - generic [ref=e487] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e489] [cursor=pointer]:
+                        - paragraph [ref=e494] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e496] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e500] [cursor=pointer]:
+                          - paragraph [ref=e501] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e503] [cursor=pointer]:
+                        - paragraph [ref=e508] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e510] [cursor=pointer]:
+                        - paragraph [ref=e515] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e517] [cursor=pointer]:
+                        - generic [ref=e520] [cursor=pointer]:
+                          - paragraph [ref=e522] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e523] [cursor=pointer]:
+                            - img [ref=e524] [cursor=pointer]
+                  - rowgroup [ref=e526]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e527] [cursor=pointer]:
+                      - button "Select row" [ref=e528] [cursor=pointer]:
+                        - checkbox [ref=e529] [cursor=pointer]:
+                          - img [ref=e530] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e533] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e537] [cursor=pointer]:
+                          - paragraph [ref=e538] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e540] [cursor=pointer]:
+                        - generic [ref=e545] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e547] [cursor=pointer]:
+                        - link "ART" [ref=e551] [cursor=pointer]:
+                          - paragraph [ref=e552] [cursor=pointer]: ART
+                      - gridcell "Source number" [ref=e554] [cursor=pointer]:
+                        - link "112" [ref=e558] [cursor=pointer]:
+                          - paragraph [ref=e559] [cursor=pointer]: "112"
+                      - gridcell "Target subject" [ref=e561] [cursor=pointer]:
+                        - link "GRC" [ref=e565] [cursor=pointer]:
+                          - paragraph [ref=e566] [cursor=pointer]: GRC
+                      - gridcell "Target number" [ref=e568] [cursor=pointer]:
+                        - link "220" [ref=e572] [cursor=pointer]:
+                          - paragraph [ref=e573] [cursor=pointer]: "220"
+                      - gridcell "Score" [ref=e575] [cursor=pointer]:
+                        - generic [ref=e580] [cursor=pointer]: "60.1"
+                      - gridcell "Request name" [ref=e582] [cursor=pointer]:
+                        - generic [ref=e587] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e589] [cursor=pointer]:
+                        - paragraph [ref=e594] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e596] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e600] [cursor=pointer]:
+                          - paragraph [ref=e601] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e603] [cursor=pointer]:
+                        - paragraph [ref=e608] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e610] [cursor=pointer]:
+                        - paragraph [ref=e615] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e617] [cursor=pointer]:
+                        - generic [ref=e620] [cursor=pointer]:
+                          - paragraph [ref=e622] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e623] [cursor=pointer]:
+                            - img [ref=e624] [cursor=pointer]
+                  - rowgroup [ref=e626]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e627] [cursor=pointer]:
+                      - button "Select row" [ref=e628] [cursor=pointer]:
+                        - checkbox [ref=e629] [cursor=pointer]:
+                          - img [ref=e630] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e633] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e637] [cursor=pointer]:
+                          - paragraph [ref=e638] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e640] [cursor=pointer]:
+                        - generic [ref=e645] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e647] [cursor=pointer]:
+                        - link "SS" [ref=e651] [cursor=pointer]:
+                          - paragraph [ref=e652] [cursor=pointer]: SS
+                      - gridcell "Source number" [ref=e654] [cursor=pointer]:
+                        - link "310" [ref=e658] [cursor=pointer]:
+                          - paragraph [ref=e659] [cursor=pointer]: "310"
+                      - gridcell "Target subject" [ref=e661] [cursor=pointer]:
+                        - link "CHI" [ref=e665] [cursor=pointer]:
+                          - paragraph [ref=e666] [cursor=pointer]: CHI
+                      - gridcell "Target number" [ref=e668] [cursor=pointer]:
+                        - link "221" [ref=e672] [cursor=pointer]:
+                          - paragraph [ref=e673] [cursor=pointer]: "221"
+                      - gridcell "Score" [ref=e675] [cursor=pointer]:
+                        - generic [ref=e680] [cursor=pointer]: "60.3"
+                      - gridcell "Request name" [ref=e682] [cursor=pointer]:
+                        - generic [ref=e687] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e689] [cursor=pointer]:
+                        - paragraph [ref=e694] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e696] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e700] [cursor=pointer]:
+                          - paragraph [ref=e701] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e703] [cursor=pointer]:
+                        - paragraph [ref=e708] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e710] [cursor=pointer]:
+                        - paragraph [ref=e715] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e717] [cursor=pointer]:
+                        - generic [ref=e720] [cursor=pointer]:
+                          - paragraph [ref=e722] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e723] [cursor=pointer]:
+                            - img [ref=e724] [cursor=pointer]
+                  - rowgroup [ref=e726]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e727] [cursor=pointer]:
+                      - button "Select row" [ref=e728] [cursor=pointer]:
+                        - checkbox [ref=e729] [cursor=pointer]:
+                          - img [ref=e730] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e733] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e737] [cursor=pointer]:
+                          - paragraph [ref=e738] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e740] [cursor=pointer]:
+                        - generic [ref=e745] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e747] [cursor=pointer]:
+                        - link "ENT" [ref=e751] [cursor=pointer]:
+                          - paragraph [ref=e752] [cursor=pointer]: ENT
+                      - gridcell "Source number" [ref=e754] [cursor=pointer]:
+                        - link "305" [ref=e758] [cursor=pointer]:
+                          - paragraph [ref=e759] [cursor=pointer]: "305"
+                      - gridcell "Target subject" [ref=e761] [cursor=pointer]:
+                        - link "ENT" [ref=e765] [cursor=pointer]:
+                          - paragraph [ref=e766] [cursor=pointer]: ENT
+                      - gridcell "Target number" [ref=e768] [cursor=pointer]:
+                        - link "603" [ref=e772] [cursor=pointer]:
+                          - paragraph [ref=e773] [cursor=pointer]: "603"
+                      - gridcell "Score" [ref=e775] [cursor=pointer]:
+                        - generic [ref=e780] [cursor=pointer]: "60.4"
+                      - gridcell "Request name" [ref=e782] [cursor=pointer]:
+                        - generic [ref=e787] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e789] [cursor=pointer]:
+                        - paragraph [ref=e794] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e796] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e800] [cursor=pointer]:
+                          - paragraph [ref=e801] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e803] [cursor=pointer]:
+                        - paragraph [ref=e808] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e810] [cursor=pointer]:
+                        - paragraph [ref=e815] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e817] [cursor=pointer]:
+                        - generic [ref=e820] [cursor=pointer]:
+                          - paragraph [ref=e822] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e823] [cursor=pointer]:
+                            - img [ref=e824] [cursor=pointer]
+                  - rowgroup [ref=e826]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e827] [cursor=pointer]:
+                      - button "Select row" [ref=e828] [cursor=pointer]:
+                        - checkbox [ref=e829] [cursor=pointer]:
+                          - img [ref=e830] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e833] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e837] [cursor=pointer]:
+                          - paragraph [ref=e838] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e840] [cursor=pointer]:
+                        - generic [ref=e845] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e847] [cursor=pointer]:
+                        - link "ENT" [ref=e851] [cursor=pointer]:
+                          - paragraph [ref=e852] [cursor=pointer]: ENT
+                      - gridcell "Source number" [ref=e854] [cursor=pointer]:
+                        - link "405" [ref=e858] [cursor=pointer]:
+                          - paragraph [ref=e859] [cursor=pointer]: "405"
+                      - gridcell "Target subject" [ref=e861] [cursor=pointer]:
+                        - link "ENT" [ref=e865] [cursor=pointer]:
+                          - paragraph [ref=e866] [cursor=pointer]: ENT
+                      - gridcell "Target number" [ref=e868] [cursor=pointer]:
+                        - link "200" [ref=e872] [cursor=pointer]:
+                          - paragraph [ref=e873] [cursor=pointer]: "200"
+                      - gridcell "Score" [ref=e875] [cursor=pointer]:
+                        - generic [ref=e880] [cursor=pointer]: "60.4"
+                      - gridcell "Request name" [ref=e882] [cursor=pointer]:
+                        - generic [ref=e887] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e889] [cursor=pointer]:
+                        - paragraph [ref=e894] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e896] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e900] [cursor=pointer]:
+                          - paragraph [ref=e901] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e903] [cursor=pointer]:
+                        - paragraph [ref=e908] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e910] [cursor=pointer]:
+                        - paragraph [ref=e915] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e917] [cursor=pointer]:
+                        - generic [ref=e920] [cursor=pointer]:
+                          - paragraph [ref=e922] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e923] [cursor=pointer]:
+                            - img [ref=e924] [cursor=pointer]
+                  - rowgroup [ref=e926]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e927] [cursor=pointer]:
+                      - button "Select row" [ref=e928] [cursor=pointer]:
+                        - checkbox [ref=e929] [cursor=pointer]:
+                          - img [ref=e930] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e933] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e937] [cursor=pointer]:
+                          - paragraph [ref=e938] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e940] [cursor=pointer]:
+                        - generic [ref=e945] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e947] [cursor=pointer]:
+                        - link "NTW" [ref=e951] [cursor=pointer]:
+                          - paragraph [ref=e952] [cursor=pointer]: NTW
+                      - gridcell "Source number" [ref=e954] [cursor=pointer]:
+                        - link "428" [ref=e958] [cursor=pointer]:
+                          - paragraph [ref=e959] [cursor=pointer]: "428"
+                      - gridcell "Target subject" [ref=e961] [cursor=pointer]:
+                        - link "IS" [ref=e965] [cursor=pointer]:
+                          - paragraph [ref=e966] [cursor=pointer]: IS
+                      - gridcell "Target number" [ref=e968] [cursor=pointer]:
+                        - link "752" [ref=e972] [cursor=pointer]:
+                          - paragraph [ref=e973] [cursor=pointer]: "752"
+                      - gridcell "Score" [ref=e975] [cursor=pointer]:
+                        - generic [ref=e980] [cursor=pointer]: "60.7"
+                      - gridcell "Request name" [ref=e982] [cursor=pointer]:
+                        - generic [ref=e987] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e989] [cursor=pointer]:
+                        - paragraph [ref=e994] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e996] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1000] [cursor=pointer]:
+                          - paragraph [ref=e1001] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1003] [cursor=pointer]:
+                        - paragraph [ref=e1008] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1010] [cursor=pointer]:
+                        - paragraph [ref=e1015] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1017] [cursor=pointer]:
+                        - generic [ref=e1020] [cursor=pointer]:
+                          - paragraph [ref=e1022] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1023] [cursor=pointer]:
+                            - img [ref=e1024] [cursor=pointer]
+                  - rowgroup [ref=e1026]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1027] [cursor=pointer]:
+                      - button "Select row" [ref=e1028] [cursor=pointer]:
+                        - checkbox [ref=e1029] [cursor=pointer]:
+                          - img [ref=e1030] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1033] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1037] [cursor=pointer]:
+                          - paragraph [ref=e1038] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1040] [cursor=pointer]:
+                        - generic [ref=e1045] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1047] [cursor=pointer]:
+                        - link "GPE" [ref=e1051] [cursor=pointer]:
+                          - paragraph [ref=e1052] [cursor=pointer]: GPE
+                      - gridcell "Source number" [ref=e1054] [cursor=pointer]:
+                        - link "310" [ref=e1058] [cursor=pointer]:
+                          - paragraph [ref=e1059] [cursor=pointer]: "310"
+                      - gridcell "Target subject" [ref=e1061] [cursor=pointer]:
+                        - link "CS" [ref=e1065] [cursor=pointer]:
+                          - paragraph [ref=e1066] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e1068] [cursor=pointer]:
+                        - link "381" [ref=e1072] [cursor=pointer]:
+                          - paragraph [ref=e1073] [cursor=pointer]: "381"
+                      - gridcell "Score" [ref=e1075] [cursor=pointer]:
+                        - generic [ref=e1080] [cursor=pointer]: "60.7"
+                      - gridcell "Request name" [ref=e1082] [cursor=pointer]:
+                        - generic [ref=e1087] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1089] [cursor=pointer]:
+                        - paragraph [ref=e1094] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1096] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1100] [cursor=pointer]:
+                          - paragraph [ref=e1101] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1103] [cursor=pointer]:
+                        - paragraph [ref=e1108] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1110] [cursor=pointer]:
+                        - paragraph [ref=e1115] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1117] [cursor=pointer]:
+                        - generic [ref=e1120] [cursor=pointer]:
+                          - paragraph [ref=e1122] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1123] [cursor=pointer]:
+                            - img [ref=e1124] [cursor=pointer]
+                  - rowgroup [ref=e1126]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1127] [cursor=pointer]:
+                      - button "Select row" [ref=e1128] [cursor=pointer]:
+                        - checkbox [ref=e1129] [cursor=pointer]:
+                          - img [ref=e1130] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1133] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1137] [cursor=pointer]:
+                          - paragraph [ref=e1138] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1140] [cursor=pointer]:
+                        - generic [ref=e1145] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1147] [cursor=pointer]:
+                        - link "MS510" [ref=e1151] [cursor=pointer]:
+                          - paragraph [ref=e1152] [cursor=pointer]: MS510
+                      - gridcell "Source number" [ref=e1154] [cursor=pointer]:
+                        - link "2054" [ref=e1158] [cursor=pointer]:
+                          - paragraph [ref=e1159] [cursor=pointer]: "2054"
+                      - gridcell "Target subject" [ref=e1161] [cursor=pointer]:
+                        - link "CS" [ref=e1165] [cursor=pointer]:
+                          - paragraph [ref=e1166] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e1168] [cursor=pointer]:
+                        - link "645" [ref=e1172] [cursor=pointer]:
+                          - paragraph [ref=e1173] [cursor=pointer]: "645"
+                      - gridcell "Score" [ref=e1175] [cursor=pointer]:
+                        - generic [ref=e1180] [cursor=pointer]: "60.7"
+                      - gridcell "Request name" [ref=e1182] [cursor=pointer]:
+                        - generic [ref=e1187] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1189] [cursor=pointer]:
+                        - paragraph [ref=e1194] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1196] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1200] [cursor=pointer]:
+                          - paragraph [ref=e1201] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1203] [cursor=pointer]:
+                        - paragraph [ref=e1208] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1210] [cursor=pointer]:
+                        - paragraph [ref=e1215] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1217] [cursor=pointer]:
+                        - generic [ref=e1220] [cursor=pointer]:
+                          - paragraph [ref=e1222] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1223] [cursor=pointer]:
+                            - img [ref=e1224] [cursor=pointer]
+                  - rowgroup [ref=e1226]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1227] [cursor=pointer]:
+                      - button "Select row" [ref=e1228] [cursor=pointer]:
+                        - checkbox [ref=e1229] [cursor=pointer]:
+                          - img [ref=e1230] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1233] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1237] [cursor=pointer]:
+                          - paragraph [ref=e1238] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1240] [cursor=pointer]:
+                        - generic [ref=e1245] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1247] [cursor=pointer]:
+                        - link "GAM" [ref=e1251] [cursor=pointer]:
+                          - paragraph [ref=e1252] [cursor=pointer]: GAM
+                      - gridcell "Source number" [ref=e1254] [cursor=pointer]:
+                        - link "351" [ref=e1258] [cursor=pointer]:
+                          - paragraph [ref=e1259] [cursor=pointer]: "351"
+                      - gridcell "Target subject" [ref=e1261] [cursor=pointer]:
+                        - link "JOUR" [ref=e1265] [cursor=pointer]:
+                          - paragraph [ref=e1266] [cursor=pointer]: JOUR
+                      - gridcell "Target number" [ref=e1268] [cursor=pointer]:
+                        - link "354" [ref=e1272] [cursor=pointer]:
+                          - paragraph [ref=e1273] [cursor=pointer]: "354"
+                      - gridcell "Score" [ref=e1275] [cursor=pointer]:
+                        - generic [ref=e1280] [cursor=pointer]: "61.1"
+                      - gridcell "Request name" [ref=e1282] [cursor=pointer]:
+                        - generic [ref=e1287] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1289] [cursor=pointer]:
+                        - paragraph [ref=e1294] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1296] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1300] [cursor=pointer]:
+                          - paragraph [ref=e1301] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1303] [cursor=pointer]:
+                        - paragraph [ref=e1308] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1310] [cursor=pointer]:
+                        - paragraph [ref=e1315] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1317] [cursor=pointer]:
+                        - generic [ref=e1320] [cursor=pointer]:
+                          - paragraph [ref=e1322] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1323] [cursor=pointer]:
+                            - img [ref=e1324] [cursor=pointer]
+                  - rowgroup [ref=e1326]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1327] [cursor=pointer]:
+                      - button "Select row" [ref=e1328] [cursor=pointer]:
+                        - checkbox [ref=e1329] [cursor=pointer]:
+                          - img [ref=e1330] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1333] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1337] [cursor=pointer]:
+                          - paragraph [ref=e1338] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1340] [cursor=pointer]:
+                        - generic [ref=e1345] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1347] [cursor=pointer]:
+                        - link "CSC" [ref=e1351] [cursor=pointer]:
+                          - paragraph [ref=e1352] [cursor=pointer]: CSC
+                      - gridcell "Source number" [ref=e1354] [cursor=pointer]:
+                        - link "449" [ref=e1358] [cursor=pointer]:
+                          - paragraph [ref=e1359] [cursor=pointer]: "449"
+                      - gridcell "Target subject" [ref=e1361] [cursor=pointer]:
+                        - link "APST" [ref=e1365] [cursor=pointer]:
+                          - paragraph [ref=e1366] [cursor=pointer]: APST
+                      - gridcell "Target number" [ref=e1368] [cursor=pointer]:
+                        - link "670" [ref=e1372] [cursor=pointer]:
+                          - paragraph [ref=e1373] [cursor=pointer]: "670"
+                      - gridcell "Score" [ref=e1375] [cursor=pointer]:
+                        - generic [ref=e1380] [cursor=pointer]: "61.2"
+                      - gridcell "Request name" [ref=e1382] [cursor=pointer]:
+                        - generic [ref=e1387] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1389] [cursor=pointer]:
+                        - paragraph [ref=e1394] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1396] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1400] [cursor=pointer]:
+                          - paragraph [ref=e1401] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1403] [cursor=pointer]:
+                        - paragraph [ref=e1408] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1410] [cursor=pointer]:
+                        - paragraph [ref=e1415] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1417] [cursor=pointer]:
+                        - generic [ref=e1420] [cursor=pointer]:
+                          - paragraph [ref=e1422] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1423] [cursor=pointer]:
+                            - img [ref=e1424] [cursor=pointer]
+                  - rowgroup [ref=e1426]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1427] [cursor=pointer]:
+                      - button "Select row" [ref=e1428] [cursor=pointer]:
+                        - checkbox [ref=e1429] [cursor=pointer]:
+                          - img [ref=e1430] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1433] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1437] [cursor=pointer]:
+                          - paragraph [ref=e1438] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1440] [cursor=pointer]:
+                        - generic [ref=e1445] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1447] [cursor=pointer]:
+                        - link "MS563" [ref=e1451] [cursor=pointer]:
+                          - paragraph [ref=e1452] [cursor=pointer]: MS563
+                      - gridcell "Source number" [ref=e1454] [cursor=pointer]:
+                        - link "NAN" [ref=e1458] [cursor=pointer]:
+                          - paragraph [ref=e1459] [cursor=pointer]: NAN
+                      - gridcell "Target subject" [ref=e1461] [cursor=pointer]:
+                        - link "CS" [ref=e1465] [cursor=pointer]:
+                          - paragraph [ref=e1466] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e1468] [cursor=pointer]:
+                        - link "681" [ref=e1472] [cursor=pointer]:
+                          - paragraph [ref=e1473] [cursor=pointer]: "681"
+                      - gridcell "Score" [ref=e1475] [cursor=pointer]:
+                        - generic [ref=e1480] [cursor=pointer]: "61.2"
+                      - gridcell "Request name" [ref=e1482] [cursor=pointer]:
+                        - generic [ref=e1487] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1489] [cursor=pointer]:
+                        - paragraph [ref=e1494] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1496] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1500] [cursor=pointer]:
+                          - paragraph [ref=e1501] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1503] [cursor=pointer]:
+                        - paragraph [ref=e1508] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1510] [cursor=pointer]:
+                        - paragraph [ref=e1515] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1517] [cursor=pointer]:
+                        - generic [ref=e1520] [cursor=pointer]:
+                          - paragraph [ref=e1522] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1523] [cursor=pointer]:
+                            - img [ref=e1524] [cursor=pointer]
+                  - rowgroup [ref=e1526]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1527] [cursor=pointer]:
+                      - button "Select row" [ref=e1528] [cursor=pointer]:
+                        - checkbox [ref=e1529] [cursor=pointer]:
+                          - img [ref=e1530] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1533] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1537] [cursor=pointer]:
+                          - paragraph [ref=e1538] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1540] [cursor=pointer]:
+                        - generic [ref=e1545] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1547] [cursor=pointer]:
+                        - link "NTS" [ref=e1551] [cursor=pointer]:
+                          - paragraph [ref=e1552] [cursor=pointer]: NTS
+                      - gridcell "Source number" [ref=e1554] [cursor=pointer]:
+                        - link "201" [ref=e1558] [cursor=pointer]:
+                          - paragraph [ref=e1559] [cursor=pointer]: "201"
+                      - gridcell "Target subject" [ref=e1561] [cursor=pointer]:
+                        - link "CS" [ref=e1565] [cursor=pointer]:
+                          - paragraph [ref=e1566] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e1568] [cursor=pointer]:
+                        - link "151" [ref=e1572] [cursor=pointer]:
+                          - paragraph [ref=e1573] [cursor=pointer]: "151"
+                      - gridcell "Score" [ref=e1575] [cursor=pointer]:
+                        - generic [ref=e1580] [cursor=pointer]: "61.2"
+                      - gridcell "Request name" [ref=e1582] [cursor=pointer]:
+                        - generic [ref=e1587] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1589] [cursor=pointer]:
+                        - paragraph [ref=e1594] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1596] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1600] [cursor=pointer]:
+                          - paragraph [ref=e1601] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1603] [cursor=pointer]:
+                        - paragraph [ref=e1608] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1610] [cursor=pointer]:
+                        - paragraph [ref=e1615] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1617] [cursor=pointer]:
+                        - generic [ref=e1620] [cursor=pointer]:
+                          - paragraph [ref=e1622] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1623] [cursor=pointer]:
+                            - img [ref=e1624] [cursor=pointer]
+                  - rowgroup [ref=e1626]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1627] [cursor=pointer]:
+                      - button "Select row" [ref=e1628] [cursor=pointer]:
+                        - checkbox [ref=e1629] [cursor=pointer]:
+                          - img [ref=e1630] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1633] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1637] [cursor=pointer]:
+                          - paragraph [ref=e1638] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1640] [cursor=pointer]:
+                        - generic [ref=e1645] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1647] [cursor=pointer]:
+                        - link "SCI" [ref=e1651] [cursor=pointer]:
+                          - paragraph [ref=e1652] [cursor=pointer]: SCI
+                      - gridcell "Source number" [ref=e1654] [cursor=pointer]:
+                        - link "388" [ref=e1658] [cursor=pointer]:
+                          - paragraph [ref=e1659] [cursor=pointer]: "388"
+                      - gridcell "Target subject" [ref=e1661] [cursor=pointer]:
+                        - link "PHYS" [ref=e1665] [cursor=pointer]:
+                          - paragraph [ref=e1666] [cursor=pointer]: PHYS
+                      - gridcell "Target number" [ref=e1668] [cursor=pointer]:
+                        - link "483" [ref=e1672] [cursor=pointer]:
+                          - paragraph [ref=e1673] [cursor=pointer]: "483"
+                      - gridcell "Score" [ref=e1675] [cursor=pointer]:
+                        - generic [ref=e1680] [cursor=pointer]: "61.4"
+                      - gridcell "Request name" [ref=e1682] [cursor=pointer]:
+                        - generic [ref=e1687] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1689] [cursor=pointer]:
+                        - paragraph [ref=e1694] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1696] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1700] [cursor=pointer]:
+                          - paragraph [ref=e1701] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1703] [cursor=pointer]:
+                        - paragraph [ref=e1708] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1710] [cursor=pointer]:
+                        - paragraph [ref=e1715] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1717] [cursor=pointer]:
+                        - generic [ref=e1720] [cursor=pointer]:
+                          - paragraph [ref=e1722] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1723] [cursor=pointer]:
+                            - img [ref=e1724] [cursor=pointer]
+                  - rowgroup [ref=e1726]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1727] [cursor=pointer]:
+                      - button "Select row" [ref=e1728] [cursor=pointer]:
+                        - checkbox [ref=e1729] [cursor=pointer]:
+                          - img [ref=e1730] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1733] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1737] [cursor=pointer]:
+                          - paragraph [ref=e1738] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1740] [cursor=pointer]:
+                        - generic [ref=e1745] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1747] [cursor=pointer]:
+                        - link "SCI" [ref=e1751] [cursor=pointer]:
+                          - paragraph [ref=e1752] [cursor=pointer]: SCI
+                      - gridcell "Source number" [ref=e1754] [cursor=pointer]:
+                        - link "388" [ref=e1758] [cursor=pointer]:
+                          - paragraph [ref=e1759] [cursor=pointer]: "388"
+                      - gridcell "Target subject" [ref=e1761] [cursor=pointer]:
+                        - link "PHYS" [ref=e1765] [cursor=pointer]:
+                          - paragraph [ref=e1766] [cursor=pointer]: PHYS
+                      - gridcell "Target number" [ref=e1768] [cursor=pointer]:
+                        - link "484" [ref=e1772] [cursor=pointer]:
+                          - paragraph [ref=e1773] [cursor=pointer]: "484"
+                      - gridcell "Score" [ref=e1775] [cursor=pointer]:
+                        - generic [ref=e1780] [cursor=pointer]: "61.4"
+                      - gridcell "Request name" [ref=e1782] [cursor=pointer]:
+                        - generic [ref=e1787] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1789] [cursor=pointer]:
+                        - paragraph [ref=e1794] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1796] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1800] [cursor=pointer]:
+                          - paragraph [ref=e1801] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1803] [cursor=pointer]:
+                        - paragraph [ref=e1808] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1810] [cursor=pointer]:
+                        - paragraph [ref=e1815] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1817] [cursor=pointer]:
+                        - generic [ref=e1820] [cursor=pointer]:
+                          - paragraph [ref=e1822] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1823] [cursor=pointer]:
+                            - img [ref=e1824] [cursor=pointer]
+                  - rowgroup [ref=e1826]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1827] [cursor=pointer]:
+                      - button "Select row" [ref=e1828] [cursor=pointer]:
+                        - checkbox [ref=e1829] [cursor=pointer]:
+                          - img [ref=e1830] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1833] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1837] [cursor=pointer]:
+                          - paragraph [ref=e1838] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1840] [cursor=pointer]:
+                        - generic [ref=e1845] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1847] [cursor=pointer]:
+                        - link "ENG" [ref=e1851] [cursor=pointer]:
+                          - paragraph [ref=e1852] [cursor=pointer]: ENG
+                      - gridcell "Source number" [ref=e1854] [cursor=pointer]:
+                        - link "415" [ref=e1858] [cursor=pointer]:
+                          - paragraph [ref=e1859] [cursor=pointer]: "415"
+                      - gridcell "Target subject" [ref=e1861] [cursor=pointer]:
+                        - link "ENG" [ref=e1865] [cursor=pointer]:
+                          - paragraph [ref=e1866] [cursor=pointer]: ENG
+                      - gridcell "Target number" [ref=e1868] [cursor=pointer]:
+                        - link "304" [ref=e1872] [cursor=pointer]:
+                          - paragraph [ref=e1873] [cursor=pointer]: "304"
+                      - gridcell "Score" [ref=e1875] [cursor=pointer]:
+                        - generic [ref=e1880] [cursor=pointer]: "61.5"
+                      - gridcell "Request name" [ref=e1882] [cursor=pointer]:
+                        - generic [ref=e1887] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1889] [cursor=pointer]:
+                        - paragraph [ref=e1894] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1896] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e1900] [cursor=pointer]:
+                          - paragraph [ref=e1901] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e1903] [cursor=pointer]:
+                        - paragraph [ref=e1908] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e1910] [cursor=pointer]:
+                        - paragraph [ref=e1915] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e1917] [cursor=pointer]:
+                        - generic [ref=e1920] [cursor=pointer]:
+                          - paragraph [ref=e1922] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e1923] [cursor=pointer]:
+                            - img [ref=e1924] [cursor=pointer]
+                  - rowgroup [ref=e1926]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e1927] [cursor=pointer]:
+                      - button "Select row" [ref=e1928] [cursor=pointer]:
+                        - checkbox [ref=e1929] [cursor=pointer]:
+                          - img [ref=e1930] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e1933] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e1937] [cursor=pointer]:
+                          - paragraph [ref=e1938] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e1940] [cursor=pointer]:
+                        - generic [ref=e1945] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e1947] [cursor=pointer]:
+                        - link "BUS" [ref=e1951] [cursor=pointer]:
+                          - paragraph [ref=e1952] [cursor=pointer]: BUS
+                      - gridcell "Source number" [ref=e1954] [cursor=pointer]:
+                        - link "320" [ref=e1958] [cursor=pointer]:
+                          - paragraph [ref=e1959] [cursor=pointer]: "320"
+                      - gridcell "Target subject" [ref=e1961] [cursor=pointer]:
+                        - link "FIN" [ref=e1965] [cursor=pointer]:
+                          - paragraph [ref=e1966] [cursor=pointer]: FIN
+                      - gridcell "Target number" [ref=e1968] [cursor=pointer]:
+                        - link "415" [ref=e1972] [cursor=pointer]:
+                          - paragraph [ref=e1973] [cursor=pointer]: "415"
+                      - gridcell "Score" [ref=e1975] [cursor=pointer]:
+                        - generic [ref=e1980] [cursor=pointer]: "61.5"
+                      - gridcell "Request name" [ref=e1982] [cursor=pointer]:
+                        - generic [ref=e1987] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e1989] [cursor=pointer]:
+                        - paragraph [ref=e1994] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e1996] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2000] [cursor=pointer]:
+                          - paragraph [ref=e2001] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2003] [cursor=pointer]:
+                        - paragraph [ref=e2008] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2010] [cursor=pointer]:
+                        - paragraph [ref=e2015] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2017] [cursor=pointer]:
+                        - generic [ref=e2020] [cursor=pointer]:
+                          - paragraph [ref=e2022] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2023] [cursor=pointer]:
+                            - img [ref=e2024] [cursor=pointer]
+                  - rowgroup [ref=e2026]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2027] [cursor=pointer]:
+                      - button "Select row" [ref=e2028] [cursor=pointer]:
+                        - checkbox [ref=e2029] [cursor=pointer]:
+                          - img [ref=e2030] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2033] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2037] [cursor=pointer]:
+                          - paragraph [ref=e2038] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2040] [cursor=pointer]:
+                        - generic [ref=e2045] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2047] [cursor=pointer]:
+                        - link "MGT" [ref=e2051] [cursor=pointer]:
+                          - paragraph [ref=e2052] [cursor=pointer]: MGT
+                      - gridcell "Source number" [ref=e2054] [cursor=pointer]:
+                        - link "322" [ref=e2058] [cursor=pointer]:
+                          - paragraph [ref=e2059] [cursor=pointer]: "322"
+                      - gridcell "Target subject" [ref=e2061] [cursor=pointer]:
+                        - link "FIN" [ref=e2065] [cursor=pointer]:
+                          - paragraph [ref=e2066] [cursor=pointer]: FIN
+                      - gridcell "Target number" [ref=e2068] [cursor=pointer]:
+                        - link "415" [ref=e2072] [cursor=pointer]:
+                          - paragraph [ref=e2073] [cursor=pointer]: "415"
+                      - gridcell "Score" [ref=e2075] [cursor=pointer]:
+                        - generic [ref=e2080] [cursor=pointer]: "61.5"
+                      - gridcell "Request name" [ref=e2082] [cursor=pointer]:
+                        - generic [ref=e2087] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2089] [cursor=pointer]:
+                        - paragraph [ref=e2094] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2096] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2100] [cursor=pointer]:
+                          - paragraph [ref=e2101] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2103] [cursor=pointer]:
+                        - paragraph [ref=e2108] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2110] [cursor=pointer]:
+                        - paragraph [ref=e2115] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2117] [cursor=pointer]:
+                        - generic [ref=e2120] [cursor=pointer]:
+                          - paragraph [ref=e2122] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2123] [cursor=pointer]:
+                            - img [ref=e2124] [cursor=pointer]
+                  - rowgroup [ref=e2126]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2127] [cursor=pointer]:
+                      - button "Select row" [ref=e2128] [cursor=pointer]:
+                        - checkbox [ref=e2129] [cursor=pointer]:
+                          - img [ref=e2130] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2133] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2137] [cursor=pointer]:
+                          - paragraph [ref=e2138] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2140] [cursor=pointer]:
+                        - generic [ref=e2145] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2147] [cursor=pointer]:
+                        - link "BUS" [ref=e2151] [cursor=pointer]:
+                          - paragraph [ref=e2152] [cursor=pointer]: BUS
+                      - gridcell "Source number" [ref=e2154] [cursor=pointer]:
+                        - link "440" [ref=e2158] [cursor=pointer]:
+                          - paragraph [ref=e2159] [cursor=pointer]: "440"
+                      - gridcell "Target subject" [ref=e2161] [cursor=pointer]:
+                        - link "BAN" [ref=e2165] [cursor=pointer]:
+                          - paragraph [ref=e2166] [cursor=pointer]: BAN
+                      - gridcell "Target number" [ref=e2168] [cursor=pointer]:
+                        - link "701" [ref=e2172] [cursor=pointer]:
+                          - paragraph [ref=e2173] [cursor=pointer]: "701"
+                      - gridcell "Score" [ref=e2175] [cursor=pointer]:
+                        - generic [ref=e2180] [cursor=pointer]: "61.5"
+                      - gridcell "Request name" [ref=e2182] [cursor=pointer]:
+                        - generic [ref=e2187] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2189] [cursor=pointer]:
+                        - paragraph [ref=e2194] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2196] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2200] [cursor=pointer]:
+                          - paragraph [ref=e2201] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2203] [cursor=pointer]:
+                        - paragraph [ref=e2208] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2210] [cursor=pointer]:
+                        - paragraph [ref=e2215] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2217] [cursor=pointer]:
+                        - generic [ref=e2220] [cursor=pointer]:
+                          - paragraph [ref=e2222] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2223] [cursor=pointer]:
+                            - img [ref=e2224] [cursor=pointer]
+                  - rowgroup [ref=e2226]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2227] [cursor=pointer]:
+                      - button "Select row" [ref=e2228] [cursor=pointer]:
+                        - checkbox [ref=e2229] [cursor=pointer]:
+                          - img [ref=e2230] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2233] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2237] [cursor=pointer]:
+                          - paragraph [ref=e2238] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2240] [cursor=pointer]:
+                        - generic [ref=e2245] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2247] [cursor=pointer]:
+                        - link "ENT" [ref=e2251] [cursor=pointer]:
+                          - paragraph [ref=e2252] [cursor=pointer]: ENT
+                      - gridcell "Source number" [ref=e2254] [cursor=pointer]:
+                        - link "305" [ref=e2258] [cursor=pointer]:
+                          - paragraph [ref=e2259] [cursor=pointer]: "305"
+                      - gridcell "Target subject" [ref=e2261] [cursor=pointer]:
+                        - link "ENT" [ref=e2265] [cursor=pointer]:
+                          - paragraph [ref=e2266] [cursor=pointer]: ENT
+                      - gridcell "Target number" [ref=e2268] [cursor=pointer]:
+                        - link "200" [ref=e2272] [cursor=pointer]:
+                          - paragraph [ref=e2273] [cursor=pointer]: "200"
+                      - gridcell "Score" [ref=e2275] [cursor=pointer]:
+                        - generic [ref=e2280] [cursor=pointer]: "61.5"
+                      - gridcell "Request name" [ref=e2282] [cursor=pointer]:
+                        - generic [ref=e2287] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2289] [cursor=pointer]:
+                        - paragraph [ref=e2294] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2296] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2300] [cursor=pointer]:
+                          - paragraph [ref=e2301] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2303] [cursor=pointer]:
+                        - paragraph [ref=e2308] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2310] [cursor=pointer]:
+                        - paragraph [ref=e2315] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2317] [cursor=pointer]:
+                        - generic [ref=e2320] [cursor=pointer]:
+                          - paragraph [ref=e2322] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2323] [cursor=pointer]:
+                            - img [ref=e2324] [cursor=pointer]
+                  - rowgroup [ref=e2326]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2327] [cursor=pointer]:
+                      - button "Select row" [ref=e2328] [cursor=pointer]:
+                        - checkbox [ref=e2329] [cursor=pointer]:
+                          - img [ref=e2330] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2333] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2337] [cursor=pointer]:
+                          - paragraph [ref=e2338] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2340] [cursor=pointer]:
+                        - generic [ref=e2345] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2347] [cursor=pointer]:
+                        - link "MS563" [ref=e2351] [cursor=pointer]:
+                          - paragraph [ref=e2352] [cursor=pointer]: MS563
+                      - gridcell "Source number" [ref=e2354] [cursor=pointer]:
+                        - link "NAN" [ref=e2358] [cursor=pointer]:
+                          - paragraph [ref=e2359] [cursor=pointer]: NAN
+                      - gridcell "Target subject" [ref=e2361] [cursor=pointer]:
+                        - link "CS" [ref=e2365] [cursor=pointer]:
+                          - paragraph [ref=e2366] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e2368] [cursor=pointer]:
+                        - link "481" [ref=e2372] [cursor=pointer]:
+                          - paragraph [ref=e2373] [cursor=pointer]: "481"
+                      - gridcell "Score" [ref=e2375] [cursor=pointer]:
+                        - generic [ref=e2380] [cursor=pointer]: "61.7"
+                      - gridcell "Request name" [ref=e2382] [cursor=pointer]:
+                        - generic [ref=e2387] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2389] [cursor=pointer]:
+                        - paragraph [ref=e2394] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2396] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2400] [cursor=pointer]:
+                          - paragraph [ref=e2401] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2403] [cursor=pointer]:
+                        - paragraph [ref=e2408] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2410] [cursor=pointer]:
+                        - paragraph [ref=e2415] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2417] [cursor=pointer]:
+                        - generic [ref=e2420] [cursor=pointer]:
+                          - paragraph [ref=e2422] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2423] [cursor=pointer]:
+                            - img [ref=e2424] [cursor=pointer]
+                  - rowgroup [ref=e2426]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2427] [cursor=pointer]:
+                      - button "Select row" [ref=e2428] [cursor=pointer]:
+                        - checkbox [ref=e2429] [cursor=pointer]:
+                          - img [ref=e2430] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2433] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2437] [cursor=pointer]:
+                          - paragraph [ref=e2438] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2440] [cursor=pointer]:
+                        - generic [ref=e2445] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2447] [cursor=pointer]:
+                        - link "GAM" [ref=e2451] [cursor=pointer]:
+                          - paragraph [ref=e2452] [cursor=pointer]: GAM
+                      - gridcell "Source number" [ref=e2454] [cursor=pointer]:
+                        - link "200" [ref=e2458] [cursor=pointer]:
+                          - paragraph [ref=e2459] [cursor=pointer]: "200"
+                      - gridcell "Target subject" [ref=e2461] [cursor=pointer]:
+                        - link "ART" [ref=e2465] [cursor=pointer]:
+                          - paragraph [ref=e2466] [cursor=pointer]: ART
+                      - gridcell "Target number" [ref=e2468] [cursor=pointer]:
+                        - link "381" [ref=e2472] [cursor=pointer]:
+                          - paragraph [ref=e2473] [cursor=pointer]: "381"
+                      - gridcell "Score" [ref=e2475] [cursor=pointer]:
+                        - generic [ref=e2480] [cursor=pointer]: "61.9"
+                      - gridcell "Request name" [ref=e2482] [cursor=pointer]:
+                        - generic [ref=e2487] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2489] [cursor=pointer]:
+                        - paragraph [ref=e2494] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2496] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2500] [cursor=pointer]:
+                          - paragraph [ref=e2501] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2503] [cursor=pointer]:
+                        - paragraph [ref=e2508] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2510] [cursor=pointer]:
+                        - paragraph [ref=e2515] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2517] [cursor=pointer]:
+                        - generic [ref=e2520] [cursor=pointer]:
+                          - paragraph [ref=e2522] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2523] [cursor=pointer]:
+                            - img [ref=e2524] [cursor=pointer]
+                  - rowgroup [ref=e2526]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2527] [cursor=pointer]:
+                      - button "Select row" [ref=e2528] [cursor=pointer]:
+                        - checkbox [ref=e2529] [cursor=pointer]:
+                          - img [ref=e2530] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2533] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2537] [cursor=pointer]:
+                          - paragraph [ref=e2538] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2540] [cursor=pointer]:
+                        - generic [ref=e2545] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2547] [cursor=pointer]:
+                        - link "HCI" [ref=e2551] [cursor=pointer]:
+                          - paragraph [ref=e2552] [cursor=pointer]: HCI
+                      - gridcell "Source number" [ref=e2554] [cursor=pointer]:
+                        - link "101" [ref=e2558] [cursor=pointer]:
+                          - paragraph [ref=e2559] [cursor=pointer]: "101"
+                      - gridcell "Target subject" [ref=e2561] [cursor=pointer]:
+                        - link "IMSE" [ref=e2565] [cursor=pointer]:
+                          - paragraph [ref=e2566] [cursor=pointer]: IMSE
+                      - gridcell "Target number" [ref=e2568] [cursor=pointer]:
+                        - link "460" [ref=e2572] [cursor=pointer]:
+                          - paragraph [ref=e2573] [cursor=pointer]: "460"
+                      - gridcell "Score" [ref=e2575] [cursor=pointer]:
+                        - generic [ref=e2580] [cursor=pointer]: "61.9"
+                      - gridcell "Request name" [ref=e2582] [cursor=pointer]:
+                        - generic [ref=e2587] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2589] [cursor=pointer]:
+                        - paragraph [ref=e2594] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2596] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2600] [cursor=pointer]:
+                          - paragraph [ref=e2601] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2603] [cursor=pointer]:
+                        - paragraph [ref=e2608] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2610] [cursor=pointer]:
+                        - paragraph [ref=e2615] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2617] [cursor=pointer]:
+                        - generic [ref=e2620] [cursor=pointer]:
+                          - paragraph [ref=e2622] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2623] [cursor=pointer]:
+                            - img [ref=e2624] [cursor=pointer]
+                  - rowgroup [ref=e2626]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2627] [cursor=pointer]:
+                      - button "Select row" [ref=e2628] [cursor=pointer]:
+                        - checkbox [ref=e2629] [cursor=pointer]:
+                          - img [ref=e2630] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2633] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2637] [cursor=pointer]:
+                          - paragraph [ref=e2638] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2640] [cursor=pointer]:
+                        - generic [ref=e2645] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2647] [cursor=pointer]:
+                        - link "MAT" [ref=e2651] [cursor=pointer]:
+                          - paragraph [ref=e2652] [cursor=pointer]: MAT
+                      - gridcell "Source number" [ref=e2654] [cursor=pointer]:
+                        - link "370" [ref=e2658] [cursor=pointer]:
+                          - paragraph [ref=e2659] [cursor=pointer]: "370"
+                      - gridcell "Target subject" [ref=e2661] [cursor=pointer]:
+                        - link "APST" [ref=e2665] [cursor=pointer]:
+                          - paragraph [ref=e2666] [cursor=pointer]: APST
+                      - gridcell "Target number" [ref=e2668] [cursor=pointer]:
+                        - link "667" [ref=e2672] [cursor=pointer]:
+                          - paragraph [ref=e2673] [cursor=pointer]: "667"
+                      - gridcell "Score" [ref=e2675] [cursor=pointer]:
+                        - generic [ref=e2680] [cursor=pointer]: "62.1"
+                      - gridcell "Request name" [ref=e2682] [cursor=pointer]:
+                        - generic [ref=e2687] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2689] [cursor=pointer]:
+                        - paragraph [ref=e2694] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2696] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2700] [cursor=pointer]:
+                          - paragraph [ref=e2701] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2703] [cursor=pointer]:
+                        - paragraph [ref=e2708] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2710] [cursor=pointer]:
+                        - paragraph [ref=e2715] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2717] [cursor=pointer]:
+                        - generic [ref=e2720] [cursor=pointer]:
+                          - paragraph [ref=e2722] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2723] [cursor=pointer]:
+                            - img [ref=e2724] [cursor=pointer]
+                  - rowgroup [ref=e2726]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2727] [cursor=pointer]:
+                      - button "Select row" [ref=e2728] [cursor=pointer]:
+                        - checkbox [ref=e2729] [cursor=pointer]:
+                          - img [ref=e2730] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2733] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2737] [cursor=pointer]:
+                          - paragraph [ref=e2738] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2740] [cursor=pointer]:
+                        - generic [ref=e2745] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2747] [cursor=pointer]:
+                        - link "HIS" [ref=e2751] [cursor=pointer]:
+                          - paragraph [ref=e2752] [cursor=pointer]: HIS
+                      - gridcell "Source number" [ref=e2754] [cursor=pointer]:
+                        - link "240" [ref=e2758] [cursor=pointer]:
+                          - paragraph [ref=e2759] [cursor=pointer]: "240"
+                      - gridcell "Target subject" [ref=e2761] [cursor=pointer]:
+                        - link "HIST" [ref=e2765] [cursor=pointer]:
+                          - paragraph [ref=e2766] [cursor=pointer]: HIST
+                      - gridcell "Target number" [ref=e2768] [cursor=pointer]:
+                        - link "403" [ref=e2772] [cursor=pointer]:
+                          - paragraph [ref=e2773] [cursor=pointer]: "403"
+                      - gridcell "Score" [ref=e2775] [cursor=pointer]:
+                        - generic [ref=e2780] [cursor=pointer]: "62.1"
+                      - gridcell "Request name" [ref=e2782] [cursor=pointer]:
+                        - generic [ref=e2787] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2789] [cursor=pointer]:
+                        - paragraph [ref=e2794] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2796] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2800] [cursor=pointer]:
+                          - paragraph [ref=e2801] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2803] [cursor=pointer]:
+                        - paragraph [ref=e2808] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2810] [cursor=pointer]:
+                        - paragraph [ref=e2815] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2817] [cursor=pointer]:
+                        - generic [ref=e2820] [cursor=pointer]:
+                          - paragraph [ref=e2822] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2823] [cursor=pointer]:
+                            - img [ref=e2824] [cursor=pointer]
+                  - rowgroup [ref=e2826]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2827] [cursor=pointer]:
+                      - button "Select row" [ref=e2828] [cursor=pointer]:
+                        - checkbox [ref=e2829] [cursor=pointer]:
+                          - img [ref=e2830] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2833] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2837] [cursor=pointer]:
+                          - paragraph [ref=e2838] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2840] [cursor=pointer]:
+                        - generic [ref=e2845] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2847] [cursor=pointer]:
+                        - link "NTW" [ref=e2851] [cursor=pointer]:
+                          - paragraph [ref=e2852] [cursor=pointer]: NTW
+                      - gridcell "Source number" [ref=e2854] [cursor=pointer]:
+                        - link "428" [ref=e2858] [cursor=pointer]:
+                          - paragraph [ref=e2859] [cursor=pointer]: "428"
+                      - gridcell "Target subject" [ref=e2861] [cursor=pointer]:
+                        - link "BADM" [ref=e2865] [cursor=pointer]:
+                          - paragraph [ref=e2866] [cursor=pointer]: BADM
+                      - gridcell "Target number" [ref=e2868] [cursor=pointer]:
+                        - link "750" [ref=e2872] [cursor=pointer]:
+                          - paragraph [ref=e2873] [cursor=pointer]: "750"
+                      - gridcell "Score" [ref=e2875] [cursor=pointer]:
+                        - generic [ref=e2880] [cursor=pointer]: "62.3"
+                      - gridcell "Request name" [ref=e2882] [cursor=pointer]:
+                        - generic [ref=e2887] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2889] [cursor=pointer]:
+                        - paragraph [ref=e2894] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2896] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e2900] [cursor=pointer]:
+                          - paragraph [ref=e2901] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e2903] [cursor=pointer]:
+                        - paragraph [ref=e2908] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e2910] [cursor=pointer]:
+                        - paragraph [ref=e2915] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e2917] [cursor=pointer]:
+                        - generic [ref=e2920] [cursor=pointer]:
+                          - paragraph [ref=e2922] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e2923] [cursor=pointer]:
+                            - img [ref=e2924] [cursor=pointer]
+                  - rowgroup [ref=e2926]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e2927] [cursor=pointer]:
+                      - button "Select row" [ref=e2928] [cursor=pointer]:
+                        - checkbox [ref=e2929] [cursor=pointer]:
+                          - img [ref=e2930] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e2933] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e2937] [cursor=pointer]:
+                          - paragraph [ref=e2938] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e2940] [cursor=pointer]:
+                        - generic [ref=e2945] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e2947] [cursor=pointer]:
+                        - link "CIS" [ref=e2951] [cursor=pointer]:
+                          - paragraph [ref=e2952] [cursor=pointer]: CIS
+                      - gridcell "Source number" [ref=e2954] [cursor=pointer]:
+                        - link "340" [ref=e2958] [cursor=pointer]:
+                          - paragraph [ref=e2959] [cursor=pointer]: "340"
+                      - gridcell "Target subject" [ref=e2961] [cursor=pointer]:
+                        - link "IS" [ref=e2965] [cursor=pointer]:
+                          - paragraph [ref=e2966] [cursor=pointer]: IS
+                      - gridcell "Target number" [ref=e2968] [cursor=pointer]:
+                        - link "660" [ref=e2972] [cursor=pointer]:
+                          - paragraph [ref=e2973] [cursor=pointer]: "660"
+                      - gridcell "Score" [ref=e2975] [cursor=pointer]:
+                        - generic [ref=e2980] [cursor=pointer]: "62.3"
+                      - gridcell "Request name" [ref=e2982] [cursor=pointer]:
+                        - generic [ref=e2987] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e2989] [cursor=pointer]:
+                        - paragraph [ref=e2994] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e2996] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3000] [cursor=pointer]:
+                          - paragraph [ref=e3001] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3003] [cursor=pointer]:
+                        - paragraph [ref=e3008] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3010] [cursor=pointer]:
+                        - paragraph [ref=e3015] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3017] [cursor=pointer]:
+                        - generic [ref=e3020] [cursor=pointer]:
+                          - paragraph [ref=e3022] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3023] [cursor=pointer]:
+                            - img [ref=e3024] [cursor=pointer]
+                  - rowgroup [ref=e3026]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3027] [cursor=pointer]:
+                      - button "Select row" [ref=e3028] [cursor=pointer]:
+                        - checkbox [ref=e3029] [cursor=pointer]:
+                          - img [ref=e3030] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3033] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3037] [cursor=pointer]:
+                          - paragraph [ref=e3038] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3040] [cursor=pointer]:
+                        - generic [ref=e3045] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3047] [cursor=pointer]:
+                        - link "MS" [ref=e3051] [cursor=pointer]:
+                          - paragraph [ref=e3052] [cursor=pointer]: MS
+                      - gridcell "Source number" [ref=e3054] [cursor=pointer]:
+                        - link "507" [ref=e3058] [cursor=pointer]:
+                          - paragraph [ref=e3059] [cursor=pointer]: "507"
+                      - gridcell "Target subject" [ref=e3061] [cursor=pointer]:
+                        - link "CS" [ref=e3065] [cursor=pointer]:
+                          - paragraph [ref=e3066] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e3068] [cursor=pointer]:
+                        - link "450" [ref=e3072] [cursor=pointer]:
+                          - paragraph [ref=e3073] [cursor=pointer]: "450"
+                      - gridcell "Score" [ref=e3075] [cursor=pointer]:
+                        - generic [ref=e3080] [cursor=pointer]: "62.6"
+                      - gridcell "Request name" [ref=e3082] [cursor=pointer]:
+                        - generic [ref=e3087] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3089] [cursor=pointer]:
+                        - paragraph [ref=e3094] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3096] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3100] [cursor=pointer]:
+                          - paragraph [ref=e3101] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3103] [cursor=pointer]:
+                        - paragraph [ref=e3108] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3110] [cursor=pointer]:
+                        - paragraph [ref=e3115] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3117] [cursor=pointer]:
+                        - generic [ref=e3120] [cursor=pointer]:
+                          - paragraph [ref=e3122] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3123] [cursor=pointer]:
+                            - img [ref=e3124] [cursor=pointer]
+                  - rowgroup [ref=e3126]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3127] [cursor=pointer]:
+                      - button "Select row" [ref=e3128] [cursor=pointer]:
+                        - checkbox [ref=e3129] [cursor=pointer]:
+                          - img [ref=e3130] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3133] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3137] [cursor=pointer]:
+                          - paragraph [ref=e3138] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3140] [cursor=pointer]:
+                        - generic [ref=e3145] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3147] [cursor=pointer]:
+                        - link "MGT" [ref=e3151] [cursor=pointer]:
+                          - paragraph [ref=e3152] [cursor=pointer]: MGT
+                      - gridcell "Source number" [ref=e3154] [cursor=pointer]:
+                        - link "423" [ref=e3158] [cursor=pointer]:
+                          - paragraph [ref=e3159] [cursor=pointer]: "423"
+                      - gridcell "Target subject" [ref=e3161] [cursor=pointer]:
+                        - link "CS" [ref=e3165] [cursor=pointer]:
+                          - paragraph [ref=e3166] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e3168] [cursor=pointer]:
+                        - link "658" [ref=e3172] [cursor=pointer]:
+                          - paragraph [ref=e3173] [cursor=pointer]: "658"
+                      - gridcell "Score" [ref=e3175] [cursor=pointer]:
+                        - generic [ref=e3180] [cursor=pointer]: "62.6"
+                      - gridcell "Request name" [ref=e3182] [cursor=pointer]:
+                        - generic [ref=e3187] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3189] [cursor=pointer]:
+                        - paragraph [ref=e3194] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3196] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3200] [cursor=pointer]:
+                          - paragraph [ref=e3201] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3203] [cursor=pointer]:
+                        - paragraph [ref=e3208] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3210] [cursor=pointer]:
+                        - paragraph [ref=e3215] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3217] [cursor=pointer]:
+                        - generic [ref=e3220] [cursor=pointer]:
+                          - paragraph [ref=e3222] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3223] [cursor=pointer]:
+                            - img [ref=e3224] [cursor=pointer]
+                  - rowgroup [ref=e3226]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3227] [cursor=pointer]:
+                      - button "Select row" [ref=e3228] [cursor=pointer]:
+                        - checkbox [ref=e3229] [cursor=pointer]:
+                          - img [ref=e3230] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3233] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3237] [cursor=pointer]:
+                          - paragraph [ref=e3238] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3240] [cursor=pointer]:
+                        - generic [ref=e3245] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3247] [cursor=pointer]:
+                        - link "NTS" [ref=e3251] [cursor=pointer]:
+                          - paragraph [ref=e3252] [cursor=pointer]: NTS
+                      - gridcell "Source number" [ref=e3254] [cursor=pointer]:
+                        - link "415" [ref=e3258] [cursor=pointer]:
+                          - paragraph [ref=e3259] [cursor=pointer]: "415"
+                      - gridcell "Target subject" [ref=e3261] [cursor=pointer]:
+                        - link "CS" [ref=e3265] [cursor=pointer]:
+                          - paragraph [ref=e3266] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e3268] [cursor=pointer]:
+                        - link "445" [ref=e3272] [cursor=pointer]:
+                          - paragraph [ref=e3273] [cursor=pointer]: "445"
+                      - gridcell "Score" [ref=e3275] [cursor=pointer]:
+                        - generic [ref=e3280] [cursor=pointer]: "62.7"
+                      - gridcell "Request name" [ref=e3282] [cursor=pointer]:
+                        - generic [ref=e3287] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3289] [cursor=pointer]:
+                        - paragraph [ref=e3294] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3296] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3300] [cursor=pointer]:
+                          - paragraph [ref=e3301] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3303] [cursor=pointer]:
+                        - paragraph [ref=e3308] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3310] [cursor=pointer]:
+                        - paragraph [ref=e3315] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3317] [cursor=pointer]:
+                        - generic [ref=e3320] [cursor=pointer]:
+                          - paragraph [ref=e3322] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3323] [cursor=pointer]:
+                            - img [ref=e3324] [cursor=pointer]
+                  - rowgroup [ref=e3326]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3327] [cursor=pointer]:
+                      - button "Select row" [ref=e3328] [cursor=pointer]:
+                        - checkbox [ref=e3329] [cursor=pointer]:
+                          - img [ref=e3330] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3333] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3337] [cursor=pointer]:
+                          - paragraph [ref=e3338] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3340] [cursor=pointer]:
+                        - generic [ref=e3345] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3347] [cursor=pointer]:
+                        - link "RBT" [ref=e3351] [cursor=pointer]:
+                          - paragraph [ref=e3352] [cursor=pointer]: RBT
+                      - gridcell "Source number" [ref=e3354] [cursor=pointer]:
+                        - link "125" [ref=e3358] [cursor=pointer]:
+                          - paragraph [ref=e3359] [cursor=pointer]: "125"
+                      - gridcell "Target subject" [ref=e3361] [cursor=pointer]:
+                        - link "CS" [ref=e3365] [cursor=pointer]:
+                          - paragraph [ref=e3366] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e3368] [cursor=pointer]:
+                        - link "777" [ref=e3372] [cursor=pointer]:
+                          - paragraph [ref=e3373] [cursor=pointer]: "777"
+                      - gridcell "Score" [ref=e3375] [cursor=pointer]:
+                        - generic [ref=e3380] [cursor=pointer]: "62.7"
+                      - gridcell "Request name" [ref=e3382] [cursor=pointer]:
+                        - generic [ref=e3387] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3389] [cursor=pointer]:
+                        - paragraph [ref=e3394] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3396] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3400] [cursor=pointer]:
+                          - paragraph [ref=e3401] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3403] [cursor=pointer]:
+                        - paragraph [ref=e3408] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3410] [cursor=pointer]:
+                        - paragraph [ref=e3415] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3417] [cursor=pointer]:
+                        - generic [ref=e3420] [cursor=pointer]:
+                          - paragraph [ref=e3422] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3423] [cursor=pointer]:
+                            - img [ref=e3424] [cursor=pointer]
+                  - rowgroup [ref=e3426]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3427] [cursor=pointer]:
+                      - button "Select row" [ref=e3428] [cursor=pointer]:
+                        - checkbox [ref=e3429] [cursor=pointer]:
+                          - img [ref=e3430] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3433] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3437] [cursor=pointer]:
+                          - paragraph [ref=e3438] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3440] [cursor=pointer]:
+                        - generic [ref=e3445] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3447] [cursor=pointer]:
+                        - link "HIS" [ref=e3451] [cursor=pointer]:
+                          - paragraph [ref=e3452] [cursor=pointer]: HIS
+                      - gridcell "Source number" [ref=e3454] [cursor=pointer]:
+                        - link "230" [ref=e3458] [cursor=pointer]:
+                          - paragraph [ref=e3459] [cursor=pointer]: "230"
+                      - gridcell "Target subject" [ref=e3461] [cursor=pointer]:
+                        - link "HIST" [ref=e3465] [cursor=pointer]:
+                          - paragraph [ref=e3466] [cursor=pointer]: HIST
+                      - gridcell "Target number" [ref=e3468] [cursor=pointer]:
+                        - link "101" [ref=e3472] [cursor=pointer]:
+                          - paragraph [ref=e3473] [cursor=pointer]: "101"
+                      - gridcell "Score" [ref=e3475] [cursor=pointer]:
+                        - generic [ref=e3480] [cursor=pointer]: "62.8"
+                      - gridcell "Request name" [ref=e3482] [cursor=pointer]:
+                        - generic [ref=e3487] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3489] [cursor=pointer]:
+                        - paragraph [ref=e3494] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3496] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3500] [cursor=pointer]:
+                          - paragraph [ref=e3501] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3503] [cursor=pointer]:
+                        - paragraph [ref=e3508] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3510] [cursor=pointer]:
+                        - paragraph [ref=e3515] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3517] [cursor=pointer]:
+                        - generic [ref=e3520] [cursor=pointer]:
+                          - paragraph [ref=e3522] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3523] [cursor=pointer]:
+                            - img [ref=e3524] [cursor=pointer]
+                  - rowgroup [ref=e3526]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3527] [cursor=pointer]:
+                      - button "Select row" [ref=e3528] [cursor=pointer]:
+                        - checkbox [ref=e3529] [cursor=pointer]:
+                          - img [ref=e3530] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3533] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3537] [cursor=pointer]:
+                          - paragraph [ref=e3538] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3540] [cursor=pointer]:
+                        - generic [ref=e3545] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3547] [cursor=pointer]:
+                        - link "ART" [ref=e3551] [cursor=pointer]:
+                          - paragraph [ref=e3552] [cursor=pointer]: ART
+                      - gridcell "Source number" [ref=e3554] [cursor=pointer]:
+                        - link "209" [ref=e3558] [cursor=pointer]:
+                          - paragraph [ref=e3559] [cursor=pointer]: "209"
+                      - gridcell "Target subject" [ref=e3561] [cursor=pointer]:
+                        - link "JOUR" [ref=e3565] [cursor=pointer]:
+                          - paragraph [ref=e3566] [cursor=pointer]: JOUR
+                      - gridcell "Target number" [ref=e3568] [cursor=pointer]:
+                        - link "108" [ref=e3572] [cursor=pointer]:
+                          - paragraph [ref=e3573] [cursor=pointer]: "108"
+                      - gridcell "Score" [ref=e3575] [cursor=pointer]:
+                        - generic [ref=e3580] [cursor=pointer]: "63.0"
+                      - gridcell "Request name" [ref=e3582] [cursor=pointer]:
+                        - generic [ref=e3587] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3589] [cursor=pointer]:
+                        - paragraph [ref=e3594] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3596] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3600] [cursor=pointer]:
+                          - paragraph [ref=e3601] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3603] [cursor=pointer]:
+                        - paragraph [ref=e3608] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3610] [cursor=pointer]:
+                        - paragraph [ref=e3615] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3617] [cursor=pointer]:
+                        - generic [ref=e3620] [cursor=pointer]:
+                          - paragraph [ref=e3622] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3623] [cursor=pointer]:
+                            - img [ref=e3624] [cursor=pointer]
+                  - rowgroup [ref=e3626]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3627] [cursor=pointer]:
+                      - button "Select row" [ref=e3628] [cursor=pointer]:
+                        - checkbox [ref=e3629] [cursor=pointer]:
+                          - img [ref=e3630] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3633] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3637] [cursor=pointer]:
+                          - paragraph [ref=e3638] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3640] [cursor=pointer]:
+                        - generic [ref=e3645] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3647] [cursor=pointer]:
+                        - link "HCI" [ref=e3651] [cursor=pointer]:
+                          - paragraph [ref=e3652] [cursor=pointer]: HCI
+                      - gridcell "Source number" [ref=e3654] [cursor=pointer]:
+                        - link "101" [ref=e3658] [cursor=pointer]:
+                          - paragraph [ref=e3659] [cursor=pointer]: "101"
+                      - gridcell "Target subject" [ref=e3661] [cursor=pointer]:
+                        - link "IMSE" [ref=e3665] [cursor=pointer]:
+                          - paragraph [ref=e3666] [cursor=pointer]: IMSE
+                      - gridcell "Target number" [ref=e3668] [cursor=pointer]:
+                        - link "660" [ref=e3672] [cursor=pointer]:
+                          - paragraph [ref=e3673] [cursor=pointer]: "660"
+                      - gridcell "Score" [ref=e3675] [cursor=pointer]:
+                        - generic [ref=e3680] [cursor=pointer]: "63.0"
+                      - gridcell "Request name" [ref=e3682] [cursor=pointer]:
+                        - generic [ref=e3687] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3689] [cursor=pointer]:
+                        - paragraph [ref=e3694] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3696] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3700] [cursor=pointer]:
+                          - paragraph [ref=e3701] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3703] [cursor=pointer]:
+                        - paragraph [ref=e3708] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3710] [cursor=pointer]:
+                        - paragraph [ref=e3715] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3717] [cursor=pointer]:
+                        - generic [ref=e3720] [cursor=pointer]:
+                          - paragraph [ref=e3722] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3723] [cursor=pointer]:
+                            - img [ref=e3724] [cursor=pointer]
+                  - rowgroup [ref=e3726]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3727] [cursor=pointer]:
+                      - button "Select row" [ref=e3728] [cursor=pointer]:
+                        - checkbox [ref=e3729] [cursor=pointer]:
+                          - img [ref=e3730] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3733] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3737] [cursor=pointer]:
+                          - paragraph [ref=e3738] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3740] [cursor=pointer]:
+                        - generic [ref=e3745] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3747] [cursor=pointer]:
+                        - link "MS" [ref=e3751] [cursor=pointer]:
+                          - paragraph [ref=e3752] [cursor=pointer]: MS
+                      - gridcell "Source number" [ref=e3754] [cursor=pointer]:
+                        - link "549" [ref=e3758] [cursor=pointer]:
+                          - paragraph [ref=e3759] [cursor=pointer]: "549"
+                      - gridcell "Target subject" [ref=e3761] [cursor=pointer]:
+                        - link "CS" [ref=e3765] [cursor=pointer]:
+                          - paragraph [ref=e3766] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e3768] [cursor=pointer]:
+                        - link "601" [ref=e3772] [cursor=pointer]:
+                          - paragraph [ref=e3773] [cursor=pointer]: "601"
+                      - gridcell "Score" [ref=e3775] [cursor=pointer]:
+                        - generic [ref=e3780] [cursor=pointer]: "63.1"
+                      - gridcell "Request name" [ref=e3782] [cursor=pointer]:
+                        - generic [ref=e3787] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3789] [cursor=pointer]:
+                        - paragraph [ref=e3794] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3796] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3800] [cursor=pointer]:
+                          - paragraph [ref=e3801] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3803] [cursor=pointer]:
+                        - paragraph [ref=e3808] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3810] [cursor=pointer]:
+                        - paragraph [ref=e3815] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3817] [cursor=pointer]:
+                        - generic [ref=e3820] [cursor=pointer]:
+                          - paragraph [ref=e3822] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3823] [cursor=pointer]:
+                            - img [ref=e3824] [cursor=pointer]
+                  - rowgroup [ref=e3826]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3827] [cursor=pointer]:
+                      - button "Select row" [ref=e3828] [cursor=pointer]:
+                        - checkbox [ref=e3829] [cursor=pointer]:
+                          - img [ref=e3830] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3833] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3837] [cursor=pointer]:
+                          - paragraph [ref=e3838] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3840] [cursor=pointer]:
+                        - generic [ref=e3845] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3847] [cursor=pointer]:
+                        - link "SCI" [ref=e3851] [cursor=pointer]:
+                          - paragraph [ref=e3852] [cursor=pointer]: SCI
+                      - gridcell "Source number" [ref=e3854] [cursor=pointer]:
+                        - link "388" [ref=e3858] [cursor=pointer]:
+                          - paragraph [ref=e3859] [cursor=pointer]: "388"
+                      - gridcell "Target subject" [ref=e3861] [cursor=pointer]:
+                        - link "PHYS" [ref=e3865] [cursor=pointer]:
+                          - paragraph [ref=e3866] [cursor=pointer]: PHYS
+                      - gridcell "Target number" [ref=e3868] [cursor=pointer]:
+                        - link "684" [ref=e3872] [cursor=pointer]:
+                          - paragraph [ref=e3873] [cursor=pointer]: "684"
+                      - gridcell "Score" [ref=e3875] [cursor=pointer]:
+                        - generic [ref=e3880] [cursor=pointer]: "63.2"
+                      - gridcell "Request name" [ref=e3882] [cursor=pointer]:
+                        - generic [ref=e3887] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3889] [cursor=pointer]:
+                        - paragraph [ref=e3894] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3896] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e3900] [cursor=pointer]:
+                          - paragraph [ref=e3901] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e3903] [cursor=pointer]:
+                        - paragraph [ref=e3908] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e3910] [cursor=pointer]:
+                        - paragraph [ref=e3915] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e3917] [cursor=pointer]:
+                        - generic [ref=e3920] [cursor=pointer]:
+                          - paragraph [ref=e3922] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e3923] [cursor=pointer]:
+                            - img [ref=e3924] [cursor=pointer]
+                  - rowgroup [ref=e3926]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e3927] [cursor=pointer]:
+                      - button "Select row" [ref=e3928] [cursor=pointer]:
+                        - checkbox [ref=e3929] [cursor=pointer]:
+                          - img [ref=e3930] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e3933] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e3937] [cursor=pointer]:
+                          - paragraph [ref=e3938] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e3940] [cursor=pointer]:
+                        - generic [ref=e3945] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e3947] [cursor=pointer]:
+                        - link "SCI" [ref=e3951] [cursor=pointer]:
+                          - paragraph [ref=e3952] [cursor=pointer]: SCI
+                      - gridcell "Source number" [ref=e3954] [cursor=pointer]:
+                        - link "388" [ref=e3958] [cursor=pointer]:
+                          - paragraph [ref=e3959] [cursor=pointer]: "388"
+                      - gridcell "Target subject" [ref=e3961] [cursor=pointer]:
+                        - link "PHYS" [ref=e3965] [cursor=pointer]:
+                          - paragraph [ref=e3966] [cursor=pointer]: PHYS
+                      - gridcell "Target number" [ref=e3968] [cursor=pointer]:
+                        - link "683" [ref=e3972] [cursor=pointer]:
+                          - paragraph [ref=e3973] [cursor=pointer]: "683"
+                      - gridcell "Score" [ref=e3975] [cursor=pointer]:
+                        - generic [ref=e3980] [cursor=pointer]: "63.2"
+                      - gridcell "Request name" [ref=e3982] [cursor=pointer]:
+                        - generic [ref=e3987] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e3989] [cursor=pointer]:
+                        - paragraph [ref=e3994] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e3996] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4000] [cursor=pointer]:
+                          - paragraph [ref=e4001] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4003] [cursor=pointer]:
+                        - paragraph [ref=e4008] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4010] [cursor=pointer]:
+                        - paragraph [ref=e4015] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4017] [cursor=pointer]:
+                        - generic [ref=e4020] [cursor=pointer]:
+                          - paragraph [ref=e4022] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4023] [cursor=pointer]:
+                            - img [ref=e4024] [cursor=pointer]
+                  - rowgroup [ref=e4026]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4027] [cursor=pointer]:
+                      - button "Select row" [ref=e4028] [cursor=pointer]:
+                        - checkbox [ref=e4029] [cursor=pointer]:
+                          - img [ref=e4030] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4033] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4037] [cursor=pointer]:
+                          - paragraph [ref=e4038] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4040] [cursor=pointer]:
+                        - generic [ref=e4045] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4047] [cursor=pointer]:
+                        - link "NTS" [ref=e4051] [cursor=pointer]:
+                          - paragraph [ref=e4052] [cursor=pointer]: NTS
+                      - gridcell "Source number" [ref=e4054] [cursor=pointer]:
+                        - link "415" [ref=e4058] [cursor=pointer]:
+                          - paragraph [ref=e4059] [cursor=pointer]: "415"
+                      - gridcell "Target subject" [ref=e4061] [cursor=pointer]:
+                        - link "CS" [ref=e4065] [cursor=pointer]:
+                          - paragraph [ref=e4066] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e4068] [cursor=pointer]:
+                        - link "645" [ref=e4072] [cursor=pointer]:
+                          - paragraph [ref=e4073] [cursor=pointer]: "645"
+                      - gridcell "Score" [ref=e4075] [cursor=pointer]:
+                        - generic [ref=e4080] [cursor=pointer]: "63.2"
+                      - gridcell "Request name" [ref=e4082] [cursor=pointer]:
+                        - generic [ref=e4087] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4089] [cursor=pointer]:
+                        - paragraph [ref=e4094] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4096] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4100] [cursor=pointer]:
+                          - paragraph [ref=e4101] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4103] [cursor=pointer]:
+                        - paragraph [ref=e4108] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4110] [cursor=pointer]:
+                        - paragraph [ref=e4115] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4117] [cursor=pointer]:
+                        - generic [ref=e4120] [cursor=pointer]:
+                          - paragraph [ref=e4122] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4123] [cursor=pointer]:
+                            - img [ref=e4124] [cursor=pointer]
+                  - rowgroup [ref=e4126]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4127] [cursor=pointer]:
+                      - button "Select row" [ref=e4128] [cursor=pointer]:
+                        - checkbox [ref=e4129] [cursor=pointer]:
+                          - img [ref=e4130] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4133] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4137] [cursor=pointer]:
+                          - paragraph [ref=e4138] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4140] [cursor=pointer]:
+                        - generic [ref=e4145] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4147] [cursor=pointer]:
+                        - link "ART" [ref=e4151] [cursor=pointer]:
+                          - paragraph [ref=e4152] [cursor=pointer]: ART
+                      - gridcell "Source number" [ref=e4154] [cursor=pointer]:
+                        - link "209" [ref=e4158] [cursor=pointer]:
+                          - paragraph [ref=e4159] [cursor=pointer]: "209"
+                      - gridcell "Target subject" [ref=e4161] [cursor=pointer]:
+                        - link "ART" [ref=e4165] [cursor=pointer]:
+                          - paragraph [ref=e4166] [cursor=pointer]: ART
+                      - gridcell "Target number" [ref=e4168] [cursor=pointer]:
+                        - link "349" [ref=e4172] [cursor=pointer]:
+                          - paragraph [ref=e4173] [cursor=pointer]: "349"
+                      - gridcell "Score" [ref=e4175] [cursor=pointer]:
+                        - generic [ref=e4180] [cursor=pointer]: "63.3"
+                      - gridcell "Request name" [ref=e4182] [cursor=pointer]:
+                        - generic [ref=e4187] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4189] [cursor=pointer]:
+                        - paragraph [ref=e4194] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4196] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4200] [cursor=pointer]:
+                          - paragraph [ref=e4201] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4203] [cursor=pointer]:
+                        - paragraph [ref=e4208] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4210] [cursor=pointer]:
+                        - paragraph [ref=e4215] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4217] [cursor=pointer]:
+                        - generic [ref=e4220] [cursor=pointer]:
+                          - paragraph [ref=e4222] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4223] [cursor=pointer]:
+                            - img [ref=e4224] [cursor=pointer]
+                  - rowgroup [ref=e4226]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4227] [cursor=pointer]:
+                      - button "Select row" [ref=e4228] [cursor=pointer]:
+                        - checkbox [ref=e4229] [cursor=pointer]:
+                          - img [ref=e4230] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4233] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4237] [cursor=pointer]:
+                          - paragraph [ref=e4238] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4240] [cursor=pointer]:
+                        - generic [ref=e4245] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4247] [cursor=pointer]:
+                        - link "MS" [ref=e4251] [cursor=pointer]:
+                          - paragraph [ref=e4252] [cursor=pointer]: MS
+                      - gridcell "Source number" [ref=e4254] [cursor=pointer]:
+                        - link "528" [ref=e4258] [cursor=pointer]:
+                          - paragraph [ref=e4259] [cursor=pointer]: "528"
+                      - gridcell "Target subject" [ref=e4261] [cursor=pointer]:
+                        - link "MGT" [ref=e4265] [cursor=pointer]:
+                          - paragraph [ref=e4266] [cursor=pointer]: MGT
+                      - gridcell "Target number" [ref=e4268] [cursor=pointer]:
+                        - link "493" [ref=e4272] [cursor=pointer]:
+                          - paragraph [ref=e4273] [cursor=pointer]: "493"
+                      - gridcell "Score" [ref=e4275] [cursor=pointer]:
+                        - generic [ref=e4280] [cursor=pointer]: "63.4"
+                      - gridcell "Request name" [ref=e4282] [cursor=pointer]:
+                        - generic [ref=e4287] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4289] [cursor=pointer]:
+                        - paragraph [ref=e4294] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4296] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4300] [cursor=pointer]:
+                          - paragraph [ref=e4301] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4303] [cursor=pointer]:
+                        - paragraph [ref=e4308] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4310] [cursor=pointer]:
+                        - paragraph [ref=e4315] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4317] [cursor=pointer]:
+                        - generic [ref=e4320] [cursor=pointer]:
+                          - paragraph [ref=e4322] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4323] [cursor=pointer]:
+                            - img [ref=e4324] [cursor=pointer]
+                  - rowgroup [ref=e4326]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4327] [cursor=pointer]:
+                      - button "Select row" [ref=e4328] [cursor=pointer]:
+                        - checkbox [ref=e4329] [cursor=pointer]:
+                          - img [ref=e4330] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4333] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4337] [cursor=pointer]:
+                          - paragraph [ref=e4338] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4340] [cursor=pointer]:
+                        - generic [ref=e4345] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4347] [cursor=pointer]:
+                        - link "MS" [ref=e4351] [cursor=pointer]:
+                          - paragraph [ref=e4352] [cursor=pointer]: MS
+                      - gridcell "Source number" [ref=e4354] [cursor=pointer]:
+                        - link "507" [ref=e4358] [cursor=pointer]:
+                          - paragraph [ref=e4359] [cursor=pointer]: "507"
+                      - gridcell "Target subject" [ref=e4361] [cursor=pointer]:
+                        - link "CS" [ref=e4365] [cursor=pointer]:
+                          - paragraph [ref=e4366] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e4368] [cursor=pointer]:
+                        - link "650" [ref=e4372] [cursor=pointer]:
+                          - paragraph [ref=e4373] [cursor=pointer]: "650"
+                      - gridcell "Score" [ref=e4375] [cursor=pointer]:
+                        - generic [ref=e4380] [cursor=pointer]: "63.5"
+                      - gridcell "Request name" [ref=e4382] [cursor=pointer]:
+                        - generic [ref=e4387] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4389] [cursor=pointer]:
+                        - paragraph [ref=e4394] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4396] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4400] [cursor=pointer]:
+                          - paragraph [ref=e4401] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4403] [cursor=pointer]:
+                        - paragraph [ref=e4408] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4410] [cursor=pointer]:
+                        - paragraph [ref=e4415] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4417] [cursor=pointer]:
+                        - generic [ref=e4420] [cursor=pointer]:
+                          - paragraph [ref=e4422] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4423] [cursor=pointer]:
+                            - img [ref=e4424] [cursor=pointer]
+                  - rowgroup [ref=e4426]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4427] [cursor=pointer]:
+                      - button "Select row" [ref=e4428] [cursor=pointer]:
+                        - checkbox [ref=e4429] [cursor=pointer]:
+                          - img [ref=e4430] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4433] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4437] [cursor=pointer]:
+                          - paragraph [ref=e4438] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4440] [cursor=pointer]:
+                        - generic [ref=e4445] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4447] [cursor=pointer]:
+                        - link "RBT" [ref=e4451] [cursor=pointer]:
+                          - paragraph [ref=e4452] [cursor=pointer]: RBT
+                      - gridcell "Source number" [ref=e4454] [cursor=pointer]:
+                        - link "131" [ref=e4458] [cursor=pointer]:
+                          - paragraph [ref=e4459] [cursor=pointer]: "131"
+                      - gridcell "Target subject" [ref=e4461] [cursor=pointer]:
+                        - link "CPE" [ref=e4465] [cursor=pointer]:
+                          - paragraph [ref=e4466] [cursor=pointer]: CPE
+                      - gridcell "Target number" [ref=e4468] [cursor=pointer]:
+                        - link "201" [ref=e4472] [cursor=pointer]:
+                          - paragraph [ref=e4473] [cursor=pointer]: "201"
+                      - gridcell "Score" [ref=e4475] [cursor=pointer]:
+                        - generic [ref=e4480] [cursor=pointer]: "63.6"
+                      - gridcell "Request name" [ref=e4482] [cursor=pointer]:
+                        - generic [ref=e4487] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4489] [cursor=pointer]:
+                        - paragraph [ref=e4494] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4496] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4500] [cursor=pointer]:
+                          - paragraph [ref=e4501] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4503] [cursor=pointer]:
+                        - paragraph [ref=e4508] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4510] [cursor=pointer]:
+                        - paragraph [ref=e4515] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4517] [cursor=pointer]:
+                        - generic [ref=e4520] [cursor=pointer]:
+                          - paragraph [ref=e4522] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4523] [cursor=pointer]:
+                            - img [ref=e4524] [cursor=pointer]
+                  - rowgroup [ref=e4526]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4527] [cursor=pointer]:
+                      - button "Select row" [ref=e4528] [cursor=pointer]:
+                        - checkbox [ref=e4529] [cursor=pointer]:
+                          - img [ref=e4530] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4533] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4537] [cursor=pointer]:
+                          - paragraph [ref=e4538] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4540] [cursor=pointer]:
+                        - generic [ref=e4545] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4547] [cursor=pointer]:
+                        - link "CIS" [ref=e4551] [cursor=pointer]:
+                          - paragraph [ref=e4552] [cursor=pointer]: CIS
+                      - gridcell "Source number" [ref=e4554] [cursor=pointer]:
+                        - link "100" [ref=e4558] [cursor=pointer]:
+                          - paragraph [ref=e4559] [cursor=pointer]: "100"
+                      - gridcell "Target subject" [ref=e4561] [cursor=pointer]:
+                        - link "IS" [ref=e4565] [cursor=pointer]:
+                          - paragraph [ref=e4566] [cursor=pointer]: IS
+                      - gridcell "Target number" [ref=e4568] [cursor=pointer]:
+                        - link "360" [ref=e4572] [cursor=pointer]:
+                          - paragraph [ref=e4573] [cursor=pointer]: "360"
+                      - gridcell "Score" [ref=e4575] [cursor=pointer]:
+                        - generic [ref=e4580] [cursor=pointer]: "63.6"
+                      - gridcell "Request name" [ref=e4582] [cursor=pointer]:
+                        - generic [ref=e4587] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4589] [cursor=pointer]:
+                        - paragraph [ref=e4594] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4596] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4600] [cursor=pointer]:
+                          - paragraph [ref=e4601] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4603] [cursor=pointer]:
+                        - paragraph [ref=e4608] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4610] [cursor=pointer]:
+                        - paragraph [ref=e4615] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4617] [cursor=pointer]:
+                        - generic [ref=e4620] [cursor=pointer]:
+                          - paragraph [ref=e4622] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4623] [cursor=pointer]:
+                            - img [ref=e4624] [cursor=pointer]
+                  - rowgroup [ref=e4626]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4627] [cursor=pointer]:
+                      - button "Select row" [ref=e4628] [cursor=pointer]:
+                        - checkbox [ref=e4629] [cursor=pointer]:
+                          - img [ref=e4630] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4633] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4637] [cursor=pointer]:
+                          - paragraph [ref=e4638] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4640] [cursor=pointer]:
+                        - generic [ref=e4645] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4647] [cursor=pointer]:
+                        - link "MS" [ref=e4651] [cursor=pointer]:
+                          - paragraph [ref=e4652] [cursor=pointer]: MS
+                      - gridcell "Source number" [ref=e4654] [cursor=pointer]:
+                        - link "528" [ref=e4658] [cursor=pointer]:
+                          - paragraph [ref=e4659] [cursor=pointer]: "528"
+                      - gridcell "Target subject" [ref=e4661] [cursor=pointer]:
+                        - link "ENT" [ref=e4665] [cursor=pointer]:
+                          - paragraph [ref=e4666] [cursor=pointer]: ENT
+                      - gridcell "Target number" [ref=e4668] [cursor=pointer]:
+                        - link "200" [ref=e4672] [cursor=pointer]:
+                          - paragraph [ref=e4673] [cursor=pointer]: "200"
+                      - gridcell "Score" [ref=e4675] [cursor=pointer]:
+                        - generic [ref=e4680] [cursor=pointer]: "63.6"
+                      - gridcell "Request name" [ref=e4682] [cursor=pointer]:
+                        - generic [ref=e4687] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4689] [cursor=pointer]:
+                        - paragraph [ref=e4694] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4696] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4700] [cursor=pointer]:
+                          - paragraph [ref=e4701] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4703] [cursor=pointer]:
+                        - paragraph [ref=e4708] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4710] [cursor=pointer]:
+                        - paragraph [ref=e4715] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4717] [cursor=pointer]:
+                        - generic [ref=e4720] [cursor=pointer]:
+                          - paragraph [ref=e4722] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4723] [cursor=pointer]:
+                            - img [ref=e4724] [cursor=pointer]
+                  - rowgroup [ref=e4726]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4727] [cursor=pointer]:
+                      - button "Select row" [ref=e4728] [cursor=pointer]:
+                        - checkbox [ref=e4729] [cursor=pointer]:
+                          - img [ref=e4730] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4733] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4737] [cursor=pointer]:
+                          - paragraph [ref=e4738] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4740] [cursor=pointer]:
+                        - generic [ref=e4745] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4747] [cursor=pointer]:
+                        - link "MS" [ref=e4751] [cursor=pointer]:
+                          - paragraph [ref=e4752] [cursor=pointer]: MS
+                      - gridcell "Source number" [ref=e4754] [cursor=pointer]:
+                        - link "558" [ref=e4758] [cursor=pointer]:
+                          - paragraph [ref=e4759] [cursor=pointer]: "558"
+                      - gridcell "Target subject" [ref=e4761] [cursor=pointer]:
+                        - link "IS" [ref=e4765] [cursor=pointer]:
+                          - paragraph [ref=e4766] [cursor=pointer]: IS
+                      - gridcell "Target number" [ref=e4768] [cursor=pointer]:
+                        - link "470" [ref=e4772] [cursor=pointer]:
+                          - paragraph [ref=e4773] [cursor=pointer]: "470"
+                      - gridcell "Score" [ref=e4775] [cursor=pointer]:
+                        - generic [ref=e4780] [cursor=pointer]: "63.6"
+                      - gridcell "Request name" [ref=e4782] [cursor=pointer]:
+                        - generic [ref=e4787] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4789] [cursor=pointer]:
+                        - paragraph [ref=e4794] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4796] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4800] [cursor=pointer]:
+                          - paragraph [ref=e4801] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4803] [cursor=pointer]:
+                        - paragraph [ref=e4808] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4810] [cursor=pointer]:
+                        - paragraph [ref=e4815] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4817] [cursor=pointer]:
+                        - generic [ref=e4820] [cursor=pointer]:
+                          - paragraph [ref=e4822] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4823] [cursor=pointer]:
+                            - img [ref=e4824] [cursor=pointer]
+                  - rowgroup [ref=e4826]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4827] [cursor=pointer]:
+                      - button "Select row" [ref=e4828] [cursor=pointer]:
+                        - checkbox [ref=e4829] [cursor=pointer]:
+                          - img [ref=e4830] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4833] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4837] [cursor=pointer]:
+                          - paragraph [ref=e4838] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4840] [cursor=pointer]:
+                        - generic [ref=e4845] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4847] [cursor=pointer]:
+                        - link "ART" [ref=e4851] [cursor=pointer]:
+                          - paragraph [ref=e4852] [cursor=pointer]: ART
+                      - gridcell "Source number" [ref=e4854] [cursor=pointer]:
+                        - link "255" [ref=e4858] [cursor=pointer]:
+                          - paragraph [ref=e4859] [cursor=pointer]: "255"
+                      - gridcell "Target subject" [ref=e4861] [cursor=pointer]:
+                        - link "GRC" [ref=e4865] [cursor=pointer]:
+                          - paragraph [ref=e4866] [cursor=pointer]: GRC
+                      - gridcell "Target number" [ref=e4868] [cursor=pointer]:
+                        - link "385" [ref=e4872] [cursor=pointer]:
+                          - paragraph [ref=e4873] [cursor=pointer]: "385"
+                      - gridcell "Score" [ref=e4875] [cursor=pointer]:
+                        - generic [ref=e4880] [cursor=pointer]: "63.7"
+                      - gridcell "Request name" [ref=e4882] [cursor=pointer]:
+                        - generic [ref=e4887] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4889] [cursor=pointer]:
+                        - paragraph [ref=e4894] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4896] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e4900] [cursor=pointer]:
+                          - paragraph [ref=e4901] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e4903] [cursor=pointer]:
+                        - paragraph [ref=e4908] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e4910] [cursor=pointer]:
+                        - paragraph [ref=e4915] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e4917] [cursor=pointer]:
+                        - generic [ref=e4920] [cursor=pointer]:
+                          - paragraph [ref=e4922] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e4923] [cursor=pointer]:
+                            - img [ref=e4924] [cursor=pointer]
+                  - rowgroup [ref=e4926]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e4927] [cursor=pointer]:
+                      - button "Select row" [ref=e4928] [cursor=pointer]:
+                        - checkbox [ref=e4929] [cursor=pointer]:
+                          - img [ref=e4930] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e4933] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e4937] [cursor=pointer]:
+                          - paragraph [ref=e4938] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e4940] [cursor=pointer]:
+                        - generic [ref=e4945] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e4947] [cursor=pointer]:
+                        - link "CSC" [ref=e4951] [cursor=pointer]:
+                          - paragraph [ref=e4952] [cursor=pointer]: CSC
+                      - gridcell "Source number" [ref=e4954] [cursor=pointer]:
+                        - link "356" [ref=e4958] [cursor=pointer]:
+                          - paragraph [ref=e4959] [cursor=pointer]: "356"
+                      - gridcell "Target subject" [ref=e4961] [cursor=pointer]:
+                        - link "IS" [ref=e4965] [cursor=pointer]:
+                          - paragraph [ref=e4966] [cursor=pointer]: IS
+                      - gridcell "Target number" [ref=e4968] [cursor=pointer]:
+                        - link "460" [ref=e4972] [cursor=pointer]:
+                          - paragraph [ref=e4973] [cursor=pointer]: "460"
+                      - gridcell "Score" [ref=e4975] [cursor=pointer]:
+                        - generic [ref=e4980] [cursor=pointer]: "64.0"
+                      - gridcell "Request name" [ref=e4982] [cursor=pointer]:
+                        - generic [ref=e4987] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e4989] [cursor=pointer]:
+                        - paragraph [ref=e4994] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e4996] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e5000] [cursor=pointer]:
+                          - paragraph [ref=e5001] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e5003] [cursor=pointer]:
+                        - paragraph [ref=e5008] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e5010] [cursor=pointer]:
+                        - paragraph [ref=e5015] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e5017] [cursor=pointer]:
+                        - generic [ref=e5020] [cursor=pointer]:
+                          - paragraph [ref=e5022] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e5023] [cursor=pointer]:
+                            - img [ref=e5024] [cursor=pointer]
+                  - rowgroup [ref=e5026]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e5027] [cursor=pointer]:
+                      - button "Select row" [ref=e5028] [cursor=pointer]:
+                        - checkbox [ref=e5029] [cursor=pointer]:
+                          - img [ref=e5030] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e5033] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e5037] [cursor=pointer]:
+                          - paragraph [ref=e5038] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e5040] [cursor=pointer]:
+                        - generic [ref=e5045] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e5047] [cursor=pointer]:
+                        - link "THE" [ref=e5051] [cursor=pointer]:
+                          - paragraph [ref=e5052] [cursor=pointer]: THE
+                      - gridcell "Source number" [ref=e5054] [cursor=pointer]:
+                        - link "220" [ref=e5058] [cursor=pointer]:
+                          - paragraph [ref=e5059] [cursor=pointer]: "220"
+                      - gridcell "Target subject" [ref=e5061] [cursor=pointer]:
+                        - link "ENG" [ref=e5065] [cursor=pointer]:
+                          - paragraph [ref=e5066] [cursor=pointer]: ENG
+                      - gridcell "Target number" [ref=e5068] [cursor=pointer]:
+                        - link "271" [ref=e5072] [cursor=pointer]:
+                          - paragraph [ref=e5073] [cursor=pointer]: "271"
+                      - gridcell "Score" [ref=e5075] [cursor=pointer]:
+                        - generic [ref=e5080] [cursor=pointer]: "64.1"
+                      - gridcell "Request name" [ref=e5082] [cursor=pointer]:
+                        - generic [ref=e5087] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e5089] [cursor=pointer]:
+                        - paragraph [ref=e5094] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e5096] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e5100] [cursor=pointer]:
+                          - paragraph [ref=e5101] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e5103] [cursor=pointer]:
+                        - paragraph [ref=e5108] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e5110] [cursor=pointer]:
+                        - paragraph [ref=e5115] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e5117] [cursor=pointer]:
+                        - generic [ref=e5120] [cursor=pointer]:
+                          - paragraph [ref=e5122] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e5123] [cursor=pointer]:
+                            - img [ref=e5124] [cursor=pointer]
+                  - rowgroup [ref=e5126]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e5127] [cursor=pointer]:
+                      - button "Select row" [ref=e5128] [cursor=pointer]:
+                        - checkbox [ref=e5129] [cursor=pointer]:
+                          - img [ref=e5130] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e5133] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e5137] [cursor=pointer]:
+                          - paragraph [ref=e5138] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e5140] [cursor=pointer]:
+                        - generic [ref=e5145] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e5147] [cursor=pointer]:
+                        - link "NTS" [ref=e5151] [cursor=pointer]:
+                          - paragraph [ref=e5152] [cursor=pointer]: NTS
+                      - gridcell "Source number" [ref=e5154] [cursor=pointer]:
+                        - link "350" [ref=e5158] [cursor=pointer]:
+                          - paragraph [ref=e5159] [cursor=pointer]: "350"
+                      - gridcell "Target subject" [ref=e5161] [cursor=pointer]:
+                        - link "CS" [ref=e5165] [cursor=pointer]:
+                          - paragraph [ref=e5166] [cursor=pointer]: CS
+                      - gridcell "Target number" [ref=e5168] [cursor=pointer]:
+                        - link "445" [ref=e5172] [cursor=pointer]:
+                          - paragraph [ref=e5173] [cursor=pointer]: "445"
+                      - gridcell "Score" [ref=e5175] [cursor=pointer]:
+                        - generic [ref=e5180] [cursor=pointer]: "64.7"
+                      - gridcell "Request name" [ref=e5182] [cursor=pointer]:
+                        - generic [ref=e5187] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e5189] [cursor=pointer]:
+                        - paragraph [ref=e5194] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e5196] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e5200] [cursor=pointer]:
+                          - paragraph [ref=e5201] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e5203] [cursor=pointer]:
+                        - paragraph [ref=e5208] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e5210] [cursor=pointer]:
+                        - paragraph [ref=e5215] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e5217] [cursor=pointer]:
+                        - generic [ref=e5220] [cursor=pointer]:
+                          - paragraph [ref=e5222] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e5223] [cursor=pointer]:
+                            - img [ref=e5224] [cursor=pointer]
+                  - rowgroup [ref=e5226]:
+                    - row "Select row Source institution Source state Source subject Source number Target subject Target number Score Request name Suggestion type Target institution Date suggested Date last modified Assignee" [ref=e5227] [cursor=pointer]:
+                      - button "Select row" [ref=e5228] [cursor=pointer]:
+                        - checkbox [ref=e5229] [cursor=pointer]:
+                          - img [ref=e5230] [cursor=pointer]
+                      - gridcell "Source institution" [ref=e5233] [cursor=pointer]:
+                        - link "University of Advancing Technology" [ref=e5237] [cursor=pointer]:
+                          - paragraph [ref=e5238] [cursor=pointer]: University of Advancing Technology
+                      - gridcell "Source state" [ref=e5240] [cursor=pointer]:
+                        - generic [ref=e5245] [cursor=pointer]: Arizona
+                      - gridcell "Source subject" [ref=e5247] [cursor=pointer]:
+                        - link "THE" [ref=e5251] [cursor=pointer]:
+                          - paragraph [ref=e5252] [cursor=pointer]: THE
+                      - gridcell "Source number" [ref=e5254] [cursor=pointer]:
+                        - link "320" [ref=e5258] [cursor=pointer]:
+                          - paragraph [ref=e5259] [cursor=pointer]: "320"
+                      - gridcell "Target subject" [ref=e5261] [cursor=pointer]:
+                        - link "ENG" [ref=e5265] [cursor=pointer]:
+                          - paragraph [ref=e5266] [cursor=pointer]: ENG
+                      - gridcell "Target number" [ref=e5268] [cursor=pointer]:
+                        - link "633A" [ref=e5272] [cursor=pointer]:
+                          - paragraph [ref=e5273] [cursor=pointer]: 633A
+                      - gridcell "Score" [ref=e5275] [cursor=pointer]:
+                        - generic [ref=e5280] [cursor=pointer]: "64.9"
+                      - gridcell "Request name" [ref=e5282] [cursor=pointer]:
+                        - generic [ref=e5287] [cursor=pointer]: Advanced uni
+                      - gridcell "Suggestion type" [ref=e5289] [cursor=pointer]:
+                        - paragraph [ref=e5294] [cursor=pointer]: Partner institution boost
+                      - gridcell "Target institution" [ref=e5296] [cursor=pointer]:
+                        - link "University of Nevada-Reno" [ref=e5300] [cursor=pointer]:
+                          - paragraph [ref=e5301] [cursor=pointer]: University of Nevada-Reno
+                      - gridcell "Date suggested" [ref=e5303] [cursor=pointer]:
+                        - paragraph [ref=e5308] [cursor=pointer]: January 22, 2026
+                      - gridcell "Date last modified" [ref=e5310] [cursor=pointer]:
+                        - paragraph [ref=e5315] [cursor=pointer]: January 22, 2026
+                      - gridcell "Assignee" [ref=e5317] [cursor=pointer]:
+                        - generic [ref=e5320] [cursor=pointer]:
+                          - paragraph [ref=e5322] [cursor=pointer]: Multiple
+                          - button "view workflow summary notes" [ref=e5323] [cursor=pointer]:
+                            - img [ref=e5324] [cursor=pointer]
+```

@@ -1,0 +1,922 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+    - listitem:
+      - link "Skip to primary content" [ref=e5] [cursor=pointer]:
+        - /url: "#primary-content"
+  - generic [ref=e10]:
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "logo" [ref=e14] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e15] [cursor=pointer]
+            - paragraph [ref=e32] [cursor=pointer]: Triangulator
+        - listitem [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e35] [cursor=pointer]: Dashboard
+        - listitem [ref=e36]:
+          - link "My Workplace" [ref=e37] [cursor=pointer]:
+            - /url: /app/my-workspace/inst-admin/summary
+            - generic [ref=e38] [cursor=pointer]: My Workplace
+        - listitem [ref=e39]:
+          - link "My Triangulator" [ref=e40] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e41] [cursor=pointer]: My Triangulator
+        - listitem [ref=e42]:
+          - link "Search" [ref=e43] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e44] [cursor=pointer]: Search
+        - listitem [ref=e45]:
+          - link "FAQ" [ref=e46] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e47] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e51] [cursor=pointer]:
+        - img [ref=e52] [cursor=pointer]
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - navigation [ref=e57]:
+          - heading "Suggestions" [level=2] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "New" [ref=e61] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/new
+                - img [ref=e62] [cursor=pointer]
+                - generic [ref=e68] [cursor=pointer]: New
+            - listitem [ref=e69]:
+              - link "Assigned" [active] [ref=e70] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/assigned
+                - img [ref=e71] [cursor=pointer]
+                - generic [ref=e73] [cursor=pointer]: Assigned
+                - generic [ref=e76] [cursor=pointer]: 1,862
+            - listitem [ref=e77]:
+              - link "History" [ref=e78] [cursor=pointer]:
+                - /url: /app/my-triangulator/suggestions/history
+                - img [ref=e79] [cursor=pointer]
+                - generic [ref=e81] [cursor=pointer]: History
+          - heading "Requests" [level=2] [ref=e83]
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - link "Boost Suggestions" [ref=e86] [cursor=pointer]:
+                - /url: /app/my-triangulator/requests/boost-suggestions
+                - img [ref=e87] [cursor=pointer]
+                - generic [ref=e90] [cursor=pointer]: Boost Suggestions
+          - generic [ref=e92]:
+            - button "upload" [ref=e94] [cursor=pointer]:
+              - status [ref=e96] [cursor=pointer]:
+                - generic [ref=e97] [cursor=pointer]: Loading...
+              - generic [ref=e98] [cursor=pointer]:
+                - generic [ref=e99] [cursor=pointer]: Upload
+                - img [ref=e100] [cursor=pointer]
+            - button "Download" [ref=e104] [cursor=pointer]:
+              - status [ref=e106] [cursor=pointer]:
+                - generic [ref=e107] [cursor=pointer]: Loading...
+              - generic [ref=e108] [cursor=pointer]:
+                - generic [ref=e109] [cursor=pointer]: Download
+                - img [ref=e110] [cursor=pointer]
+          - paragraph [ref=e113]: 2026 Triangulator Engine
+        - generic [ref=e119]:
+          - generic [ref=e121]:
+            - paragraph [ref=e124]: Suggestions
+            - heading "Assigned" [level=1] [ref=e125]
+          - generic [ref=e126]:
+            - navigation [ref=e127]:
+              - button "Prev" [disabled] [ref=e128]:
+                - img [ref=e129]
+                - generic [ref=e131]: Prev
+              - button "Next" [disabled] [ref=e140]:
+                - img [ref=e141]
+                - generic [ref=e143]: Next
+            - button "Filter" [ref=e145] [cursor=pointer]:
+              - img [ref=e146] [cursor=pointer]
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - tab "My Suggestions" [ref=e151] [cursor=pointer]:
+                - generic [ref=e152] [cursor=pointer]:
+                  - img [ref=e153] [cursor=pointer]
+                  - paragraph [ref=e155] [cursor=pointer]: My Suggestions
+                - paragraph [ref=e158] [cursor=pointer]: 1,862
+              - tab "Other Suggestions" [ref=e160] [cursor=pointer]:
+                - generic [ref=e161] [cursor=pointer]:
+                  - img [ref=e162] [cursor=pointer]
+                  - paragraph [ref=e164] [cursor=pointer]: Other Suggestions
+                - paragraph [ref=e167] [cursor=pointer]: "0"
+            - table "assignedMySuggestions" [ref=e170]:
+              - generic [ref=e172]:
+                - generic [ref=e174]:
+                  - button "Select row" [ref=e175] [cursor=pointer]:
+                    - checkbox [ref=e176] [cursor=pointer]:
+                      - img [ref=e177] [cursor=pointer]
+                  - generic [ref=e179]:
+                    - columnheader "Source institution" [ref=e181]:
+                      - button "Source institution" [ref=e184] [cursor=pointer]:
+                        - generic [ref=e187] [cursor=pointer]: Source institution
+                        - img [ref=e189] [cursor=pointer]
+                    - columnheader "Source state" [ref=e192]:
+                      - button "Source state" [ref=e195] [cursor=pointer]:
+                        - generic [ref=e198] [cursor=pointer]: Source state
+                        - img [ref=e200] [cursor=pointer]
+                    - columnheader "Source subject" [ref=e203]:
+                      - button "Source subject" [ref=e206] [cursor=pointer]:
+                        - generic [ref=e209] [cursor=pointer]: Source subject
+                        - img [ref=e211] [cursor=pointer]
+                    - columnheader "Source number" [ref=e214]:
+                      - button "Source number" [ref=e217] [cursor=pointer]:
+                        - generic [ref=e220] [cursor=pointer]: Source number
+                        - img [ref=e222] [cursor=pointer]
+                    - columnheader "Target subject" [ref=e225]:
+                      - button "Target subject" [ref=e228] [cursor=pointer]:
+                        - generic [ref=e231] [cursor=pointer]: Target subject
+                        - img [ref=e233] [cursor=pointer]
+                    - columnheader "Target number" [ref=e236]:
+                      - button "Target number" [ref=e239] [cursor=pointer]:
+                        - generic [ref=e242] [cursor=pointer]: Target number
+                        - img [ref=e244] [cursor=pointer]
+                    - columnheader "Score" [ref=e247]:
+                      - button "Score" [ref=e250] [cursor=pointer]:
+                        - generic [ref=e253] [cursor=pointer]: Score
+                        - img [ref=e255] [cursor=pointer]
+                    - columnheader "Request name" [ref=e258]:
+                      - button "Request name" [ref=e261] [cursor=pointer]:
+                        - generic [ref=e264] [cursor=pointer]: Request name
+                        - img [ref=e266] [cursor=pointer]
+                    - columnheader "Suggestion type" [ref=e269]:
+                      - button "Suggestion type" [ref=e272] [cursor=pointer]:
+                        - generic [ref=e275] [cursor=pointer]: Suggestion type
+                        - img [ref=e277] [cursor=pointer]
+                    - columnheader "Target institution" [ref=e280]:
+                      - button "Target institution" [ref=e283] [cursor=pointer]:
+                        - generic [ref=e286] [cursor=pointer]: Target institution
+                        - img [ref=e288] [cursor=pointer]
+                    - columnheader "Date suggested" [ref=e291]:
+                      - button "Date suggested" [ref=e294] [cursor=pointer]:
+                        - generic [ref=e297] [cursor=pointer]: Date suggested
+                        - generic [ref=e298] [cursor=pointer]:
+                          - img [ref=e299] [cursor=pointer]
+                          - img [ref=e301] [cursor=pointer]
+                    - columnheader "Date last modified" [ref=e304]:
+                      - button "Date last modified" [ref=e307] [cursor=pointer]:
+                        - generic [ref=e310] [cursor=pointer]: Date last modified
+                        - img [ref=e312] [cursor=pointer]
+                    - columnheader "Assignee" [ref=e315]:
+                      - button "Assignee" [ref=e318] [cursor=pointer]:
+                        - generic [ref=e321] [cursor=pointer]: Assignee
+                        - img [ref=e323] [cursor=pointer]
+                - generic [ref=e325]:
+                  - generic [ref=e326] [cursor=pointer]:
+                    - button "Select row" [ref=e327] [cursor=pointer]
+                    - generic [ref=e333] [cursor=pointer]: EMPTY
+                    - generic [ref=e338] [cursor=pointer]: EMPTY
+                    - generic [ref=e343] [cursor=pointer]: EMPTY
+                    - generic [ref=e348] [cursor=pointer]: EMPTY
+                    - generic [ref=e353] [cursor=pointer]: EMPTY
+                    - generic [ref=e358] [cursor=pointer]: EMPTY
+                    - generic [ref=e364] [cursor=pointer]: "0.0"
+                    - generic [ref=e369] [cursor=pointer]: EMPTY
+                    - generic [ref=e374] [cursor=pointer]: EMPTY
+                    - generic [ref=e379] [cursor=pointer]: EMPTY
+                    - generic [ref=e384] [cursor=pointer]: EMPTY
+                    - generic [ref=e389] [cursor=pointer]: EMPTY
+                    - generic [ref=e394] [cursor=pointer]: EMPTY
+                  - generic [ref=e395] [cursor=pointer]:
+                    - button "Select row" [ref=e396] [cursor=pointer]
+                    - generic [ref=e402] [cursor=pointer]: EMPTY
+                    - generic [ref=e407] [cursor=pointer]: EMPTY
+                    - generic [ref=e412] [cursor=pointer]: EMPTY
+                    - generic [ref=e417] [cursor=pointer]: EMPTY
+                    - generic [ref=e422] [cursor=pointer]: EMPTY
+                    - generic [ref=e427] [cursor=pointer]: EMPTY
+                    - generic [ref=e433] [cursor=pointer]: "0.0"
+                    - generic [ref=e438] [cursor=pointer]: EMPTY
+                    - generic [ref=e443] [cursor=pointer]: EMPTY
+                    - generic [ref=e448] [cursor=pointer]: EMPTY
+                    - generic [ref=e453] [cursor=pointer]: EMPTY
+                    - generic [ref=e458] [cursor=pointer]: EMPTY
+                    - generic [ref=e463] [cursor=pointer]: EMPTY
+                  - generic [ref=e464] [cursor=pointer]:
+                    - button "Select row" [ref=e465] [cursor=pointer]
+                    - generic [ref=e471] [cursor=pointer]: EMPTY
+                    - generic [ref=e476] [cursor=pointer]: EMPTY
+                    - generic [ref=e481] [cursor=pointer]: EMPTY
+                    - generic [ref=e486] [cursor=pointer]: EMPTY
+                    - generic [ref=e491] [cursor=pointer]: EMPTY
+                    - generic [ref=e496] [cursor=pointer]: EMPTY
+                    - generic [ref=e502] [cursor=pointer]: "0.0"
+                    - generic [ref=e507] [cursor=pointer]: EMPTY
+                    - generic [ref=e512] [cursor=pointer]: EMPTY
+                    - generic [ref=e517] [cursor=pointer]: EMPTY
+                    - generic [ref=e522] [cursor=pointer]: EMPTY
+                    - generic [ref=e527] [cursor=pointer]: EMPTY
+                    - generic [ref=e532] [cursor=pointer]: EMPTY
+                  - generic [ref=e533] [cursor=pointer]:
+                    - button "Select row" [ref=e534] [cursor=pointer]
+                    - generic [ref=e540] [cursor=pointer]: EMPTY
+                    - generic [ref=e545] [cursor=pointer]: EMPTY
+                    - generic [ref=e550] [cursor=pointer]: EMPTY
+                    - generic [ref=e555] [cursor=pointer]: EMPTY
+                    - generic [ref=e560] [cursor=pointer]: EMPTY
+                    - generic [ref=e565] [cursor=pointer]: EMPTY
+                    - generic [ref=e571] [cursor=pointer]: "0.0"
+                    - generic [ref=e576] [cursor=pointer]: EMPTY
+                    - generic [ref=e581] [cursor=pointer]: EMPTY
+                    - generic [ref=e586] [cursor=pointer]: EMPTY
+                    - generic [ref=e591] [cursor=pointer]: EMPTY
+                    - generic [ref=e596] [cursor=pointer]: EMPTY
+                    - generic [ref=e601] [cursor=pointer]: EMPTY
+                  - generic [ref=e602] [cursor=pointer]:
+                    - button "Select row" [ref=e603] [cursor=pointer]
+                    - generic [ref=e609] [cursor=pointer]: EMPTY
+                    - generic [ref=e614] [cursor=pointer]: EMPTY
+                    - generic [ref=e619] [cursor=pointer]: EMPTY
+                    - generic [ref=e624] [cursor=pointer]: EMPTY
+                    - generic [ref=e629] [cursor=pointer]: EMPTY
+                    - generic [ref=e634] [cursor=pointer]: EMPTY
+                    - generic [ref=e640] [cursor=pointer]: "0.0"
+                    - generic [ref=e645] [cursor=pointer]: EMPTY
+                    - generic [ref=e650] [cursor=pointer]: EMPTY
+                    - generic [ref=e655] [cursor=pointer]: EMPTY
+                    - generic [ref=e660] [cursor=pointer]: EMPTY
+                    - generic [ref=e665] [cursor=pointer]: EMPTY
+                    - generic [ref=e670] [cursor=pointer]: EMPTY
+                  - generic [ref=e671] [cursor=pointer]:
+                    - button "Select row" [ref=e672] [cursor=pointer]
+                    - generic [ref=e678] [cursor=pointer]: EMPTY
+                    - generic [ref=e683] [cursor=pointer]: EMPTY
+                    - generic [ref=e688] [cursor=pointer]: EMPTY
+                    - generic [ref=e693] [cursor=pointer]: EMPTY
+                    - generic [ref=e698] [cursor=pointer]: EMPTY
+                    - generic [ref=e703] [cursor=pointer]: EMPTY
+                    - generic [ref=e709] [cursor=pointer]: "0.0"
+                    - generic [ref=e714] [cursor=pointer]: EMPTY
+                    - generic [ref=e719] [cursor=pointer]: EMPTY
+                    - generic [ref=e724] [cursor=pointer]: EMPTY
+                    - generic [ref=e729] [cursor=pointer]: EMPTY
+                    - generic [ref=e734] [cursor=pointer]: EMPTY
+                    - generic [ref=e739] [cursor=pointer]: EMPTY
+                  - generic [ref=e740] [cursor=pointer]:
+                    - button "Select row" [ref=e741] [cursor=pointer]
+                    - generic [ref=e747] [cursor=pointer]: EMPTY
+                    - generic [ref=e752] [cursor=pointer]: EMPTY
+                    - generic [ref=e757] [cursor=pointer]: EMPTY
+                    - generic [ref=e762] [cursor=pointer]: EMPTY
+                    - generic [ref=e767] [cursor=pointer]: EMPTY
+                    - generic [ref=e772] [cursor=pointer]: EMPTY
+                    - generic [ref=e778] [cursor=pointer]: "0.0"
+                    - generic [ref=e783] [cursor=pointer]: EMPTY
+                    - generic [ref=e788] [cursor=pointer]: EMPTY
+                    - generic [ref=e793] [cursor=pointer]: EMPTY
+                    - generic [ref=e798] [cursor=pointer]: EMPTY
+                    - generic [ref=e803] [cursor=pointer]: EMPTY
+                    - generic [ref=e808] [cursor=pointer]: EMPTY
+                  - generic [ref=e809] [cursor=pointer]:
+                    - button "Select row" [ref=e810] [cursor=pointer]
+                    - generic [ref=e816] [cursor=pointer]: EMPTY
+                    - generic [ref=e821] [cursor=pointer]: EMPTY
+                    - generic [ref=e826] [cursor=pointer]: EMPTY
+                    - generic [ref=e831] [cursor=pointer]: EMPTY
+                    - generic [ref=e836] [cursor=pointer]: EMPTY
+                    - generic [ref=e841] [cursor=pointer]: EMPTY
+                    - generic [ref=e847] [cursor=pointer]: "0.0"
+                    - generic [ref=e852] [cursor=pointer]: EMPTY
+                    - generic [ref=e857] [cursor=pointer]: EMPTY
+                    - generic [ref=e862] [cursor=pointer]: EMPTY
+                    - generic [ref=e867] [cursor=pointer]: EMPTY
+                    - generic [ref=e872] [cursor=pointer]: EMPTY
+                    - generic [ref=e877] [cursor=pointer]: EMPTY
+                  - generic [ref=e878] [cursor=pointer]:
+                    - button "Select row" [ref=e879] [cursor=pointer]
+                    - generic [ref=e885] [cursor=pointer]: EMPTY
+                    - generic [ref=e890] [cursor=pointer]: EMPTY
+                    - generic [ref=e895] [cursor=pointer]: EMPTY
+                    - generic [ref=e900] [cursor=pointer]: EMPTY
+                    - generic [ref=e905] [cursor=pointer]: EMPTY
+                    - generic [ref=e910] [cursor=pointer]: EMPTY
+                    - generic [ref=e916] [cursor=pointer]: "0.0"
+                    - generic [ref=e921] [cursor=pointer]: EMPTY
+                    - generic [ref=e926] [cursor=pointer]: EMPTY
+                    - generic [ref=e931] [cursor=pointer]: EMPTY
+                    - generic [ref=e936] [cursor=pointer]: EMPTY
+                    - generic [ref=e941] [cursor=pointer]: EMPTY
+                    - generic [ref=e946] [cursor=pointer]: EMPTY
+                  - generic [ref=e947] [cursor=pointer]:
+                    - button "Select row" [ref=e948] [cursor=pointer]
+                    - generic [ref=e954] [cursor=pointer]: EMPTY
+                    - generic [ref=e959] [cursor=pointer]: EMPTY
+                    - generic [ref=e964] [cursor=pointer]: EMPTY
+                    - generic [ref=e969] [cursor=pointer]: EMPTY
+                    - generic [ref=e974] [cursor=pointer]: EMPTY
+                    - generic [ref=e979] [cursor=pointer]: EMPTY
+                    - generic [ref=e985] [cursor=pointer]: "0.0"
+                    - generic [ref=e990] [cursor=pointer]: EMPTY
+                    - generic [ref=e995] [cursor=pointer]: EMPTY
+                    - generic [ref=e1000] [cursor=pointer]: EMPTY
+                    - generic [ref=e1005] [cursor=pointer]: EMPTY
+                    - generic [ref=e1010] [cursor=pointer]: EMPTY
+                    - generic [ref=e1015] [cursor=pointer]: EMPTY
+                  - generic [ref=e1016] [cursor=pointer]:
+                    - button "Select row" [ref=e1017] [cursor=pointer]
+                    - generic [ref=e1023] [cursor=pointer]: EMPTY
+                    - generic [ref=e1028] [cursor=pointer]: EMPTY
+                    - generic [ref=e1033] [cursor=pointer]: EMPTY
+                    - generic [ref=e1038] [cursor=pointer]: EMPTY
+                    - generic [ref=e1043] [cursor=pointer]: EMPTY
+                    - generic [ref=e1048] [cursor=pointer]: EMPTY
+                    - generic [ref=e1054] [cursor=pointer]: "0.0"
+                    - generic [ref=e1059] [cursor=pointer]: EMPTY
+                    - generic [ref=e1064] [cursor=pointer]: EMPTY
+                    - generic [ref=e1069] [cursor=pointer]: EMPTY
+                    - generic [ref=e1074] [cursor=pointer]: EMPTY
+                    - generic [ref=e1079] [cursor=pointer]: EMPTY
+                    - generic [ref=e1084] [cursor=pointer]: EMPTY
+                  - generic [ref=e1085] [cursor=pointer]:
+                    - button "Select row" [ref=e1086] [cursor=pointer]
+                    - generic [ref=e1092] [cursor=pointer]: EMPTY
+                    - generic [ref=e1097] [cursor=pointer]: EMPTY
+                    - generic [ref=e1102] [cursor=pointer]: EMPTY
+                    - generic [ref=e1107] [cursor=pointer]: EMPTY
+                    - generic [ref=e1112] [cursor=pointer]: EMPTY
+                    - generic [ref=e1117] [cursor=pointer]: EMPTY
+                    - generic [ref=e1123] [cursor=pointer]: "0.0"
+                    - generic [ref=e1128] [cursor=pointer]: EMPTY
+                    - generic [ref=e1133] [cursor=pointer]: EMPTY
+                    - generic [ref=e1138] [cursor=pointer]: EMPTY
+                    - generic [ref=e1143] [cursor=pointer]: EMPTY
+                    - generic [ref=e1148] [cursor=pointer]: EMPTY
+                    - generic [ref=e1153] [cursor=pointer]: EMPTY
+                  - generic [ref=e1154] [cursor=pointer]:
+                    - button "Select row" [ref=e1155] [cursor=pointer]
+                    - generic [ref=e1161] [cursor=pointer]: EMPTY
+                    - generic [ref=e1166] [cursor=pointer]: EMPTY
+                    - generic [ref=e1171] [cursor=pointer]: EMPTY
+                    - generic [ref=e1176] [cursor=pointer]: EMPTY
+                    - generic [ref=e1181] [cursor=pointer]: EMPTY
+                    - generic [ref=e1186] [cursor=pointer]: EMPTY
+                    - generic [ref=e1192] [cursor=pointer]: "0.0"
+                    - generic [ref=e1197] [cursor=pointer]: EMPTY
+                    - generic [ref=e1202] [cursor=pointer]: EMPTY
+                    - generic [ref=e1207] [cursor=pointer]: EMPTY
+                    - generic [ref=e1212] [cursor=pointer]: EMPTY
+                    - generic [ref=e1217] [cursor=pointer]: EMPTY
+                    - generic [ref=e1222] [cursor=pointer]: EMPTY
+                  - generic [ref=e1223] [cursor=pointer]:
+                    - button "Select row" [ref=e1224] [cursor=pointer]
+                    - generic [ref=e1230] [cursor=pointer]: EMPTY
+                    - generic [ref=e1235] [cursor=pointer]: EMPTY
+                    - generic [ref=e1240] [cursor=pointer]: EMPTY
+                    - generic [ref=e1245] [cursor=pointer]: EMPTY
+                    - generic [ref=e1250] [cursor=pointer]: EMPTY
+                    - generic [ref=e1255] [cursor=pointer]: EMPTY
+                    - generic [ref=e1261] [cursor=pointer]: "0.0"
+                    - generic [ref=e1266] [cursor=pointer]: EMPTY
+                    - generic [ref=e1271] [cursor=pointer]: EMPTY
+                    - generic [ref=e1276] [cursor=pointer]: EMPTY
+                    - generic [ref=e1281] [cursor=pointer]: EMPTY
+                    - generic [ref=e1286] [cursor=pointer]: EMPTY
+                    - generic [ref=e1291] [cursor=pointer]: EMPTY
+                  - generic [ref=e1292] [cursor=pointer]:
+                    - button "Select row" [ref=e1293] [cursor=pointer]
+                    - generic [ref=e1299] [cursor=pointer]: EMPTY
+                    - generic [ref=e1304] [cursor=pointer]: EMPTY
+                    - generic [ref=e1309] [cursor=pointer]: EMPTY
+                    - generic [ref=e1314] [cursor=pointer]: EMPTY
+                    - generic [ref=e1319] [cursor=pointer]: EMPTY
+                    - generic [ref=e1324] [cursor=pointer]: EMPTY
+                    - generic [ref=e1330] [cursor=pointer]: "0.0"
+                    - generic [ref=e1335] [cursor=pointer]: EMPTY
+                    - generic [ref=e1340] [cursor=pointer]: EMPTY
+                    - generic [ref=e1345] [cursor=pointer]: EMPTY
+                    - generic [ref=e1350] [cursor=pointer]: EMPTY
+                    - generic [ref=e1355] [cursor=pointer]: EMPTY
+                    - generic [ref=e1360] [cursor=pointer]: EMPTY
+                  - generic [ref=e1361] [cursor=pointer]:
+                    - button "Select row" [ref=e1362] [cursor=pointer]
+                    - generic [ref=e1368] [cursor=pointer]: EMPTY
+                    - generic [ref=e1373] [cursor=pointer]: EMPTY
+                    - generic [ref=e1378] [cursor=pointer]: EMPTY
+                    - generic [ref=e1383] [cursor=pointer]: EMPTY
+                    - generic [ref=e1388] [cursor=pointer]: EMPTY
+                    - generic [ref=e1393] [cursor=pointer]: EMPTY
+                    - generic [ref=e1399] [cursor=pointer]: "0.0"
+                    - generic [ref=e1404] [cursor=pointer]: EMPTY
+                    - generic [ref=e1409] [cursor=pointer]: EMPTY
+                    - generic [ref=e1414] [cursor=pointer]: EMPTY
+                    - generic [ref=e1419] [cursor=pointer]: EMPTY
+                    - generic [ref=e1424] [cursor=pointer]: EMPTY
+                    - generic [ref=e1429] [cursor=pointer]: EMPTY
+                  - generic [ref=e1430] [cursor=pointer]:
+                    - button "Select row" [ref=e1431] [cursor=pointer]
+                    - generic [ref=e1437] [cursor=pointer]: EMPTY
+                    - generic [ref=e1442] [cursor=pointer]: EMPTY
+                    - generic [ref=e1447] [cursor=pointer]: EMPTY
+                    - generic [ref=e1452] [cursor=pointer]: EMPTY
+                    - generic [ref=e1457] [cursor=pointer]: EMPTY
+                    - generic [ref=e1462] [cursor=pointer]: EMPTY
+                    - generic [ref=e1468] [cursor=pointer]: "0.0"
+                    - generic [ref=e1473] [cursor=pointer]: EMPTY
+                    - generic [ref=e1478] [cursor=pointer]: EMPTY
+                    - generic [ref=e1483] [cursor=pointer]: EMPTY
+                    - generic [ref=e1488] [cursor=pointer]: EMPTY
+                    - generic [ref=e1493] [cursor=pointer]: EMPTY
+                    - generic [ref=e1498] [cursor=pointer]: EMPTY
+                  - generic [ref=e1499] [cursor=pointer]:
+                    - button "Select row" [ref=e1500] [cursor=pointer]
+                    - generic [ref=e1506] [cursor=pointer]: EMPTY
+                    - generic [ref=e1511] [cursor=pointer]: EMPTY
+                    - generic [ref=e1516] [cursor=pointer]: EMPTY
+                    - generic [ref=e1521] [cursor=pointer]: EMPTY
+                    - generic [ref=e1526] [cursor=pointer]: EMPTY
+                    - generic [ref=e1531] [cursor=pointer]: EMPTY
+                    - generic [ref=e1537] [cursor=pointer]: "0.0"
+                    - generic [ref=e1542] [cursor=pointer]: EMPTY
+                    - generic [ref=e1547] [cursor=pointer]: EMPTY
+                    - generic [ref=e1552] [cursor=pointer]: EMPTY
+                    - generic [ref=e1557] [cursor=pointer]: EMPTY
+                    - generic [ref=e1562] [cursor=pointer]: EMPTY
+                    - generic [ref=e1567] [cursor=pointer]: EMPTY
+                  - generic [ref=e1568] [cursor=pointer]:
+                    - button "Select row" [ref=e1569] [cursor=pointer]
+                    - generic [ref=e1575] [cursor=pointer]: EMPTY
+                    - generic [ref=e1580] [cursor=pointer]: EMPTY
+                    - generic [ref=e1585] [cursor=pointer]: EMPTY
+                    - generic [ref=e1590] [cursor=pointer]: EMPTY
+                    - generic [ref=e1595] [cursor=pointer]: EMPTY
+                    - generic [ref=e1600] [cursor=pointer]: EMPTY
+                    - generic [ref=e1606] [cursor=pointer]: "0.0"
+                    - generic [ref=e1611] [cursor=pointer]: EMPTY
+                    - generic [ref=e1616] [cursor=pointer]: EMPTY
+                    - generic [ref=e1621] [cursor=pointer]: EMPTY
+                    - generic [ref=e1626] [cursor=pointer]: EMPTY
+                    - generic [ref=e1631] [cursor=pointer]: EMPTY
+                    - generic [ref=e1636] [cursor=pointer]: EMPTY
+                  - generic [ref=e1637] [cursor=pointer]:
+                    - button "Select row" [ref=e1638] [cursor=pointer]
+                    - generic [ref=e1644] [cursor=pointer]: EMPTY
+                    - generic [ref=e1649] [cursor=pointer]: EMPTY
+                    - generic [ref=e1654] [cursor=pointer]: EMPTY
+                    - generic [ref=e1659] [cursor=pointer]: EMPTY
+                    - generic [ref=e1664] [cursor=pointer]: EMPTY
+                    - generic [ref=e1669] [cursor=pointer]: EMPTY
+                    - generic [ref=e1675] [cursor=pointer]: "0.0"
+                    - generic [ref=e1680] [cursor=pointer]: EMPTY
+                    - generic [ref=e1685] [cursor=pointer]: EMPTY
+                    - generic [ref=e1690] [cursor=pointer]: EMPTY
+                    - generic [ref=e1695] [cursor=pointer]: EMPTY
+                    - generic [ref=e1700] [cursor=pointer]: EMPTY
+                    - generic [ref=e1705] [cursor=pointer]: EMPTY
+                  - generic [ref=e1706] [cursor=pointer]:
+                    - button "Select row" [ref=e1707] [cursor=pointer]
+                    - generic [ref=e1713] [cursor=pointer]: EMPTY
+                    - generic [ref=e1718] [cursor=pointer]: EMPTY
+                    - generic [ref=e1723] [cursor=pointer]: EMPTY
+                    - generic [ref=e1728] [cursor=pointer]: EMPTY
+                    - generic [ref=e1733] [cursor=pointer]: EMPTY
+                    - generic [ref=e1738] [cursor=pointer]: EMPTY
+                    - generic [ref=e1744] [cursor=pointer]: "0.0"
+                    - generic [ref=e1749] [cursor=pointer]: EMPTY
+                    - generic [ref=e1754] [cursor=pointer]: EMPTY
+                    - generic [ref=e1759] [cursor=pointer]: EMPTY
+                    - generic [ref=e1764] [cursor=pointer]: EMPTY
+                    - generic [ref=e1769] [cursor=pointer]: EMPTY
+                    - generic [ref=e1774] [cursor=pointer]: EMPTY
+                  - generic [ref=e1775] [cursor=pointer]:
+                    - button "Select row" [ref=e1776] [cursor=pointer]
+                    - generic [ref=e1782] [cursor=pointer]: EMPTY
+                    - generic [ref=e1787] [cursor=pointer]: EMPTY
+                    - generic [ref=e1792] [cursor=pointer]: EMPTY
+                    - generic [ref=e1797] [cursor=pointer]: EMPTY
+                    - generic [ref=e1802] [cursor=pointer]: EMPTY
+                    - generic [ref=e1807] [cursor=pointer]: EMPTY
+                    - generic [ref=e1813] [cursor=pointer]: "0.0"
+                    - generic [ref=e1818] [cursor=pointer]: EMPTY
+                    - generic [ref=e1823] [cursor=pointer]: EMPTY
+                    - generic [ref=e1828] [cursor=pointer]: EMPTY
+                    - generic [ref=e1833] [cursor=pointer]: EMPTY
+                    - generic [ref=e1838] [cursor=pointer]: EMPTY
+                    - generic [ref=e1843] [cursor=pointer]: EMPTY
+                  - generic [ref=e1844] [cursor=pointer]:
+                    - button "Select row" [ref=e1845] [cursor=pointer]
+                    - generic [ref=e1851] [cursor=pointer]: EMPTY
+                    - generic [ref=e1856] [cursor=pointer]: EMPTY
+                    - generic [ref=e1861] [cursor=pointer]: EMPTY
+                    - generic [ref=e1866] [cursor=pointer]: EMPTY
+                    - generic [ref=e1871] [cursor=pointer]: EMPTY
+                    - generic [ref=e1876] [cursor=pointer]: EMPTY
+                    - generic [ref=e1882] [cursor=pointer]: "0.0"
+                    - generic [ref=e1887] [cursor=pointer]: EMPTY
+                    - generic [ref=e1892] [cursor=pointer]: EMPTY
+                    - generic [ref=e1897] [cursor=pointer]: EMPTY
+                    - generic [ref=e1902] [cursor=pointer]: EMPTY
+                    - generic [ref=e1907] [cursor=pointer]: EMPTY
+                    - generic [ref=e1912] [cursor=pointer]: EMPTY
+                  - generic [ref=e1913] [cursor=pointer]:
+                    - button "Select row" [ref=e1914] [cursor=pointer]
+                    - generic [ref=e1920] [cursor=pointer]: EMPTY
+                    - generic [ref=e1925] [cursor=pointer]: EMPTY
+                    - generic [ref=e1930] [cursor=pointer]: EMPTY
+                    - generic [ref=e1935] [cursor=pointer]: EMPTY
+                    - generic [ref=e1940] [cursor=pointer]: EMPTY
+                    - generic [ref=e1945] [cursor=pointer]: EMPTY
+                    - generic [ref=e1951] [cursor=pointer]: "0.0"
+                    - generic [ref=e1956] [cursor=pointer]: EMPTY
+                    - generic [ref=e1961] [cursor=pointer]: EMPTY
+                    - generic [ref=e1966] [cursor=pointer]: EMPTY
+                    - generic [ref=e1971] [cursor=pointer]: EMPTY
+                    - generic [ref=e1976] [cursor=pointer]: EMPTY
+                    - generic [ref=e1981] [cursor=pointer]: EMPTY
+                  - generic [ref=e1982] [cursor=pointer]:
+                    - button "Select row" [ref=e1983] [cursor=pointer]
+                    - generic [ref=e1989] [cursor=pointer]: EMPTY
+                    - generic [ref=e1994] [cursor=pointer]: EMPTY
+                    - generic [ref=e1999] [cursor=pointer]: EMPTY
+                    - generic [ref=e2004] [cursor=pointer]: EMPTY
+                    - generic [ref=e2009] [cursor=pointer]: EMPTY
+                    - generic [ref=e2014] [cursor=pointer]: EMPTY
+                    - generic [ref=e2020] [cursor=pointer]: "0.0"
+                    - generic [ref=e2025] [cursor=pointer]: EMPTY
+                    - generic [ref=e2030] [cursor=pointer]: EMPTY
+                    - generic [ref=e2035] [cursor=pointer]: EMPTY
+                    - generic [ref=e2040] [cursor=pointer]: EMPTY
+                    - generic [ref=e2045] [cursor=pointer]: EMPTY
+                    - generic [ref=e2050] [cursor=pointer]: EMPTY
+                  - generic [ref=e2051] [cursor=pointer]:
+                    - button "Select row" [ref=e2052] [cursor=pointer]
+                    - generic [ref=e2058] [cursor=pointer]: EMPTY
+                    - generic [ref=e2063] [cursor=pointer]: EMPTY
+                    - generic [ref=e2068] [cursor=pointer]: EMPTY
+                    - generic [ref=e2073] [cursor=pointer]: EMPTY
+                    - generic [ref=e2078] [cursor=pointer]: EMPTY
+                    - generic [ref=e2083] [cursor=pointer]: EMPTY
+                    - generic [ref=e2089] [cursor=pointer]: "0.0"
+                    - generic [ref=e2094] [cursor=pointer]: EMPTY
+                    - generic [ref=e2099] [cursor=pointer]: EMPTY
+                    - generic [ref=e2104] [cursor=pointer]: EMPTY
+                    - generic [ref=e2109] [cursor=pointer]: EMPTY
+                    - generic [ref=e2114] [cursor=pointer]: EMPTY
+                    - generic [ref=e2119] [cursor=pointer]: EMPTY
+                  - generic [ref=e2120] [cursor=pointer]:
+                    - button "Select row" [ref=e2121] [cursor=pointer]
+                    - generic [ref=e2127] [cursor=pointer]: EMPTY
+                    - generic [ref=e2132] [cursor=pointer]: EMPTY
+                    - generic [ref=e2137] [cursor=pointer]: EMPTY
+                    - generic [ref=e2142] [cursor=pointer]: EMPTY
+                    - generic [ref=e2147] [cursor=pointer]: EMPTY
+                    - generic [ref=e2152] [cursor=pointer]: EMPTY
+                    - generic [ref=e2158] [cursor=pointer]: "0.0"
+                    - generic [ref=e2163] [cursor=pointer]: EMPTY
+                    - generic [ref=e2168] [cursor=pointer]: EMPTY
+                    - generic [ref=e2173] [cursor=pointer]: EMPTY
+                    - generic [ref=e2178] [cursor=pointer]: EMPTY
+                    - generic [ref=e2183] [cursor=pointer]: EMPTY
+                    - generic [ref=e2188] [cursor=pointer]: EMPTY
+                  - generic [ref=e2189] [cursor=pointer]:
+                    - button "Select row" [ref=e2190] [cursor=pointer]
+                    - generic [ref=e2196] [cursor=pointer]: EMPTY
+                    - generic [ref=e2201] [cursor=pointer]: EMPTY
+                    - generic [ref=e2206] [cursor=pointer]: EMPTY
+                    - generic [ref=e2211] [cursor=pointer]: EMPTY
+                    - generic [ref=e2216] [cursor=pointer]: EMPTY
+                    - generic [ref=e2221] [cursor=pointer]: EMPTY
+                    - generic [ref=e2227] [cursor=pointer]: "0.0"
+                    - generic [ref=e2232] [cursor=pointer]: EMPTY
+                    - generic [ref=e2237] [cursor=pointer]: EMPTY
+                    - generic [ref=e2242] [cursor=pointer]: EMPTY
+                    - generic [ref=e2247] [cursor=pointer]: EMPTY
+                    - generic [ref=e2252] [cursor=pointer]: EMPTY
+                    - generic [ref=e2257] [cursor=pointer]: EMPTY
+                  - generic [ref=e2258] [cursor=pointer]:
+                    - button "Select row" [ref=e2259] [cursor=pointer]
+                    - generic [ref=e2265] [cursor=pointer]: EMPTY
+                    - generic [ref=e2270] [cursor=pointer]: EMPTY
+                    - generic [ref=e2275] [cursor=pointer]: EMPTY
+                    - generic [ref=e2280] [cursor=pointer]: EMPTY
+                    - generic [ref=e2285] [cursor=pointer]: EMPTY
+                    - generic [ref=e2290] [cursor=pointer]: EMPTY
+                    - generic [ref=e2296] [cursor=pointer]: "0.0"
+                    - generic [ref=e2301] [cursor=pointer]: EMPTY
+                    - generic [ref=e2306] [cursor=pointer]: EMPTY
+                    - generic [ref=e2311] [cursor=pointer]: EMPTY
+                    - generic [ref=e2316] [cursor=pointer]: EMPTY
+                    - generic [ref=e2321] [cursor=pointer]: EMPTY
+                    - generic [ref=e2326] [cursor=pointer]: EMPTY
+                  - generic [ref=e2327] [cursor=pointer]:
+                    - button "Select row" [ref=e2328] [cursor=pointer]
+                    - generic [ref=e2334] [cursor=pointer]: EMPTY
+                    - generic [ref=e2339] [cursor=pointer]: EMPTY
+                    - generic [ref=e2344] [cursor=pointer]: EMPTY
+                    - generic [ref=e2349] [cursor=pointer]: EMPTY
+                    - generic [ref=e2354] [cursor=pointer]: EMPTY
+                    - generic [ref=e2359] [cursor=pointer]: EMPTY
+                    - generic [ref=e2365] [cursor=pointer]: "0.0"
+                    - generic [ref=e2370] [cursor=pointer]: EMPTY
+                    - generic [ref=e2375] [cursor=pointer]: EMPTY
+                    - generic [ref=e2380] [cursor=pointer]: EMPTY
+                    - generic [ref=e2385] [cursor=pointer]: EMPTY
+                    - generic [ref=e2390] [cursor=pointer]: EMPTY
+                    - generic [ref=e2395] [cursor=pointer]: EMPTY
+                  - generic [ref=e2396] [cursor=pointer]:
+                    - button "Select row" [ref=e2397] [cursor=pointer]
+                    - generic [ref=e2403] [cursor=pointer]: EMPTY
+                    - generic [ref=e2408] [cursor=pointer]: EMPTY
+                    - generic [ref=e2413] [cursor=pointer]: EMPTY
+                    - generic [ref=e2418] [cursor=pointer]: EMPTY
+                    - generic [ref=e2423] [cursor=pointer]: EMPTY
+                    - generic [ref=e2428] [cursor=pointer]: EMPTY
+                    - generic [ref=e2434] [cursor=pointer]: "0.0"
+                    - generic [ref=e2439] [cursor=pointer]: EMPTY
+                    - generic [ref=e2444] [cursor=pointer]: EMPTY
+                    - generic [ref=e2449] [cursor=pointer]: EMPTY
+                    - generic [ref=e2454] [cursor=pointer]: EMPTY
+                    - generic [ref=e2459] [cursor=pointer]: EMPTY
+                    - generic [ref=e2464] [cursor=pointer]: EMPTY
+                  - generic [ref=e2465] [cursor=pointer]:
+                    - button "Select row" [ref=e2466] [cursor=pointer]
+                    - generic [ref=e2472] [cursor=pointer]: EMPTY
+                    - generic [ref=e2477] [cursor=pointer]: EMPTY
+                    - generic [ref=e2482] [cursor=pointer]: EMPTY
+                    - generic [ref=e2487] [cursor=pointer]: EMPTY
+                    - generic [ref=e2492] [cursor=pointer]: EMPTY
+                    - generic [ref=e2497] [cursor=pointer]: EMPTY
+                    - generic [ref=e2503] [cursor=pointer]: "0.0"
+                    - generic [ref=e2508] [cursor=pointer]: EMPTY
+                    - generic [ref=e2513] [cursor=pointer]: EMPTY
+                    - generic [ref=e2518] [cursor=pointer]: EMPTY
+                    - generic [ref=e2523] [cursor=pointer]: EMPTY
+                    - generic [ref=e2528] [cursor=pointer]: EMPTY
+                    - generic [ref=e2533] [cursor=pointer]: EMPTY
+                  - generic [ref=e2534] [cursor=pointer]:
+                    - button "Select row" [ref=e2535] [cursor=pointer]
+                    - generic [ref=e2541] [cursor=pointer]: EMPTY
+                    - generic [ref=e2546] [cursor=pointer]: EMPTY
+                    - generic [ref=e2551] [cursor=pointer]: EMPTY
+                    - generic [ref=e2556] [cursor=pointer]: EMPTY
+                    - generic [ref=e2561] [cursor=pointer]: EMPTY
+                    - generic [ref=e2566] [cursor=pointer]: EMPTY
+                    - generic [ref=e2572] [cursor=pointer]: "0.0"
+                    - generic [ref=e2577] [cursor=pointer]: EMPTY
+                    - generic [ref=e2582] [cursor=pointer]: EMPTY
+                    - generic [ref=e2587] [cursor=pointer]: EMPTY
+                    - generic [ref=e2592] [cursor=pointer]: EMPTY
+                    - generic [ref=e2597] [cursor=pointer]: EMPTY
+                    - generic [ref=e2602] [cursor=pointer]: EMPTY
+                  - generic [ref=e2603] [cursor=pointer]:
+                    - button "Select row" [ref=e2604] [cursor=pointer]
+                    - generic [ref=e2610] [cursor=pointer]: EMPTY
+                    - generic [ref=e2615] [cursor=pointer]: EMPTY
+                    - generic [ref=e2620] [cursor=pointer]: EMPTY
+                    - generic [ref=e2625] [cursor=pointer]: EMPTY
+                    - generic [ref=e2630] [cursor=pointer]: EMPTY
+                    - generic [ref=e2635] [cursor=pointer]: EMPTY
+                    - generic [ref=e2641] [cursor=pointer]: "0.0"
+                    - generic [ref=e2646] [cursor=pointer]: EMPTY
+                    - generic [ref=e2651] [cursor=pointer]: EMPTY
+                    - generic [ref=e2656] [cursor=pointer]: EMPTY
+                    - generic [ref=e2661] [cursor=pointer]: EMPTY
+                    - generic [ref=e2666] [cursor=pointer]: EMPTY
+                    - generic [ref=e2671] [cursor=pointer]: EMPTY
+                  - generic [ref=e2672] [cursor=pointer]:
+                    - button "Select row" [ref=e2673] [cursor=pointer]
+                    - generic [ref=e2679] [cursor=pointer]: EMPTY
+                    - generic [ref=e2684] [cursor=pointer]: EMPTY
+                    - generic [ref=e2689] [cursor=pointer]: EMPTY
+                    - generic [ref=e2694] [cursor=pointer]: EMPTY
+                    - generic [ref=e2699] [cursor=pointer]: EMPTY
+                    - generic [ref=e2704] [cursor=pointer]: EMPTY
+                    - generic [ref=e2710] [cursor=pointer]: "0.0"
+                    - generic [ref=e2715] [cursor=pointer]: EMPTY
+                    - generic [ref=e2720] [cursor=pointer]: EMPTY
+                    - generic [ref=e2725] [cursor=pointer]: EMPTY
+                    - generic [ref=e2730] [cursor=pointer]: EMPTY
+                    - generic [ref=e2735] [cursor=pointer]: EMPTY
+                    - generic [ref=e2740] [cursor=pointer]: EMPTY
+                  - generic [ref=e2741] [cursor=pointer]:
+                    - button "Select row" [ref=e2742] [cursor=pointer]
+                    - generic [ref=e2748] [cursor=pointer]: EMPTY
+                    - generic [ref=e2753] [cursor=pointer]: EMPTY
+                    - generic [ref=e2758] [cursor=pointer]: EMPTY
+                    - generic [ref=e2763] [cursor=pointer]: EMPTY
+                    - generic [ref=e2768] [cursor=pointer]: EMPTY
+                    - generic [ref=e2773] [cursor=pointer]: EMPTY
+                    - generic [ref=e2779] [cursor=pointer]: "0.0"
+                    - generic [ref=e2784] [cursor=pointer]: EMPTY
+                    - generic [ref=e2789] [cursor=pointer]: EMPTY
+                    - generic [ref=e2794] [cursor=pointer]: EMPTY
+                    - generic [ref=e2799] [cursor=pointer]: EMPTY
+                    - generic [ref=e2804] [cursor=pointer]: EMPTY
+                    - generic [ref=e2809] [cursor=pointer]: EMPTY
+                  - generic [ref=e2810] [cursor=pointer]:
+                    - button "Select row" [ref=e2811] [cursor=pointer]
+                    - generic [ref=e2817] [cursor=pointer]: EMPTY
+                    - generic [ref=e2822] [cursor=pointer]: EMPTY
+                    - generic [ref=e2827] [cursor=pointer]: EMPTY
+                    - generic [ref=e2832] [cursor=pointer]: EMPTY
+                    - generic [ref=e2837] [cursor=pointer]: EMPTY
+                    - generic [ref=e2842] [cursor=pointer]: EMPTY
+                    - generic [ref=e2848] [cursor=pointer]: "0.0"
+                    - generic [ref=e2853] [cursor=pointer]: EMPTY
+                    - generic [ref=e2858] [cursor=pointer]: EMPTY
+                    - generic [ref=e2863] [cursor=pointer]: EMPTY
+                    - generic [ref=e2868] [cursor=pointer]: EMPTY
+                    - generic [ref=e2873] [cursor=pointer]: EMPTY
+                    - generic [ref=e2878] [cursor=pointer]: EMPTY
+                  - generic [ref=e2879] [cursor=pointer]:
+                    - button "Select row" [ref=e2880] [cursor=pointer]
+                    - generic [ref=e2886] [cursor=pointer]: EMPTY
+                    - generic [ref=e2891] [cursor=pointer]: EMPTY
+                    - generic [ref=e2896] [cursor=pointer]: EMPTY
+                    - generic [ref=e2901] [cursor=pointer]: EMPTY
+                    - generic [ref=e2906] [cursor=pointer]: EMPTY
+                    - generic [ref=e2911] [cursor=pointer]: EMPTY
+                    - generic [ref=e2917] [cursor=pointer]: "0.0"
+                    - generic [ref=e2922] [cursor=pointer]: EMPTY
+                    - generic [ref=e2927] [cursor=pointer]: EMPTY
+                    - generic [ref=e2932] [cursor=pointer]: EMPTY
+                    - generic [ref=e2937] [cursor=pointer]: EMPTY
+                    - generic [ref=e2942] [cursor=pointer]: EMPTY
+                    - generic [ref=e2947] [cursor=pointer]: EMPTY
+                  - generic [ref=e2948] [cursor=pointer]:
+                    - button "Select row" [ref=e2949] [cursor=pointer]
+                    - generic [ref=e2955] [cursor=pointer]: EMPTY
+                    - generic [ref=e2960] [cursor=pointer]: EMPTY
+                    - generic [ref=e2965] [cursor=pointer]: EMPTY
+                    - generic [ref=e2970] [cursor=pointer]: EMPTY
+                    - generic [ref=e2975] [cursor=pointer]: EMPTY
+                    - generic [ref=e2980] [cursor=pointer]: EMPTY
+                    - generic [ref=e2986] [cursor=pointer]: "0.0"
+                    - generic [ref=e2991] [cursor=pointer]: EMPTY
+                    - generic [ref=e2996] [cursor=pointer]: EMPTY
+                    - generic [ref=e3001] [cursor=pointer]: EMPTY
+                    - generic [ref=e3006] [cursor=pointer]: EMPTY
+                    - generic [ref=e3011] [cursor=pointer]: EMPTY
+                    - generic [ref=e3016] [cursor=pointer]: EMPTY
+                  - generic [ref=e3017] [cursor=pointer]:
+                    - button "Select row" [ref=e3018] [cursor=pointer]
+                    - generic [ref=e3024] [cursor=pointer]: EMPTY
+                    - generic [ref=e3029] [cursor=pointer]: EMPTY
+                    - generic [ref=e3034] [cursor=pointer]: EMPTY
+                    - generic [ref=e3039] [cursor=pointer]: EMPTY
+                    - generic [ref=e3044] [cursor=pointer]: EMPTY
+                    - generic [ref=e3049] [cursor=pointer]: EMPTY
+                    - generic [ref=e3055] [cursor=pointer]: "0.0"
+                    - generic [ref=e3060] [cursor=pointer]: EMPTY
+                    - generic [ref=e3065] [cursor=pointer]: EMPTY
+                    - generic [ref=e3070] [cursor=pointer]: EMPTY
+                    - generic [ref=e3075] [cursor=pointer]: EMPTY
+                    - generic [ref=e3080] [cursor=pointer]: EMPTY
+                    - generic [ref=e3085] [cursor=pointer]: EMPTY
+                  - generic [ref=e3086] [cursor=pointer]:
+                    - button "Select row" [ref=e3087] [cursor=pointer]
+                    - generic [ref=e3093] [cursor=pointer]: EMPTY
+                    - generic [ref=e3098] [cursor=pointer]: EMPTY
+                    - generic [ref=e3103] [cursor=pointer]: EMPTY
+                    - generic [ref=e3108] [cursor=pointer]: EMPTY
+                    - generic [ref=e3113] [cursor=pointer]: EMPTY
+                    - generic [ref=e3118] [cursor=pointer]: EMPTY
+                    - generic [ref=e3124] [cursor=pointer]: "0.0"
+                    - generic [ref=e3129] [cursor=pointer]: EMPTY
+                    - generic [ref=e3134] [cursor=pointer]: EMPTY
+                    - generic [ref=e3139] [cursor=pointer]: EMPTY
+                    - generic [ref=e3144] [cursor=pointer]: EMPTY
+                    - generic [ref=e3149] [cursor=pointer]: EMPTY
+                    - generic [ref=e3154] [cursor=pointer]: EMPTY
+                  - generic [ref=e3155] [cursor=pointer]:
+                    - button "Select row" [ref=e3156] [cursor=pointer]
+                    - generic [ref=e3162] [cursor=pointer]: EMPTY
+                    - generic [ref=e3167] [cursor=pointer]: EMPTY
+                    - generic [ref=e3172] [cursor=pointer]: EMPTY
+                    - generic [ref=e3177] [cursor=pointer]: EMPTY
+                    - generic [ref=e3182] [cursor=pointer]: EMPTY
+                    - generic [ref=e3187] [cursor=pointer]: EMPTY
+                    - generic [ref=e3193] [cursor=pointer]: "0.0"
+                    - generic [ref=e3198] [cursor=pointer]: EMPTY
+                    - generic [ref=e3203] [cursor=pointer]: EMPTY
+                    - generic [ref=e3208] [cursor=pointer]: EMPTY
+                    - generic [ref=e3213] [cursor=pointer]: EMPTY
+                    - generic [ref=e3218] [cursor=pointer]: EMPTY
+                    - generic [ref=e3223] [cursor=pointer]: EMPTY
+                  - generic [ref=e3224] [cursor=pointer]:
+                    - button "Select row" [ref=e3225] [cursor=pointer]
+                    - generic [ref=e3231] [cursor=pointer]: EMPTY
+                    - generic [ref=e3236] [cursor=pointer]: EMPTY
+                    - generic [ref=e3241] [cursor=pointer]: EMPTY
+                    - generic [ref=e3246] [cursor=pointer]: EMPTY
+                    - generic [ref=e3251] [cursor=pointer]: EMPTY
+                    - generic [ref=e3256] [cursor=pointer]: EMPTY
+                    - generic [ref=e3262] [cursor=pointer]: "0.0"
+                    - generic [ref=e3267] [cursor=pointer]: EMPTY
+                    - generic [ref=e3272] [cursor=pointer]: EMPTY
+                    - generic [ref=e3277] [cursor=pointer]: EMPTY
+                    - generic [ref=e3282] [cursor=pointer]: EMPTY
+                    - generic [ref=e3287] [cursor=pointer]: EMPTY
+                    - generic [ref=e3292] [cursor=pointer]: EMPTY
+                  - generic [ref=e3293] [cursor=pointer]:
+                    - button "Select row" [ref=e3294] [cursor=pointer]
+                    - generic [ref=e3300] [cursor=pointer]: EMPTY
+                    - generic [ref=e3305] [cursor=pointer]: EMPTY
+                    - generic [ref=e3310] [cursor=pointer]: EMPTY
+                    - generic [ref=e3315] [cursor=pointer]: EMPTY
+                    - generic [ref=e3320] [cursor=pointer]: EMPTY
+                    - generic [ref=e3325] [cursor=pointer]: EMPTY
+                    - generic [ref=e3331] [cursor=pointer]: "0.0"
+                    - generic [ref=e3336] [cursor=pointer]: EMPTY
+                    - generic [ref=e3341] [cursor=pointer]: EMPTY
+                    - generic [ref=e3346] [cursor=pointer]: EMPTY
+                    - generic [ref=e3351] [cursor=pointer]: EMPTY
+                    - generic [ref=e3356] [cursor=pointer]: EMPTY
+                    - generic [ref=e3361] [cursor=pointer]: EMPTY
+                  - generic [ref=e3362] [cursor=pointer]:
+                    - button "Select row" [ref=e3363] [cursor=pointer]
+                    - generic [ref=e3369] [cursor=pointer]: EMPTY
+                    - generic [ref=e3374] [cursor=pointer]: EMPTY
+                    - generic [ref=e3379] [cursor=pointer]: EMPTY
+                    - generic [ref=e3384] [cursor=pointer]: EMPTY
+                    - generic [ref=e3389] [cursor=pointer]: EMPTY
+                    - generic [ref=e3394] [cursor=pointer]: EMPTY
+                    - generic [ref=e3400] [cursor=pointer]: "0.0"
+                    - generic [ref=e3405] [cursor=pointer]: EMPTY
+                    - generic [ref=e3410] [cursor=pointer]: EMPTY
+                    - generic [ref=e3415] [cursor=pointer]: EMPTY
+                    - generic [ref=e3420] [cursor=pointer]: EMPTY
+                    - generic [ref=e3425] [cursor=pointer]: EMPTY
+                    - generic [ref=e3430] [cursor=pointer]: EMPTY
+                  - generic [ref=e3431] [cursor=pointer]:
+                    - button "Select row" [ref=e3432] [cursor=pointer]
+                    - generic [ref=e3438] [cursor=pointer]: EMPTY
+                    - generic [ref=e3443] [cursor=pointer]: EMPTY
+                    - generic [ref=e3448] [cursor=pointer]: EMPTY
+                    - generic [ref=e3453] [cursor=pointer]: EMPTY
+                    - generic [ref=e3458] [cursor=pointer]: EMPTY
+                    - generic [ref=e3463] [cursor=pointer]: EMPTY
+                    - generic [ref=e3469] [cursor=pointer]: "0.0"
+                    - generic [ref=e3474] [cursor=pointer]: EMPTY
+                    - generic [ref=e3479] [cursor=pointer]: EMPTY
+                    - generic [ref=e3484] [cursor=pointer]: EMPTY
+                    - generic [ref=e3489] [cursor=pointer]: EMPTY
+                    - generic [ref=e3494] [cursor=pointer]: EMPTY
+                    - generic [ref=e3499] [cursor=pointer]: EMPTY
+                  - generic [ref=e3500] [cursor=pointer]:
+                    - button "Select row" [ref=e3501] [cursor=pointer]
+                    - generic [ref=e3507] [cursor=pointer]: EMPTY
+                    - generic [ref=e3512] [cursor=pointer]: EMPTY
+                    - generic [ref=e3517] [cursor=pointer]: EMPTY
+                    - generic [ref=e3522] [cursor=pointer]: EMPTY
+                    - generic [ref=e3527] [cursor=pointer]: EMPTY
+                    - generic [ref=e3532] [cursor=pointer]: EMPTY
+                    - generic [ref=e3538] [cursor=pointer]: "0.0"
+                    - generic [ref=e3543] [cursor=pointer]: EMPTY
+                    - generic [ref=e3548] [cursor=pointer]: EMPTY
+                    - generic [ref=e3553] [cursor=pointer]: EMPTY
+                    - generic [ref=e3558] [cursor=pointer]: EMPTY
+                    - generic [ref=e3563] [cursor=pointer]: EMPTY
+                    - generic [ref=e3568] [cursor=pointer]: EMPTY
+                  - generic [ref=e3569] [cursor=pointer]:
+                    - button "Select row" [ref=e3570] [cursor=pointer]
+                    - generic [ref=e3576] [cursor=pointer]: EMPTY
+                    - generic [ref=e3581] [cursor=pointer]: EMPTY
+                    - generic [ref=e3586] [cursor=pointer]: EMPTY
+                    - generic [ref=e3591] [cursor=pointer]: EMPTY
+                    - generic [ref=e3596] [cursor=pointer]: EMPTY
+                    - generic [ref=e3601] [cursor=pointer]: EMPTY
+                    - generic [ref=e3607] [cursor=pointer]: "0.0"
+                    - generic [ref=e3612] [cursor=pointer]: EMPTY
+                    - generic [ref=e3617] [cursor=pointer]: EMPTY
+                    - generic [ref=e3622] [cursor=pointer]: EMPTY
+                    - generic [ref=e3627] [cursor=pointer]: EMPTY
+                    - generic [ref=e3632] [cursor=pointer]: EMPTY
+                    - generic [ref=e3637] [cursor=pointer]: EMPTY
+                  - generic [ref=e3638] [cursor=pointer]:
+                    - button "Select row" [ref=e3639] [cursor=pointer]
+                    - generic [ref=e3645] [cursor=pointer]: EMPTY
+                    - generic [ref=e3650] [cursor=pointer]: EMPTY
+                    - generic [ref=e3655] [cursor=pointer]: EMPTY
+                    - generic [ref=e3660] [cursor=pointer]: EMPTY
+                    - generic [ref=e3665] [cursor=pointer]: EMPTY
+                    - generic [ref=e3670] [cursor=pointer]: EMPTY
+                    - generic [ref=e3676] [cursor=pointer]: "0.0"
+                    - generic [ref=e3681] [cursor=pointer]: EMPTY
+                    - generic [ref=e3686] [cursor=pointer]: EMPTY
+                    - generic [ref=e3691] [cursor=pointer]: EMPTY
+                    - generic [ref=e3696] [cursor=pointer]: EMPTY
+                    - generic [ref=e3701] [cursor=pointer]: EMPTY
+                    - generic [ref=e3706] [cursor=pointer]: EMPTY
+                  - generic [ref=e3707] [cursor=pointer]:
+                    - button "Select row" [ref=e3708] [cursor=pointer]
+                    - generic [ref=e3714] [cursor=pointer]: EMPTY
+                    - generic [ref=e3719] [cursor=pointer]: EMPTY
+                    - generic [ref=e3724] [cursor=pointer]: EMPTY
+                    - generic [ref=e3729] [cursor=pointer]: EMPTY
+                    - generic [ref=e3734] [cursor=pointer]: EMPTY
+                    - generic [ref=e3739] [cursor=pointer]: EMPTY
+                    - generic [ref=e3745] [cursor=pointer]: "0.0"
+                    - generic [ref=e3750] [cursor=pointer]: EMPTY
+                    - generic [ref=e3755] [cursor=pointer]: EMPTY
+                    - generic [ref=e3760] [cursor=pointer]: EMPTY
+                    - generic [ref=e3765] [cursor=pointer]: EMPTY
+                    - generic [ref=e3770] [cursor=pointer]: EMPTY
+                    - generic [ref=e3775] [cursor=pointer]: EMPTY
+```

@@ -1,0 +1,762 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - list:
+    - listitem:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#main-content"
+    - listitem:
+      - link "Skip to primary content" [ref=e5] [cursor=pointer]:
+        - /url: "#primary-content"
+  - generic [ref=e10]:
+    - navigation [ref=e11]:
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "logo" [ref=e14] [cursor=pointer]:
+            - /url: /app/dashboard
+            - img [ref=e15] [cursor=pointer]
+            - paragraph [ref=e32] [cursor=pointer]: Triangulator
+        - listitem [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /app/dashboard
+            - generic [ref=e35] [cursor=pointer]: Dashboard
+        - listitem [ref=e36]:
+          - link "My Workplace" [ref=e37] [cursor=pointer]:
+            - /url: /app/my-workspace/tri-admin/inst/summary
+            - generic [ref=e38] [cursor=pointer]: My Workplace
+        - listitem [ref=e39]:
+          - link "My Triangulator" [ref=e40] [cursor=pointer]:
+            - /url: /app/my-triangulator/suggestions/new
+            - generic [ref=e41] [cursor=pointer]: My Triangulator
+        - listitem [ref=e42]:
+          - link "Search" [ref=e43] [cursor=pointer]:
+            - /url: /app/public-search
+            - generic [ref=e44] [cursor=pointer]: Search
+        - listitem [ref=e45]:
+          - link "FAQ" [ref=e46] [cursor=pointer]:
+            - /url: /app/faq/
+            - generic [ref=e47] [cursor=pointer]: FAQ
+      - button "Open account dropdown" [ref=e51] [cursor=pointer]:
+        - img [ref=e52] [cursor=pointer]
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - navigation [ref=e57]:
+          - heading "Users" [level=2] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - link "All" [ref=e61] [cursor=pointer]:
+                - /url: /app/my-workspace/tri-admin/users-all
+                - img [ref=e62] [cursor=pointer]
+                - generic [ref=e64] [cursor=pointer]: All
+            - listitem [ref=e65]:
+              - link "Requests" [ref=e66] [cursor=pointer]:
+                - /url: /app/my-workspace/tri-admin/users-requests
+                - img [ref=e67] [cursor=pointer]
+                - generic [ref=e69] [cursor=pointer]: Requests
+                - generic [ref=e72] [cursor=pointer]: "4"
+          - heading "Institutions" [level=2] [ref=e74]
+          - list [ref=e75]:
+            - listitem [ref=e76]:
+              - link "Summary" [ref=e77] [cursor=pointer]:
+                - /url: /app/my-workspace/tri-admin/inst/summary
+                - img [ref=e78] [cursor=pointer]
+                - generic [ref=e80] [cursor=pointer]: Summary
+            - listitem [ref=e81]:
+              - link "Job Status" [ref=e82] [cursor=pointer]:
+                - /url: /app/my-workspace/tri-admin/job-status
+                - img [ref=e83] [cursor=pointer]
+                - generic [ref=e85] [cursor=pointer]: Job Status
+            - listitem [ref=e86]:
+              - link "IPEDS" [ref=e87] [cursor=pointer]:
+                - /url: /app/my-workspace/tri-admin/inst/ipeds
+                - img [ref=e88] [cursor=pointer]
+                - generic [ref=e90] [cursor=pointer]: IPEDS
+            - listitem [ref=e91]:
+              - link "Settings" [ref=e92] [cursor=pointer]:
+                - /url: /app/my-workspace/tri-admin/inst/settings
+                - img [ref=e93] [cursor=pointer]
+                - generic [ref=e95] [cursor=pointer]: Settings
+            - listitem [ref=e96]:
+              - link "Run Triangulation" [ref=e97] [cursor=pointer]:
+                - /url: /app/my-workspace/tri-admin/run-triangulation
+                - img [ref=e98] [cursor=pointer]
+                - generic [ref=e100] [cursor=pointer]: Run Triangulation
+            - listitem [ref=e101]:
+              - link "Run SQL" [ref=e102] [cursor=pointer]:
+                - /url: /app/my-workspace/tri-admin/run-sql
+                - img [ref=e103] [cursor=pointer]
+                - generic [ref=e105] [cursor=pointer]: Run SQL
+          - button "Download activity data" [ref=e109] [cursor=pointer]:
+            - status [ref=e111] [cursor=pointer]:
+              - generic [ref=e112] [cursor=pointer]: Loading...
+            - generic [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]: Activity Data
+              - img [ref=e115] [cursor=pointer]
+          - paragraph [ref=e118]: 2026 Triangulator Engine
+        - generic [ref=e123]:
+          - generic [ref=e125]:
+            - paragraph [ref=e128]: Institutions
+            - heading "Summary" [level=1] [ref=e129]
+          - generic [ref=e130]:
+            - navigation [ref=e131]:
+              - button "Prev" [disabled] [ref=e132]:
+                - img [ref=e133]
+                - generic [ref=e135]: Prev
+              - button "1" [ref=e136] [cursor=pointer]
+              - button "2" [ref=e137] [cursor=pointer]
+              - button "3" [ref=e138] [cursor=pointer]
+              - button "4" [ref=e139] [cursor=pointer]
+              - button "5" [ref=e140] [cursor=pointer]
+              - button "6" [ref=e141] [cursor=pointer]
+              - button "..." [disabled] [ref=e142]
+              - button "17" [ref=e143] [cursor=pointer]
+              - button "Next" [ref=e144] [cursor=pointer]:
+                - img [ref=e145] [cursor=pointer]
+                - generic [ref=e147] [cursor=pointer]: Next
+            - button "Filter" [ref=e149] [cursor=pointer]:
+              - img [ref=e150] [cursor=pointer]
+          - table "instSummary" [ref=e155]:
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - generic [ref=e160]:
+                  - columnheader "Unique Identifier" [ref=e162]:
+                    - button "Unique Identifier" [ref=e165] [cursor=pointer]:
+                      - generic [ref=e168] [cursor=pointer]: Unique Identifier
+                      - img [ref=e170] [cursor=pointer]
+                  - columnheader "State" [ref=e173]:
+                    - button "State" [ref=e176] [cursor=pointer]:
+                      - generic [ref=e179] [cursor=pointer]: State
+                      - img [ref=e181] [cursor=pointer]
+                  - columnheader "Last Triangulation Date" [ref=e184]:
+                    - button "Last Triangulation Date" [ref=e187] [cursor=pointer]:
+                      - generic [ref=e190] [cursor=pointer]: Last Triangulation Date
+                      - img [ref=e192] [cursor=pointer]
+                  - columnheader "Next Triangulation Date" [ref=e195]:
+                    - button "Next Triangulation Date" [ref=e198] [cursor=pointer]:
+                      - generic [ref=e201] [cursor=pointer]: Next Triangulation Date
+                      - img [ref=e203] [cursor=pointer]
+                  - columnheader "Total Rules" [ref=e206]:
+                    - button "Total Rules" [ref=e209] [cursor=pointer]:
+                      - generic [ref=e212] [cursor=pointer]: Total Rules
+                      - img [ref=e214] [cursor=pointer]
+                  - columnheader "Total Open Suggestions" [ref=e217]:
+                    - button "Total Open Suggestions" [ref=e220] [cursor=pointer]:
+                      - generic [ref=e223] [cursor=pointer]: Total Open Suggestions
+                      - img [ref=e225] [cursor=pointer]
+                  - columnheader "Total Closed Suggestions" [ref=e228]:
+                    - button "Total Closed Suggestions" [ref=e231] [cursor=pointer]:
+                      - generic [ref=e234] [cursor=pointer]: Total Closed Suggestions
+                      - img [ref=e236] [cursor=pointer]
+                  - columnheader "Total Accepted Suggestions" [ref=e239]:
+                    - button "Total Accepted Suggestions" [ref=e242] [cursor=pointer]:
+                      - generic [ref=e245] [cursor=pointer]: Total Accepted Suggestions
+                      - img [ref=e247] [cursor=pointer]
+                  - columnheader "Total Rejected Suggestions" [ref=e250]:
+                    - button "Total Rejected Suggestions" [ref=e253] [cursor=pointer]:
+                      - generic [ref=e256] [cursor=pointer]: Total Rejected Suggestions
+                      - img [ref=e258] [cursor=pointer]
+                  - columnheader "Status" [ref=e261]:
+                    - button "Status" [ref=e264] [cursor=pointer]:
+                      - generic [ref=e267] [cursor=pointer]: Status
+                      - img [ref=e269] [cursor=pointer]
+                - generic [ref=e272]:
+                  - rowgroup [ref=e273]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e274]:
+                      - gridcell "Unique Identifier" [ref=e276]:
+                        - generic [ref=e281]: "180203"
+                      - gridcell "State" [ref=e283]:
+                        - generic [ref=e288]: Montana
+                      - gridcell "Last Triangulation Date" [ref=e290]:
+                        - paragraph [ref=e294]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e296]:
+                        - paragraph [ref=e300]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e302]:
+                        - paragraph [ref=e306]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e308]:
+                        - paragraph [ref=e312]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e314]:
+                        - paragraph [ref=e318]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e320]:
+                        - paragraph [ref=e324]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e326]:
+                        - paragraph [ref=e330]: "0"
+                      - gridcell "Status" [ref=e332]:
+                        - generic [ref=e337]: Active
+                  - rowgroup [ref=e339]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e340]:
+                      - gridcell "Unique Identifier" [ref=e342]:
+                        - generic [ref=e347]: "222178"
+                      - gridcell "State" [ref=e349]:
+                        - generic [ref=e354]: Texas
+                      - gridcell "Last Triangulation Date" [ref=e356]:
+                        - paragraph [ref=e360]: No data
+                      - gridcell "Next Triangulation Date" [ref=e362]:
+                        - paragraph [ref=e366]: No data
+                      - gridcell "Total Rules" [ref=e368]:
+                        - paragraph [ref=e372]: "186"
+                      - gridcell "Total Open Suggestions" [ref=e374]:
+                        - paragraph [ref=e378]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e380]:
+                        - paragraph [ref=e384]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e386]:
+                        - paragraph [ref=e390]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e392]:
+                        - paragraph [ref=e396]: "0"
+                      - gridcell "Status" [ref=e398]:
+                        - generic [ref=e403]: Active
+                  - rowgroup [ref=e405]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e406]:
+                      - gridcell "Unique Identifier" [ref=e408]:
+                        - generic [ref=e413]: "138558"
+                      - gridcell "State" [ref=e415]:
+                        - generic [ref=e420]: Georgia
+                      - gridcell "Last Triangulation Date" [ref=e422]:
+                        - paragraph [ref=e426]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e428]:
+                        - paragraph [ref=e432]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e434]:
+                        - paragraph [ref=e438]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e440]:
+                        - paragraph [ref=e444]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e446]:
+                        - paragraph [ref=e450]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e452]:
+                        - paragraph [ref=e456]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e458]:
+                        - paragraph [ref=e462]: "0"
+                      - gridcell "Status" [ref=e464]:
+                        - generic [ref=e469]: Suspended
+                  - rowgroup [ref=e471]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e472]:
+                      - gridcell "Unique Identifier" [ref=e474]:
+                        - generic [ref=e479]: "172866"
+                      - gridcell "State" [ref=e481]:
+                        - generic [ref=e486]: Minnesota
+                      - gridcell "Last Triangulation Date" [ref=e488]:
+                        - paragraph [ref=e492]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e494]:
+                        - paragraph [ref=e498]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e500]:
+                        - paragraph [ref=e504]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e506]:
+                        - paragraph [ref=e510]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e512]:
+                        - paragraph [ref=e516]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e518]:
+                        - paragraph [ref=e522]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e524]:
+                        - paragraph [ref=e528]: "0"
+                      - gridcell "Status" [ref=e530]:
+                        - generic [ref=e535]: Active
+                  - rowgroup [ref=e537]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e538]:
+                      - gridcell "Unique Identifier" [ref=e540]:
+                        - generic [ref=e545]: "108232"
+                      - gridcell "State" [ref=e547]:
+                        - generic [ref=e552]: California
+                      - gridcell "Last Triangulation Date" [ref=e554]:
+                        - paragraph [ref=e558]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e560]:
+                        - paragraph [ref=e564]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e566]:
+                        - paragraph [ref=e570]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e572]:
+                        - paragraph [ref=e576]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e578]:
+                        - paragraph [ref=e582]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e584]:
+                        - paragraph [ref=e588]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e590]:
+                        - paragraph [ref=e594]: "0"
+                      - gridcell "Status" [ref=e596]:
+                        - generic [ref=e601]: Active
+                  - rowgroup [ref=e603]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e604]:
+                      - gridcell "Unique Identifier" [ref=e606]:
+                        - generic [ref=e611]: "487658"
+                      - gridcell "State" [ref=e613]:
+                        - generic [ref=e618]: Louisiana
+                      - gridcell "Last Triangulation Date" [ref=e620]:
+                        - paragraph [ref=e624]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e626]:
+                        - paragraph [ref=e630]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e632]:
+                        - paragraph [ref=e636]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e638]:
+                        - paragraph [ref=e642]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e644]:
+                        - paragraph [ref=e648]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e650]:
+                        - paragraph [ref=e654]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e656]:
+                        - paragraph [ref=e660]: "0"
+                      - gridcell "Status" [ref=e662]:
+                        - generic [ref=e667]: Active
+                  - rowgroup [ref=e669]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e670]:
+                      - gridcell "Unique Identifier" [ref=e672]:
+                        - generic [ref=e677]: "188429"
+                      - gridcell "State" [ref=e679]:
+                        - generic [ref=e684]: New York
+                      - gridcell "Last Triangulation Date" [ref=e686]:
+                        - paragraph [ref=e690]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e692]:
+                        - paragraph [ref=e696]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e698]:
+                        - paragraph [ref=e702]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e704]:
+                        - paragraph [ref=e708]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e710]:
+                        - paragraph [ref=e714]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e716]:
+                        - paragraph [ref=e720]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e722]:
+                        - paragraph [ref=e726]: "0"
+                      - gridcell "Status" [ref=e728]:
+                        - generic [ref=e733]: Active
+                  - rowgroup [ref=e735]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e736]:
+                      - gridcell "Unique Identifier" [ref=e738]:
+                        - generic [ref=e743]: "374024"
+                      - gridcell "State" [ref=e745]:
+                        - generic [ref=e750]: Minnesota
+                      - gridcell "Last Triangulation Date" [ref=e752]:
+                        - paragraph [ref=e756]: No data
+                      - gridcell "Next Triangulation Date" [ref=e758]:
+                        - paragraph [ref=e762]: January 26, 2026
+                      - gridcell "Total Rules" [ref=e764]:
+                        - paragraph [ref=e768]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e770]:
+                        - paragraph [ref=e774]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e776]:
+                        - paragraph [ref=e780]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e782]:
+                        - paragraph [ref=e786]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e788]:
+                        - paragraph [ref=e792]: "0"
+                      - gridcell "Status" [ref=e794]:
+                        - generic [ref=e799]: Active
+                  - rowgroup [ref=e801]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e802]:
+                      - gridcell "Unique Identifier" [ref=e804]:
+                        - generic [ref=e809]: "222497"
+                      - gridcell "State" [ref=e811]:
+                        - generic [ref=e816]: Texas
+                      - gridcell "Last Triangulation Date" [ref=e818]:
+                        - paragraph [ref=e822]: No data
+                      - gridcell "Next Triangulation Date" [ref=e824]:
+                        - paragraph [ref=e828]: No data
+                      - gridcell "Total Rules" [ref=e830]:
+                        - paragraph [ref=e834]: "569"
+                      - gridcell "Total Open Suggestions" [ref=e836]:
+                        - paragraph [ref=e840]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e842]:
+                        - paragraph [ref=e846]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e848]:
+                        - paragraph [ref=e852]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e854]:
+                        - paragraph [ref=e858]: "0"
+                      - gridcell "Status" [ref=e860]:
+                        - generic [ref=e865]: Data Activated
+                  - rowgroup [ref=e867]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e868]:
+                      - gridcell "Unique Identifier" [ref=e870]:
+                        - generic [ref=e875]: "175342"
+                      - gridcell "State" [ref=e877]:
+                        - generic [ref=e882]: Mississippi
+                      - gridcell "Last Triangulation Date" [ref=e884]:
+                        - paragraph [ref=e888]: January 19, 2026
+                      - gridcell "Next Triangulation Date" [ref=e890]:
+                        - paragraph [ref=e894]: January 26, 2026
+                      - gridcell "Total Rules" [ref=e896]:
+                        - paragraph [ref=e900]: 15,802
+                      - gridcell "Total Open Suggestions" [ref=e902]:
+                        - paragraph [ref=e906]: 3,563
+                      - gridcell "Total Closed Suggestions" [ref=e908]:
+                        - paragraph [ref=e912]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e914]:
+                        - paragraph [ref=e918]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e920]:
+                        - paragraph [ref=e924]: "0"
+                      - gridcell "Status" [ref=e926]:
+                        - generic [ref=e931]: Active
+                  - rowgroup [ref=e933]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e934]:
+                      - gridcell "Unique Identifier" [ref=e936]:
+                        - generic [ref=e941]: "108807"
+                      - gridcell "State" [ref=e943]:
+                        - generic [ref=e948]: California
+                      - gridcell "Last Triangulation Date" [ref=e950]:
+                        - paragraph [ref=e954]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e956]:
+                        - paragraph [ref=e960]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e962]:
+                        - paragraph [ref=e966]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e968]:
+                        - paragraph [ref=e972]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e974]:
+                        - paragraph [ref=e978]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e980]:
+                        - paragraph [ref=e984]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e986]:
+                        - paragraph [ref=e990]: "0"
+                      - gridcell "Status" [ref=e992]:
+                        - generic [ref=e997]: Active
+                  - rowgroup [ref=e999]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1000]:
+                      - gridcell "Unique Identifier" [ref=e1002]:
+                        - generic [ref=e1007]: "154642"
+                      - gridcell "State" [ref=e1009]:
+                        - generic [ref=e1014]: Kansas
+                      - gridcell "Last Triangulation Date" [ref=e1016]:
+                        - paragraph [ref=e1020]: No data
+                      - gridcell "Next Triangulation Date" [ref=e1022]:
+                        - paragraph [ref=e1026]: No data
+                      - gridcell "Total Rules" [ref=e1028]:
+                        - paragraph [ref=e1032]: "82"
+                      - gridcell "Total Open Suggestions" [ref=e1034]:
+                        - paragraph [ref=e1038]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1040]:
+                        - paragraph [ref=e1044]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1046]:
+                        - paragraph [ref=e1050]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1052]:
+                        - paragraph [ref=e1056]: "0"
+                      - gridcell "Status" [ref=e1058]:
+                        - generic [ref=e1063]: Data Activated
+                  - rowgroup [ref=e1065]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1066]:
+                      - gridcell "Unique Identifier" [ref=e1068]:
+                        - generic [ref=e1073]: "427946"
+                      - gridcell "State" [ref=e1075]:
+                        - generic [ref=e1080]: New York
+                      - gridcell "Last Triangulation Date" [ref=e1082]:
+                        - paragraph [ref=e1086]: January 19, 2026
+                      - gridcell "Next Triangulation Date" [ref=e1088]:
+                        - paragraph [ref=e1092]: January 26, 2026
+                      - gridcell "Total Rules" [ref=e1094]:
+                        - paragraph [ref=e1098]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e1100]:
+                        - paragraph [ref=e1104]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1106]:
+                        - paragraph [ref=e1110]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1112]:
+                        - paragraph [ref=e1116]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1118]:
+                        - paragraph [ref=e1122]: "0"
+                      - gridcell "Status" [ref=e1124]:
+                        - generic [ref=e1129]: Active
+                  - rowgroup [ref=e1131]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1132]:
+                      - gridcell "Unique Identifier" [ref=e1134]:
+                        - generic [ref=e1139]: "238193"
+                      - gridcell "State" [ref=e1141]:
+                        - generic [ref=e1146]: Wisconsin
+                      - gridcell "Last Triangulation Date" [ref=e1148]:
+                        - paragraph [ref=e1152]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e1154]:
+                        - paragraph [ref=e1158]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e1160]:
+                        - paragraph [ref=e1164]: "0"
+                      - gridcell "Total Open Suggestions" [ref=e1166]:
+                        - paragraph [ref=e1170]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1172]:
+                        - paragraph [ref=e1176]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1178]:
+                        - paragraph [ref=e1182]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1184]:
+                        - paragraph [ref=e1188]: "0"
+                      - gridcell "Status" [ref=e1190]:
+                        - generic [ref=e1195]: Active
+                  - rowgroup [ref=e1197]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1198]:
+                      - gridcell "Unique Identifier" [ref=e1200]:
+                        - generic [ref=e1205]: "222567"
+                      - gridcell "State" [ref=e1207]:
+                        - generic [ref=e1212]: Texas
+                      - gridcell "Last Triangulation Date" [ref=e1214]:
+                        - paragraph [ref=e1218]: March 3, 2025
+                      - gridcell "Next Triangulation Date" [ref=e1220]:
+                        - paragraph [ref=e1224]: September 11, 2025
+                      - gridcell "Total Rules" [ref=e1226]:
+                        - paragraph [ref=e1230]: "208"
+                      - gridcell "Total Open Suggestions" [ref=e1232]:
+                        - paragraph [ref=e1236]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1238]:
+                        - paragraph [ref=e1242]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1244]:
+                        - paragraph [ref=e1248]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1250]:
+                        - paragraph [ref=e1254]: "0"
+                      - gridcell "Status" [ref=e1256]:
+                        - generic [ref=e1261]: Inactive
+                  - rowgroup [ref=e1263]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1264]:
+                      - gridcell "Unique Identifier" [ref=e1266]:
+                        - generic [ref=e1271]: "222576"
+                      - gridcell "State" [ref=e1273]:
+                        - generic [ref=e1278]: Texas
+                      - gridcell "Last Triangulation Date" [ref=e1280]:
+                        - paragraph [ref=e1284]: No data
+                      - gridcell "Next Triangulation Date" [ref=e1286]:
+                        - paragraph [ref=e1290]: No data
+                      - gridcell "Total Rules" [ref=e1292]:
+                        - paragraph [ref=e1296]: "182"
+                      - gridcell "Total Open Suggestions" [ref=e1298]:
+                        - paragraph [ref=e1302]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1304]:
+                        - paragraph [ref=e1308]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1310]:
+                        - paragraph [ref=e1314]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1316]:
+                        - paragraph [ref=e1320]: "0"
+                      - gridcell "Status" [ref=e1322]:
+                        - generic [ref=e1327]: Active
+                  - rowgroup [ref=e1329]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1330]:
+                      - gridcell "Unique Identifier" [ref=e1332]:
+                        - generic [ref=e1337]: "109208"
+                      - gridcell "State" [ref=e1339]:
+                        - generic [ref=e1344]: California
+                      - gridcell "Last Triangulation Date" [ref=e1346]:
+                        - paragraph [ref=e1350]: January 23, 2026
+                      - gridcell "Next Triangulation Date" [ref=e1352]:
+                        - paragraph [ref=e1356]: January 26, 2026
+                      - gridcell "Total Rules" [ref=e1358]:
+                        - paragraph [ref=e1362]: "14"
+                      - gridcell "Total Open Suggestions" [ref=e1364]:
+                        - paragraph [ref=e1368]: "289"
+                      - gridcell "Total Closed Suggestions" [ref=e1370]:
+                        - paragraph [ref=e1374]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1376]:
+                        - paragraph [ref=e1380]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1382]:
+                        - paragraph [ref=e1386]: "0"
+                      - gridcell "Status" [ref=e1388]:
+                        - generic [ref=e1393]: Active
+                  - rowgroup [ref=e1395]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1396]:
+                      - gridcell "Unique Identifier" [ref=e1398]:
+                        - generic [ref=e1403]: "150066"
+                      - gridcell "State" [ref=e1405]:
+                        - generic [ref=e1410]: Indiana
+                      - gridcell "Last Triangulation Date" [ref=e1412]:
+                        - paragraph [ref=e1416]: No data
+                      - gridcell "Next Triangulation Date" [ref=e1418]:
+                        - paragraph [ref=e1422]: No data
+                      - gridcell "Total Rules" [ref=e1424]:
+                        - paragraph [ref=e1428]: "63"
+                      - gridcell "Total Open Suggestions" [ref=e1430]:
+                        - paragraph [ref=e1434]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1436]:
+                        - paragraph [ref=e1440]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1442]:
+                        - paragraph [ref=e1446]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1448]:
+                        - paragraph [ref=e1452]: "0"
+                      - gridcell "Status" [ref=e1454]:
+                        - generic [ref=e1459]: Inactive
+                  - rowgroup [ref=e1461]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1462]:
+                      - gridcell "Unique Identifier" [ref=e1464]:
+                        - generic [ref=e1469]: "222822"
+                      - gridcell "State" [ref=e1471]:
+                        - generic [ref=e1476]: Texas
+                      - gridcell "Last Triangulation Date" [ref=e1478]:
+                        - paragraph [ref=e1482]: No data
+                      - gridcell "Next Triangulation Date" [ref=e1484]:
+                        - paragraph [ref=e1488]: No data
+                      - gridcell "Total Rules" [ref=e1490]:
+                        - paragraph [ref=e1494]: "158"
+                      - gridcell "Total Open Suggestions" [ref=e1496]:
+                        - paragraph [ref=e1500]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1502]:
+                        - paragraph [ref=e1506]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1508]:
+                        - paragraph [ref=e1512]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1514]:
+                        - paragraph [ref=e1518]: "0"
+                      - gridcell "Status" [ref=e1520]:
+                        - generic [ref=e1525]: Data Activated
+                  - rowgroup [ref=e1527]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1528]:
+                      - gridcell "Unique Identifier" [ref=e1530]:
+                        - generic [ref=e1535]: "222831"
+                      - gridcell "State" [ref=e1537]:
+                        - generic [ref=e1542]: Texas
+                      - gridcell "Last Triangulation Date" [ref=e1544]:
+                        - paragraph [ref=e1548]: No data
+                      - gridcell "Next Triangulation Date" [ref=e1550]:
+                        - paragraph [ref=e1554]: No data
+                      - gridcell "Total Rules" [ref=e1556]:
+                        - paragraph [ref=e1560]: "195"
+                      - gridcell "Total Open Suggestions" [ref=e1562]:
+                        - paragraph [ref=e1566]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1568]:
+                        - paragraph [ref=e1572]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1574]:
+                        - paragraph [ref=e1578]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1580]:
+                        - paragraph [ref=e1584]: "0"
+                      - gridcell "Status" [ref=e1586]:
+                        - generic [ref=e1591]: Data Activated
+                  - rowgroup [ref=e1593]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1594]:
+                      - gridcell "Unique Identifier" [ref=e1596]:
+                        - generic [ref=e1601]: "900003"
+                      - gridcell "State" [ref=e1603]:
+                        - generic [ref=e1608]: Arizona
+                      - gridcell "Last Triangulation Date" [ref=e1610]:
+                        - paragraph [ref=e1614]: No data
+                      - gridcell "Next Triangulation Date" [ref=e1616]:
+                        - paragraph [ref=e1620]: No data
+                      - gridcell "Total Rules" [ref=e1622]:
+                        - paragraph [ref=e1626]: 1,774
+                      - gridcell "Total Open Suggestions" [ref=e1628]:
+                        - paragraph [ref=e1632]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1634]:
+                        - paragraph [ref=e1638]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1640]:
+                        - paragraph [ref=e1644]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1646]:
+                        - paragraph [ref=e1650]: "0"
+                      - gridcell "Status" [ref=e1652]:
+                        - generic [ref=e1657]: Data Activated
+                  - rowgroup [ref=e1659]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1660]:
+                      - gridcell "Unique Identifier" [ref=e1662]:
+                        - generic [ref=e1667]: "104151"
+                      - gridcell "State" [ref=e1669]:
+                        - generic [ref=e1674]: Arizona
+                      - gridcell "Last Triangulation Date" [ref=e1676]:
+                        - paragraph [ref=e1680]: December 30, 2025
+                      - gridcell "Next Triangulation Date" [ref=e1682]:
+                        - paragraph [ref=e1686]: No data
+                      - gridcell "Total Rules" [ref=e1688]:
+                        - paragraph [ref=e1692]: 405,471
+                      - gridcell "Total Open Suggestions" [ref=e1694]:
+                        - paragraph [ref=e1698]: 1,505
+                      - gridcell "Total Closed Suggestions" [ref=e1700]:
+                        - paragraph [ref=e1704]: "417"
+                      - gridcell "Total Accepted Suggestions" [ref=e1706]:
+                        - paragraph [ref=e1710]: "345"
+                      - gridcell "Total Rejected Suggestions" [ref=e1712]:
+                        - paragraph [ref=e1716]: "72"
+                      - gridcell "Status" [ref=e1718]:
+                        - generic [ref=e1723]: Active
+                  - rowgroup [ref=e1725]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1726]:
+                      - gridcell "Unique Identifier" [ref=e1728]:
+                        - generic [ref=e1733]: "104160"
+                      - gridcell "State" [ref=e1735]:
+                        - generic [ref=e1740]: Arizona
+                      - gridcell "Last Triangulation Date" [ref=e1742]:
+                        - paragraph [ref=e1746]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e1748]:
+                        - paragraph [ref=e1752]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e1754]:
+                        - paragraph [ref=e1758]: "73"
+                      - gridcell "Total Open Suggestions" [ref=e1760]:
+                        - paragraph [ref=e1764]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1766]:
+                        - paragraph [ref=e1770]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1772]:
+                        - paragraph [ref=e1776]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1778]:
+                        - paragraph [ref=e1782]: "0"
+                      - gridcell "Status" [ref=e1784]:
+                        - generic [ref=e1789]: Active
+                  - rowgroup [ref=e1791]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1792]:
+                      - gridcell "Unique Identifier" [ref=e1794]:
+                        - generic [ref=e1799]: "222992"
+                      - gridcell "State" [ref=e1801]:
+                        - generic [ref=e1806]: Texas
+                      - gridcell "Last Triangulation Date" [ref=e1808]:
+                        - paragraph [ref=e1812]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e1814]:
+                        - paragraph [ref=e1818]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e1820]:
+                        - paragraph [ref=e1824]: "355"
+                      - gridcell "Total Open Suggestions" [ref=e1826]:
+                        - paragraph [ref=e1830]: "0"
+                      - gridcell "Total Closed Suggestions" [ref=e1832]:
+                        - paragraph [ref=e1836]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1838]:
+                        - paragraph [ref=e1842]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1844]:
+                        - paragraph [ref=e1848]: "0"
+                      - gridcell "Status" [ref=e1850]:
+                        - generic [ref=e1855]: Active
+                  - rowgroup [ref=e1857]:
+                    - row "Unique Identifier State Last Triangulation Date Next Triangulation Date Total Rules Total Open Suggestions Total Closed Suggestions Total Accepted Suggestions Total Rejected Suggestions Status" [ref=e1858]:
+                      - gridcell "Unique Identifier" [ref=e1860]:
+                        - generic [ref=e1865]: "219602"
+                      - gridcell "State" [ref=e1867]:
+                        - generic [ref=e1872]: Tennessee
+                      - gridcell "Last Triangulation Date" [ref=e1874]:
+                        - paragraph [ref=e1878]: January 5, 2026
+                      - gridcell "Next Triangulation Date" [ref=e1880]:
+                        - paragraph [ref=e1884]: February 2, 2026
+                      - gridcell "Total Rules" [ref=e1886]:
+                        - paragraph [ref=e1890]: "30"
+                      - gridcell "Total Open Suggestions" [ref=e1892]:
+                        - paragraph [ref=e1896]: "1"
+                      - gridcell "Total Closed Suggestions" [ref=e1898]:
+                        - paragraph [ref=e1902]: "0"
+                      - gridcell "Total Accepted Suggestions" [ref=e1904]:
+                        - paragraph [ref=e1908]: "0"
+                      - gridcell "Total Rejected Suggestions" [ref=e1910]:
+                        - paragraph [ref=e1914]: "0"
+                      - gridcell "Status" [ref=e1916]:
+                        - generic [ref=e1921]: Active
+              - generic:
+                - generic:
+                  - button "row floating action button" [ref=e1926] [cursor=pointer]:
+                    - img [ref=e1927] [cursor=pointer]
+                  - button "row floating action button" [ref=e1932] [cursor=pointer]:
+                    - img [ref=e1933] [cursor=pointer]
+                  - button "row floating action button" [ref=e1938] [cursor=pointer]:
+                    - img [ref=e1939] [cursor=pointer]
+                  - button "row floating action button" [ref=e1944] [cursor=pointer]:
+                    - img [ref=e1945] [cursor=pointer]
+                  - button "row floating action button" [ref=e1950] [cursor=pointer]:
+                    - img [ref=e1951] [cursor=pointer]
+                  - button "row floating action button" [ref=e1956] [cursor=pointer]:
+                    - img [ref=e1957] [cursor=pointer]
+                  - button "row floating action button" [ref=e1962] [cursor=pointer]:
+                    - img [ref=e1963] [cursor=pointer]
+                  - button "row floating action button" [ref=e1968] [cursor=pointer]:
+                    - img [ref=e1969] [cursor=pointer]
+                  - button "row floating action button" [ref=e1974] [cursor=pointer]:
+                    - img [ref=e1975] [cursor=pointer]
+                  - button "row floating action button" [ref=e1980] [cursor=pointer]:
+                    - img [ref=e1981] [cursor=pointer]
+                  - button "row floating action button" [ref=e1986] [cursor=pointer]:
+                    - img [ref=e1987] [cursor=pointer]
+                  - button "row floating action button" [ref=e1992] [cursor=pointer]:
+                    - img [ref=e1993] [cursor=pointer]
+                  - button "row floating action button" [ref=e1998] [cursor=pointer]:
+                    - img [ref=e1999] [cursor=pointer]
+                  - button "row floating action button" [ref=e2004] [cursor=pointer]:
+                    - img [ref=e2005] [cursor=pointer]
+                  - button "row floating action button" [ref=e2010] [cursor=pointer]:
+                    - img [ref=e2011] [cursor=pointer]
+                  - button "row floating action button" [ref=e2016] [cursor=pointer]:
+                    - img [ref=e2017] [cursor=pointer]
+                  - button "row floating action button" [ref=e2022] [cursor=pointer]:
+                    - img [ref=e2023] [cursor=pointer]
+                  - button "row floating action button" [ref=e2028] [cursor=pointer]:
+                    - img [ref=e2029] [cursor=pointer]
+                  - button "row floating action button" [ref=e2034] [cursor=pointer]:
+                    - img [ref=e2035] [cursor=pointer]
+                  - button "row floating action button" [ref=e2040] [cursor=pointer]:
+                    - img [ref=e2041] [cursor=pointer]
+                  - button "row floating action button" [ref=e2046] [cursor=pointer]:
+                    - img [ref=e2047] [cursor=pointer]
+                  - button "row floating action button" [ref=e2052] [cursor=pointer]:
+                    - img [ref=e2053] [cursor=pointer]
+                  - button "row floating action button" [ref=e2058] [cursor=pointer]:
+                    - img [ref=e2059] [cursor=pointer]
+```
