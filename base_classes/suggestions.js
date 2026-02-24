@@ -648,5 +648,301 @@ async NoAPIerror1576()
   await this.page.waitForLoadState('networkidle');
   await expect(this.page.getByText('PIMA COMMUNITY COLLEGE').nth(1)).toBeVisible(); // 10 seconds
 }
+
+  // ─── MODERN NAVIGATION ───────────────────────────────────────────────────────
+
+  async goToNewSuggestions() {
+    await this.page.getByRole('link', { name: 'My Triangulator' }).click();
+    await this.page.waitForURL('**/suggestions/new**');
+    await expect(this.page.getByRole('heading', { name: 'New Suggestions', level: 1 })).toBeVisible();
+    await expect(this.page.getByRole('gridcell', { name: 'Source institution' }).first()).toBeVisible({ timeout: 15000 });
+  }
+
+  async goToAssignedSuggestions() {
+    await this.page.getByRole('link', { name: 'Assigned' }).click();
+    await this.page.waitForURL('**/suggestions/assigned**');
+    await expect(this.page.getByRole('heading', { name: 'Assigned', level: 1 })).toBeVisible();
+  }
+
+  async goToHistorySuggestions() {
+    await this.page.getByRole('link', { name: 'History' }).click();
+    await this.page.waitForURL('**/suggestions/history**');
+    await expect(this.page.getByRole('heading', { name: 'History', level: 1 })).toBeVisible();
+    await expect(this.page.getByRole('gridcell', { name: 'Source institution' }).first()).toBeVisible({ timeout: 15000 });
+  }
+
+  // ─── SIDEBAR BADGE ────────────────────────────────────────────────────────────
+
+  async getAssignedBadgeCount() {
+    const badge = this.page.getByRole('link', { name: /Assigned/ }).locator('p, span').filter({ hasNotText: 'Assigned' });
+    const text = await badge.first().textContent();
+    return parseInt(text || '0', 10);
+  }
+
+  // ─── TABLE COLUMN VALIDATION ──────────────────────────────────────────────────
+
+  async validateNewSuggestionsColumns() {
+    const cols = [
+      'Source institution', 'Source state', 'Source subject', 'Source number',
+      'Target subject', 'Target number', 'Score', 'Request name',
+      'Suggestion type', 'Target institution', 'Date suggested', 'Date last modified',
+    ];
+    for (const col of cols) {
+      await expect(this.page.getByRole('columnheader', { name: col })).toBeVisible();
+    }
+  }
+
+  async validateHistoryExtraColumns() {
+    for (const col of ['Date decided', 'Decided by', 'Decision']) {
+      await expect(this.page.getByRole('columnheader', { name: col })).toBeVisible();
+    }
+  }
+
+  async validateAssignedExtraColumns() {
+    await expect(this.page.getByRole('columnheader', { name: 'Assignee' })).toBeVisible();
+  }
+
+  // ─── DETAIL VIEW ──────────────────────────────────────────────────────────────
+
+  async openFirstSuggestionDetail() {
+    await expect(this.page.getByRole('gridcell', { name: 'Source institution' }).first()).toBeVisible({ timeout: 15000 });
+    await this.page.getByRole('gridcell', { name: 'Source institution' }).first().click();
+    await this.page.waitForURL(/pageRowIndex=\d/, { timeout: 15000 });
+  }
+
+  async validateDetailViewStructure() {
+    await expect(this.page.getByRole('button', { name: 'Back' })).toBeVisible();
+    await expect(this.page.getByText('Source', { exact: true })).toBeVisible();
+    await expect(this.page.getByText('Target', { exact: true })).toBeVisible();
+    await expect(this.page.getByText('Subject:').first()).toBeVisible();
+    await expect(this.page.getByText('Number:').first()).toBeVisible();
+    await expect(this.page.getByText('Min/max hours:').first()).toBeVisible();
+    await expect(this.page.getByText('Begin/end date:').first()).toBeVisible();
+    await expect(this.page.getByRole('button', { name: /Assign/i })).toBeVisible();
+  }
+
+  async getDetailSubjectCodes() {
+    const subjectParagraphs = this.page.locator('p').filter({ hasText: 'Subject:' });
+    await expect(subjectParagraphs.nth(0)).toBeVisible({ timeout: 10000 });
+    await expect(subjectParagraphs.nth(1)).toBeVisible({ timeout: 10000 });
+    const srcRaw = await subjectParagraphs.nth(0).textContent() ?? '';
+    const tgtRaw = await subjectParagraphs.nth(1).textContent() ?? '';
+    const src = srcRaw.replace('Subject:', '').trim();
+    const tgt = tgtRaw.replace('Subject:', '').trim();
+    return { src, tgt };
+  }
+
+  async validateSubjectMatchSemantically() {
+    const { src, tgt } = await this.getDetailSubjectCodes();
+    // Subject codes must share the same academic discipline root
+    // e.g., CHM=CHM, CHEM≈CHM (Chemistry), HIST≈HIS (History)
+    // ENG should never map to MATH
+    const srcRoot = src.slice(0, 2).toUpperCase();
+    const tgtRoot = tgt.slice(0, 2).toUpperCase();
+    expect(srcRoot).toBe(tgtRoot);
+  }
+
+  async validateDetailCourseTitle() {
+    const courseTitle = this.page.locator('p, h2, h3, span').filter({ hasText: /[A-Z]{2,5}\s+\d/ }).first();
+    await expect(courseTitle).toBeVisible();
+  }
+
+  async validateDetailSuggestionTypeBadge() {
+    const validTypes = ['Triangulation', 'Partner', 'Improve rules boost', 'Random'];
+    let found = false;
+    for (const t of validTypes) {
+      const el = this.page.getByRole('button', { name: t }).or(this.page.getByText(t, { exact: true })).first();
+      if (await el.count() > 0) { found = true; break; }
+    }
+    expect(found).toBe(true);
+  }
+
+  async validateDetailQueueNavigation() {
+    await expect(this.page.getByRole('button', { name: 'Next suggestion' })).toBeVisible();
+    await expect(this.page.getByRole('button', { name: 'Previous suggestion' })).toBeVisible();
+  }
+
+  async navigateDetailQueueNext() {
+    await this.page.getByRole('button', { name: 'Next suggestion' }).click();
+    await this.page.waitForURL(/pageRowIndex=1/, { timeout: 10000 });
+  }
+
+  async goBackFromDetail() {
+    await this.page.getByRole('button', { name: 'Back' }).click();
+    await this.page.waitForURL('**/suggestions/new**', { timeout: 10000 });
+    await expect(this.page.getByRole('heading', { name: 'New Suggestions', level: 1 })).toBeVisible();
+    await expect(this.page.getByRole('gridcell', { name: 'Source institution' }).first()).toBeVisible({ timeout: 10000 });
+  }
+
+  async validateDetailAcceptRejectDisabledOnNew() {
+    await expect(this.page.getByRole('button', { name: 'Accept' })).toBeDisabled();
+    await expect(this.page.getByRole('button', { name: 'Reject' })).toBeDisabled();
+  }
+
+  async validateDetailAcceptRejectEnabledOnAssigned() {
+    await expect(this.page.getByRole('button', { name: 'Accept' })).toBeEnabled();
+    await expect(this.page.getByRole('button', { name: 'Reject' })).toBeEnabled();
+  }
+
+  // ─── SUBJECT MISMATCH GUARD (table level) ────────────────────────────────────
+
+  async validateTableSubjectMatchConsistency(maxRows = 5) {
+    const rows = this.page.getByRole('rowgroup').getByRole('row');
+    const count = Math.min(await rows.count(), maxRows);
+    if (count === 0) return;
+    let anyMatch = false;
+    for (let i = 0; i < count; i++) {
+      const row = rows.nth(i);
+      const srcCell = row.getByRole('gridcell', { name: 'Source subject' });
+      const tgtCell = row.getByRole('gridcell', { name: 'Target subject' });
+      const srcText = (await srcCell.textContent() ?? '').trim();
+      const tgtText = (await tgtCell.textContent() ?? '').trim();
+      if (srcText && tgtText) {
+        const srcRoot = srcText.slice(0, 2).toUpperCase();
+        const tgtRoot = tgtText.slice(0, 2).toUpperCase();
+        if (srcRoot === tgtRoot) anyMatch = true;
+      }
+    }
+    expect(anyMatch).toBe(true);
+  }
+
+  // ─── FILTER PANEL ────────────────────────────────────────────────────────────
+
+  async openFilterPanel() {
+    await this.page.getByRole('button', { name: 'Filter' }).click();
+    const panelHeader = this.page.getByText(/Filter suggestions/i);
+    const applyButton = this.page.getByRole('button', { name: 'Apply' });
+    await Promise.race([
+      panelHeader.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {}),
+      applyButton.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {}),
+    ]);
+  }
+
+  async applyFilterBySuggestionType(type) {
+    await this.openFilterPanel();
+    await this.page.getByRole('combobox', { name: 'Suggestion Type' }).locator('div').nth(1).click();
+    await this.page.getByText(type, { exact: false }).click();
+    await this.page.getByRole('button', { name: 'Apply' }).click();
+    await this.page.waitForTimeout(1200);
+    // wait for chip and table render
+    await expect(this.page.locator('.justify-between > div.overflow-hidden > .overflow-hidden')).toContainText(new RegExp(type, 'i'));
+    await this.page.getByRole('rowgroup').first().getByRole('row').first().waitFor({ timeout: 8000 });
+  }
+
+  async clearAllFiltersViaChip() {
+    const clearBtn = this.page.getByRole('button', { name: /clear all/i })
+      .or(this.page.getByRole('button', { name: /clear filters/i }))
+      .or(this.page.getByText(/Clear all/i).first());
+    if (await clearBtn.count() > 0) {
+      await clearBtn.first().click();
+      await this.page.waitForTimeout(1200);
+      await this.page.getByRole('rowgroup').first().getByRole('row').first().waitFor({ timeout: 8000 });
+      await expect(this.page.locator('.justify-between > div.overflow-hidden > .overflow-hidden')).not.toContainText(/Triangulation|Partner|Improve|Random/i, { timeout: 5000 });
+    }
+  }
+
+  async validateActiveFilterChipContains(text) {
+    const chip = this.page.locator('.justify-between > div.overflow-hidden > .overflow-hidden');
+    await expect(chip).toContainText(new RegExp(text, 'i'));
+  }
+
+  // ─── COLUMN SORTING ───────────────────────────────────────────────────────────
+
+  async sortColumnAscending(columnName) {
+    await this.page.getByRole('columnheader', { name: columnName }).click();
+    await this.page.waitForTimeout(800);
+  }
+
+  async sortColumnDescending(columnName) {
+    await this.page.getByRole('columnheader', { name: columnName }).click();
+    await this.page.waitForTimeout(800);
+    await this.page.getByRole('columnheader', { name: columnName }).click();
+    await this.page.waitForTimeout(800);
+  }
+
+  // ─── ASSIGNED SUB-TABS ────────────────────────────────────────────────────────
+
+  async selectMyAssignedTab() {
+    await this.page.getByRole('tab', { name: /My Suggestions/i }).click();
+    await this.page.waitForTimeout(500);
+  }
+
+  async selectOtherAssignedTab() {
+    await this.page.getByRole('tab', { name: /Other Suggestions/i }).click();
+    await this.page.waitForTimeout(500);
+  }
+
+  async validateAssignedEmptyState() {
+    await expect(this.page.getByText(/No assigned suggestions/i)).toBeVisible();
+  }
+
+  // ─── HISTORY DECISION VALIDATION ──────────────────────────────────────────────
+
+  async validateFirstHistoryRowDecision() {
+    const decisionCell = this.page.getByRole('rowgroup').first().getByRole('row').first()
+      .getByRole('gridcell', { name: 'Decision' });
+    await expect(decisionCell).toBeVisible();
+    const text = (await decisionCell.textContent() ?? '').trim();
+    expect(['Accepted', 'Rejected']).toContain(text);
+  }
+
+  async validateDecisionBadgesVisible() {
+    await this.page.waitForLoadState('domcontentloaded');
+    await this.page.waitForTimeout(1000);
+    const rows = this.page.getByRole('rowgroup').getByRole('row');
+    if ((await rows.count()) === 0) return;
+    const accepted = this.page.getByText('Accepted', { exact: false });
+    const rejected = this.page.getByText('Rejected', { exact: false });
+    const hasDecision = (await accepted.count() > 0) || (await rejected.count() > 0);
+    expect(hasDecision, 'Expected at least one Accepted or Rejected decision in history').toBe(true);
+  }
+
+  async openHistoryDetailAndCheckActions() {
+    await expect(this.page.getByRole('gridcell', { name: 'Source institution' }).first()).toBeVisible({ timeout: 15000 });
+    await this.page.getByRole('gridcell', { name: 'Source institution' }).first().click();
+    await this.page.waitForURL(/pageRowIndex=\d/, { timeout: 15000 });
+    await expect(this.page.getByRole('button', { name: 'Back' })).toBeVisible();
+  }
+
+  // ─── SUGGESTION TYPE VALIDATION ───────────────────────────────────────────────
+
+  async validateSuggestionTypeInTable(expectedType) {
+    const typeCells = this.page.getByRole('gridcell', { name: 'Suggestion type' });
+    const count = await typeCells.count();
+    if (count === 0) return; // No rows after filter – skip row-level check
+    const sample = Math.min(count, 5);
+    for (let i = 0; i < sample; i++) {
+      const text = (await typeCells.nth(i).textContent() ?? '').trim();
+      expect(text.toLowerCase()).toContain(expectedType.toLowerCase());
+    }
+  }
+
+  async filterAndValidateSuggestionType(filterLabel, expectedCellText) {
+    await this.applyFilterBySuggestionType(filterLabel);
+    await this.validateSuggestionTypeInTable(expectedCellText);
+  }
+
+  // ─── PAGINATION ───────────────────────────────────────────────────────────────
+
+  async validatePaginationVisible() {
+    await expect(this.page.getByRole('navigation').filter({ hasText: /Prev/ })).toBeVisible();
+  }
+
+  async goToNextPage() {
+    const nextBtn = this.page.getByRole('button', { name: 'Next' });
+    if (await nextBtn.isEnabled()) {
+      await nextBtn.click();
+      await this.page.waitForLoadState('networkidle');
+    }
+  }
+
+  // ─── DASHBOARD STATS ──────────────────────────────────────────────────────────
+
+  async validateDashboardSuggestionStats() {
+    await expect(this.page.getByText('Total accepted')).toBeVisible();
+    await expect(this.page.getByText('My outstanding')).toBeVisible();
+    await expect(this.page.getByText('My accepted')).toBeVisible();
+    await expect(this.page.getByText('My rejected')).toBeVisible();
+  }
 }
-module.exports  = {SuggestionsPage};
+module.exports = { SuggestionsPage };

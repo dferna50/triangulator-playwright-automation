@@ -9,7 +9,10 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.58.0",
-    "@types/node": "^22.13.14"
+    "@types/node": "^22.19.11",
+    "@types/papaparse": "^5.5.2",
+    "dotenv": "^17.3.1",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "papaparse": "^5.5.2"

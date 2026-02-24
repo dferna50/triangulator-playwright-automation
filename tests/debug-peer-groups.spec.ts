@@ -1,12 +1,10 @@
-const { test, expect } = require('@playwright/test');
-const { loginPage } = require('../base_classes/login');
-const { PeerGroupsPage } = require('../base_classes/peerGroupsPage');
+import { test, expect } from '../fixtures/test';
 
-test('Debug: Test all Submit strategies', async ({ page }) => {
-    const baseURL = 'https://qa.creditmobility.net';
-    const login = new loginPage(page);
-    const peerPage = new PeerGroupsPage(page);
+const baseURL = process.env.BASE_URL ?? 'https://qa.creditmobility.net';
+const regularUserEmail = process.env.REGULAR_USER_EMAIL ?? '';
+const regularUserPassword = process.env.REGULAR_USER_PASSWORD ?? '';
 
+test('Debug: Test all Submit strategies', async ({ page, loginPage, peerGroupsPage }) => {
     page.on('response', async (res) => {
         if (res.url().includes('graphql')) {
             try {
@@ -15,17 +13,19 @@ test('Debug: Test all Submit strategies', async ({ page }) => {
                 if (str.includes('peerGroup') || str.includes('error') || str.includes('create')) {
                     console.log(`GraphQL: ${str}`);
                 }
-            } catch (e) {}
+            } catch {
+                // ignore parse errors
+            }
         }
     });
 
     await page.goto(`${baseURL}/logged-out/login/email`);
-    await login.loginuser('testtriangulator+108@gmail.com', 'Triangulator!1');
+    await loginPage.loginUser(regularUserEmail, regularUserPassword);
     await page.waitForLoadState('domcontentloaded');
-    await peerPage.navigateToPeerGroupsPageDirect();
+    await peerGroupsPage.navigateToPeerGroupsPageDirect();
 
-    // First clean up ALL leftover test peer groups (keep only daniel test 4 if it exists)
-    let count = await peerPage.getPeerGroupRowCount();
+    // Clean up ALL leftover test peer groups
+    let count = await peerGroupsPage.getPeerGroupRowCount();
     console.log(`Initial peer groups: ${count}`);
     while (count > 0) {
         await page.getByRole('button', { name: 'Toggle see more' }).last().click();
@@ -33,33 +33,30 @@ test('Debug: Test all Submit strategies', async ({ page }) => {
         await page.waitForTimeout(1000);
         const dialog = page.getByRole('dialog');
         if (await dialog.isVisible().catch(() => false)) {
-            // Use clickVueButton approach for Delete confirmation
-            await peerPage.clickVueButton(dialog.getByRole('button', { name: 'Delete' }));
+            await peerGroupsPage.clickVueButton(dialog.getByRole('button', { name: 'Delete' }));
         }
         await page.waitForTimeout(3000);
         await page.reload();
-        await peerPage.createPeerGroupBtn.waitFor({ state: 'visible', timeout: 15000 });
-        count = await peerPage.getPeerGroupRowCount();
+        await peerGroupsPage.createPeerGroupBtn.waitFor({ state: 'visible', timeout: 15000 });
+        count = await peerGroupsPage.getPeerGroupRowCount();
         console.log(`After cleanup: ${count} groups`);
     }
 
     // Now create a peer group
-    await peerPage.openCreateDialog();
-    await peerPage.selectInstitution('Abilene Christian University');
-    await peerPage.selectInstitution('Academy of Art University');
-    await peerPage.selectInstitution('Adams State University');
-    await peerPage.clickNext();
+    await peerGroupsPage.openCreateDialog();
+    await peerGroupsPage.selectInstitution('Abilene Christian University');
+    await peerGroupsPage.selectInstitution('Academy of Art University');
+    await peerGroupsPage.selectInstitution('Adams State University');
+    await peerGroupsPage.clickNext();
 
     const groupName = `Debug ${Date.now()}`;
-    await peerPage.fillPeerGroupName(groupName);
-    await peerPage.selectMatchThreshold();
+    await peerGroupsPage.fillPeerGroupName(groupName);
+    await peerGroupsPage.selectMatchThreshold();
     await page.waitForTimeout(500);
 
-    // Use clickVueButton from POM (tests the current implementation)
     console.log('Using peerPage.clickSubmit()...');
-    await peerPage.clickSubmit();
+    await peerGroupsPage.clickSubmit();
 
-    // Wait for dialog to close
     await page.getByRole('dialog').waitFor({ state: 'hidden', timeout: 20000 }).catch(() => {
         console.log('Dialog did NOT close');
     });

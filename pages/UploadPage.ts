@@ -1,10 +1,26 @@
-const { expect } = require('@playwright/test');
-const Papa = require('papaparse');
-const fs = require('fs');
-const path = require('path');
+import { type Page, type Locator, expect } from '@playwright/test';
+import Papa from 'papaparse';
+import fs from 'fs';
 
-class Upload {
-  constructor(page) {
+export class UploadPage {
+  readonly page: Page;
+  readonly myTriangulatorTab: Locator;
+  readonly uploadButton: Locator;
+  readonly uploadModal: Locator;
+  readonly selectFirstRadioButton: Locator;
+  readonly selectSecondRadioButton: Locator;
+  readonly selectThirdRadioButton: Locator;
+  readonly openSlidebar: Locator;
+  readonly uploadNextButton: Locator;
+  readonly uploadFile: Locator;
+  readonly scrollBottom: Locator;
+  readonly dataReceivedMessage: Locator;
+  readonly uploadSummaryPage: Locator;
+  readonly uploadCatalogSummaryPage: Locator;
+  readonly downloadCsvFileButton: Locator;
+  readonly submitButton: Locator;
+
+  constructor(page: Page) {
     this.page = page;
     this.myTriangulatorTab = page.locator(':nth-child(4) > .text-grey-600');
     this.uploadButton = page.getByRole('button', { name: 'Upload' });
@@ -23,29 +39,27 @@ class Upload {
     this.submitButton = page.getByText('Submit');
   }
 
-  async preUpload() {
-    await this.page.locator(':nth-child(3) > .text-grey-600').click(); // Click on My Workspace
-    //await this.page.locator('.px-4 > .relative > .opacity-0').click(); // Click on the sidebar
-    await this.page.locator(':nth-child(5) > :nth-child(1) > .w-full > .flex-1').click(); // Click on the summary from the sidebar
+  async preUpload(): Promise<number> {
+    await this.page.locator(':nth-child(3) > .text-grey-600').click();
+    await this.page.locator(':nth-child(5) > :nth-child(1) > .w-full > .flex-1').click();
     await this.scrollBottom.click();
     await this.scrollBottom.evaluate((el) => el.scrollTo(0, 500));
     await this.page.waitForTimeout(10000);
     const text = await this.page.locator(':nth-child(2) > .w-full > :nth-child(2) > .rounded > .text-4xl').textContent();
-    return parseFloat(text.replace(/,/g, ''));
+    return parseFloat((text ?? '0').replace(/,/g, ''));
   }
 
-  async preUploadCatalog() {
-    await this.page.locator(':nth-child(3) > .text-grey-600').click(); // Click on My Workspace
-   // await this.page.locator('.px-4 > .relative > .opacity-0').click(); // Click on the sidebar
-    await this.page.locator(':nth-child(5) > :nth-child(1) > .w-full > .flex-1').click(); // Click on the summary from the sidebar
+  async preUploadCatalog(): Promise<number> {
+    await this.page.locator(':nth-child(3) > .text-grey-600').click();
+    await this.page.locator(':nth-child(5) > :nth-child(1) > .w-full > .flex-1').click();
     await this.scrollBottom.click();
     await this.scrollBottom.evaluate((el) => el.scrollTo(0, 500));
     await this.page.waitForTimeout(10000);
     const text = await this.page.locator(':nth-child(3) > .w-full > :nth-child(2) > .rounded > .text-4xl').textContent();
-    return parseFloat(text.replace(/,/g, ''));
+    return parseFloat((text ?? '0').replace(/,/g, ''));
   }
 
-  async postUploadCount() {
+  async postUploadCount(): Promise<number> {
     await expect(this.dataReceivedMessage).toBeVisible();
     await expect(this.page).toHaveURL(/\/my-workspace\/inst-admin\/summary/);
     await this.scrollBottom.click();
@@ -54,10 +68,10 @@ class Upload {
     await this.page.reload();
     await this.page.waitForTimeout(5000);
     const text = await this.page.locator(':nth-child(2) > .w-full > :nth-child(2) > .rounded > .text-4xl').textContent();
-    return parseFloat(text.replace(/,/g, ''));
+    return parseFloat((text ?? '0').replace(/,/g, ''));
   }
 
-  async postUploadCountCatalog() {
+  async postUploadCountCatalog(): Promise<number> {
     await expect(this.dataReceivedMessage).toBeVisible();
     await expect(this.page).toHaveURL(/\/my-workspace\/inst-admin\/summary/);
     await this.scrollBottom.click();
@@ -69,163 +83,151 @@ class Upload {
     await this.scrollBottom.evaluate((el) => el.scrollTo(0, 500));
     await this.page.waitForTimeout(10000);
     const text = await this.page.locator(':nth-child(3) > .w-full > :nth-child(2) > .rounded > .text-4xl').textContent();
-    return parseFloat(text.replace(/,/g, ''));
+    return parseFloat((text ?? '0').replace(/,/g, ''));
   }
 
-  async confirmationPageCount(rCount, rInFile, rLoaded, iCount, iInFile, iLoaded) {
+  async confirmationPageCount(
+    rCount: string,
+    rInFile: string,
+    rLoaded: string,
+    iCount: string,
+    iInFile: string,
+    iLoaded: string
+  ): Promise<void> {
     const rulesCount = await this.page.locator('.gap-4 > div > .font-bold').textContent();
-    expect(rulesCount.trim()).toBe(rCount);
+    expect((rulesCount ?? '').trim()).toBe(rCount);
 
     const rulesInFile = await this.page.locator('.gap-4 > div > :nth-child(3)').textContent();
-    expect(rulesInFile.trim()).toBe(rInFile);
+    expect((rulesInFile ?? '').trim()).toBe(rInFile);
 
     const rulesLoadedFromFile = await this.page.locator('.gap-4 > div > :nth-child(4)').textContent();
-    expect(rulesLoadedFromFile.trim()).toBe(rLoaded);
+    expect((rulesLoadedFromFile ?? '').trim()).toBe(rLoaded);
 
     const institutionCount = await this.page.locator('.flex-col > .font-bold').textContent();
-    expect(institutionCount.trim()).toBe(iCount);
+    expect((institutionCount ?? '').trim()).toBe(iCount);
 
     const institutionInFile = await this.page.locator('.items-stretch > .flex-col > :nth-child(3)').textContent();
-    expect(institutionInFile.trim()).toBe(iInFile);
+    expect((institutionInFile ?? '').trim()).toBe(iInFile);
 
     const loadedInstitution = await this.page.locator('.items-stretch > .flex-col > :nth-child(4)').textContent();
-    expect(loadedInstitution.trim()).toBe(iLoaded);
+    expect((loadedInstitution ?? '').trim()).toBe(iLoaded);
   }
-  async confirmationPageCountCatalog(rCount, rInFile, iCount, iInFile, iLoaded) {
+
+  async confirmationPageCountCatalog(
+    rCount: string,
+    rInFile: string,
+    iCount: string,
+    iInFile: string,
+    iLoaded: string
+  ): Promise<void> {
     const rulesCount = await this.page.locator(':nth-child(3) > div > .font-bold').textContent();
-    expect(rulesCount.trim()).toBe(rCount); // Accepted Rule count
+    expect((rulesCount ?? '').trim()).toBe(rCount);
 
     const rulesInFile = await this.page.locator(':nth-child(3) > div > .text-neutral-400').textContent();
-    expect(rulesInFile.trim()).toBe(rInFile); // Rules in file
+    expect((rulesInFile ?? '').trim()).toBe(rInFile);
 
     const institutionCount = await this.page.locator('.gap-4 > :nth-child(1) > .gap-8').textContent();
-    expect(institutionCount.trim()).toBe(iCount); // Institution count
+    expect((institutionCount ?? '').trim()).toBe(iCount);
 
     const institutionInFile = await this.page.locator(':nth-child(3) > .text-neutral-400').textContent();
-    expect(institutionInFile.trim()).toBe(iInFile); // Institutions in file
+    expect((institutionInFile ?? '').trim()).toBe(iInFile);
 
     const loadedInstitution = await this.page.locator(':nth-child(4) > .text-neutral-400').textContent();
-    expect(loadedInstitution.trim()).toBe(iLoaded); // Institution loaded from the file
-}
+    expect((loadedInstitution ?? '').trim()).toBe(iLoaded);
+  }
 
-  async upload(file, choice) {
-    await this.myTriangulatorTab.click(); // Navigate to My Triangulator tab
+  async upload(file: string, choice: number): Promise<void> {
+    await this.myTriangulatorTab.click();
     await expect(this.page.getByText('New Suggestions').first()).toBeVisible();
-    //await this.openSlidebar.click(); // Open the slidebar
-    //await expect(this.page.getByLabel('Upload').getByText('Upload', { exact: true })).toBeVisible();
-    await this.uploadButton.click(); // Click on the upload button
+    await this.uploadButton.click();
     await this.page.getByRole('link', { name: 'Upload' }).click();
-//    await expect(this.page.getByLabel('Upload').getByText('Upload', { exact: true })).toBeVisible(); // Assertions
-
-    //await expect( this.page.locator('#dialog-title').textContent()).toBe('Upload'); // Modal title assertion
-    await this.page.locator('#modal-outlet-0 > div.absolute.inset-0.flex.items-center.justify-center.z-30.pointer-events-none > div > div > div.p-6.gap-4.flex.flex-col.w-full > div > button:nth-child(' + choice +')').first().click(); // Select the option
-   // await this.uploadNextButton.click(); // Click on the next button
-   // await expect(this.page.getByText('Upload data', {timeout:120000})).toBeVisible();
-    await this.uploadFile.setInputFiles(file); // Select the file
+    await this.page.locator(`#modal-outlet-0 > div.absolute.inset-0.flex.items-center.justify-center.z-30.pointer-events-none > div > div > div.p-6.gap-4.flex.flex-col.w-full > div > button:nth-child(${choice})`).first().click();
+    await this.uploadFile.setInputFiles(file);
   }
 
-
-  async uploadValid(choice) {
-    await this.page.locator(`#optionLabel-${choice}`).first().click(); // Click on add option
-    await this.uploadNextButton.click(); // Submit button to upload the file
-    await expect(this.page.getByText('Uploaded')).toBeVisible({timeout:120000}); // Toast message assertion
-    await expect(this.page.getByText('Upload Rules Summary')).toBeVisible({timeout:120000}); // Upload summary page assertion
+  async uploadValid(choice: number): Promise<void> {
+    await this.page.locator(`#optionLabel-${choice}`).first().click();
+    await this.uploadNextButton.click();
+    await expect(this.page.getByText('Uploaded')).toBeVisible({ timeout: 120000 });
+    await expect(this.page.getByText('Upload Rules Summary')).toBeVisible({ timeout: 120000 });
   }
 
-  async uplaodcatalogValid(choice) {
-    await this.page.locator(`#optionLabel-${choice}`).first().click(); // Click on add option
-    await this.uploadNextButton.click(); // Submit button to upload the file
-    await expect(this.page.getByText('Uploaded')).toBeVisible({timeout:120000}); // Toast message assertion
-    await expect(this.page.getByText('Upload Course Catalog Summary')).toBeVisible({timeout:120000}); // Upload summary page assertion
+  async uploadCatalogValid(choice: number): Promise<void> {
+    await this.page.locator(`#optionLabel-${choice}`).first().click();
+    await this.uploadNextButton.click();
+    await expect(this.page.getByText('Uploaded')).toBeVisible({ timeout: 120000 });
+    await expect(this.page.getByText('Upload Course Catalog Summary')).toBeVisible({ timeout: 120000 });
   }
-  
 
-  async criticalError(error) {
-    await expect(this.page.getByText('Errors', {exact: true})).toBeVisible({timeout:120000});
-    await expect(this.page.locator(`text=${error}`)).toBeVisible(); // Assertion for type of critical error
+  async criticalError(error: string): Promise<void> {
+    await expect(this.page.getByText('Errors', { exact: true })).toBeVisible({ timeout: 120000 });
+    await expect(this.page.locator(`text=${error}`)).toBeVisible();
     await this.scrollBottom.click();
-    await this.scrollBottom.evaluate((el) => el.scrollTo(0, el.scrollHeight)); // Scroll to bottom
+    await this.scrollBottom.evaluate((el) => el.scrollTo(0, el.scrollHeight));
     await expect(this.page.getByText('Review formatting errors/critical errors')).toBeVisible();
     await expect(this.page.getByText('Download csv file')).toBeVisible();
   }
 
-  async catalogFormatError() {
-await this.page.waitForSelector('.py-1', { timeout: 10000 });
-   // await this.page.waitForSelector('.py-1');
-    await expect(this.page.locator('.py-1')).toBeVisible({timeout:180000});
-//    await expect(this.page.locator('.w-full.flex-col > :nth-child(1) > .font-semibold')).toHaveText('Review formatting errors');
+  async catalogFormatError(): Promise<void> {
+    await this.page.waitForSelector('.py-1', { timeout: 10000 });
+    await expect(this.page.locator('.py-1')).toBeVisible({ timeout: 180000 });
     await expect(this.page.getByText('Download csv file')).toBeVisible();
   }
 
-  async catalogCriticalError() {
+  async catalogCriticalError(): Promise<void> {
     await expect(this.page.locator('.py-1')).toBeVisible();
     await expect(this.page.locator('.w-full.flex-col > :nth-child(1) > .font-semibold')).toHaveText('Critical errors');
     await expect(this.page.getByText('Download csv file')).toBeVisible();
   }
 
-  generateUniqueAlphaNumeric(limit) {
-    const alphanumericCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  generateUniqueAlphaNumeric(limit: number): string {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
-
     for (let i = 0; i < limit; i++) {
-      const randomIndex = Math.floor(Math.random() * alphanumericCharacters.length);
-      result += alphanumericCharacters.charAt(randomIndex);
+      const randomIndex = Math.floor(Math.random() * chars.length);
+      result += chars.charAt(randomIndex);
     }
-
     return result;
   }
 
-  updateCSVContent(fileContent) {
+  updateCSVContent(fileContent: string): string {
     const rows = fileContent.split('\n');
-
-    // Process each row starting from the second row
     for (let i = 1; i < rows.length; i++) {
       const columns = rows[i].split(',');
-
-      // Update values in column A (RulesIdentifier) with AUTO + random alphanumeric value + _SOURCE
       columns[0] = `AUTO${this.generateUniqueAlphaNumeric(8)}_SOURCE`;
-
-      // Update values in column I (Number) with AUTO + random alphanumeric value + _TARGET
       columns[8] = `AUTO${this.generateUniqueAlphaNumeric(8)}_TARGET`;
     }
-
-    // Update the modified content back to the file (if needed)
     return rows.join('\n');
   }
 
-  async readErrorCSVFile(error, row) {
+  async readErrorCSVFile(error: string, row: number): Promise<void> {
     const [download] = await Promise.all([
       this.page.waitForEvent('download'),
       this.page.getByText('Download csv file').click(),
     ]);
     const csvPath = await download.path();
+    if (!csvPath) throw new Error('Download path is null');
     const csvContent = fs.readFileSync(csvPath, 'utf8');
-    const data = Papa.parse(csvContent, { header: true }).data;
+    const data = Papa.parse<Record<string, string>>(csvContent, { header: true }).data;
     const errorMessage = data[row]['Errors'];
     expect(errorMessage).toBe(error);
   }
 
-  async catalogreadErrorCSVFile(error, row) {
+  async catalogReadErrorCSVFile(error: string, row: number): Promise<void> {
     const [download] = await Promise.all([
       this.page.waitForEvent('download'),
       this.page.getByText('Download csv file').click(),
     ]);
     const csvPath = await download.path();
+    if (!csvPath) throw new Error('Download path is null');
     const csvContent = fs.readFileSync(csvPath, 'utf8');
-    const data = Papa.parse(csvContent, { header: true }).data;
+    const data = Papa.parse<Record<string, string>>(csvContent, { header: true }).data;
     const errorMessage = data[row]['format_errors'];
     expect(errorMessage).toBe(error);
   }
 
-  async postUpload() {
+  async postUpload(): Promise<void> {
     await this.page.locator('.items-start > .flex').click();
     await this.submitButton.click();
   }
-  async Rulesuploadprocessfails1568()
-  {
-    
-  }
-
 }
-
-module.exports = {Upload};
