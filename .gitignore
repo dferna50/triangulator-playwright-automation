@@ -1,6 +1,7 @@
-
 # Environment variables
 .env
+.env.*
+!.env.example
 
 # Playwright
 node_modules/
@@ -8,3 +9,27 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# AI/Editor directories
+.claude/
+.windsurf/
+
+# Debug files
+debug-*.png
+dropdown-debug*.png
+/test-*.txt
+/test-output*.txt
+device-info.txt
+
+# Reports and archives
+*.zip
+*.7z
+*.tar.gz
+test-results.json
+
+# Test output
+test-output.json
+
+# OS files
+.DS_Store
+Thumbs.db

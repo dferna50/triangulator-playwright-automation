@@ -8,10 +8,21 @@ import { SuggestionsPage } from '../pages/SuggestionsPage';
 import { InstitutionConfigPage } from '../pages/InstitutionConfigPage';
 import { PeerGroupsPage } from '../pages/PeerGroupsPage';
 import { BoostRequestPage } from '../pages/BoostRequestPage';
-import { CreateUserPage } from '../pages/CreateUserPage';
+import { CreateUserPage, UserData } from '../pages/CreateUserPage';
 import { DeleteUserPage } from '../pages/DeleteUserPage';
 import { EditUserPage } from '../pages/EditUserPage';
 import { WorkflowLandingPage } from '../pages/WorkflowLandingPage';
+import { RunSqlPage } from '../pages/RunSqlPage';
+import { RunTriangulationPage } from '../pages/RunTriangulationPage';
+import { WorkflowConfigurationsPage } from '../pages/WorkflowConfigurationsPage';
+import { UserManagementPage } from '../pages/UserManagementPage';
+import { EmailVerificationPage } from '../pages/EmailVerificationPage';
+import { InstitutionSettingsPage } from '../pages/InstitutionSettingsPage';
+import { OrganizationsPage } from '../pages/OrganizationsPage';
+import { InstitutionMappingsPage } from '../pages/InstitutionMappingsPage';
+import { ApiTokensPage } from '../pages/ApiTokensPage';
+import { EquivalencyDownloadPage } from '../pages/EquivalencyDownloadPage';
+import { RequestAccessPage } from '../pages/RequestAccessPage';
 
 /**
  * Custom fixture type definitions for all page objects.
@@ -30,6 +41,17 @@ type PageFixtures = {
   deleteUserPage: DeleteUserPage;
   editUserPage: EditUserPage;
   workflowLandingPage: WorkflowLandingPage;
+  runSqlPage: RunSqlPage;
+  runTriangulationPage: RunTriangulationPage;
+  workflowConfigurationsPage: WorkflowConfigurationsPage;
+  userManagementPage: UserManagementPage;
+  emailVerificationPage: EmailVerificationPage;
+  institutionSettingsPage: InstitutionSettingsPage;
+  organizationsPage: OrganizationsPage;
+  institutionMappingsPage: InstitutionMappingsPage;
+  apiTokensPage: ApiTokensPage;
+  equivalencyDownloadPage: EquivalencyDownloadPage;
+  requestAccessPage: RequestAccessPage;
 };
 
 /**
@@ -75,6 +97,39 @@ export const test = base.extend<PageFixtures>({
   },
   workflowLandingPage: async ({ page }: { page: Page }, use: (r: WorkflowLandingPage) => Promise<void>) => {
     await use(new WorkflowLandingPage(page));
+  },
+  runSqlPage: async ({ page }: { page: Page }, use: (r: RunSqlPage) => Promise<void>) => {
+    await use(new RunSqlPage(page));
+  },
+  runTriangulationPage: async ({ page }: { page: Page }, use: (r: RunTriangulationPage) => Promise<void>) => {
+    await use(new RunTriangulationPage(page));
+  },
+  workflowConfigurationsPage: async ({ page }: { page: Page }, use: (r: WorkflowConfigurationsPage) => Promise<void>) => {
+    await use(new WorkflowConfigurationsPage(page));
+  },
+  userManagementPage: async ({ page }: { page: Page }, use: (r: UserManagementPage) => Promise<void>) => {
+    await use(new UserManagementPage(page));
+  },
+  emailVerificationPage: async ({ page }: { page: Page }, use: (r: EmailVerificationPage) => Promise<void>) => {
+    await use(new EmailVerificationPage(page));
+  },
+  institutionSettingsPage: async ({ page }: { page: Page }, use: (r: InstitutionSettingsPage) => Promise<void>) => {
+    await use(new InstitutionSettingsPage(page));
+  },
+  organizationsPage: async ({ page }: { page: Page }, use: (r: OrganizationsPage) => Promise<void>) => {
+    await use(new OrganizationsPage(page));
+  },
+  institutionMappingsPage: async ({ page }: { page: Page }, use: (r: InstitutionMappingsPage) => Promise<void>) => {
+    await use(new InstitutionMappingsPage(page));
+  },
+  apiTokensPage: async ({ page }: { page: Page }, use: (r: ApiTokensPage) => Promise<void>) => {
+    await use(new ApiTokensPage(page));
+  },
+  equivalencyDownloadPage: async ({ page }: { page: Page }, use: (r: EquivalencyDownloadPage) => Promise<void>) => {
+    await use(new EquivalencyDownloadPage(page));
+  },
+  requestAccessPage: async ({ page }: { page: Page }, use: (r: RequestAccessPage) => Promise<void>) => {
+    await use(new RequestAccessPage(page));
   },
 });
 

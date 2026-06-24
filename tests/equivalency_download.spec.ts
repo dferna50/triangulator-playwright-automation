@@ -1,24 +1,10 @@
 import { test, expect } from '../fixtures/test';
-import type { Page } from '@playwright/test';
 import { CSVValidator } from '../helpers/csv-validator';
 import fs from 'fs';
 import Papa from 'papaparse';
 
 const instAdminEmail = process.env.INST_ADMIN_EMAIL ?? 'testtriangulator+108@gmail.com';
 const instAdminPassword = process.env.INST_ADMIN_PASSWORD ?? 'Triangulator!1';
-
-async function openDownloadDialog(page: Page): Promise<void> {
-    await page.waitForLoadState('domcontentloaded');
-    const downloadButton = page.locator('nav').getByRole('button', { name: 'Download' });
-    await downloadButton.waitFor({ state: 'visible', timeout: 10000 });
-    await downloadButton.click();
-    await page.waitForSelector('[role="dialog"]', { timeout: 5000 });
-}
-
-async function selectDownloadOption(page: Page, option = 'Download all'): Promise<void> {
-    await page.getByRole('combobox', { name: 'Download option' }).click();
-    await page.getByRole('option', { name: option }).click();
-}
 
 test.describe('Equivalency Download Feature Tests', () => {
 
@@ -33,15 +19,15 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Navigation and Access Tests', () => {
 
-        test('TC1.1: Verify user can navigate to download feature', async ({ page }) => {
+        test('TC1.1: Verify user can navigate to download feature', async ({ page, equivalencyDownloadPage }) => {
             await page.waitForLoadState('domcontentloaded');
             const downloadButton = page.locator('nav').getByRole('button', { name: 'Download' });
             await expect(downloadButton).toBeVisible({ timeout: 10000 });
             await expect(downloadButton).toBeEnabled();
         });
 
-        test('TC1.2: Verify download popup opens with all filter options', async ({ page }) => {
-            await openDownloadDialog(page);
+        test('TC1.2: Verify download popup opens with all filter options', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
             await expect(page.getByRole('dialog', { name: 'Download' })).toBeVisible({ timeout: 5000 });
             await expect(page.getByRole('combobox', { name: 'Download option' })).toBeVisible();
             await expect(page.getByRole('textbox', { name: 'Start date' })).toBeVisible();
@@ -58,9 +44,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Date Range Filter Tests', () => {
 
-        test('TC2.1: Download with start date only', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC2.1: Download with start date only', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const thirtyDaysAgo = new Date();
             thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
             await page.getByRole('textbox', { name: 'Start date' }).fill(thirtyDaysAgo.toISOString().split('T')[0]);
@@ -73,9 +59,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             expect(download.suggestedFilename()).toMatch(/\.(csv|xlsx|xls)$/i);
         });
 
-        test('TC2.2: Download with end date only', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC2.2: Download with end date only', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const yesterday = new Date();
             yesterday.setDate(yesterday.getDate() - 1);
             await page.getByRole('textbox', { name: 'End date' }).fill(yesterday.toISOString().split('T')[0]);
@@ -87,9 +73,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             expect(downloadPath && fs.existsSync(downloadPath)).toBeTruthy();
         });
 
-        test('TC2.3: Download with complete date range', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC2.3: Download with complete date range', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const startDate = new Date(); startDate.setDate(startDate.getDate() - 60);
             const endDate = new Date(); endDate.setDate(endDate.getDate() - 30);
 
@@ -117,9 +103,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC2.4: Download with same start and end date', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC2.4: Download with same start and end date', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const today = new Date().toISOString().split('T')[0];
             await page.getByRole('textbox', { name: 'Start date' }).fill(today);
             await page.getByRole('textbox', { name: 'End date' }).fill(today);
@@ -130,9 +116,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             expect(download).toBeTruthy();
         });
 
-        test('TC2.5: Verify validation for invalid date range (end before start)', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC2.5: Verify validation for invalid date range (end before start)', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const today = new Date();
             const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
             await page.getByRole('textbox', { name: 'Start date' }).fill(today.toISOString().split('T')[0]);
@@ -140,9 +126,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             await expect(page.getByText('Start date must be earlier')).toBeVisible({ timeout: 3000 });
         });
 
-        test('TC2.6: Download with no date filters', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC2.6: Download with no date filters', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
 
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
@@ -163,9 +149,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Source State Filter Tests', () => {
 
-        test('TC3.1: Download with single source state (Nevada)', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC3.1: Download with single source state (Nevada)', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
             await stateCombobox.click();
             await stateCombobox.fill('Nevada');
@@ -189,9 +175,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC3.2: Download with multiple source states (Arizona and Nevada)', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC3.2: Download with multiple source states (Arizona and Nevada)', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
 
             await stateCombobox.click();
@@ -227,9 +213,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Source Institution Filter Tests', () => {
 
-        test('TC4.1: Download with single source institution', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC4.1: Download with single source institution', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
             await stateCombobox.click();
             await stateCombobox.fill('California');
@@ -261,9 +247,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC4.2: Download with multiple source institutions', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC4.2: Download with multiple source institutions', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
             await stateCombobox.click();
             await stateCombobox.fill('California');
@@ -293,9 +279,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC4.3: Verify institution filter with state combination', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC4.3: Verify institution filter with state combination', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
             await stateCombobox.click();
             await stateCombobox.fill('Nevada');
@@ -332,9 +318,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Target Subject Filter Tests', () => {
 
-        test('TC5.1: Download with single target subject', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC5.1: Download with single target subject', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const subjectInput = page.getByRole('textbox', { name: 'Target subject(s)' });
             await subjectInput.click();
             await subjectInput.fill('MATH');
@@ -363,9 +349,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC5.2: Download with multiple target subjects', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC5.2: Download with multiple target subjects', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             await page.getByRole('textbox', { name: 'Target subject(s)' }).fill('MATH, ENGL');
 
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
@@ -382,9 +368,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC5.3: Download with case-insensitive subject', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC5.3: Download with case-insensitive subject', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             await page.getByRole('textbox', { name: 'Target subject(s)' }).fill('math');
 
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
@@ -401,9 +387,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC5.4: Download with subject containing special characters', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC5.4: Download with subject containing special characters', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             await page.getByRole('textbox', { name: 'Target subject(s)' }).fill('ENGL');
 
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
@@ -426,9 +412,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Combined Filter Tests', () => {
 
-        test('TC6.1: Download with all filters applied', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC6.1: Download with all filters applied', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const startDate = new Date(); startDate.setDate(startDate.getDate() - 90);
             const endDate = new Date(); endDate.setDate(endDate.getDate() - 30);
 
@@ -473,9 +459,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC6.2: Download with state and date filters', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC6.2: Download with state and date filters', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const startDate = new Date(); startDate.setDate(startDate.getDate() - 60);
             const endDate = new Date(); endDate.setDate(endDate.getDate() - 30);
 
@@ -507,9 +493,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC6.3: Download with state and subject filters', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC6.3: Download with state and subject filters', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
             await stateCombobox.click();
             await stateCombobox.fill('Arizona');
@@ -535,9 +521,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC6.4: Download with institution and date filters', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC6.4: Download with institution and date filters', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const startDate = new Date(); startDate.setDate(startDate.getDate() - 45);
             const endDate = new Date();
 
@@ -572,9 +558,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC6.5: Download with multiple states and subjects', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC6.5: Download with multiple states and subjects', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
             await stateCombobox.click();
             await stateCombobox.fill('Nevada');
@@ -611,9 +597,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Downloaded File Validation Tests', () => {
 
-        test('TC7.1: Verify file format and structure', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC7.1: Verify file format and structure', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -636,9 +622,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC7.2: Verify CSV data completeness and no duplicates', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC7.2: Verify CSV data completeness and no duplicates', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -659,9 +645,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC7.3: Verify special characters handling', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC7.3: Verify special characters handling', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -674,9 +660,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC7.4: Verify downloaded file size is reasonable', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC7.4: Verify downloaded file size is reasonable', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -687,9 +673,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             expect(fileSizeInKB).toBeGreaterThan(1);
         });
 
-        test('TC7.5: Verify file naming convention', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC7.5: Verify file naming convention', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -698,9 +684,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             expect(fileName).toMatch(/\.(csv|xlsx|xls)$/i);
         });
 
-        test('TC7.6: Verify CSV encoding is UTF-8', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC7.6: Verify CSV encoding is UTF-8', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -721,34 +707,34 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Error Handling Tests', () => {
 
-        test('TC9.1: Verify cancel download operation', async ({ page }) => {
-            await openDownloadDialog(page);
+        test('TC9.1: Verify cancel download operation', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
             await expect(page.getByRole('dialog', { name: 'Download' })).toBeVisible();
             await page.getByRole('button', { name: 'Cancel' }).click();
             await expect(page.getByRole('dialog', { name: 'Download' })).not.toBeVisible({ timeout: 3000 });
         });
 
-        test('TC9.2: Verify download with empty result set', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC9.2: Verify download with empty result set', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             await page.getByRole('textbox', { name: 'Start date' }).fill('2000-01-01');
             await page.getByRole('textbox', { name: 'End date' }).fill('2000-01-02');
             await page.getByRole('button', { name: 'Download' }).last().click();
             await page.waitForTimeout(3000);
         });
 
-        test('TC9.3: Verify reopening download dialog after cancel', async ({ page }) => {
-            await openDownloadDialog(page);
+        test('TC9.3: Verify reopening download dialog after cancel', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
             const dialog = page.getByRole('dialog', { name: 'Download' });
             await expect(dialog).toBeVisible();
             await page.getByRole('button', { name: 'Cancel' }).click();
             await expect(dialog).not.toBeVisible({ timeout: 3000 });
-            await openDownloadDialog(page);
+            await equivalencyDownloadPage.openDownloadDialog();
             await expect(dialog).toBeVisible();
         });
 
-        test('TC9.4: Verify download button disabled state before selection', async ({ page }) => {
-            await openDownloadDialog(page);
+        test('TC9.4: Verify download button disabled state before selection', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
             const downloadButton = page.getByRole('button', { name: 'Download' }).last();
             const isDisabled = await downloadButton.isDisabled();
             expect(isDisabled).toBeTruthy();
@@ -760,8 +746,8 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('UI/UX Tests', () => {
 
-        test('TC10.1: Verify download popup responsiveness', async ({ page }) => {
-            await openDownloadDialog(page);
+        test('TC10.1: Verify download popup responsiveness', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
             const dialog = page.getByRole('dialog', { name: 'Download' });
             await expect(dialog).toBeVisible();
             await page.keyboard.press('Tab');
@@ -771,17 +757,17 @@ test.describe('Equivalency Download Feature Tests', () => {
             await expect(dialog).not.toBeVisible({ timeout: 3000 });
         });
 
-        test('TC10.2: Verify filter field usability', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC10.2: Verify filter field usability', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             await expect(page.getByRole('textbox', { name: 'Start date' })).toBeEditable();
             await expect(page.getByRole('combobox', { name: 'Source state(s)' })).toBeVisible();
             await expect(page.getByRole('button', { name: 'Download' }).last()).toBeEnabled();
         });
 
-        test('TC10.3: Verify all filter labels are visible', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC10.3: Verify all filter labels are visible', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             await expect(page.getByText('Start date')).toBeVisible();
             await expect(page.getByText('End date')).toBeVisible();
             await expect(page.getByText('Source state(s)')).toBeVisible();
@@ -789,18 +775,18 @@ test.describe('Equivalency Download Feature Tests', () => {
             await expect(page.getByText('Target subject(s)')).toBeVisible();
         });
 
-        test('TC10.4: Verify download dialog closes on successful download', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC10.4: Verify download dialog closes on successful download', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             await downloadPromise;
             await expect(page.getByRole('dialog', { name: 'Download' })).not.toBeVisible({ timeout: 5000 });
         });
 
-        test('TC10.5: Verify keyboard navigation through filters', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC10.5: Verify keyboard navigation through filters', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             await page.keyboard.press('Tab');
             await page.keyboard.press('Tab');
             const focusedElement = await page.evaluate(() => document.activeElement?.tagName);
@@ -813,9 +799,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Download Option Tests', () => {
 
-        test('TC11.1: Verify "Download all" option', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page, 'Download all');
+        test('TC11.1: Verify "Download all" option', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption('Download all');
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -830,14 +816,14 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC11.2: Verify download option dropdown has all options', async ({ page }) => {
-            await openDownloadDialog(page);
+        test('TC11.2: Verify download option dropdown has all options', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
             await page.getByRole('combobox', { name: 'Download option' }).click();
             await expect(page.getByRole('option', { name: 'Download all' })).toBeVisible();
         });
 
-        test('TC11.3: Verify switching between download options', async ({ page }) => {
-            await openDownloadDialog(page);
+        test('TC11.3: Verify switching between download options', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
             const downloadOptionCombobox = page.getByRole('combobox', { name: 'Download option' });
             await downloadOptionCombobox.click();
             await page.getByRole('option', { name: 'Download all' }).click();
@@ -851,9 +837,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Date Edge Cases Tests', () => {
 
-        test('TC12.1: Download with future date range', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC12.1: Download with future date range', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const startDate = new Date(); startDate.setDate(startDate.getDate() + 30);
             const endDate = new Date(); endDate.setDate(endDate.getDate() + 60);
             await page.getByRole('textbox', { name: 'Start date' }).fill(startDate.toISOString().split('T')[0]);
@@ -862,18 +848,18 @@ test.describe('Equivalency Download Feature Tests', () => {
             await page.waitForTimeout(3000);
         });
 
-        test('TC12.2: Download with very old date range', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC12.2: Download with very old date range', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             await page.getByRole('textbox', { name: 'Start date' }).fill('2010-01-01');
             await page.getByRole('textbox', { name: 'End date' }).fill('2010-12-31');
             await page.getByRole('button', { name: 'Download' }).last().click();
             await page.waitForTimeout(3000);
         });
 
-        test('TC12.3: Download with one day date range', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC12.3: Download with one day date range', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const startDate = new Date(); startDate.setDate(startDate.getDate() - 30);
             const dateStr = startDate.toISOString().split('T')[0];
             await page.getByRole('textbox', { name: 'Start date' }).fill(dateStr);
@@ -886,9 +872,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             expect(downloadPath && fs.existsSync(downloadPath)).toBeTruthy();
         });
 
-        test('TC12.4: Download with wide date range (1 year)', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC12.4: Download with wide date range (1 year)', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const startDate = new Date(); startDate.setFullYear(startDate.getFullYear() - 1);
             const endDate = new Date();
             await page.getByRole('textbox', { name: 'Start date' }).fill(startDate.toISOString().split('T')[0]);
@@ -914,9 +900,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('State Filter Edge Cases', () => {
 
-        test('TC13.1: Download with California state', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC13.1: Download with California state', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
             await stateCombobox.click();
             await stateCombobox.fill('California');
@@ -938,9 +924,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC13.2: Download with Texas state', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC13.2: Download with Texas state', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
             await stateCombobox.click();
             await stateCombobox.fill('Texas');
@@ -962,9 +948,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC13.3: Download with three different states', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC13.3: Download with three different states', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const stateCombobox = page.getByRole('combobox', { name: 'Source state(s)' });
             for (const state of ['Nevada', 'Arizona', 'California']) {
                 await stateCombobox.click();
@@ -995,9 +981,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Data Integrity Tests', () => {
 
-        test('TC14.1: Verify source and target row pairing', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC14.1: Verify source and target row pairing', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -1012,9 +998,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC14.2: Verify all rows have required columns populated', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC14.2: Verify all rows have required columns populated', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -1030,9 +1016,9 @@ test.describe('Equivalency Download Feature Tests', () => {
             }
         });
 
-        test('TC14.3: Verify CSV has no malformed rows', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC14.3: Verify CSV has no malformed rows', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download = await downloadPromise;
@@ -1051,9 +1037,9 @@ test.describe('Equivalency Download Feature Tests', () => {
     // =========================================================================
     test.describe('Performance and Load Tests', () => {
 
-        test('TC15.1: Verify download completes within reasonable time', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC15.1: Verify download completes within reasonable time', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const startTime = Date.now();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
@@ -1063,25 +1049,25 @@ test.describe('Equivalency Download Feature Tests', () => {
             console.log(`Download completed in ${duration.toFixed(2)} seconds`);
         });
 
-        test('TC15.2: Verify multiple sequential downloads', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC15.2: Verify multiple sequential downloads', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             let downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             await downloadPromise;
             await page.waitForTimeout(2000);
 
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             const download2 = await downloadPromise;
             expect(download2).toBeTruthy();
         });
 
-        test('TC15.3: Verify dialog responsiveness during download', async ({ page }) => {
-            await openDownloadDialog(page);
-            await selectDownloadOption(page);
+        test('TC15.3: Verify dialog responsiveness during download', async ({ page, equivalencyDownloadPage }) => {
+            await equivalencyDownloadPage.openDownloadDialog();
+            await equivalencyDownloadPage.selectDownloadOption();
             const downloadPromise = page.waitForEvent('download', { timeout: 300000 });
             await page.getByRole('button', { name: 'Download' }).last().click();
             await downloadPromise;

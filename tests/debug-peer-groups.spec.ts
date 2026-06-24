@@ -1,8 +1,8 @@
 import { test, expect } from '../fixtures/test';
 
-const baseURL = process.env.BASE_URL ?? 'https://qa.creditmobility.net';
-const regularUserEmail = process.env.REGULAR_USER_EMAIL ?? '';
-const regularUserPassword = process.env.REGULAR_USER_PASSWORD ?? '';
+const baseURL = (process.env.BASE_URL ?? 'https://qa.creditmobility.net').replace(/\/$/, '');
+const regularUserEmail = process.env.INST_ADMIN_EMAIL ?? '';
+const regularUserPassword = process.env.INST_ADMIN_PASSWORD ?? '';
 
 test('Debug: Test all Submit strategies', async ({ page, loginPage, peerGroupsPage }) => {
     page.on('response', async (res) => {
@@ -28,10 +28,10 @@ test('Debug: Test all Submit strategies', async ({ page, loginPage, peerGroupsPa
     let count = await peerGroupsPage.getPeerGroupRowCount();
     console.log(`Initial peer groups: ${count}`);
     while (count > 0) {
-        await page.getByRole('button', { name: 'Toggle see more' }).last().click();
-        await page.getByRole('menuitem', { name: 'Delete' }).click();
+        await peerGroupsPage.toggleSeeMoreBtn.last().click();
+        await peerGroupsPage.deleteMenuItem.click();
         await page.waitForTimeout(1000);
-        const dialog = page.getByRole('dialog');
+        const dialog = peerGroupsPage.anyDialog;
         if (await dialog.isVisible().catch(() => false)) {
             await peerGroupsPage.clickVueButton(dialog.getByRole('button', { name: 'Delete' }));
         }
@@ -57,17 +57,17 @@ test('Debug: Test all Submit strategies', async ({ page, loginPage, peerGroupsPa
     console.log('Using peerPage.clickSubmit()...');
     await peerGroupsPage.clickSubmit();
 
-    await page.getByRole('dialog').waitFor({ state: 'hidden', timeout: 20000 }).catch(() => {
+    await peerGroupsPage.anyDialog.waitFor({ state: 'hidden', timeout: 20000 }).catch(() => {
         console.log('Dialog did NOT close');
     });
 
-    const dialogVisible = await page.getByRole('dialog').isVisible().catch(() => false);
+    const dialogVisible = await peerGroupsPage.anyDialog.isVisible().catch(() => false);
     console.log('Dialog visible:', dialogVisible);
 
     if (!dialogVisible) {
         console.log('SUCCESS!');
         await page.waitForTimeout(2000);
-        const exists = await page.locator(`text=${groupName}`).isVisible().catch(() => false);
+        const exists = await peerGroupsPage.isPeerGroupInList(groupName);
         console.log('Group in list:', exists);
     } else {
         console.log('clickSubmit failed. Dialog still open.');

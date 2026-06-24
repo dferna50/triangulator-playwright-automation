@@ -134,8 +134,8 @@ export class InstitutionConfigPage {
   }
 
   async navigateToConfigPageDirect(): Promise<void> {
-    const baseUrl = process.env.BASE_URL ?? 'https://qa.creditmobility.net/';
-    await this.page.goto(`${baseUrl}app/my-workspace/inst-admin/inst/settings/suggestion-configs`);
+    const baseUrl = (process.env.BASE_URL ?? 'https://qa.creditmobility.net').replace(/\/$/, '');
+    await this.page.goto(`${baseUrl}/app/my-workspace/inst-admin/inst/settings/suggestion-configs`);
     await this.page.waitForLoadState('domcontentloaded');
   }
 

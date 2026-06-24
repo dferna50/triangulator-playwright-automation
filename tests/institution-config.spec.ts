@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/test';
 
 test.describe('Institution Configuration Tests', () => {
-    const baseURL = process.env.BASE_URL ?? 'https://qa.creditmobility.net';
+    const baseURL = (process.env.BASE_URL ?? 'https://qa.creditmobility.net').replace(/\/$/, '');
     const adminEmail = process.env.REGULAR_USER_EMAIL ?? '';
     const adminPassword = process.env.REGULAR_USER_PASSWORD ?? '';
 

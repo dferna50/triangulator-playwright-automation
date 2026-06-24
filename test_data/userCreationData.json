@@ -1,0 +1,253 @@
+{
+  "userCreationScenarios": [
+    {
+      "id": "TC-TRI-ADMIN-001",
+      "creatorType": "triangulator_admin",
+      "userType": "triangulator_admin",
+      "creatorEmail": "creditmobility@asu.edu",
+      "creatorPassword": "Triangulator!1",
+      "testEmailTemplate": "testtriangulator+{timestamp}@gmail.com",
+      "firstName": "Test",
+      "lastName": "TriAdmin",
+      "institution": "Arizona State University",
+      "role": "Triangulator Admin",
+      "expectedStatus": "Active",
+      "description": "Triangulator Admin creates Triangulator Admin user",
+      "testSteps": [
+        "Login as Triangulator Admin",
+        "Navigate to My Workplace > Settings > All Users",
+        "Click Add User button",
+        "Fill user creation form",
+        "Submit user creation",
+        "Verify email sent",
+        "Complete first-time login",
+        "Verify user appears in user list"
+      ]
+    },
+    {
+      "id": "TC-TRI-ADMIN-002",
+      "creatorType": "triangulator_admin",
+      "userType": "institution_admin",
+      "creatorEmail": "creditmobility@asu.edu",
+      "creatorPassword": "Triangulator!1",
+      "testEmailTemplate": "testtriangulator+{timestamp}@gmail.com",
+      "firstName": "Test",
+      "lastName": "InstAdmin",
+      "institution": "University Of Nevada Reno",
+      "role": "Institution Admin",
+      "expectedStatus": "Active",
+      "description": "Triangulator Admin creates Institution Admin user for any institution",
+      "testSteps": [
+        "Login as Triangulator Admin",
+        "Navigate to My Workplace > Settings > All Users",
+        "Click Add User button",
+        "Fill user creation form with Institution Admin role",
+        "Select any institution from dropdown",
+        "Submit user creation",
+        "Verify email sent",
+        "Complete first-time login",
+        "Verify user appears in user list with correct institution"
+      ]
+    },
+    {
+      "id": "TC-TRI-ADMIN-003",
+      "creatorType": "triangulator_admin",
+      "userType": "reviewer",
+      "creatorEmail": "creditmobility@asu.edu",
+      "creatorPassword": "Triangulator!1",
+      "testEmailTemplate": "testtriangulator+{timestamp}@gmail.com",
+      "firstName": "Test",
+      "lastName": "Reviewer",
+      "institution": "Arizona State University",
+      "role": "Reviewer",
+      "expectedStatus": "Active",
+      "description": "Triangulator Admin creates Reviewer user for any institution",
+      "testSteps": [
+        "Login as Triangulator Admin",
+        "Navigate to My Workplace > Settings > All Users",
+        "Click Add User button",
+        "Fill user creation form with Reviewer role",
+        "Select any institution from dropdown",
+        "Submit user creation",
+        "Verify email sent",
+        "Complete first-time login",
+        "Verify user appears in user list with correct institution"
+      ]
+    },
+    {
+      "id": "TC-INST-ADMIN-001",
+      "creatorType": "institution_admin",
+      "userType": "institution_admin",
+      "creatorEmail": "testtriangulator+109@gmail.com",
+      "creatorPassword": "Triangulator!1",
+      "testEmailTemplate": "testtriangulator+{timestamp}@gmail.com",
+      "firstName": "Test",
+      "lastName": "InstAdminOwn",
+      "institution": "University Of Nevada Reno",
+      "role": "Institution Admin",
+      "expectedStatus": "Active",
+      "description": "Institution Admin creates Institution Admin user for own institution",
+      "testSteps": [
+        "Login as Institution Admin (University Of Nevada Reno)",
+        "Navigate to My Workplace > Settings > All Users",
+        "Click Add User button",
+        "Fill user creation form with Institution Admin role",
+        "Select own institution from dropdown",
+        "Submit user creation",
+        "Verify email sent",
+        "Complete first-time login",
+        "Verify user appears in user list with correct institution"
+      ]
+    },
+    {
+      "id": "TC-INST-ADMIN-002",
+      "creatorType": "institution_admin",
+      "userType": "reviewer",
+      "creatorEmail": "testtriangulator+109@gmail.com",
+      "creatorPassword": "Triangulator!1",
+      "testEmailTemplate": "testtriangulator+{timestamp}@gmail.com",
+      "firstName": "Test",
+      "lastName": "ReviewerOwn",
+      "institution": "University Of Nevada Reno",
+      "role": "Reviewer",
+      "expectedStatus": "Active",
+      "description": "Institution Admin creates Reviewer user for own institution",
+      "testSteps": [
+        "Login as Institution Admin (University Of Nevada Reno)",
+        "Navigate to My Workplace > Settings > All Users",
+        "Click Add User button",
+        "Fill user creation form with Reviewer role",
+        "Select own institution from dropdown",
+        "Submit user creation",
+        "Verify email sent",
+        "Complete first-time login",
+        "Verify user appears in user list with correct institution"
+      ]
+    }
+  ],
+  "testConfiguration": {
+    "baseUrl": "https://qa.creditmobility.net",
+    "timeout": {
+      "pageLoad": 30000,
+      "elementLoad": 10000,
+      "emailDelivery": 30000,
+      "userCreation": 45000
+    },
+    "emailSettings": {
+      "useMockService": true,
+      "useGmailApi": false,
+      "mockDelay": 1000,
+      "tempPasswordLength": 12
+    },
+    "testData": {
+      "baseEmail": "testtriangulator",
+      "emailDomain": "gmail.com",
+      "defaultPassword": "Triangulator!1",
+      "newPassword": "TestPassword123!"
+    },
+    "cleanup": {
+      "deleteTestUsers": false,
+      "cleanupDelay": 5000,
+      "retainUsersForDebugging": true
+    }
+  },
+  "institutions": [
+    {
+      "name": "Arizona State University",
+      "shortName": "ASU",
+      "adminEmail": "creditmobility@asu.edu"
+    },
+    {
+      "name": "University Of Nevada Reno",
+      "shortName": "UNR",
+      "adminEmail": "testtriangulator+109@gmail.com"
+    },
+    {
+      "name": "California One",
+      "shortName": "CAL1",
+      "adminEmail": "testtriangulator+1@gmail.com"
+    },
+    {
+      "name": "Rutgers University",
+      "shortName": "RUT",
+      "adminEmail": "testtriangulator+116@gmail.com"
+    },
+    {
+      "name": "Pima Community College",
+      "shortName": "PIMA",
+      "adminEmail": "testtriangulator+108@gmail.com"
+    }
+  ],
+  "roles": {
+    "triangulator_admin": {
+      "displayName": "Triangulator Admin",
+      "permissions": ["user_management", "system_config", "all_institutions"],
+      "canBeCreatedBy": ["triangulator_admin"]
+    },
+    "institution_admin": {
+      "displayName": "Institution Admin",
+      "permissions": ["user_management", "institution_config"],
+      "canBeCreatedBy": ["triangulator_admin", "institution_admin"],
+      "institutionRestriction": "own_institution_only"
+    },
+    "reviewer": {
+      "displayName": "Reviewer",
+      "permissions": ["review_courses", "view_reports"],
+      "canBeCreatedBy": ["triangulator_admin", "institution_admin"],
+      "institutionRestriction": "own_institution_only"
+    }
+  },
+  "validationRules": {
+    "email": {
+      "required": true,
+      "format": "email",
+      "unique": true,
+      "maxLength": 255
+    },
+    "firstName": {
+      "required": true,
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "lastName": {
+      "required": true,
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "institution": {
+      "required": true,
+      "mustExist": true
+    },
+    "role": {
+      "required": true,
+      "mustBeValid": true,
+      "respectPermissions": true
+    }
+  },
+  "errorMessages": {
+    "requiredFields": {
+      "email": "Email is required",
+      "firstName": "First name is required",
+      "lastName": "Last name is required",
+      "institution": "Institution is required",
+      "role": "Role is required"
+    },
+    "validation": {
+      "invalidEmail": "Please enter a valid email address",
+      "duplicateEmail": "A user with this email already exists",
+      "invalidInstitution": "Please select a valid institution",
+      "invalidRole": "Please select a valid role",
+      "permissionDenied": "You don't have permission to create this type of user"
+    },
+    "success": {
+      "userCreated": "User invitation sent successfully",
+      "passwordChanged": "Password changed successfully"
+    },
+    "email": {
+      "tempPasswordExpired": "Temporary password has expired",
+      "invalidTempPassword": "Invalid email or password",
+      "passwordMismatch": "Passwords do not match",
+      "passwordTooWeak": "Password must be at least 8 characters"
+    }
+  }
+}

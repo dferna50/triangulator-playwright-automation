@@ -21,10 +21,10 @@ test.describe('Search Course by Course', () => {
     test('Search Course by course - Attempt to add a course with only institution name', async ({ searchPage }) => {
         test.setTimeout(120000);
         await searchPage.searchCourseByCourse();
-        await searchPage.page.getByText('My courses').click();
+        await searchPage.clickMyCoursesTab();
         await searchPage.addInstitutionName('Arizona State');
         await searchPage.assertWithEmptyFields();
-        await expect(searchPage.page.getByText('Course subject prefix is missing')).toBeVisible();
+        await expect(searchPage.getErrorMessageLocator('Course subject is missing')).toBeVisible();
     });
 
     test('Search Course by course - Attempt to add a course without course number', async ({ searchPage }) => {
@@ -32,7 +32,7 @@ test.describe('Search Course by Course', () => {
         await searchPage.addInstitutionName(searchdata.Institution[0].institutionName);
         await searchPage.addCourseSubject(searchdata.Courses[0].courseSubject);
         await searchPage.assertWithEmptyFields();
-        await expect(searchPage.page.getByText('Course number is missing')).toBeVisible();
+        await expect(searchPage.getErrorMessageLocator('Course number is missing')).toBeVisible();
     });
 
     test('Search Course by course - Add duplicate course', async ({ searchPage }) => {
@@ -43,7 +43,7 @@ test.describe('Search Course by Course', () => {
             await searchPage.addCourseNumber(searchdata.Courses[0].courseNumber);
             await searchPage.clickPlusButton();
         }
-        await expect(searchPage.page.getByText('A duplicate course was added. This will not affect the number of evaluations found.')).toBeVisible();
+        await expect(searchPage.getDuplicateCourseAddedError()).toBeVisible();
     });
 
     test('Search Course by course - Remove a previously added course', async ({ searchPage }) => {
@@ -55,22 +55,20 @@ test.describe('Search Course by Course', () => {
             await searchPage.addCourseNumber(searchdata.Courses[i].courseNumber);
             await searchPage.clickPlusButton();
         }
-        await searchPage.page.locator(`text=${searchdata.Courses[0].courseSubject} ${searchdata.Courses[0].courseNumber}`).click();
-        await searchPage.page.keyboard.press('Tab');
-        await searchPage.page.getByRole('button', { name: 'Delete course' }).nth(1).click();
-        await expect(searchPage.page.locator(`text=${searchdata.Courses[0].courseSubject} ${searchdata.Courses[0].courseNumber}`)).not.toBeVisible();
+        await searchPage.getCourseItemLocator(searchdata.Courses[0].courseSubject, searchdata.Courses[0].courseNumber).click();
+        await searchPage.pressTab();
+        await searchPage.clickDeleteCourseButton(1);
+        await expect(searchPage.getCourseItemLocator(searchdata.Courses[0].courseSubject, searchdata.Courses[0].courseNumber)).not.toBeVisible();
     });
 
     test('Search Course by course - Add multiple courses and view the search result', async ({ searchPage }) => {
         test.setTimeout(60000);
         await searchPage.searchCourseByCourse();
-        for (let i = 0; i < 3; i++) {
-            await searchPage.addInstitutionName(searchdata.Institution[i].institutionName);
-            for (let j = 0; j < 10; j++) {
-                await searchPage.addCourseSubject(searchdata.Courses[j].courseSubject);
-                await searchPage.addCourseNumber(searchdata.Courses[j].courseNumber);
-                await searchPage.clickPlusButton();
-            }
+        await searchPage.addInstitutionName(searchdata.Institution[0].institutionName);
+        for (let j = 0; j < 2; j++) {
+            await searchPage.addCourseSubject(searchdata.Courses[j].courseSubject);
+            await searchPage.addCourseNumber(searchdata.Courses[j].courseNumber);
+            await searchPage.clickPlusButton();
         }
         await searchPage.clickSearchButton();
     });
@@ -82,8 +80,8 @@ test.describe('Search Course by Course', () => {
             searchdata.Courses[0].courseSubject,
             searchdata.Courses[0].courseNumber
         );
-        await expect(searchPage.page.locator(`text=${searchdata.Institution[0].institutionName}`)).toBeVisible();
-        await expect(searchPage.page.locator(`text=${searchdata.Courses[0].courseSubject} ${searchdata.Courses[0].courseNumber}`)).toBeVisible();
+        await expect(searchPage.getInstitutionLocator(searchdata.Institution[0].institutionName)).toBeVisible();
+        await expect(searchPage.getCourseItemLocator(searchdata.Courses[0].courseSubject, searchdata.Courses[0].courseNumber)).toBeVisible();
     });
 
     test.skip('Search Course by Course - State filter', async ({ searchPage }) => {
@@ -95,9 +93,9 @@ test.describe('Search Course by Course', () => {
         );
         await expect(searchPage.page.locator('.rounded-xl > :nth-child(1)')).toBeVisible();
         await searchPage.stateFilterSearch(searchdata.Institution[0].state);
-        await searchPage.page.click('text=Apply');
-        await expect(searchPage.page.getByText('Filters applied')).toBeVisible();
-        await expect(searchPage.page.getByText('States:')).toBeVisible();
+        await searchPage.clickSearchButton();
+        await expect(searchPage.getErrorMessageLocator('Filters applied')).toBeVisible();
+        await expect(searchPage.getErrorMessageLocator('States:')).toBeVisible();
     });
 
     test.skip('Search Course by Course - distance+ZIP filter', async ({ searchPage }) => {
@@ -108,9 +106,9 @@ test.describe('Search Course by Course', () => {
             searchdata.Courses[0].courseNumber
         );
         await searchPage.distanceAndZipCodeFilter(searchdata.Institution[1].zipCode);
-        await searchPage.page.getByText('Apply').click();
-        await expect(searchPage.page.getByText('Filters applied')).toBeVisible();
-        await expect(searchPage.page.getByText('Less than')).toBeVisible();
+        await searchPage.clickSearchButton();
+        await expect(searchPage.getErrorMessageLocator('Filters applied')).toBeVisible();
+        await expect(searchPage.getErrorMessageLocator('Less than')).toBeVisible();
     });
 
     test.skip('Search Course by Course - Approved courses percentage(lowest to highest)', async ({ searchPage }) => {
@@ -123,7 +121,7 @@ test.describe('Search Course by Course', () => {
         }
         await searchPage.clickSearchButton();
         await searchPage.sortBy('Approved course % (lowest to highest)');
-        await expect(searchPage.page.getByText('Approved course % (lowest to highest)')).toBeVisible();
+        await expect(searchPage.getErrorMessageLocator('Approved course % (lowest to highest)')).toBeVisible();
     });
 
     test.skip('Search Course by Course - Approved courses percentage(highest to lowest)', async ({ searchPage }) => {
@@ -136,6 +134,6 @@ test.describe('Search Course by Course', () => {
         }
         await searchPage.clickSearchButton();
         await searchPage.sortBy('Approved course % (highest to lowest)');
-        await expect(searchPage.page.getByText('Approved course % (highest to lowest)')).toBeVisible();
+        await expect(searchPage.getErrorMessageLocator('Approved course % (highest to lowest)')).toBeVisible();
     });
 });

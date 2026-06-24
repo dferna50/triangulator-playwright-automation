@@ -21,12 +21,14 @@ export class SearchPage {
   readonly chevronButton: Locator;
   readonly searchFromCombobox: Locator;
   readonly searchToCombobox: Locator;
+  readonly myCoursesTab: Locator;
+  readonly deleteCourseButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.publicSearchButton = page.getByRole('link', { name: 'Search' });
-    this.searchCourseByCourseIcon = page.getByRole('button', { name: 'Search course by course If' });
-    this.addSchoolnameComboBox = page.locator('.relative.w-full #dropdown-trigger .rounded-md .flex-1').first();
+    this.searchCourseByCourseIcon = page.getByRole('link', { name: 'Search course by course' });
+    this.addSchoolnameComboBox = page.getByRole('combobox', { name: 'School name' });
     this.sortByComboBox = page.locator('.item-center');
     this.addSubjectTextbox = page.locator(':nth-child(3) .rounded-md');
     this.addPlusIcon = page.getByRole('button', { name: 'Add course' });
@@ -35,14 +37,16 @@ export class SearchPage {
     this.filtersButton = page.locator('.justify-end .ring-offset-1 .opacity-0');
     this.stateFilter = page.locator(':nth-child(3) #dropdown-trigger .rounded-md .relative .justify-center .px-2 .items-center .flex-1 #combobox-input');
     this.zipCodeFilter = page.getByRole('textbox', { name: 'Zip code' });
-    this.exploreAllEquivalenciesButton = page.getByRole('button', { name: 'Explore all equivalencies If' });
+    this.exploreAllEquivalenciesButton = page.getByRole('link', { name: 'Explore all equivalencies' });
     this.transferFromComboBox = page.locator(':nth-child(1)[class="w-full flex-1"]');
     this.transferToComboBox = page.locator(':nth-child(2)[class="w-full flex-1"]');
-    this.anywhereContain = page.getByText('Anywhere', { exact: true });
+    this.anywhereContain = page.locator('[role="listbox"]').getByText('Anywhere', { exact: true }).first();
     this.bodyElement = page.locator('body');
     this.chevronButton = page.locator('div.flex.justify-end.items-center.pr-5.w-20.pt-4 > div > button').first();
     this.searchFromCombobox = page.locator('div').filter({ hasText: /^Where are you transferring from\?$/ }).getByPlaceholder('Search and select a school');
     this.searchToCombobox = page.locator('div').filter({ hasText: /^Where are you transferring to\?$/ }).getByPlaceholder('Search and select a school');
+    this.myCoursesTab = page.getByText('My courses');
+    this.deleteCourseButton = page.getByRole('button', { name: 'Delete course' });
   }
 
   async searchExploreAllEquivalenciesWithoutFrom(): Promise<void> {
@@ -121,8 +125,8 @@ export class SearchPage {
   async searchExploreAllEquivalenciesTo(): Promise<void> {
     await this.searchExploreAllEquivalenciesWithoutTo();
     await this.searchToCombobox.click();
-    await this.searchToCombobox.type('Allan Hancock College');
-    await this.page.getByText('Allan Hancock College').click();
+    await this.searchToCombobox.type('Nevada-Reno');
+    await this.page.getByText('University of Nevada-Reno').click();
     await this.searchButton.click();
     await this.chevronButton.click();
   }
@@ -132,16 +136,9 @@ export class SearchPage {
     courseSubject: string,
     courseNumber: string
   ): Promise<void> {
-    await this.addSchoolnameComboBox.click();
-    await this.page.keyboard.press('Tab');
-    await this.page.keyboard.press('Backspace');
-    await this.page.keyboard.type(institutionName);
-    await this.page.waitForTimeout(5000);
-    await this.page.keyboard.press('ArrowDown');
-    await this.page.keyboard.press('Enter');
-    await this.addSubjectTextbox.type(courseSubject);
-    await this.page.keyboard.press('Tab');
-    await this.page.keyboard.type(courseNumber);
+    await this.addInstitutionName(institutionName);
+    await this.addCourseSubject(courseSubject);
+    await this.addCourseNumber(courseNumber);
     await this.addPlusIcon.click();
     await this.searchButton.click();
   }
@@ -161,23 +158,25 @@ export class SearchPage {
   }
 
   async addInstitutionName(institutionName: string): Promise<void> {
-    await this.bodyElement.hover({ position: { x: 0, y: 0 } });
     await this.addSchoolnameComboBox.click();
-    await this.page.keyboard.press('Tab');
-    await this.page.keyboard.press('Backspace');
-    await this.page.keyboard.type(institutionName);
-    await this.page.waitForTimeout(5000);
+    await this.addSchoolnameComboBox.fill(institutionName);
+    await this.page.waitForTimeout(2000);
     await this.page.keyboard.press('ArrowDown');
     await this.page.keyboard.press('Enter');
   }
 
   async addCourseSubject(courseSubject: string): Promise<void> {
-    await this.addSubjectTextbox.type(courseSubject);
+    const subjectCombobox = this.page.getByRole('combobox', { name: 'Subject' });
+    await subjectCombobox.click();
+    await subjectCombobox.fill(courseSubject);
+    await this.page.getByRole('option', { name: courseSubject, exact: true }).click();
   }
 
   async addCourseNumber(courseNumber: string): Promise<void> {
-    await this.page.keyboard.press('Tab');
-    await this.page.keyboard.type(courseNumber);
+    const courseNumberCombobox = this.page.getByRole('combobox', { name: 'Course number' });
+    await courseNumberCombobox.click();
+    await courseNumberCombobox.fill(courseNumber);
+    await this.page.getByRole('option', { name: courseNumber, exact: true }).click();
   }
 
   async clickPlusButton(): Promise<void> {
@@ -236,5 +235,34 @@ export class SearchPage {
       resolvedInstitutions.push(institution ?? '');
     }
     return resolvedInstitutions;
+  }
+
+  // Helper methods for getting locators (used in assertions)
+  getErrorMessageLocator(message: string): Locator {
+    return this.page.getByText(message);
+  }
+
+  getDuplicateCourseAddedError(): Locator {
+    return this.page.getByText('A duplicate course was added. This will not affect the number of evaluations found.');
+  }
+
+  getInstitutionLocator(institutionName: string): Locator {
+    return this.page.locator(`text=${institutionName}`);
+  }
+
+  getCourseItemLocator(courseSubject: string, courseNumber: string): Locator {
+    return this.page.locator(`text=${courseSubject} ${courseNumber}`);
+  }
+
+  async clickMyCoursesTab(): Promise<void> {
+    await this.myCoursesTab.click();
+  }
+
+  async clickDeleteCourseButton(index: number = 0): Promise<void> {
+    await this.deleteCourseButton.nth(index).click();
+  }
+
+  async pressTab(): Promise<void> {
+    await this.page.keyboard.press('Tab');
   }
 }

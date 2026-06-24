@@ -151,4 +151,56 @@ export class FaqPage {
     await this.navigateToFaqSettings();
     await this.verifyFaqSettingsPageLoaded();
   }
+
+  /**
+   * Check if validation error message is visible
+   */
+  async hasValidationError(): Promise<boolean> {
+    return await this.page.locator('text=/error|required|invalid/i').isVisible().catch(() => false);
+  }
+
+  /**
+   * Check if URL validation error is visible
+   */
+  async hasUrlValidationError(): Promise<boolean> {
+    return await this.page.locator('text=/error|invalid|url/i').isVisible().catch(() => false);
+  }
+
+  /**
+   * Check if XSS validation error is visible
+   */
+  async hasXssValidationError(): Promise<boolean> {
+    const inputInvalid = await this.faqInput.evaluate((el: HTMLInputElement) => !el.checkValidity()).catch(() => false);
+    const errorVisible = await this.page.locator('text=/error|invalid/i').isVisible().catch(() => false);
+    return inputInvalid || errorVisible;
+  }
+
+  /**
+   * Navigate to My Workplace page
+   */
+  async navigateToMyWorkplace(): Promise<void> {
+    await this.myWorkplaceLink.click();
+    await this.page.waitForURL(/.*my-workspace.*/, { timeout: 10000 });
+  }
+
+  /**
+   * Check if element is visible by text
+   */
+  async isElementVisibleByText(text: string): Promise<boolean> {
+    return await this.page.locator(`text=${text}`).first().isVisible().catch(() => false);
+  }
+
+  /**
+   * Get mobile menu button
+   */
+  getMobileMenuButton(): Locator {
+    return this.page.locator('button[aria-label*="menu" i], button:has-text("☺")').first();
+  }
+
+  /**
+   * Get element by text
+   */
+  getElementByText(text: string): Locator {
+    return this.page.locator(`text=${text}`).first();
+  }
 }

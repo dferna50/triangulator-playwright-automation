@@ -12,123 +12,155 @@ export class BoostRequestPage {
     return Array.from({ length: limit }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
   }
 
-  async autoName(name: string, score: number, requestName: number, assign: number): Promise<void> {
-    await this.page.locator(`:nth-child(${score}) > .pb-8 > .gap-2 > .rounded-md > .flex-1 > .justify-center`).click();
-    await this.page.keyboard.press('Control+A');
-    await this.page.keyboard.press('Backspace');
-    await this.page.keyboard.type('50');
+  // ─── Navigation ─────────────────────────────────────────────────────────
 
-    await this.page.locator(`:nth-child(${requestName}) > .pb-8 > .gap-2 > .rounded-md > .flex-1 > .justify-center`).click();
-    await this.page.keyboard.press('Control+A');
-    await this.page.keyboard.press('Backspace');
-    await this.page.keyboard.type('Daniel Random 2' + name);
-
-    await this.page.locator(`.bg-white > :nth-child(${assign})`).click();
+  async navigateToBoostSuggestions(): Promise<void> {
+    await this.page.goto('/app/my-triangulator/requests/boost-suggestions');
+    await this.page.waitForLoadState('networkidle');
+    await expect(this.page.getByRole('heading', { name: 'Boost Suggestions', level: 1 })).toBeVisible({ timeout: 15000 });
   }
 
-  async submitRequest(name: string): Promise<void> {
-    await this.page.locator(':nth-child(2) > .relative > .opacity-0').click();
-    await this.page.locator(':nth-child(2) > div.w-full > .relative > .opacity-0').click();
-    await this.page.locator(':nth-child(3) > .relative > .opacity-0 > .inline-block').click();
-    await expect(this.page.locator('.justify-between > div.overflow-hidden > .overflow-hidden'))
-      .toHaveText('Request name: Daniel Random 2' + name);
-    await expect(this.page.locator('text=assigned')).toBeVisible();
+  async clickPartnerInstitutionCard(): Promise<void> {
+    await this.page.getByRole('link', { name: 'Partner Institution' }).first().click();
+    await this.page.waitForURL(/partner-institution/, { timeout: 15000 });
+    await expect(this.page.getByText(/Partner Institution/i).first()).toBeVisible({ timeout: 10000 });
   }
 
-  async submitRequestUnassigned(name: string): Promise<void> {
-    await this.page.locator('.grid-flow-col > .p-0').click();
-    await this.page.locator(':nth-child(2) > div.w-full > .relative > .opacity-0').click();
-    await this.page.locator(':nth-child(3) > .relative > .opacity-0 > .inline-block').click();
-    await expect(this.page.locator('.justify-between > div.overflow-hidden > .overflow-hidden'))
-      .toHaveText('Request name: Daniel Random 2' + name);
-    await expect(this.page.locator('text=New Suggestions')).toBeVisible();
+  async clickImproveRulesCard(): Promise<void> {
+    await this.page.getByRole('link', { name: 'Improve Rules' }).first().click();
+    await this.page.waitForURL(/improve-rules/, { timeout: 15000 });
+    await expect(this.page.getByText(/Improve Rules/i).first()).toBeVisible({ timeout: 10000 });
   }
 
-  async submitRequestUnassignedFindCourse(name: string): Promise<void> {
-    await this.page.locator(':nth-child(2) > div.w-full > .relative > .opacity-0').click();
-    await this.page.locator(':nth-child(3) > .relative > .opacity-0 > .inline-block').click();
-    await expect(this.page.locator('.justify-between > div.overflow-hidden > .overflow-hidden'))
-      .toHaveText('Request name: Daniel Random 2' + name);
-    await expect(this.page.locator('text=New Suggestions')).toBeVisible();
+  async clickFindCourseCard(): Promise<void> {
+    await this.page.getByRole('link', { name: 'Find Course' }).first().click();
+    await this.page.waitForURL(/find-course/, { timeout: 15000 });
+    await expect(this.page.getByText(/Find a? Course/i).first()).toBeVisible({ timeout: 10000 });
   }
 
-  async selectRandomItemFromComboBox(
-    comboBoxSelector: string,
-    itemList: string,
-    num: number
-  ): Promise<void> {
-    await this.page.locator(comboBoxSelector).click();
-    await this.page.locator(itemList).waitFor({ state: 'visible' });
-    const randomIndex = Math.floor(Math.random() * num);
-    for (let i = 0; i <= randomIndex; i++) {
-      await this.page.keyboard.press('ArrowDown');
-    }
+  // ─── Partner Institution Form ─────────────────────────────────────────────
+
+  async selectSourceInstitutionLevel(level: string): Promise<void> {
+    const combo = this.page.getByRole('combobox', { name: 'Source Institution Level', exact: true });
+    await combo.click();
+    await this.page.waitForTimeout(500);
+    await this.page.getByRole('option', { name: level }).first().click();
+    await this.page.waitForTimeout(300);
+  }
+
+  async selectSourceState(state: string): Promise<void> {
+    const combo = this.page.getByRole('combobox', { name: 'Source State', exact: true });
+    await combo.click();
+    await this.page.waitForTimeout(500);
+    await this.page.getByRole('option', { name: state }).first().click();
+    await this.page.waitForTimeout(300);
+  }
+
+  async selectSourceInstitution(institution: string): Promise<void> {
+    const combo = this.page.getByRole('combobox', { name: 'Source Institution', exact: true });
+    await combo.click();
     await this.page.waitForTimeout(1000);
-    await this.page.keyboard.press('Enter');
+    await this.page.getByRole('option', { name: institution }).first().click();
+    await this.page.waitForTimeout(300);
   }
 
-  async disabledSubmitButton(): Promise<void> {
-    await this.page.hover('.gap-3 > :nth-child(2) > div.cursor-not-allowed');
-    await expect(this.page.locator('text=Please complete all steps')).toBeVisible();
-    await this.page.hover('body', { position: { x: 0, y: 0 } });
+  async fillMinimumScore(score: string): Promise<void> {
+    const input = this.page.getByRole('textbox', { name: /Minimum score/i }).first();
+    await expect(input).toBeEnabled({ timeout: 10000 });
+    await input.fill(score);
   }
 
-  async navigateToPartnerBoost(): Promise<void> {
-    await expect(this.page.locator(':nth-child(4) > .text-grey-600 > .text-center')).toHaveText('My Triangulator');
-    await this.page.locator(':nth-child(4) > .text-grey-600 > .text-center').click();
-    await expect(this.page.locator('.flex > .font-semibold')).toHaveText('New Suggestions');
-    await this.page.locator('.relative > .opacity-0').click();
-    await expect(this.page.locator(':nth-child(5) > .list-none > .w-full')).toHaveText(' Boost Suggestions ');
-    await this.page.locator(':nth-child(5) > .list-none > .w-full > .flex-1').click();
-    await expect(this.page.locator('.w-full.gap-4 > .flex-col > .flex > .font-semibold')).toHaveText('Boost Suggestions');
-    await expect(this.page.locator('.items-stretch > :nth-child(1) > .flex')).toBeVisible();
-    await expect(this.page.locator(':nth-child(1) > .flex > .text-lg')).toHaveText('Partner Institution');
-    await this.page.locator('.items-stretch > :nth-child(1) > .flex').click();
-    await expect(this.page.locator('.text-2xl')).toHaveText('Partner Institution');
-    await expect(this.page.locator('.pb-2 > .text-secondary')).toContainText('Allow the Triangulator');
+  async selectMaximumMatches(matches: string): Promise<void> {
+    const combo = this.page.getByRole('combobox', { name: /Maximum matches/i }).first();
+    await combo.click();
+    await this.page.waitForTimeout(500);
+    await this.page.getByRole('option', { name: matches }).first().click();
+    await this.page.waitForTimeout(500);
   }
 
-  async navigateToImproveRule(): Promise<void> {
-    await expect(this.page.locator(':nth-child(4) > .text-grey-600 > .text-center')).toHaveText('My Triangulator');
-    await this.page.locator(':nth-child(4) > .text-grey-600 > .text-center').click();
-    await expect(this.page.locator('.flex > .font-semibold')).toHaveText('New Suggestions');
-    await this.page.locator('.relative > .opacity-0').click();
-    await this.page.locator(':nth-child(5) > .list-none > .w-full > .flex-1').click();
-    await expect(this.page.locator('.w-full.gap-4 > .flex-col > .flex > .font-semibold')).toHaveText('Boost Suggestions');
-    await expect(this.page.locator('.items-stretch > :nth-child(2) > .flex')).toBeEnabled();
-    await expect(this.page.locator(':nth-child(2) > .flex')).toContainText('Improve Rules');
-    await this.page.locator('.items-stretch > :nth-child(2) > .flex').click();
-    await expect(this.page.locator('.pb-2 > .text-secondary')).toContainText('Allow the Triangulator to assist your institution');
-    await this.page.locator('.underline').click();
-    await expect(this.page.locator('.bg-white > .flex > .text-2xl')).toHaveText('Improve Rules Example');
-    await this.page.locator('.absolute > div > .rounded-full > .w-6 > path').click();
+  async fillRequestName(name: string): Promise<void> {
+    const input = this.page.getByRole('textbox', { name: /Request Name/i }).first();
+    await expect(input).toBeEnabled({ timeout: 10000 });
+    await input.fill(name);
   }
 
-  async navigateToFindCourse(): Promise<void> {
-    await expect(this.page.locator(':nth-child(4) > .text-grey-600 > .text-center')).toHaveText('My Triangulator');
-    await this.page.locator(':nth-child(4) > .text-grey-600 > .text-center').click();
-    await expect(this.page.locator('.flex > .font-semibold')).toHaveText('New Suggestions');
-    await this.page.locator('.relative > .opacity-0').click();
-    await this.page.locator(':nth-child(5) > .list-none > .w-full > .flex-1').click();
-    await expect(this.page.locator('.w-full.gap-4 > .flex-col > .flex > .font-semibold')).toHaveText('Boost Suggestions');
-    await expect(this.page.locator('.items-stretch > :nth-child(3) > .flex')).toBeEnabled();
-    await expect(this.page.locator(':nth-child(3) > .flex > .text-lg')).toHaveText('Find Course');
-    await this.page.locator('#uuid-c3c86810-30c1-4d8d-b805-5be01eca2a12').click();
-    await expect(this.page.locator('text=Find a Course')).toBeVisible();
-    await expect(this.page.locator('.w-full.justify-start > .text-secondary')).toContainText('Allow the Triangulator');
-    await this.page.locator('.underline').click();
-    await expect(this.page.locator('.bg-white > .flex > .text-2xl')).toHaveText('Find Course Example');
-    await this.page.locator('.absolute > [aria-hidden="false"] > .rounded-full > .w-6 > path').click();
+  async submitBoostRequest(): Promise<void> {
+    const submitBtn = this.page.getByRole('button', { name: /Submit/i }).first();
+    await submitBtn.click();
+    await this.page.waitForLoadState('networkidle');
   }
 
-  async selectRandomInstitution(num: number): Promise<void> {
-    const dropdown = `:nth-child(${num}) > .pb-8 > .timeline-input > #dropdown-trigger > .rounded-md >.flex-1`;
-    await this.page.locator(dropdown).click();
-    await this.page.waitForTimeout(5000);
-    const randomIndex = Math.floor(Math.random() * 5);
-    for (let i = 0; i <= randomIndex; i++) {
-      await this.page.locator(`:nth-child(${num}) > .pb-8 > .timeline-input > #dropdown-trigger > .rounded-md`).press('ArrowDown');
-    }
-    await this.page.locator(`:nth-child(${num}) > .pb-8 > .timeline-input > #dropdown-trigger > .rounded-md`).press('Enter');
+  async cancelBoostRequest(): Promise<void> {
+    const cancelBtn = this.page.getByRole('button', { name: /Cancel/i }).first();
+    await cancelBtn.click();
+    await this.page.waitForLoadState('networkidle');
+  }
+
+  async validateSubmitDisabledTooltip(): Promise<void> {
+    await expect(this.page.locator('[aria-label*="Please complete all steps"]').first()).toBeVisible();
+  }
+
+  // ─── Request Log ──────────────────────────────────────────────────────────
+
+  async validateRequestLogHasRows(): Promise<void> {
+    const rows = this.page.getByRole('rowgroup').first().getByRole('row');
+    expect(await rows.count()).toBeGreaterThan(0);
+  }
+
+  async validateRequestLogTypeColumn(): Promise<void> {
+    const typeHeader = this.page.getByRole('columnheader', { name: 'Type' }).first();
+    await expect(typeHeader).toBeVisible();
+  }
+
+  async openRequestLogRowByName(name: string): Promise<void> {
+    const rowBtn = this.page.getByRole('button', { name }).first();
+    await rowBtn.click();
+    await this.page.waitForLoadState('networkidle');
+  }
+
+  // ─── Improve Rules Form ───────────────────────────────────────────────────
+
+  async selectYourSubject(subject: string): Promise<void> {
+    const combo = this.page.getByRole('combobox', { name: 'Your subject', exact: true });
+    await combo.click();
+    await this.page.waitForTimeout(500);
+    await this.page.getByRole('option', { name: subject, exact: true }).click();
+    await this.page.waitForTimeout(300);
+  }
+
+  async selectYourNumber(number: string): Promise<void> {
+    const combo = this.page.getByRole('combobox', { name: 'Your number', exact: true });
+    await combo.click();
+    await this.page.waitForTimeout(500);
+    await this.page.getByRole('option', { name: number, exact: true }).click();
+    await this.page.waitForTimeout(300);
+  }
+
+  async fillImproveRulesForm(subject: string, number: string, minScore: string, requestName: string): Promise<void> {
+    await this.selectYourSubject(subject);
+    await this.selectYourNumber(number);
+    const scoreInput = this.page.getByRole('textbox', { name: 'Minimum score', exact: true });
+    await expect(scoreInput).toBeEnabled({ timeout: 10000 });
+    await scoreInput.fill(minScore);
+    const nameInput = this.page.getByRole('textbox', { name: 'Request Name', exact: true });
+    await expect(nameInput).toBeEnabled({ timeout: 10000 });
+    await nameInput.fill(requestName);
+  }
+
+  // ─── Find Course Form ─────────────────────────────────────────────────────
+
+  async fillFindCourseForm(level: string, state: string, institution: string, subject: string, number: string, minScore: string, requestName: string): Promise<void> {
+    await this.selectSourceInstitutionLevel(level);
+    await this.selectSourceState(state);
+    await this.selectSourceInstitution(institution);
+    await this.page.getByRole('textbox', { name: 'Enter subject', exact: true }).fill(subject);
+    await this.page.getByRole('textbox', { name: 'Enter course number', exact: true }).fill(number);
+    await this.page.waitForTimeout(300);
+    const scoreInput = this.page.getByRole('textbox', { name: 'Minimum score', exact: true });
+    await expect(scoreInput).toBeEnabled({ timeout: 10000 });
+    await scoreInput.fill(minScore);
+    const nameInput = this.page.getByRole('textbox', { name: 'Request Name', exact: true });
+    await expect(nameInput).toBeEnabled({ timeout: 10000 });
+    await nameInput.fill(requestName);
   }
 }

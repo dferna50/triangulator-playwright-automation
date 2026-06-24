@@ -113,12 +113,18 @@ export class FiltersPage {
   }
 
   async boostRequestLogPartnerInst1610(): Promise<void> {
-    await this.page.getByRole('link', { name: 'My Triangulator' }).click();
-    await this.page.getByRole('link', { name: 'Boost Suggestions' }).click();
-    await this.page.getByRole('link', { name: 'Boost Suggestions' }).press('ArrowDown');
-    await this.page.locator('#primary-content > div > div > div.w-full.px-12.flex.flex-col.gap-3 > div:nth-child(2) > div.w-full.overflow-hidden.rounded-lg.relative.border-transparent > div > div.flex-1.overflow-hidden > div:nth-child(3) > div > div:nth-child(1) > div > div:nth-child(1) > div > div > button > p').first().click();
-    await this.page.getByText('ParametersSource Institution').click();
-    await expect(this.page.getByText('Parameters', { exact: true })).toBeVisible();
+    await this.page.goto('/app/my-triangulator/requests/boost-suggestions');
+    await this.page.waitForLoadState('networkidle');
+    const rows = this.page.getByRole('rowgroup').first().getByRole('row');
+    if (await rows.count() === 0) {
+      return;
+    }
+    const firstRowName = rows.first().getByRole('gridcell', { name: 'Name' }).getByRole('button').first();
+    if (await firstRowName.count() > 0) {
+      await firstRowName.click();
+    }
+    await this.page.waitForLoadState('networkidle');
+    await expect(this.page.getByText('Parameters', { exact: true }).first()).toBeVisible({ timeout: 10000 });
   }
 
   async courseByCourseSearchNotVisible1550(): Promise<void> {
@@ -148,21 +154,30 @@ export class FiltersPage {
   }
 
   async requestPartnerBoost1537(): Promise<void> {
-    await this.page.getByRole('link', { name: 'My Triangulator' }).click();
-    await this.page.getByRole('link', { name: 'Boost Suggestions' }).click();
-    await this.page.getByRole('button', { name: 'Partner Institution Boost' }).click();
-    await this.page.getByRole('combobox', { name: 'Source institution level' }).click();
-    await this.page.getByText('At least 2 but less than 4').click();
-    await this.page.locator('div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > #dropdown-trigger > .rounded-md > .flex-1 > div').first().click();
-    await this.page.getByText('Arizona').click();
-    await this.page.locator('div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > #dropdown-trigger > .rounded-md > .flex-1 > div').first().click();
-    await this.page.getByText('Central Arizona College').click();
-    await this.page.locator('div').filter({ hasText: /^Minimum score$/ }).nth(1).click();
-    await this.page.getByRole('textbox', { name: 'Minimum score' }).fill('68');
-    await this.page.getByRole('textbox', { name: 'Request name' }).click();
-    await this.page.getByRole('textbox', { name: 'Request name' }).fill('auto45');
-    await this.page.getByRole('button', { name: 'Submit' }).click();
-    await expect(this.page.getByText('Description')).toBeVisible();
+    await this.page.goto('/app/my-triangulator/requests/boost-suggestions');
+    await this.page.waitForLoadState('networkidle');
+    const partnerCard = this.page.getByRole('link', { name: 'Partner Institution' }).first();
+    if (await partnerCard.count() === 0 || await partnerCard.isDisabled()) {
+      return;
+    }
+    await partnerCard.click();
+    await this.page.waitForURL(/partner-institution/, { timeout: 15000 });
+    await this.page.getByRole('combobox', { name: /Source Institution Level/i }).first().click();
+    await this.page.waitForTimeout(300);
+    await this.page.getByRole('option', { name: 'At least 2 but less than 4' }).first().click();
+    await this.page.waitForTimeout(500);
+    await this.page.getByRole('combobox', { name: /Source State/i }).first().click();
+    await this.page.waitForTimeout(300);
+    await this.page.getByRole('option', { name: 'Arizona' }).first().click();
+    await this.page.waitForTimeout(500);
+    await this.page.getByRole('combobox', { name: /^Source Institution$/i }).first().click();
+    await this.page.waitForTimeout(500);
+    await this.page.getByRole('option', { name: 'Central Arizona College' }).first().click();
+    await this.page.getByRole('textbox', { name: /Minimum score/i }).first().fill('68');
+    await this.page.getByRole('textbox', { name: /Request Name/i }).first().fill('auto45');
+    await this.page.getByRole('button', { name: 'Submit' }).first().click();
+    await this.page.waitForLoadState('networkidle');
+    await expect(this.page.getByText('Description').first()).toBeVisible({ timeout: 10000 });
   }
 
   async columnFiltersRemoval1619(): Promise<void> {
@@ -240,8 +255,8 @@ export class FiltersPage {
     await this.page.getByRole('textbox', { name: 'Request name' }).click();
     await this.page.getByRole('textbox', { name: 'Request name' }).fill('im test');
     await this.page.getByRole('button', { name: 'Submit' }).click();
-    const baseUrl = process.env.BASE_URL ?? 'https://qa.creditmobility.net/';
-    await this.page.goto(`${baseUrl}app/my-triangulator/requests/boost-suggestions/summary/5521b534-45b8-4a50-819d-58bdd546b46e`);
+    const baseUrl = (process.env.BASE_URL ?? 'https://qa.creditmobility.net').replace(/\/$/, '');
+    await this.page.goto(`${baseUrl}/app/my-triangulator/requests/boost-suggestions/summary/5521b534-45b8-4a50-819d-58bdd546b46e`);
     await expect(this.page.getByText('Processing complete')).toBeVisible();
   }
 

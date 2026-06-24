@@ -2,9 +2,15 @@ import { type Page, type Locator, expect } from '@playwright/test';
 
 export class SuggestionsPage {
   readonly page: Page;
+  readonly newSuggestionsHeading: Locator;
+  readonly historyHeading: Locator;
+  readonly assignedHeading: Locator;
 
   constructor(page: Page) {
     this.page = page;
+    this.newSuggestionsHeading = page.getByRole('heading', { name: 'New Suggestions', level: 1 });
+    this.historyHeading = page.getByRole('heading', { name: 'History', level: 1 });
+    this.assignedHeading = page.getByRole('heading', { name: 'Assigned', level: 1 });
   }
 
   async historyNewActions(): Promise<void> {
@@ -456,7 +462,7 @@ export class SuggestionsPage {
     const expectedHeaders = [
       'Source institution', 'Source state', 'Source subject', 'Source number',
       'Target institution', 'Target subject', 'Target number',
-      'Score', 'Suggestion type', 'Date suggested',
+      'Score', 'Request name', 'Suggestion type', 'Date suggested', 'Date last modified',
     ];
     for (const header of expectedHeaders) {
       const col = this.page.getByRole('columnheader', { name: header });
@@ -601,12 +607,16 @@ export class SuggestionsPage {
 
   async applyFilterBySuggestionType(type: string): Promise<void> {
     await this.openFilterPanel();
-    const typeCheckbox = this.page.getByRole('checkbox', { name: type }).first();
-    if (await typeCheckbox.count() > 0) {
-      await typeCheckbox.check();
-    } else {
-      const typeLabel = this.page.getByText(type, { exact: false }).first();
-      await typeLabel.click();
+    const typeCombo = this.page.getByRole('combobox', { name: /Suggestion Type/i }).first();
+    if (await typeCombo.count() > 0) {
+      await typeCombo.click();
+      await this.page.waitForTimeout(300);
+      const option = this.page.getByRole('option', { name: type }).first();
+      if (await option.count() > 0) {
+        await option.click();
+      } else {
+        await this.page.getByText(type, { exact: false }).first().click();
+      }
     }
     const applyBtn = this.page.getByRole('button', { name: /Apply/i }).first();
     if (await applyBtn.count() > 0) {
@@ -616,8 +626,10 @@ export class SuggestionsPage {
   }
 
   async validateActiveFilterChipContains(text: string): Promise<void> {
-    const chip = this.page.locator('.overflow-hidden, [data-testid="filter-chip"]')
-      .filter({ hasText: new RegExp(text, 'i') }).first();
+    const chip = this.page.getByRole('listbox', { name: /Filter chips/i })
+      .getByRole('option')
+      .filter({ hasText: new RegExp(text, 'i') })
+      .first();
     if (await chip.count() > 0) {
       await expect(chip).toBeVisible();
     } else {
@@ -637,7 +649,7 @@ export class SuggestionsPage {
   }
 
   async clearAllFiltersViaChip(): Promise<void> {
-    const clearAll = this.page.getByText(/Clear all/i).first();
+    const clearAll = this.page.getByRole('button', { name: /clear all filters/i }).first();
     if (await clearAll.count() > 0) {
       await clearAll.click();
       await this.page.waitForLoadState('networkidle');
@@ -708,5 +720,40 @@ export class SuggestionsPage {
   async filterAndValidateSuggestionType(filterType: string, expectedType: string): Promise<void> {
     await this.applyFilterBySuggestionType(filterType);
     await this.validateSuggestionTypeInTable(expectedType);
+  }
+
+  // ─── Boost Suggestion Navigation & Validation ───────────────────────────
+
+  async navigateToBoostSuggestions(): Promise<void> {
+    await this.page.goto('/app/my-triangulator/requests/boost-suggestions');
+    await this.page.waitForLoadState('networkidle');
+    await expect(this.page.getByRole('heading', { name: 'Boost Suggestions', level: 1 })).toBeVisible({ timeout: 15000 });
+  }
+
+  async validateBoostPageCards(): Promise<void> {
+    await expect(this.page.getByRole('link', { name: 'Partner Institution' }).first()).toBeVisible();
+    await expect(this.page.getByRole('link', { name: 'Improve Rules' }).first()).toBeVisible();
+    await expect(this.page.getByRole('link', { name: 'Find Course' }).first()).toBeVisible();
+  }
+
+  async validateBoostRequestLogColumns(): Promise<void> {
+    const expectedHeaders = ['Name', 'Type', 'Request Date', 'Status', 'Suggestions', 'Visible Suggestions'];
+    for (const header of expectedHeaders) {
+      const col = this.page.getByRole('columnheader', { name: header });
+      if (await col.count() > 0) {
+        await expect(col.first()).toBeVisible();
+      }
+    }
+  }
+
+  async openFirstBoostRequestLogDetail(): Promise<void> {
+    const firstRow = this.page.getByRole('rowgroup').first().getByRole('row').first();
+    const nameCell = firstRow.getByRole('gridcell', { name: 'Name' }).getByRole('button').first();
+    if (await nameCell.count() > 0) {
+      await nameCell.click();
+    } else {
+      await firstRow.click();
+    }
+    await this.page.waitForLoadState('networkidle');
   }
 }

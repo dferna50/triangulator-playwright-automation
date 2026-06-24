@@ -97,8 +97,8 @@ export class PeerGroupsPage {
   }
 
   async navigateToPeerGroupsPageDirect(): Promise<void> {
-    const baseUrl = process.env.BASE_URL ?? 'https://qa.creditmobility.net/';
-    await this.page.goto(`${baseUrl}app/my-workspace/inst-admin/inst/settings/peer-groups`);
+    const baseUrl = (process.env.BASE_URL ?? 'https://qa.creditmobility.net').replace(/\/$/, '');
+    await this.page.goto(`${baseUrl}/app/my-workspace/inst-admin/inst/settings/peer-groups`);
     await this.page.waitForLoadState('domcontentloaded');
     await this.createPeerGroupBtn.waitFor({ state: 'visible', timeout: 15000 });
   }
@@ -136,8 +136,12 @@ export class PeerGroupsPage {
   }
 
   async removeInstitution(index: number = 0): Promise<void> {
+    // Dismiss any open dropdown first
+    await this.dismissDropdown();
+    await this.page.waitForTimeout(300);
     const removeBtns = this.page.locator('[aria-label="Remove"] button');
-    await removeBtns.nth(index).click();
+    await removeBtns.nth(index).waitFor({ state: 'visible', timeout: 5000 });
+    await removeBtns.nth(index).click({ force: true });
   }
 
   async dismissDropdown(): Promise<void> {
@@ -225,8 +229,28 @@ export class PeerGroupsPage {
   }
 
   async openRowDropdown(index: number = 0): Promise<void> {
-    await this.toggleSeeMoreBtn.nth(index).click();
-    await this.editMenuItem.waitFor({ state: 'visible', timeout: 5000 });
+    // Reload page to ensure clean state if menu doesn't open
+    await this.page.reload();
+    await this.page.waitForLoadState('domcontentloaded');
+    await this.createPeerGroupBtn.waitFor({ state: 'visible', timeout: 15000 });
+    await this.page.waitForTimeout(1000);
+    
+    // Try clicking the toggle button
+    const toggle = this.toggleSeeMoreBtn.nth(index);
+    await toggle.waitFor({ state: 'visible', timeout: 5000 });
+    await toggle.scrollIntoViewIfNeeded();
+    await toggle.click({ force: true });
+    
+    // Wait for menu to appear with retry
+    let menuVisible = false;
+    for (let i = 0; i < 5; i++) {
+      menuVisible = await this.editMenuItem.isVisible().catch(() => false);
+      if (menuVisible) break;
+      await this.page.waitForTimeout(500);
+    }
+    if (!menuVisible) {
+      throw new Error('Edit menu did not appear after clicking toggle');
+    }
   }
 
   async clickEditOnRow(index: number = 0): Promise<void> {

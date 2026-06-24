@@ -32,7 +32,7 @@ test.describe('Navigation – Suggestions Sidebar', () => {
 
     test('Navigate to New Suggestions via My Triangulator link', async () => {
         await suggestions.goToNewSuggestions();
-        await expect(page.getByRole('heading', { name: 'New Suggestions', level: 1 })).toBeVisible();
+        await expect(suggestions.newSuggestionsHeading).toBeVisible();
     });
 
     test('Navigate to Assigned Suggestions from New page', async () => {
@@ -50,19 +50,19 @@ test.describe('Navigation – Suggestions Sidebar', () => {
     test('Direct URL navigation to New Suggestions works', async () => {
         await page.goto('/app/my-triangulator/suggestions/new');
         await page.waitForLoadState('networkidle');
-        await expect(page.getByRole('heading', { name: 'New Suggestions', level: 1 })).toBeVisible();
+        await expect(suggestions.newSuggestionsHeading).toBeVisible();
     });
 
     test('Direct URL navigation to History works', async () => {
         await page.goto('/app/my-triangulator/suggestions/history');
         await page.waitForLoadState('networkidle');
-        await expect(page.getByRole('heading', { name: 'History', level: 1 })).toBeVisible();
+        await expect(suggestions.historyHeading).toBeVisible();
     });
 
     test('Direct URL navigation to Assigned works', async () => {
         await page.goto('/app/my-triangulator/suggestions/assigned');
         await page.waitForLoadState('networkidle');
-        await expect(page.getByRole('heading', { name: 'Assigned', level: 1 })).toBeVisible();
+        await expect(suggestions.assignedHeading).toBeVisible();
     });
 });
 
@@ -232,7 +232,7 @@ test.describe('New Suggestions – Detail View', () => {
 
     test('Back button returns to New Suggestions list', async () => {
         await suggestions.goBackFromDetail();
-        await expect(page.getByRole('heading', { name: 'New Suggestions', level: 1 })).toBeVisible();
+        await expect(suggestions.newSuggestionsHeading).toBeVisible();
         await expect(page.getByRole('gridcell', { name: 'Source institution' }).first()).toBeVisible();
     });
 

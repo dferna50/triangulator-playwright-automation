@@ -3,9 +3,9 @@ import { test, expect } from '../fixtures/test';
 test.describe('Peer Groups Tests', () => {
     test.describe.configure({ mode: 'serial' });
 
-    const baseURL = process.env.BASE_URL ?? 'https://qa.creditmobility.net';
-    const adminEmail = process.env.REGULAR_USER_EMAIL ?? '';
-    const adminPassword = process.env.REGULAR_USER_PASSWORD ?? '';
+    const baseURL = (process.env.BASE_URL ?? 'https://qa.creditmobility.net').replace(/\/$/, '');
+    const adminEmail = process.env.INST_ADMIN_EMAIL ?? '';
+    const adminPassword = process.env.INST_ADMIN_PASSWORD ?? '';
 
     const testInstitutions = [
         'Abilene Christian University',
@@ -229,7 +229,7 @@ test.describe('Peer Groups Tests', () => {
             await peerGroupsPage.closeDialog();
         });
 
-        test.skip('TC2.8: Remove Institution from Selection', async ({ page, loginPage, peerGroupsPage }) => {
+        test('TC2.8: Remove Institution from Selection', async ({ page, loginPage, peerGroupsPage }) => {
             await page.goto(`${baseURL}/logged-out/login/email`);
             await loginPage.loginUser(adminEmail, adminPassword);
             await page.waitForLoadState('domcontentloaded');

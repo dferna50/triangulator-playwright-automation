@@ -28,7 +28,26 @@ export class LoginPage {
   }
 
   async loginUser(email: string, password: string): Promise<void> {
-    await this.landingLoginButton.click();
+    // Wait for page to be fully loaded
+    await this.page.waitForLoadState('domcontentloaded');
+    
+    // Check if we're already on the login page with the form visible
+    // Wait up to 5 seconds for the email field to appear
+    let emailVisible = false;
+    for (let i = 0; i < 10; i++) {
+      emailVisible = await this.emailTextBox.isVisible().catch(() => false);
+      if (emailVisible) break;
+      await this.page.waitForTimeout(500);
+    }
+    
+    if (!emailVisible) {
+      // Only click the landing login button if email field is not visible
+      await this.landingLoginButton.waitFor({ state: 'visible', timeout: 10000 });
+      await this.landingLoginButton.click();
+      // Wait for email field to appear after clicking login
+      await this.emailTextBox.waitFor({ state: 'visible', timeout: 10000 });
+    }
+    
     await this.emailTextBox.fill(email);
     await this.passwordTextBox.fill(password);
     await this.submitButton.click();

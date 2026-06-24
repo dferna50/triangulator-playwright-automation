@@ -29,14 +29,16 @@ export class UploadPage {
     this.selectSecondRadioButton = page.locator('#optionLabel-1');
     this.selectThirdRadioButton = page.locator('#optionLabel-2');
     this.openSlidebar = page.locator('.relative > .opacity-0').first();
-    this.uploadNextButton = page.locator('.justify-end > :nth-child(2) > .relative > .opacity-0');
+    // The Upload submit button is the last button inside the modal
+    this.uploadNextButton = page.locator('#modal-outlet-0 button').last();
     this.uploadFile = page.locator('input[type="file"]');
     this.scrollBottom = page.locator('.overflow-y-scroll');
     this.dataReceivedMessage = page.getByText('Data received.');
     this.uploadSummaryPage = page.getByText('Upload Rules Summary');
     this.uploadCatalogSummaryPage = page.getByText('Upload Course Catalog Summary');
     this.downloadCsvFileButton = page.getByText('Download csv file');
-    this.submitButton = page.getByText('Submit');
+    // Use getByRole to target the button element (not just its inner text div)
+    this.submitButton = page.getByRole('button', { name: 'Submit' });
   }
 
   async preUpload(): Promise<number> {
@@ -60,8 +62,8 @@ export class UploadPage {
   }
 
   async postUploadCount(): Promise<number> {
-    await expect(this.dataReceivedMessage).toBeVisible();
-    await expect(this.page).toHaveURL(/\/my-workspace\/inst-admin\/summary/);
+    // 'Data received.' toast no longer shown in new UI; wait for the My Workplace summary URL instead
+    await expect(this.page).toHaveURL(/\/my-workspace\/inst-admin\/summary/, { timeout: 30000 });
     await this.scrollBottom.click();
     await this.scrollBottom.evaluate((el) => el.scrollTo(0, 500));
     await this.page.waitForTimeout(5000);
@@ -72,7 +74,7 @@ export class UploadPage {
   }
 
   async postUploadCountCatalog(): Promise<number> {
-    await expect(this.dataReceivedMessage).toBeVisible();
+    // 'Data received.' toast no longer shown in new UI; wait for the My Workplace summary URL instead
     await expect(this.page).toHaveURL(/\/my-workspace\/inst-admin\/summary/);
     await this.scrollBottom.click();
     await this.scrollBottom.evaluate((el) => el.scrollTo(0, 500));
@@ -94,6 +96,8 @@ export class UploadPage {
     iInFile: string,
     iLoaded: string
   ): Promise<void> {
+    // Wait for the rules count to finish loading (stops showing '-')
+    await expect(this.page.locator('.gap-4 > div > .font-bold')).not.toHaveText('-', { timeout: 60000 });
     const rulesCount = await this.page.locator('.gap-4 > div > .font-bold').textContent();
     expect((rulesCount ?? '').trim()).toBe(rCount);
 
@@ -141,7 +145,9 @@ export class UploadPage {
     await expect(this.page.getByText('New Suggestions').first()).toBeVisible();
     await this.uploadButton.click();
     await this.page.getByRole('link', { name: 'Upload' }).click();
-    await this.page.locator(`#modal-outlet-0 > div.absolute.inset-0.flex.items-center.justify-center.z-30.pointer-events-none > div > div > div.p-6.gap-4.flex.flex-col.w-full > div > button:nth-child(${choice})`).first().click();
+    // Upload type buttons (Rule data=0, Course catalog=1, Syllabus=2) are rendered as
+    // nth-child(1..3) in the modal. The `choice` parameter is 0-based so we add 1.
+    await this.page.locator(`#modal-outlet-0 > div.absolute.inset-0.flex.items-center.justify-center.z-30.pointer-events-none > div > div > div.p-6.gap-4.flex.flex-col.w-full > div > button:nth-child(${choice + 1})`).first().click();
     await this.uploadFile.setInputFiles(file);
   }
 
@@ -155,7 +161,13 @@ export class UploadPage {
   async uploadCatalogValid(choice: number): Promise<void> {
     await this.page.locator(`#optionLabel-${choice}`).first().click();
     await this.uploadNextButton.click();
-    await expect(this.page.getByText('Uploaded')).toBeVisible({ timeout: 120000 });
+    // Wait for the upload modal to close (navigates to /app/course-catalog/upload/...)
+    // then wait for the "Uploaded" status badge. We use .first() to avoid a strict-mode
+    // violation: the catalog radio option descriptions contain the word "uploaded"
+    // (case-insensitive), so getByText('Uploaded') without .first() would match all
+    // three radio labels if the modal is still transitioning.
+    await expect(this.page).toHaveURL(/\/course-catalog\/upload\//, { timeout: 30000 });
+    await expect(this.page.getByText('Uploaded').first()).toBeVisible({ timeout: 120000 });
     await expect(this.page.getByText('Upload Course Catalog Summary')).toBeVisible({ timeout: 120000 });
   }
 

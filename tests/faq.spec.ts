@@ -5,7 +5,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { FaqPage } from '../pages/FaqPage';
 
 test.describe('FAQ Functionality Tests', () => {
-    const baseURL = process.env.BASE_URL ?? 'https://qa.creditmobility.net';
+    const baseURL = (process.env.BASE_URL ?? 'https://qa.creditmobility.net').replace(/\/$/, '');
     const adminEmail = process.env.ADMIN_EMAIL ?? '';
     const adminPassword = process.env.ADMIN_PASSWORD ?? '';
     const regularUserEmail = process.env.REGULAR_USER_EMAIL ?? '';
@@ -86,7 +86,7 @@ test.describe('FAQ Functionality Tests', () => {
             await faqPage.clickSave();
             
             // Check for validation message or successful save
-            const hasError = await page.locator('text=/error|required|invalid/i').isVisible().catch(() => false);
+            const hasError = await faqPage.hasValidationError();
             
             if (hasError) {
                 console.log('✓ Validation message shown for empty value');
@@ -109,14 +109,13 @@ test.describe('FAQ Functionality Tests', () => {
             await faqPage.clickSave();
             
             // Check for validation - either HTML5 validation or custom message
-            const faqInput = faqPage.getFaqInput();
-            const isInvalid = await faqInput.evaluate((el: HTMLInputElement) => !el.checkValidity()).catch(() => false);
+            const isInvalid = await faqPage.hasUrlValidationError();
             
             if (isInvalid) {
                 console.log('✓ Validation prevented invalid URL format');
             } else {
                 // Check for custom validation message
-                const hasError = await page.locator('text=/error|invalid|url/i').isVisible().catch(() => false);
+                const hasError = await faqPage.hasUrlValidationError();
                 expect(hasError).toBeTruthy();
                 console.log('✓ Custom validation shown for invalid URL');
             }
@@ -195,8 +194,7 @@ test.describe('FAQ Functionality Tests', () => {
             console.log('✓ FAQ link visible on dashboard');
             
             // Navigate to My Workplace
-            await page.getByRole('link', { name: 'My Workplace' }).click();
-            await page.waitForURL(/.*my-workspace.*/, { timeout: 10000 });
+            await faqPage.navigateToMyWorkplace();
             
             // Check FAQ link still visible
             faqLink = faqPage.getFaqLinkInNav();
@@ -369,40 +367,39 @@ test.describe('FAQ Functionality Tests', () => {
 
     test.describe('Permission and Security Tests', () => {
 
-        test('TC6.1: Non-Admin Cannot Access FAQ Settings', async ({ page, loginPage }) => {
+        test('TC6.1: Non-Admin Cannot Access FAQ Settings', async ({ page, loginPage, faqPage }) => {
             // Login as regular user
             await page.goto(`${baseURL}/logged-out/login/email`);
             await loginPage.loginUser(regularUserEmail, regularUserPassword);
             await page.waitForLoadState('domcontentloaded');
-            
+
             // Try to access My Workplace
-            const myWorkplace = page.locator('text=My Workplace').first();
+            const myWorkplace = faqPage.getElementByText('My Workplace');
             const isVisible = await myWorkplace.isVisible().catch(() => false);
-            
+
             if (!isVisible) {
                 console.log('✓ Regular user cannot see My Workplace option');
                 return;
             }
-            
+
             await myWorkplace.click();
             await page.waitForURL(/.*my-workspace.*/, { timeout: 10000 });
-            
+
             // Check if Settings option exists
-            const settings = page.locator('text=Settings').first();
+            const settings = faqPage.getElementByText('Settings');
             const settingsVisible = await settings.isVisible().catch(() => false);
-            
+
             if (!settingsVisible) {
                 console.log('✓ Regular user cannot see Settings option');
                 return;
             }
-            
+
             await settings.click();
             await page.waitForURL(/.*settings.*/, { timeout: 10000 });
-            
+
             // Check if FAQ option exists
-            const faq = page.locator('a:has-text("FAQ"), button:has-text("FAQ")').first();
-            const faqVisible = await faq.isVisible().catch(() => false);
-            
+            const faqVisible = await faqPage.isElementVisibleByText('FAQ');
+
             if (!faqVisible) {
                 console.log('✓ Regular user cannot see FAQ settings option');
             } else {
@@ -421,12 +418,10 @@ test.describe('FAQ Functionality Tests', () => {
             await faqPage.setFaqUrl('javascript:alert("XSS")');
             await faqPage.clickSave();
             
-            // Check if rejected
-            const faqInput = faqPage.getFaqInput();
-            const isInvalid = await faqInput.evaluate((el: HTMLInputElement) => !el.checkValidity()).catch(() => false);
-            const hasError = await page.locator('text=/error|invalid/i').isVisible().catch(() => false);
+            // Check for rejected
+            const isInvalid = await faqPage.hasXssValidationError();
             
-            if (isInvalid || hasError) {
+            if (isInvalid) {
                 console.log('✓ XSS payload rejected by validation');
             } else {
                 const savedValue = await faqPage.getFaqUrlValue();
@@ -506,7 +501,7 @@ test.describe('FAQ Functionality Tests', () => {
             await page.waitForLoadState('domcontentloaded');
             
             // Check for mobile menu
-            const menuButton = page.locator('button[aria-label*="menu" i], button:has-text("☺")').first();
+            const menuButton = faqPage.getMobileMenuButton();
             const menuVisible = await menuButton.isVisible().catch(() => false);
             
             if (menuVisible) {

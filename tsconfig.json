@@ -12,12 +12,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "paths": {
-      "@pages/*": ["pages/*"],
-      "@fixtures/*": ["fixtures/*"],
-      "@helpers/*": ["helpers/*"],
-      "@test-data/*": ["test_data/*"]
+      "@pages/*": ["./pages/*"],
+      "@fixtures/*": ["./fixtures/*"],
+      "@helpers/*": ["./helpers/*"],
+      "@test-data/*": ["./test_data/*"]
     }
   },
   "include": [
