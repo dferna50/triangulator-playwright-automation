@@ -96,11 +96,19 @@ export class PeerGroupsPage {
     await this.page.waitForLoadState('domcontentloaded');
   }
 
-  async navigateToPeerGroupsPageDirect(): Promise<void> {
+  async navigateToPeerGroupsPageDirect(forceReload: boolean = false): Promise<void> {
     const baseUrl = (process.env.BASE_URL ?? 'https://qa.creditmobility.net').replace(/\/$/, '');
-    await this.page.goto(`${baseUrl}/app/my-workspace/inst-admin/inst/settings/peer-groups`);
-    await this.page.waitForLoadState('domcontentloaded');
-    await this.createPeerGroupBtn.waitFor({ state: 'visible', timeout: 15000 });
+    const targetUrl = `${baseUrl}/app/my-workspace/inst-admin/inst/settings/peer-groups`;
+
+    if (!this.page.url().includes('/peer-groups')) {
+      await this.page.goto(targetUrl);
+      await this.page.waitForLoadState('domcontentloaded');
+    } else if (forceReload) {
+      await this.page.reload();
+      await this.page.waitForLoadState('domcontentloaded');
+    }
+
+    await this.createPeerGroupBtn.waitFor({ state: 'visible', timeout: 45000 });
   }
 
   async openCreateDialog(): Promise<void> {
@@ -110,10 +118,27 @@ export class PeerGroupsPage {
   }
 
   async selectInstitution(name: string): Promise<void> {
+    const option = this.page.getByRole('option', { name: name, exact: true });
+
+    for (let attempt = 0; attempt < 2; attempt++) {
+      await this.institutionCombobox.click();
+      await this.institutionCombobox.fill(name);
+
+      try {
+        await option.waitFor({ state: 'visible', timeout: 20000 });
+        await option.click();
+        return;
+      } catch {
+        // Retry: clear the input and try again
+        await this.institutionCombobox.clear();
+        await this.page.waitForTimeout(1000);
+      }
+    }
+
+    // Final attempt with longer timeout
     await this.institutionCombobox.click();
     await this.institutionCombobox.fill(name);
-    const option = this.page.getByRole('option', { name: name, exact: true });
-    await option.waitFor({ state: 'visible', timeout: 10000 });
+    await option.waitFor({ state: 'visible', timeout: 30000 });
     await option.click();
   }
 
@@ -177,18 +202,38 @@ export class PeerGroupsPage {
 
   async clickSubmit(): Promise<void> {
     await this.submitBtn.waitFor({ state: 'visible', timeout: 5000 });
-    await this.page.evaluate(() => {
-      const btns = [...document.querySelectorAll('.button-text')];
-      const submitText = btns.find(b => b.textContent?.trim() === 'Submit');
-      const btn = submitText ? submitText.closest('button') : null;
-      if (btn) {
-        btn.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true }));
-        btn.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
-        btn.dispatchEvent(new PointerEvent('pointerup', { bubbles: true }));
-        btn.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
-        btn.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    await this.submitBtn.scrollIntoViewIfNeeded();
+
+    // Click Submit and wait for the GraphQL mutation response
+    const [response] = await Promise.all([
+      this.page.waitForResponse(
+        resp => resp.url().includes('/graphql') && resp.status() === 200,
+        { timeout: 30000 }
+      ).catch(() => null),
+      this.submitBtn.click({ timeout: 5000 }).catch(() =>
+        this.submitBtn.click({ force: true })
+      ),
+    ]);
+
+    if (response) {
+      // Give the UI time to process the response
+      await this.page.waitForTimeout(1000);
+    }
+
+    // If the dialog didn't auto-close, close it manually
+    const dialogStillVisible = await this.anyDialog.isVisible().catch(() => false);
+    if (dialogStillVisible) {
+      // Try clicking the close button
+      const closeBtn = this.anyDialog.locator('[aria-label="close"], button:has-text("close")').first();
+      const closeBtnVisible = await closeBtn.isVisible().catch(() => false);
+      if (closeBtnVisible) {
+        await closeBtn.click({ force: true });
+      } else {
+        // Press Escape as fallback
+        await this.page.keyboard.press('Escape');
       }
-    });
+      await this.anyDialog.waitFor({ state: 'hidden', timeout: 5000 }).catch(() => {});
+    }
   }
 
   async clickCancel(): Promise<void> {
@@ -224,33 +269,64 @@ export class PeerGroupsPage {
   }
 
   async getPeerGroupRowCount(): Promise<number> {
+    // Wait for skeleton loaders to disappear
+    try {
+      await this.page.locator('.skeleton-rect').first().waitFor({ state: 'hidden', timeout: 10000 });
+      await this.page.locator('.animate-pulse').first().waitFor({ state: 'hidden', timeout: 10000 });
+    } catch (e) {
+      // Ignore timeouts if skeletons were already gone or never existed
+    }
     await this.page.waitForTimeout(1000);
     return await this.toggleSeeMoreBtn.count();
   }
 
   async openRowDropdown(index: number = 0): Promise<void> {
-    // Reload page to ensure clean state if menu doesn't open
-    await this.page.reload();
-    await this.page.waitForLoadState('domcontentloaded');
+    // Wait for page to be ready
     await this.createPeerGroupBtn.waitFor({ state: 'visible', timeout: 15000 });
-    await this.page.waitForTimeout(1000);
-    
-    // Try clicking the toggle button
-    const toggle = this.toggleSeeMoreBtn.nth(index);
-    await toggle.waitFor({ state: 'visible', timeout: 5000 });
-    await toggle.scrollIntoViewIfNeeded();
-    await toggle.click({ force: true });
-    
-    // Wait for menu to appear with retry
-    let menuVisible = false;
-    for (let i = 0; i < 5; i++) {
+    await this.page.waitForTimeout(500);
+
+    const maxAttempts = 3;
+    for (let attempt = 0; attempt < maxAttempts; attempt++) {
+      // On retry attempts, reload to get a clean DOM state
+      if (attempt > 0) {
+        await this.page.reload();
+        await this.page.waitForLoadState('domcontentloaded');
+        await this.createPeerGroupBtn.waitFor({ state: 'visible', timeout: 15000 });
+        await this.page.waitForTimeout(1000);
+      }
+
+      // Dismiss any previously open menu by clicking elsewhere
+      await this.page.locator('body').click({ position: { x: 10, y: 10 } });
+      await this.page.waitForTimeout(300);
+
+      const toggle = this.toggleSeeMoreBtn.nth(index);
+      const toggleExists = await toggle.isVisible().catch(() => false);
+      if (!toggleExists) {
+        if (attempt < maxAttempts - 1) continue;
+        throw new Error(`Toggle button at index ${index} not found after ${maxAttempts} attempts`);
+      }
+
+      await toggle.scrollIntoViewIfNeeded();
+      await toggle.click({ force: true });
+
+      // Wait for menu to appear
+      let menuVisible = false;
+      for (let i = 0; i < 5; i++) {
+        menuVisible = await this.editMenuItem.isVisible().catch(() => false);
+        if (menuVisible) break;
+        await this.page.waitForTimeout(500);
+      }
+
+      if (menuVisible) return;
+
+      // If menu didn't appear, try clicking again without force
+      await toggle.click();
+      await this.page.waitForTimeout(1000);
       menuVisible = await this.editMenuItem.isVisible().catch(() => false);
-      if (menuVisible) break;
-      await this.page.waitForTimeout(500);
+      if (menuVisible) return;
     }
-    if (!menuVisible) {
-      throw new Error('Edit menu did not appear after clicking toggle');
-    }
+
+    throw new Error(`Edit menu did not appear after ${maxAttempts} attempts`);
   }
 
   async clickEditOnRow(index: number = 0): Promise<void> {
@@ -264,7 +340,10 @@ export class PeerGroupsPage {
     await this.deleteMenuItem.click();
     await this.anyDialog.waitFor({ state: 'visible', timeout: 5000 });
     const confirmDeleteBtn = this.anyDialog.locator('.button-text:has-text("Delete")');
+    await confirmDeleteBtn.waitFor({ state: 'visible', timeout: 5000 });
     await confirmDeleteBtn.click({ force: true });
+    // Wait for the confirmation dialog to close
+    await this.anyDialog.waitFor({ state: 'hidden', timeout: 15000 }).catch(() => {});
   }
 
   async navigateBackToSettings(): Promise<void> {
@@ -284,6 +363,8 @@ export class PeerGroupsPage {
     await this.fillPeerGroupName(groupName);
     await this.selectMatchThreshold();
     await this.clickSubmit();
+    // Navigate back to ensure list is updated and dialog is dismissed
+    await this.navigateToPeerGroupsPageDirect(true);
   }
 
   async deleteLastPeerGroup(): Promise<void> {

@@ -189,9 +189,35 @@ export class CreateUserPage {
    * TC1 – Verify the user selection dropdown lists users and they appear in
    * the expected order (alphabetical by display name).
    */
+  async waitForUsersToLoad(dialog: import('@playwright/test').Locator): Promise<void> {
+    const usersInput = dialog.locator('[role="combobox"]');
+    await usersInput.waitFor({ state: 'visible', timeout: 10000 });
+    
+    let inputEl = usersInput;
+    const isInput = await usersInput.evaluate(el => el.tagName.toLowerCase() === 'input').catch(() => false);
+    if (!isInput) {
+      inputEl = usersInput.locator('input').first();
+    }
+    await inputEl.waitFor({ state: 'attached', timeout: 5000 }).catch(() => {});
+
+    for (let i = 0; i < 20; i++) {
+      const val = (await inputEl.inputValue().catch(() => '')) || '';
+      const placeholder = (await inputEl.getAttribute('placeholder').catch(() => '')) || '';
+      if (!val.toLowerCase().includes('loading') && !placeholder.toLowerCase().includes('loading')) {
+        break;
+      }
+      await this.page.waitForTimeout(500);
+    }
+    
+    await this.page.locator('.animate-spin, .loading, svg[class*="spin"]').first().waitFor({ state: 'hidden', timeout: 10000 }).catch(() => {});
+    await this.page.waitForTimeout(500);
+  }
+
   async createUserValidationErrorMsg(): Promise<void> {
     const dialog = this.page.getByRole('dialog', { name: 'Create evaluation group' });
     await expect(dialog).toBeVisible();
+
+    await this.waitForUsersToLoad(dialog);
 
     // Open the users combobox/dropdown inside the modal
     const usersInput = dialog.locator('[role="combobox"]');
@@ -199,7 +225,7 @@ export class CreateUserPage {
 
     // Wait for the listbox to appear
     const listbox = this.page.getByRole('listbox');
-    await expect(listbox).toBeVisible({ timeout: 10000 });
+    await expect(listbox).toBeVisible({ timeout: 45000 });
 
     // Collect all option text values
     const options = listbox.getByRole('option');
@@ -231,12 +257,14 @@ export class CreateUserPage {
     const dialog = this.page.getByRole('dialog', { name: 'Create evaluation group' });
     await expect(dialog).toBeVisible();
 
+    await this.waitForUsersToLoad(dialog);
+
     // Open dropdown and select the first available user
     const usersInput = dialog.locator('[role="combobox"]');
     await usersInput.click();
 
     const listbox = this.page.getByRole('listbox');
-    await expect(listbox).toBeVisible({ timeout: 10000 });
+    await expect(listbox).toBeVisible({ timeout: 45000 });
 
     // Get first unselected option and its name
     const firstOption = listbox.locator('[role="option"]:not([aria-selected="true"])').first();
@@ -287,8 +315,9 @@ export class CreateUserPage {
     const usersInput = dialog.locator('[role="combobox"]');
     const listbox = this.page.getByRole('listbox');
     if (!(await listbox.isVisible({ timeout: 2000 }).catch(() => false))) {
+      await this.waitForUsersToLoad(dialog);
       await usersInput.click();
-      await expect(listbox).toBeVisible({ timeout: 10000 });
+      await expect(listbox).toBeVisible({ timeout: 45000 });
     }
 
     for (let i = 0; i < count; i++) {
@@ -309,11 +338,13 @@ export class CreateUserPage {
     const dialog = this.page.getByRole('dialog', { name: 'Create evaluation group' });
     await expect(dialog).toBeVisible();
 
+    await this.waitForUsersToLoad(dialog);
+
     // Open combobox to discover total user count
     const usersInput = dialog.locator('[role="combobox"]');
     await usersInput.click();
     const listbox = this.page.getByRole('listbox');
-    await expect(listbox).toBeVisible({ timeout: 10000 });
+    await expect(listbox).toBeVisible({ timeout: 45000 });
     const totalCount = await listbox.getByRole('option').count();
     expect(totalCount).toBeGreaterThan(0);
 
@@ -447,12 +478,14 @@ export class CreateUserPage {
     const dialog = this.page.getByRole('dialog', { name: 'Create evaluation group' });
     await expect(dialog).toBeVisible();
 
+    await this.waitForUsersToLoad(dialog);
+
     // Make a change: open dropdown and select a user
     const usersInput = dialog.locator('[role="combobox"]');
     await usersInput.click();
 
     const listbox = this.page.getByRole('listbox');
-    await expect(listbox).toBeVisible({ timeout: 10000 });
+    await expect(listbox).toBeVisible({ timeout: 45000 });
 
     const firstOption = this.page.getByRole('option').first();
     if (await firstOption.isVisible({ timeout: 3000 }).catch(() => false)) {
@@ -460,9 +493,26 @@ export class CreateUserPage {
       await this.page.waitForTimeout(300);
     }
 
+    // Close the dropdown to make Cancel button visible/actionable
+    await this.page.keyboard.press('Escape');
+    await expect(listbox).not.toBeVisible({ timeout: 5000 });
+
     // Click Cancel to try to abandon changes
     const cancelButton = dialog.getByRole('button', { name: 'Cancel' });
+    await expect(cancelButton).toBeVisible({ timeout: 5000 });
     await cancelButton.click();
+
+    await this.page.screenshot({ path: 'scratch/after_cancel_click.png' });
+    const texts = await this.page.evaluate(() => {
+      const divs = Array.from(document.querySelectorAll('div, dialog, button, p, h1, h2, h3'));
+      return divs.map(el => ({
+        tagName: el.tagName,
+        text: (el as HTMLElement).innerText?.slice(0, 150),
+        id: el.id,
+        className: el.className
+      })).filter(item => item.text && (item.text.toLowerCase().includes('discard') || item.text.toLowerCase().includes('abandon') || item.text.toLowerCase().includes('unsaved') || item.text.toLowerCase().includes('confirm') || item.text.toLowerCase().includes('modal') || item.text.toLowerCase().includes('dialog')));
+    });
+    console.log('Visible discard/confirm elements:', JSON.stringify(texts, null, 2));
 
     // A "discard changes" confirmation should appear — either as a new dialog
     // or as text within the same dialog

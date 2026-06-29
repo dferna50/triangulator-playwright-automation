@@ -1,0 +1,101 @@
+name: Playwright Weekly Regression Suite
+
+on:
+  schedule:
+    # Runs every Sunday at 02:00 UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    inputs:
+      grep_filter:
+        description: 'Custom Playwright grep filter (e.g. @smoke)'
+        required: false
+        default: ''
+      run_external:
+        description: 'Run tests touching third-party quotas/external services?'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: playwright-weekly-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
+jobs:
+  test:
+    name: Run Shard ${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Cache Playwright Browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers & OS Dependencies
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Install Playwright OS Dependencies (Cache Hit)
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+
+      - name: Execute Playwright Tests
+        env:
+          CI: 'true'
+          BASE_URL: ${{ secrets.BASE_URL || 'https://qa.creditmobility.net' }}
+          TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          RUN_EXTERNAL: ${{ github.event.inputs.run_external || 'false' }}
+        run: |
+          ARGS="--shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}"
+          
+          # Exclude quota and external system tests by default unless explicitly triggered
+          if [ "${{ github.event.inputs.run_external }}" != "true" ]; then
+            ARGS="$ARGS --grep-invert '@quota|@external|@client-sys'"
+          fi
+          
+          # Append user custom grep filter if provided
+          if [ -n "${{ github.event.inputs.grep_filter }}" ]; then
+            ARGS="$ARGS --grep '${{ github.event.inputs.grep_filter }}'"
+          fi
+          
+          npx playwright test $ARGS
+
+      - name: Upload Test Report & Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-shard-${{ matrix.shardIndex }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

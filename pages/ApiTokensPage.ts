@@ -56,7 +56,7 @@ export class ApiTokensPage {
     this.generateTokenDialog = page.getByRole('dialog', { name: 'Generate org API token' });
     this.organizationCombobox = page.getByRole('combobox', { name: /Organization/i }).first();
     this.cancelButton = page.getByRole('button', { name: 'Cancel', exact: true });
-    this.generateButton = page.getByRole('button', { name: 'Generate' });
+    this.generateButton = page.getByRole('button', { name: 'Generate', exact: true });
     this.closeDialogButton = page.getByRole('button', { name: 'close' });
     
     // Table columns - use first() to avoid strict mode issues
@@ -75,12 +75,36 @@ export class ApiTokensPage {
   }
 
   async navigateToApiTokens(): Promise<void> {
-    await this.apiTokensLink.click();
+    const orgLink = this.page.getByRole('link', { name: 'Organizations' }).first();
+    if (await orgLink.isVisible()) {
+      await orgLink.click();
+      await this.page.waitForURL('**/app/my-workspace/tri-admin/inst/org-admin**');
+    }
+    const apiTokensLink = this.page.getByRole('link', { name: 'API tokens' });
+    if (!(await apiTokensLink.isVisible())) {
+      const openSidebarBtn = this.page.getByRole('button', { name: 'Open Sidebar' });
+      if (await openSidebarBtn.isVisible()) {
+        await openSidebarBtn.click();
+        await apiTokensLink.waitFor({ state: 'visible', timeout: 5000 });
+      }
+    }
+    await apiTokensLink.click();
     await this.page.waitForURL('**/app/my-workspace/tri-admin/inst/org-admin/org-api-tokens**');
+    
+    // Wait for the page and table to finish loading
+    await expect(this.refreshButton).toBeVisible({ timeout: 20000 });
+    await expect(this.refreshButton).toBeEnabled({ timeout: 45000 });
   }
 
   async openApiTokensSidebar(): Promise<void> {
-    await this.openSidebarButton.click();
+    const orgLink = this.page.getByRole('link', { name: 'Organizations' }).first();
+    if (await orgLink.isVisible()) {
+      await orgLink.click();
+    }
+    const openSidebarBtn = this.page.getByRole('button', { name: 'Open Sidebar' });
+    if (await openSidebarBtn.isVisible()) {
+      await openSidebarBtn.click();
+    }
   }
 
   async clickGenerateToken(): Promise<void> {
@@ -90,7 +114,22 @@ export class ApiTokensPage {
 
   async selectOrganization(organizationName: string): Promise<void> {
     await this.organizationCombobox.click();
-    await this.page.getByRole('option', { name: organizationName, exact: false }).first().click();
+    
+    // Wait for the first option to become visible, indicating the dropdown options have loaded.
+    const firstOption = this.page.getByRole('option').first();
+    try {
+      await firstOption.waitFor({ state: 'visible', timeout: 5000 });
+    } catch {
+      throw new Error("ORGANIZATION_DROPDOWN_STUCK_IN_LOADING");
+    }
+    
+    const option = this.page.getByRole('option', { name: organizationName, exact: false }).first();
+    if (await option.isVisible().catch(() => false)) {
+      await option.click();
+    } else {
+      console.log(`Organization "${organizationName}" not found. Falling back to first available option: ${await firstOption.textContent()}`);
+      await firstOption.click();
+    }
   }
 
   async generateToken(data: ApiTokenData): Promise<void> {

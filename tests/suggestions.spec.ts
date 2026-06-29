@@ -123,6 +123,7 @@ test.describe('Suggestions', () => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.navigateToAssignedPage();
+        await suggestionsPage.acceptSuggestion();
     });
 
     test('Verifies that a user can accept multiple suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {

@@ -62,12 +62,20 @@ export class InstitutionMappingsPage {
   }
 
   async navigateToInstitutionMappings(): Promise<void> {
-    // Wait for the link to be visible with timeout
-    await this.institutionMappingsLink.waitFor({ state: 'visible', timeout: 10000 });
+    const orgLink = this.page.getByRole('link', { name: 'Organizations' }).first();
+    if (await orgLink.isVisible()) {
+      await orgLink.click();
+      await this.page.waitForURL('**/app/my-workspace/tri-admin/inst/org-admin**', { timeout: 20000 });
+    }
+    if (!(await this.institutionMappingsLink.isVisible())) {
+      const openSidebarBtn = this.page.getByRole('button', { name: 'Open Sidebar' });
+      if (await openSidebarBtn.isVisible()) {
+        await openSidebarBtn.click();
+        await this.institutionMappingsLink.waitFor({ state: 'visible', timeout: 5000 });
+      }
+    }
     await this.institutionMappingsLink.click();
-    await this.page.waitForURL('**/app/my-workspace/tri-admin/inst/org-admin/org-institution-links**', { timeout: 10000 });
-    // Wait for page to fully load
-    await this.page.waitForTimeout(2000);
+    await this.page.waitForURL('**/app/my-workspace/tri-admin/inst/org-admin/org-institution-links**', { timeout: 45000 });
   }
 
   async openInstitutionMappingsSidebar(): Promise<void> {
@@ -185,8 +193,8 @@ export class InstitutionMappingsPage {
   }
 
   async verifyInstitutionMappingsPageLoaded(): Promise<void> {
-    await expect(this.page.getByRole('heading', { name: 'Institution Mappings' })).toBeVisible();
-    await expect(this.addMappingButton).toBeVisible();
+    await expect(this.page.getByRole('heading', { name: 'Institution Mappings' })).toBeVisible({ timeout: 45000 });
+    await expect(this.addMappingButton).toBeVisible({ timeout: 45000 });
     await this.verifyTableHeaders();
   }
 

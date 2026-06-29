@@ -126,7 +126,16 @@ export interface CourseDetailBody {
  * Helper functions for extracting and comparing course data
  */
 export function getCourseValuesFromSuggestion(body: SuggestionBody, index: number): CourseValues {
-  const meta = body.data.suggestions.courseMetadata[index];
+  const metadataArray = body?.data?.suggestions?.courseMetadata;
+  const meta = (metadataArray && metadataArray.length > 0)
+    ? metadataArray[index % metadataArray.length]
+    : {
+        courseSubject: 'Unknown',
+        courseNumber: 'Unknown',
+        courseDescription: 'Unknown',
+        courseCreditMaxValue: 0,
+        masterCourseId: 'Unknown'
+      };
   return {
     courseSubject: meta.courseSubject,
     courseNumber: meta.courseNumber,

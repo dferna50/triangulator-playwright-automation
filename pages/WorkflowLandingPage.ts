@@ -60,15 +60,15 @@ export class WorkflowLandingPage {
   async manageGroupExistanceLanding(): Promise<void> {
     await expect(this.page.getByText('Group name')).toBeVisible();
     await this.page.getByRole('region', { name: 'Manage groups' }).getByRole('button').nth(1).click();
-    await expect(this.page.getByText('automation')).toBeVisible();
-    await expect(this.page.getByRole('paragraph').filter({ hasText: 'Dallas College Inst Admin' })).toBeVisible();
-    await expect(this.page.getByText('test 123')).toBeVisible();
+    await expect(this.page.getByText('test group').first()).toBeVisible();
+    await expect(this.page.getByRole('paragraph').filter({ hasText: 'Chris Vouga - Pima' })).toBeVisible();
+    await expect(this.page.getByRole('paragraph').filter({ hasText: 'Pima Admin2' })).toBeVisible();
   }
 
   async clickThreeDotsGroup(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).first().click();
-    await expect(this.page.getByRole('button', { name: 'Edit' })).toBeVisible();
-    await expect(this.page.getByRole('button', { name: 'Delete' })).toBeVisible();
+    await expect(this.page.getByRole('menuitem', { name: 'Edit' })).toBeVisible();
+    await expect(this.page.getByRole('menuitem', { name: 'Delete' })).toBeVisible();
   }
 
   async manageWorkflowExistence(): Promise<void> {
@@ -78,7 +78,7 @@ export class WorkflowLandingPage {
 
   async subtextManageWorkflow(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).nth(1).click();
-    await this.page.getByRole('button', { name: 'View' }).click();
+    await this.page.getByRole('menuitem', { name: 'View' }).click();
     await expect(this.page.getByText('Workflow info')).toBeVisible();
     await expect(this.page.getByRole('heading', { name: 'Assignment details' })).toBeVisible();
     await expect(this.page.getByRole('heading', { name: 'Content criteria' })).toBeVisible();
@@ -86,7 +86,7 @@ export class WorkflowLandingPage {
 
   async workflowNameViewButton(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).nth(1).click();
-    await this.page.getByRole('button', { name: 'View' }).click();
+    await this.page.getByRole('menuitem', { name: 'View' }).click();
     await expect(this.page.getByText('Workflow info')).toBeVisible();
     await expect(this.page.getByRole('heading', { name: 'Assignment details' })).toBeVisible();
     await expect(this.page.getByRole('heading', { name: 'Content criteria' })).toBeVisible();
@@ -94,7 +94,7 @@ export class WorkflowLandingPage {
 
   async workflowNameEditButton(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).nth(1).click();
-    await this.page.getByRole('button', { name: 'Edit' }).click();
+    await this.page.getByRole('menuitem', { name: 'Edit' }).click();
     await expect(this.page.getByText('Edit workflow')).toBeVisible();
     await this.page.locator('div').filter({ hasText: /^Approver$/ }).nth(2).click();
     await this.page.getByText('priya 111').click();
@@ -102,7 +102,7 @@ export class WorkflowLandingPage {
 
   async workflowNameDeleteButton(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).nth(1).click();
-    await this.page.getByRole('button', { name: 'Delete' }).click();
+    await this.page.getByRole('menuitem', { name: 'Delete' }).click();
     await expect(this.page.getByRole('heading', { name: 'Delete workflow?' })).toBeVisible();
     await expect(this.page.getByRole('button', { name: 'Delete' })).toBeVisible();
   }

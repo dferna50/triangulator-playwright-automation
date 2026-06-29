@@ -15,11 +15,14 @@ npx playwright test
 # Run a specific test file
 npx playwright test tests/peer-groups.spec.ts
 
-# Run tests matching a name pattern
+# Run tests matching a name pattern (test ID)
 npx playwright test --grep "TC1.1"
 
 # Run in headed mode (see the browser)
 npx playwright test --headed
+
+# Run with UI mode (interactive debugging/selector picker)
+npx playwright test --ui
 
 # Run a single test file with debug output
 npx playwright test tests/peer-groups.spec.ts --debug
@@ -79,6 +82,15 @@ Adding a new page to the fixture requires: creating the page class in `pages/`, 
 - `emailServiceMock.ts` — Mock email service for tests that don't need real email delivery.
 - `GraphQLHelper.ts` — GraphQL API helper for direct backend operations.
 
+### Page Objects (`pages/`)
+
+Page classes follow a consistent structure:
+- Named with `Page` suffix (e.g., `LoginPage`, `CreateUserPage`, `SearchResourcesPage`)
+- Constructor accepts `Page` object and stores it as `this.page`
+- Declares locators as class properties in constructor
+- Exposes async action methods for UI interactions
+- Never instantiated directly — always use fixtures
+
 ### Test Data (`test_data/`)
 
 - `logindata.json` — Credential map keyed by institution role (e.g., `triadmin`, `nevadaadmin`)
@@ -90,11 +102,16 @@ Adding a new page to the fixture requires: creating the page class in `pages/`, 
 
 Tests under `tests/` are grouped by feature area. Key patterns:
 
-- **Serial mode**: Tests that depend on prior steps use `test.describe.configure({ mode: 'serial' })`
-- **Test naming**: Tests follow `TC<category>.<number>` convention (e.g., `TC1.1`, `TC2.3`)
-- **User-creation tests**: Tests verifying email flow live under `tests/user-creation/`
-- **Request-access tests**: Tests for access requests live under `tests/request-access/`
-- **User-management tests**: Tests for user management live under `tests/user-management/`
+- **Serial mode**: Tests that depend on prior steps use `test.describe.configure({ mode: 'serial' })`. This is required for tests that create data and then verify it in subsequent steps.
+- **Parallel mode**: The default `fullyParallel: true` runs independent tests concurrently. Tests that modify shared data (like institutional settings or users) should use serial mode.
+- **Test naming**: Two patterns are used:
+  - `TC<category>.<number>` (e.g., `TC1.1`, `TC2.3`) - Used in most test files
+  - `TC-<Feature>-<number>` (e.g., `TC-USER-MGMT-001`) - Used in newer test suites like user-management
+- **Folder structure**:
+  - `tests/user-creation/` - User creation workflows with mock and Gmail integration options
+  - `tests/user-management/` - Institution admin user management tests
+  - `tests/request-access/` - Access request workflows
+  - `tests/*.spec.ts` - Feature-specific tests at root level (searchResources, peer-groups, FAQ, etc.)
 
 ### Configuration Notes (`playwright.config.ts`)
 
@@ -103,3 +120,14 @@ Tests under `tests/` are grouped by feature area. Key patterns:
 - Chromium only (Firefox/WebKit commented out)
 - Screenshots always captured; traces always recorded
 - HTML reporter
+
+## Test Execution Patterns
+
+### Choosing Serial vs Parallel
+- Use serial mode for tests that create users, modify institution settings, or have data dependencies
+- Use parallel mode for read-only tests or tests that operate on independent data
+- Serial tests in a file: `test.describe.configure({ mode: 'serial' })` at the top of the describe block
+
+### Environment-Specific Behavior
+- Tests use `process.env.BASE_URL` from `.env`, falling back to QA environment
+- Gmail integration tests require credentials and are slower; mock email tests are faster for CI

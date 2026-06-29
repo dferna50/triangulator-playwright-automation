@@ -11,41 +11,55 @@ export class DeleteUserPage {
     await this.page.getByRole('link', { name: 'My Workplace' }).click();
     await this.page.getByRole('link', { name: 'Settings' }).click();
     await this.page.locator('#primary-content section').filter({ hasText: 'Workflow configurations' }).getByRole('link').click();
-    await this.page.getByRole('button', { name: 'Discard' }).click();
+    
+    const discardBtn = this.page.getByRole('button', { name: 'Discard' });
+    if (await discardBtn.isVisible()) {
+      await discardBtn.click();
+    }
   }
 
   async deleteIconVisible(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).first().click();
-    await expect(this.page.getByRole('button', { name: 'Delete' })).toBeVisible();
+    const deleteBtn = this.page.getByRole('button', { name: 'Delete' });
+    await deleteBtn.waitFor({ state: 'visible', timeout: 10000 });
+    await expect(deleteBtn).toBeVisible();
   }
 
   async deletePopup(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).first().click();
-    await this.page.getByRole('button', { name: 'Delete' }).click();
-    await expect(this.page.getByRole('heading', { name: 'Delete group' })).toBeVisible();
-    await expect(this.page.getByText('Delete group?Delete this group forever. Loading... Cancel Loading... Delete')).toBeVisible();
+    const deleteBtn = this.page.getByRole('button', { name: 'Delete' });
+    await deleteBtn.waitFor({ state: 'visible', timeout: 10000 });
+    await deleteBtn.click();
+    await expect(this.page.getByRole('heading', { name: 'Delete group' })).toBeVisible({ timeout: 10000 });
+    await expect(this.page.getByText('Delete this group forever.')).toBeVisible({ timeout: 5000 });
   }
 
   async deleteCancelButton(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).first().click();
-    await this.page.getByRole('button', { name: 'Delete' }).click();
-    await expect(this.page.getByRole('heading', { name: 'Delete group?' })).toBeVisible();
-    await expect(this.page.getByText('Delete this group forever.')).toBeVisible();
+    const deleteBtn = this.page.getByRole('button', { name: 'Delete' });
+    await deleteBtn.waitFor({ state: 'visible', timeout: 10000 });
+    await deleteBtn.click();
+    await expect(this.page.getByRole('heading', { name: 'Delete group?' })).toBeVisible({ timeout: 10000 });
+    await expect(this.page.getByText('Delete this group forever.')).toBeVisible({ timeout: 5000 });
     await this.page.locator('#modal-outlet-0 button >> svg').click();
   }
 
   async deleteXButton(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).first().click();
-    await this.page.getByRole('button', { name: 'Delete' }).click();
-    await expect(this.page.getByRole('heading', { name: 'Delete group?' })).toBeVisible();
-    await expect(this.page.getByText('Delete group?Delete this group forever. Loading... Cancel Loading... Delete')).toBeVisible();
+    const deleteBtn = this.page.getByRole('button', { name: 'Delete' });
+    await deleteBtn.waitFor({ state: 'visible', timeout: 10000 });
+    await deleteBtn.click();
+    await expect(this.page.getByRole('heading', { name: 'Delete group?' })).toBeVisible({ timeout: 10000 });
+    await expect(this.page.getByText('Delete this group forever.')).toBeVisible({ timeout: 5000 });
     await this.page.getByRole('button', { name: 'Cancel' }).click();
   }
 
   async deleteGroupPopupForever(): Promise<void> {
     await this.page.getByRole('button', { name: 'Toggle see more' }).first().click();
-    await this.page.getByRole('button', { name: 'Delete' }).click();
-    await expect(this.page.getByText('Delete this group forever.')).toBeVisible();
+    const deleteBtn = this.page.getByRole('button', { name: 'Delete' });
+    await deleteBtn.waitFor({ state: 'visible', timeout: 10000 });
+    await deleteBtn.click();
+    await expect(this.page.getByText('Delete this group forever.')).toBeVisible({ timeout: 10000 });
   }
 
   async deleteSuccessfully(): Promise<void> {

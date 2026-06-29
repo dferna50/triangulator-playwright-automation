@@ -1,35 +1,51 @@
-# Environment variables
+# Environment & Secret Files
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+*.pfx
+*.crt
+*_auth.json
+storageState*.json
+secrets/
 
-# Playwright
+# Playwright Dependencies & Execution Artifacts
 node_modules/
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+test-results.json
+test-output.json
 
-# AI/Editor directories
-.claude/
-.windsurf/
-
-# Debug files
+# Local Debug Output & Logs
 debug-*.png
 dropdown-debug*.png
-/test-*.txt
-/test-output*.txt
+*.txt
 device-info.txt
+scratch/
 
-# Reports and archives
+# Temporary Debug & Scratch Spec Files (Not for production/CI)
+tests/debug-*.spec.ts
+tests/test-debug-*.spec.ts
+tests/inspect-elements.spec.ts
+tests/test-reopen-dialog.spec.ts
+tests/test-type.spec.ts
+tests/test-query-on-type.spec.ts
+
+# Archives & Large Dumps
 *.zip
 *.7z
 *.tar.gz
-test-results.json
+*.mp4
 
-# Test output
-test-output.json
-
-# OS files
+# IDE, OS, & AI Tool Artifacts
 .DS_Store
 Thumbs.db
+.claude/
+.windsurf/
+.openclaude/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
