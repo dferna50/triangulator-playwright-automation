@@ -10,7 +10,7 @@ This test plan covers the FAQ (Frequently Asked Questions) functionality in the 
 - **Admin Login URL**: https://qa.creditmobility.net/logged-out/login/email
 - **Admin Credentials**: 
   - Email: creditmobility@asu.edu
-  - Password: Triangulator!1
+  - Password: #TransferTri1
 
 ---
 
@@ -447,7 +447,7 @@ This test plan covers the FAQ (Frequently Asked Questions) functionality in the 
 - Appropriate permission error is shown
 
 **Test Data**:
-- Regular user credentials: testtriangulator+108@gmail.com / Triangulator!1
+- Regular user credentials: testtriangulator+108@gmail.com / #TransferTri1
 
 ---
 
@@ -632,8 +632,8 @@ This test plan covers the FAQ (Frequently Asked Questions) functionality in the 
 - <script>alert('XSS')</script>
 
 ### User Credentials
-- **Admin**: creditmobility@asu.edu / Triangulator!1
-- **Regular User**: testtriangulator+108@gmail.com / Triangulator!1
+- **Admin**: creditmobility@asu.edu / #TransferTri1
+- **Regular User**: testtriangulator+108@gmail.com / #TransferTri1
 
 ---
 

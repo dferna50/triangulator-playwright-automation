@@ -8,7 +8,7 @@ const creds = {
     instadmin: process.env.INST_ADMIN_EMAIL ?? 'testtriangulator+109@gmail.com',
     instadmin2: process.env.INST_ADMIN2_EMAIL ?? 'testtriangulator+11@gmail.com',
     admin: process.env.ADMIN_EMAIL ?? 'creditmobility@asu.edu',
-    password: process.env.REGULAR_USER_PASSWORD ?? 'Triangulator!1',
+    password: process.env.REGULAR_USER_PASSWORD ?? '#TransferTri1',
 };
 
 async function loginAsPimaAdmin(browser: import('@playwright/test').Browser) {

@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/test';
 
 const BASE_URL = (process.env.BASE_URL ?? 'https://qa.creditmobility.net').replace(/\/$/, '');
 const INST_ADMIN_EMAIL = 'testtriangulator+109@gmail.com';
-const INST_ADMIN_PASSWORD = 'Triangulator!1';
+const INST_ADMIN_PASSWORD = '#TransferTri1';
 const SETTINGS_URL = `${BASE_URL}/app/my-workspace/inst-admin/inst/settings/`;
 
 async function loginAndGoToSettings(institutionSettingsPage: any, loginPage: any): Promise<void> {

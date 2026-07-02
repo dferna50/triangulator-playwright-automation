@@ -128,7 +128,7 @@ export class UserDataGenerator {
       creatorType: 'triangulator_admin',
       userType: 'triangulator_admin',
       creatorEmail: process.env.ADMIN_EMAIL || 'creditmobility@asu.edu',
-      creatorPassword: process.env.ADMIN_PASSWORD || 'Triangulator!1',
+      creatorPassword: process.env.ADMIN_PASSWORD || '#TransferTri1',
       testEmailTemplate: this.generateUniqueEmail(),
       firstName: this.generateFirstName(),
       lastName: this.generateLastName(),
@@ -142,7 +142,7 @@ export class UserDataGenerator {
       creatorType: 'triangulator_admin',
       userType: 'institution_admin',
       creatorEmail: process.env.ADMIN_EMAIL || 'creditmobility@asu.edu',
-      creatorPassword: process.env.ADMIN_PASSWORD || 'Triangulator!1',
+      creatorPassword: process.env.ADMIN_PASSWORD || '#TransferTri1',
       testEmailTemplate: this.generateUniqueEmail(),
       firstName: this.generateFirstName(),
       lastName: this.generateLastName(),
@@ -156,7 +156,7 @@ export class UserDataGenerator {
       creatorType: 'triangulator_admin',
       userType: 'reviewer',
       creatorEmail: process.env.ADMIN_EMAIL || 'creditmobility@asu.edu',
-      creatorPassword: process.env.ADMIN_PASSWORD || 'Triangulator!1',
+      creatorPassword: process.env.ADMIN_PASSWORD || '#TransferTri1',
       testEmailTemplate: this.generateUniqueEmail(),
       firstName: this.generateFirstName(),
       lastName: this.generateLastName(),
@@ -171,7 +171,7 @@ export class UserDataGenerator {
       creatorType: 'institution_admin',
       userType: 'institution_admin',
       creatorEmail: process.env.INST_ADMIN_EMAIL || 'testtriangulator+109@gmail.com',
-      creatorPassword: process.env.INST_ADMIN_PASSWORD || 'Triangulator!1',
+      creatorPassword: process.env.INST_ADMIN_PASSWORD || '#TransferTri1',
       testEmailTemplate: this.generateUniqueEmail(),
       firstName: this.generateFirstName(),
       lastName: this.generateLastName(),
@@ -185,7 +185,7 @@ export class UserDataGenerator {
       creatorType: 'institution_admin',
       userType: 'reviewer',
       creatorEmail: process.env.INST_ADMIN_EMAIL || 'testtriangulator+109@gmail.com',
-      creatorPassword: process.env.INST_ADMIN_PASSWORD || 'Triangulator!1',
+      creatorPassword: process.env.INST_ADMIN_PASSWORD || '#TransferTri1',
       testEmailTemplate: this.generateUniqueEmail(),
       firstName: this.generateFirstName(),
       lastName: this.generateLastName(),
@@ -210,7 +210,7 @@ export class UserDataGenerator {
    */
   static generateBatchOfUsers(count: number, userType: string, institution?: string): UserData[] {
     const users: UserData[] = [];
-    
+
     for (let i = 0; i < count; i++) {
       const user = this.generateUserData(
         userType as 'triangulator_admin' | 'institution_admin' | 'reviewer',
@@ -240,12 +240,12 @@ export class UserDataGenerator {
   static extractEmailBase(fullEmail: string): string {
     const atIndex = fullEmail.indexOf('@');
     if (atIndex === -1) return fullEmail;
-    
+
     const localPart = fullEmail.substring(0, atIndex);
     const plusIndex = localPart.indexOf('+');
-    
+
     if (plusIndex === -1) return fullEmail;
-    
+
     return localPart.substring(0, plusIndex) + fullEmail.substring(atIndex);
   }
 

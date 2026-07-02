@@ -3,7 +3,7 @@ import type { OrganizationData } from '../pages/OrganizationsPage';
 
 test.describe('Organization Management', () => {
   const triAdminEmail = process.env.TRI_ADMIN_EMAIL ?? 'creditmobility@asu.edu';
-  const triAdminPassword = process.env.TRI_ADMIN_PASSWORD ?? 'Triangulator!1';
+  const triAdminPassword = process.env.TRI_ADMIN_PASSWORD ?? '#TransferTri1';
 
   test.beforeEach(async ({ page, loginPage }) => {
     await page.goto('');
@@ -75,7 +75,7 @@ test.describe('Organization Management', () => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
       await organizationsPage.createOrganization(orgData);
-      
+
       // Verify organization was created
       const isVisible = await organizationsPage.verifyOrganizationInTable(orgData.name);
       expect(isVisible).toBeTruthy();
@@ -96,7 +96,7 @@ test.describe('Organization Management', () => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
       await organizationsPage.createOrganization(orgData);
-      
+
       // Verify organization was created
       const isVisible = await organizationsPage.verifyOrganizationInTable(orgData.name);
       expect(isVisible).toBeTruthy();
@@ -106,10 +106,10 @@ test.describe('Organization Management', () => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
       await organizationsPage.clickAddOrganization();
-      
+
       // Try to create without filling required fields
       await organizationsPage.createButton.click();
-      
+
       // Dialog should still be visible since required fields are not filled
       await expect(organizationsPage.addOrganizationDialog).toBeVisible();
     });
@@ -119,7 +119,7 @@ test.describe('Organization Management', () => {
     test('TC11: View organizations table pagination', async ({ organizationsPage }) => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
-      
+
       // Check if pagination exists
       const hasNextPage = await organizationsPage.nextPageButton.isVisible().catch(() => false);
       if (hasNextPage) {
@@ -154,7 +154,7 @@ test.describe('Organization Management', () => {
     test('TC15: Verify organization row action buttons exist', async ({ organizationsPage }) => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
-      
+
       // Get first organization row
       const rows = organizationsPage.page.locator('table tbody tr');
       const count = await rows.count();
@@ -170,7 +170,7 @@ test.describe('Organization Management', () => {
     test('TC16: Verify organization data structure in table', async ({ organizationsPage }) => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
-      
+
       // Get first organization row and verify structure
       const rows = organizationsPage.page.locator('table tbody tr');
       const count = await rows.count();
@@ -178,12 +178,12 @@ test.describe('Organization Management', () => {
         const firstRow = rows.first();
         const cells = firstRow.locator('td');
         expect(await cells.count()).toBeGreaterThanOrEqual(6);
-        
+
         // Verify cell contents are not empty
         const nameCell = cells.nth(0);
         const cityCell = cells.nth(1);
         const statusCell = cells.nth(5);
-        
+
         await expect(nameCell).not.toBeEmpty();
         await expect(statusCell).not.toBeEmpty();
       }
@@ -192,11 +192,11 @@ test.describe('Organization Management', () => {
     test('TC17: Verify organization status values', async ({ organizationsPage }) => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
-      
+
       // Check that status values are either ACTIVE or INACTIVE
       const rows = organizationsPage.page.locator('table tbody tr');
       const count = await rows.count();
-      
+
       for (let i = 0; i < Math.min(count, 5); i++) {
         const row = rows.nth(i);
         const statusCell = row.locator('td').nth(5);
@@ -210,7 +210,7 @@ test.describe('Organization Management', () => {
     test('TC18: Verify filter button exists and is clickable', async ({ organizationsPage }) => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
-      
+
       // Filter button might not exist on this page - check with soft assertion
       const hasFilterButton = await organizationsPage.filterButton.isVisible().catch(() => false);
       if (hasFilterButton) {
@@ -223,7 +223,7 @@ test.describe('Organization Management', () => {
     test('TC19: Verify search/filter functionality', async ({ organizationsPage }) => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
-      
+
       // Check if filter button exists before clicking
       const hasFilterButton = await organizationsPage.filterButton.isVisible().catch(() => false);
       if (hasFilterButton) {
@@ -251,7 +251,7 @@ test.describe('Organization Management', () => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
       await organizationsPage.createOrganization(orgData);
-      
+
       const isVisible = await organizationsPage.verifyOrganizationInTable(orgData.name);
       expect(isVisible).toBeTruthy();
     });
@@ -269,7 +269,7 @@ test.describe('Organization Management', () => {
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
       await organizationsPage.createOrganization(orgData);
-      
+
       // Verify organization was created (may be truncated in table)
       const isVisible = await organizationsPage.verifyOrganizationInTable(orgData.name.substring(0, 50));
       expect(isVisible).toBeTruthy();
@@ -287,15 +287,15 @@ test.describe('Organization Management', () => {
 
       await organizationsPage.navigateToMyWorkplace();
       await organizationsPage.navigateToOrganizations();
-      
+
       // Create first organization
       await organizationsPage.createOrganization(orgData);
-      
+
       // Try to create same organization again
       await organizationsPage.clickAddOrganization();
       await organizationsPage.fillOrganizationForm(orgData);
       await organizationsPage.createButton.click();
-      
+
       // Should show error or prevent creation
       // Depending on implementation, dialog might close or show error
     });

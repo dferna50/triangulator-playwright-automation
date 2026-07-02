@@ -14,7 +14,7 @@ import { RequestAccessData } from '../../pages/RequestAccessPage';
  */
 test.describe('Request Access - E2E Tests', () => {
   const TEST_INSTITUTION = 'University of Nevada-Reno';
-  const GMAIL_BASE_EMAIL = 'testtriangulatoroo@gmail.com';
+  const GMAIL_BASE_EMAIL = 'testtriangulator@gmail.com';
 
   let gmailService: GmailService;
 
@@ -274,7 +274,7 @@ test.describe('Request Access - E2E Tests', () => {
       institution: TEST_INSTITUTION,
       firstName: longText,
       lastName: longText,
-      email: UserDataGenerator.generateUniqueEmail('testtriangulatoroo'),
+      email: UserDataGenerator.generateUniqueEmail('testtriangulator'),
       jobTitle: 'QA Engineer',
     };
 
@@ -292,7 +292,7 @@ test.describe('Request Access - E2E Tests', () => {
       institution: TEST_INSTITUTION,
       firstName: 'Special',
       lastName: 'Chars',
-      email: UserDataGenerator.generateUniqueEmail('testtriangulatoroo'),
+      email: UserDataGenerator.generateUniqueEmail('testtriangulator'),
       jobTitle: "QA & DevOps @ Test-Org (2026)",
     };
 

@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/test';
 
 test.describe('Delete workflow configuration', () => {
-    // Note: Original uses different credentials (testtriangulator+107 / Triangulator!12)
+    // Note: Original uses different credentials (testtriangulator+107 / #TransferTri1)
     const instAdminEmail = process.env.INST_ADMIN_EMAIL ?? '';
     const instAdminPassword = process.env.INST_ADMIN_PASSWORD ?? '';
 

@@ -93,11 +93,7 @@ npx playwright test tests/user-management/institution-admin-user-management.spec
 
 ## Environment Variables
 
-### Required
-```bash
-BASE_URL=https://qa.creditmobility.net/
-INST_ADMIN_EMAIL=testtriangulatoroo+arc3@gmail.com
-INST_ADMIN_PASSWORD=Triangulator!1
+
 ```
 
 ### Optional (for extended test scenarios)
@@ -177,7 +173,6 @@ await page.getByRole('heading', { name: 'Suspend account' })
 await page.getByRole('button', { name: 'suspend' })
 
 // Displayed Information
-await page.getByText('testtriangulatoroo+arc3@gmail.com')  // Email
 await page.getByText('American River College')             // Institution
 ```
 
@@ -202,7 +197,6 @@ await page.getByRole('button', { name: 'Last log in' }).click()
 ```
 1. LOGIN
    ├─ Navigate to https://qa.creditmobility.net/logged-out/login/email
-   ├─ Login as Institution Admin (testtriangulatoroo+arc3@gmail.com)
    └─ Land on Dashboard
 
 2. NAVIGATE TO USERS
@@ -236,8 +230,6 @@ await page.getByRole('button', { name: 'Last log in' }).click()
 ## Test Data
 
 ### Institution Admin Credentials
-- **Email:** testtriangulatoroo+arc3@gmail.com
-- **Password:** Triangulator!1
 - **Institution:** American River College (implied from existing tests)
 
 ### Test User Types

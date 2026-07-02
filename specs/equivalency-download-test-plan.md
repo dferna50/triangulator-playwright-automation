@@ -6,7 +6,7 @@ Comprehensive test plan for the equivalency download feature on the Triangulator
 ## Test Environment
 - **Base URL**: https://qa.creditmobility.net/
 - **Test User**: testtriangulator+108@gmail.com
-- **Password**: Triangulator!1
+- **Password**: #TransferTri1
 - **Starting Page**: New Suggestions page (https://qa.creditmobility.net/app/my-triangulator/suggestions/new)
 
 ---
@@ -24,7 +24,7 @@ Comprehensive test plan for the equivalency download feature on the Triangulator
 **Steps**:
 1. Navigate to https://qa.creditmobility.net/
 2. Enter email: testtriangulator+108@gmail.com
-3. Enter password: Triangulator!1
+3. Enter password: #TransferTri1
 4. Click Submit button
 5. Verify landing on dashboard (https://qa.creditmobility.net/app/dashboard)
 6. Click on "My Triangulator" button

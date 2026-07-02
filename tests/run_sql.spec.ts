@@ -5,7 +5,7 @@ import fs from 'fs';
 test.describe('Run SQL Page Tests', () => {
 
     const adminEmail = process.env.ADMIN_EMAIL ?? 'creditmobility@asu.edu';
-    const adminPassword = process.env.ADMIN_PASSWORD ?? 'Triangulator!1';
+    const adminPassword = process.env.ADMIN_PASSWORD ?? '#TransferTri1';
     const targetInstitutionId = '182290';
     const selectQuery = `select * from graph_db_output where target_institution_id = '${targetInstitutionId}'`;
 

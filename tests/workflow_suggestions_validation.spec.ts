@@ -2,12 +2,12 @@ import { test, expect } from '../fixtures/test';
 
 test.describe('Workflow Suggestions Validation - E2E Tests', () => {
   const instAdminEmail = process.env.INST_ADMIN_EMAIL || 'testtriangulator+109@gmail.com';
-  const instAdminPassword = process.env.INST_ADMIN_PASSWORD || 'Triangulator!1';
+  const instAdminPassword = process.env.INST_ADMIN_PASSWORD || '#TransferTri1';
 
   test.beforeEach(async ({ page }) => {
     await page.goto('https://qa.creditmobility.net/logged-out/login/email');
     await page.waitForTimeout(2000);
-    
+
     // Login manually to avoid dependency on LoginPage
     await page.getByRole('textbox', { name: 'Email' }).fill(instAdminEmail);
     await page.getByRole('textbox', { name: 'Password' }).fill(instAdminPassword);
@@ -79,11 +79,11 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await workflowConfigurationsPage.verifyCreateGroupModalElements();
     await workflowConfigurationsPage.clickUsersDropdown();
     await workflowConfigurationsPage.verifyUsersDropdownVisible();
-    
+
     // Test that we can attempt to select a user (basic functionality test)
     // This verifies the dropdown is working without needing to enumerate all options
     await workflowConfigurationsPage.page.waitForTimeout(1000);
-    
+
     // Close the modal
     await workflowConfigurationsPage.clickCreateGroupCancelButton();
   });
@@ -93,11 +93,11 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await workflowConfigurationsPage.clickCreateGroupButton();
     await workflowConfigurationsPage.verifyCreateGroupModalElements();
     await workflowConfigurationsPage.clickUsersDropdown();
-    
+
     // Try to select some common users that might be available
     const commonUsers = ['Chris Vouga', 'Karthick', 'Priya'];
     let usersSelected = 0;
-    
+
     for (const userName of commonUsers) {
       try {
         const option = await workflowConfigurationsPage.getOptionByName(userName, false);
@@ -120,12 +120,12 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
         // No options available, skip verification
       }
     }
-    
+
     // Only verify if we selected at least 3 users
     if (usersSelected >= 3) {
       await workflowConfigurationsPage.verifyCreateGroupNextButtonEnabled();
     }
-    
+
     // Close the modal
     await workflowConfigurationsPage.clickCreateGroupCancelButton();
   });
@@ -168,11 +168,11 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await workflowConfigurationsPage.verifyCreateWorkflowModalElements();
     await workflowConfigurationsPage.clickWorkflowSchemeDropdown();
     await workflowConfigurationsPage.verifyWorkflowSchemeDropdownVisible();
-    
+
     // Test that we can select a specific scheme
     await workflowConfigurationsPage.selectWorkflowScheme('Assign to an approver');
     await workflowConfigurationsPage.verifyCreateWorkflowNextButtonEnabled();
-    
+
     // Close the modal
     await workflowConfigurationsPage.clickCreateWorkflowCancelButton();
   });
@@ -219,11 +219,11 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await workflowConfigurationsPage.clickCreateGroupButton();
     await workflowConfigurationsPage.verifyCreateGroupModalElements();
     await workflowConfigurationsPage.clickUsersDropdown();
-    
+
     // Try to select users using improved method
     const commonUsers = ['Chris Vouga', 'Karthick', 'Priya'];
     let usersSelected = 0;
-    
+
     for (const userName of commonUsers) {
       try {
         const option = await workflowConfigurationsPage.getOptionByName(userName, false);
@@ -281,7 +281,7 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await workflowConfigurationsPage.navigateToWorkflowConfigurations();
     const existingGroups = await workflowConfigurationsPage.getExistingGroups();
     expect(existingGroups.length).toBeGreaterThanOrEqual(0);
-    
+
     // Check for known groups that were visible during exploration
     if (existingGroups.length > 0) {
       expect(existingGroups.some(group => group.includes('Science') || group.includes('Tech') || group.includes('Test'))).toBeTruthy();
@@ -292,7 +292,7 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await workflowConfigurationsPage.navigateToWorkflowConfigurations();
     const existingWorkflows = await workflowConfigurationsPage.getExistingWorkflows();
     expect(existingWorkflows.length).toBeGreaterThanOrEqual(0);
-    
+
     // Check for known workflow that was visible during exploration
     if (existingWorkflows.length > 0) {
       expect(existingWorkflows.some(workflow => workflow.includes('all4'))).toBeTruthy();
@@ -307,7 +307,7 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await workflowConfigurationsPage.selectWorkflowScheme('Assign to an approver');
     await workflowConfigurationsPage.verifyCreateWorkflowNextButtonEnabled();
     await workflowConfigurationsPage.clickCreateWorkflowNextButton();
-    
+
     // Wait for additional steps in workflow creation
     await workflowConfigurationsPage.page.waitForTimeout(2000);
   });
@@ -320,7 +320,7 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await workflowConfigurationsPage.selectWorkflowScheme('Assign to group then approver');
     await workflowConfigurationsPage.verifyCreateWorkflowNextButtonEnabled();
     await workflowConfigurationsPage.clickCreateWorkflowNextButton();
-    
+
     // Wait for additional steps in workflow creation
     await workflowConfigurationsPage.page.waitForTimeout(2000);
   });
@@ -343,16 +343,16 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
 
   test('TC30: End-to-end workflow - Create group and then create workflow', async ({ workflowConfigurationsPage }) => {
     await workflowConfigurationsPage.navigateToWorkflowConfigurations();
-    
+
     // First create a group
     await workflowConfigurationsPage.clickCreateGroupButton();
     await workflowConfigurationsPage.verifyCreateGroupModalElements();
     await workflowConfigurationsPage.clickUsersDropdown();
-    
+
     // Try to select users using improved method
     const commonUsers = ['Chris Vouga', 'Karthick', 'Priya'];
     let usersSelected = 0;
-    
+
     for (const userName of commonUsers) {
       try {
         const option = await workflowConfigurationsPage.getOptionByName(userName, false);

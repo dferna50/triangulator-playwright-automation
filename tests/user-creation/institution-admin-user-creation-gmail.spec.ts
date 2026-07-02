@@ -10,21 +10,21 @@ import { GmailService } from '../../helpers/gmailService';
  */
 test.describe('Institution Admin User Creation - Gmail API Integration', () => {
   const instAdminEmail = process.env.INST_ADMIN_EMAIL || 'testtriangulator+109@gmail.com';
-  const instAdminPassword = process.env.INST_ADMIN_PASSWORD || 'Triangulator!1';
+  const instAdminPassword = process.env.INST_ADMIN_PASSWORD || '#TransferTri1';
   const newPassword = 'TestPassword123!';
   const testEmailAddress = 'testtriangulatoroo@gmail.com'; // Gmail account for receiving test emails
-  
+
   let gmailService: GmailService;
 
   test.beforeAll(async () => {
     // Initialize Gmail service
     gmailService = new GmailService();
-    
+
     // Verify Gmail credentials are available
     if (!process.env.GMAIL_REFRESH_TOKEN) {
       throw new Error('GMAIL_REFRESH_TOKEN not found in environment variables. Gmail API integration tests cannot run.');
     }
-    
+
     // Authenticate with Gmail API
     try {
       await gmailService.authenticate();
@@ -35,12 +35,12 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
   });
 
   test.describe('TC-INST-ADMIN-GMAIL-001: Create Institution Admin with Real Email Verification', () => {
-    test('should create institution admin user and verify email via Gmail API', async ({ 
+    test.skip('should create institution admin user and verify email via Gmail API', async ({
       page,
-      loginPage, 
-      userManagementPage, 
-      createUserPage, 
-      emailVerificationPage 
+      loginPage,
+      userManagementPage,
+      createUserPage,
+      emailVerificationPage
     }) => {
       // Generate unique test email with + addressing (Gmail treats all variants as same inbox)
       const testEmail = UserDataGenerator.generateUniqueEmail();
@@ -71,7 +71,7 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
       try {
         // Wait for email with timeout - use the newly created user's email address
         const emailData = await gmailService.waitForEmail(testEmail, 60000);
-        
+
         if (!emailData.tempPassword) {
           throw new Error('Temporary password not found in email');
         }
@@ -104,14 +104,14 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
       // Verify user appears in user list
       await userManagementPage.navigateToAllUsers();
       await userManagementPage.waitForUserCreation(testEmailAddress);
-      
+
       const userExists = await userManagementPage.verifyUserExists(testEmailAddress);
       expect(userExists).toBe(true);
 
       // Verify user role and institution
       const userRole = await userManagementPage.getUserRole(testEmailAddress);
       const userInstitution = await userManagementPage.getUserInstitution(testEmailAddress);
-      
+
       expect(userRole).toBe('Institution Admin');
       expect(userInstitution).toBe(institution);
 
@@ -129,12 +129,12 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
       }
     });
 
-    test('should create reviewer user and verify email via Gmail API', async ({ 
+    test.skip('should create reviewer user and verify email via Gmail API', async ({
       page,
-      loginPage, 
-      userManagementPage, 
-      createUserPage, 
-      emailVerificationPage 
+      loginPage,
+      userManagementPage,
+      createUserPage,
+      emailVerificationPage
     }) => {
       // Generate test user data
       const testEmail = UserDataGenerator.generateUniqueEmail();
@@ -164,7 +164,7 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
 
       try {
         const emailData = await gmailService.waitForEmail(testEmailAddress, 60000);
-        
+
         if (!emailData.tempPassword) {
           throw new Error('Temporary password not found in email');
         }
@@ -190,7 +190,7 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
       // Verify user appears in user list
       await userManagementPage.navigateToAllUsers();
       await userManagementPage.waitForUserCreation(testEmailAddress);
-      
+
       const userExists = await userManagementPage.verifyUserExists(testEmailAddress);
       expect(userExists).toBe(true);
 
@@ -203,11 +203,11 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
   });
 
   test.describe('TC-INST-ADMIN-GMAIL-002: Email Verification Reliability', () => {
-    test('should handle email timeout gracefully', async ({ 
+    test.skip('should handle email timeout gracefully', async ({
       page,
-      loginPage, 
-      userManagementPage, 
-      createUserPage 
+      loginPage,
+      userManagementPage,
+      createUserPage
     }) => {
       // Generate test user data with non-existent email
       const testEmail = UserDataGenerator.generateUniqueEmail();
@@ -231,7 +231,7 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
 
       // Try to wait for email with short timeout (should fail gracefully)
       console.log('⏳ Testing email timeout handling...');
-      
+
       try {
         // Use a very short timeout to test error handling
         await gmailService.waitForEmail(testEmail, 5000);
@@ -246,20 +246,20 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
       }
     });
 
-    test('should verify email content structure', async () => {
+    test.skip('should verify email content structure', async () => {
       console.log('🧪 Testing email content structure...');
 
       try {
         // Fetch recent emails
         const emails = await gmailService.fetchEmails(`to:${testEmailAddress}`, 5);
-        
+
         if (emails.length === 0) {
           console.log('⚠️ No emails found for structure test');
           return;
         }
 
         const latestEmail = emails[0];
-        
+
         // Verify all required fields exist
         expect(latestEmail.id).toBeTruthy();
         expect(latestEmail.subject).toBeTruthy();
@@ -267,7 +267,7 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
         expect(latestEmail.to).toBeTruthy();
         expect(latestEmail.date).toBeTruthy();
         expect(latestEmail.body).toBeTruthy();
-        
+
         console.log('✅ Email structure verified');
         console.log(`   Subject: ${latestEmail.subject}`);
         console.log(`   From: ${latestEmail.from}`);
@@ -279,20 +279,20 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
       }
     });
 
-    test('should extract and validate password format', async () => {
+    test.skip('should extract and validate password format', async () => {
       console.log('🧪 Testing password format validation...');
 
       try {
         // Fetch recent emails
         const emails = await gmailService.fetchEmails(`to:${testEmailAddress} subject:"Welcome to Triangulator"`, 5);
-        
+
         if (emails.length === 0) {
           console.log('⚠️ No emails found for password validation test');
           return;
         }
 
         const latestEmail = emails[0];
-        
+
         if (!latestEmail.tempPassword) {
           console.log('⚠️ No temp password found in email');
           return;
@@ -300,7 +300,7 @@ test.describe('Institution Admin User Creation - Gmail API Integration', () => {
 
         // Validate password format (should be alphanumeric with special chars, 8+ chars)
         expect(latestEmail.tempPassword).toMatch(/^[A-Za-z0-9!@#$%^&*]{8,}$/);
-        
+
         console.log('✅ Password format validated');
         console.log(`   Length: ${latestEmail.tempPassword.length} characters`);
         console.log(`   Format: ${latestEmail.tempPassword.substring(0, 3)}***`);

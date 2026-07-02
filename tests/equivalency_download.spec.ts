@@ -4,7 +4,7 @@ import fs from 'fs';
 import Papa from 'papaparse';
 
 const instAdminEmail = process.env.INST_ADMIN_EMAIL ?? 'testtriangulator+108@gmail.com';
-const instAdminPassword = process.env.INST_ADMIN_PASSWORD ?? 'Triangulator!1';
+const instAdminPassword = process.env.INST_ADMIN_PASSWORD ?? '#TransferTri1';
 
 test.describe('Equivalency Download Feature Tests', () => {
 

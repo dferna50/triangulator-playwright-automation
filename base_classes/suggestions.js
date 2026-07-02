@@ -1,158 +1,158 @@
 const { expect } = require('@playwright/test');
 
 
-class SuggestionsPage{
-    constructor(page) {
-      this.page = page;
-    }
+class SuggestionsPage {
+  constructor(page) {
+    this.page = page;
+  }
 
-    async historyNewActions() {
-      await this.page.locator(".min-w-max > div:nth-child(1) > div:nth-child(2) > div > div > p").click();
-      await this.page.locator("#dropdown-trigger > button > div").click();
-      await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Change to reject');
-      await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Remove decision');
-      await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Mark as new');
-    }
-  
-    async historyNewActionsReview() {
-      await this.page.locator(".min-w-max > div:nth-child(1) > div:nth-child(2) > div > div > p").click();
-      await this.page.locator("#dropdown-trigger > button > div").click();
-      await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Change to reject');
-      await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Remove decision');
-      await expect(this.page.locator("#dropdown-content > .bg-white")).not.toContainText('Mark as new');
-    }
-  
-    async historyNewActionsTriadmin() {
-      await this.page.locator(':nth-child(1) > :nth-child(1) > .p-4 > .whitespace-nowrap > .hover\\:opacity-60').click();
-      await expect(this.page.locator("#dropdown-content > .bg-white")).not.toBeVisible();
-    }
-  
-    async navigateToNewSuggestionPage() {
-      await expect(this.page.locator(':nth-child(4) > .text-grey-600 > .text-center')).toHaveText('My Triangulator');
-      await expect(this.page.locator(':nth-child(4) > .text-grey-600 > .text-center')).toBeVisible();
-      await this.page.locator(':nth-child(4) > .text-grey-600 > .text-center').click();
-      // await expect(this.page.locator('.flex > .font-semibold')).toHaveText('New Suggestions');
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-    }
-  
-    async navigateToAssignedPage() {
-      ////await this.page.locator('.px-4 > .relative > .opacity-0').click();
-      await expect(this.page.locator(':nth-child(2) > :nth-child(2) > .w-full > .flex-1')).toHaveText(' Assigned ');
-      await this.page.locator(':nth-child(2) > :nth-child(2) > .w-full > .flex-1').click();
-      await expect(this.page.locator('.flex > .font-semibold').first()).toHaveText('Assigned');
-      await expect(this.page.locator('.border-b-primary')).toContainText("My suggestions");
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-    }
-  
-    async navigateToOtherAssignedSuggestions() {
-      await this.page.locator('.pt-4 > :nth-child(2)').click();
-      await expect(this.page.locator('.border-b-primary')).toContainText("Other suggestions");
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-    }
-  
-    async navigateToHistoryTab() {
-      //await this.page.locator('.px-4 > .relative > .opacity-0').click();
-      await expect(this.page.locator(':nth-child(2) > :nth-child(3) > .w-full > .flex-1')).toHaveText(' History ');
-      await this.page.locator(':nth-child(2) > :nth-child(3) > .w-full > .flex-1').click();
-      await expect(this.page.locator('.flex > .font-semibold').first()).toHaveText('History');
-      // await expect(this.page.locator('.border-b-primary')).toContainText("My suggestions");
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
-    }
-  
-    async navigateToHistoryTabReviewer() {
-      //await this.page.locator('.px-4 > .relative > .opacity-0').click();
-      await expect(this.page.locator('ul > :nth-child(2) > .w-full > .flex-1')).toHaveText(' History ');
-      await this.page.locator('ul > :nth-child(2) > .w-full > .flex-1').click();
-      await expect(this.page.locator('.flex > .font-semibold').nth(0)).toHaveText('History');
-    }
-  
-    async newSuggestionSorting(sort) {
-      await this.page.locator(':nth-child(2) > [style="width: 26rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(3) > [style="width: 10rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(4) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      // await this.page.locator(':nth-child(5) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      // await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      // await this.page.locator(':nth-child(6) > [style="width: 12rem;"] > .max-w-full > #dropdown-trigger > .p-4').click();
-      // await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      // await this.page.locator(':nth-child(7) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      // await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      // await this.page.locator(':nth-child(8) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      // await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      // await this.page.locator(':nth-child(9) > [style="width: 12rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      // await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator('[style="width: 8rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(11) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(12) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(13) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(14) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(15) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(16) > [style="width: 26rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(17) > [style="width: 10rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(18) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(19) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(20) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(21) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(22) > [style="width: 12rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(23) > [style="width: 12rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
-    }
-  
-    async historySuggestionSorting( sort) {
-      await this.page.locator(':nth-child(2) > [style="width: 26rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(3) > [style="width: 10rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(4) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(5) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(6) > [style="width: 12rem;"] > .max-w-full > #dropdown-trigger > .p-4').click();
-      await this.page.locator(':nth-child(' + sort + ') > .block').click();
-      // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
-      await this.page.locator(':nth-child(7) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
+  async historyNewActions() {
+    await this.page.locator(".min-w-max > div:nth-child(1) > div:nth-child(2) > div > div > p").click();
+    await this.page.locator("#dropdown-trigger > button > div").click();
+    await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Change to reject');
+    await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Remove decision');
+    await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Mark as new');
+  }
+
+  async historyNewActionsReview() {
+    await this.page.locator(".min-w-max > div:nth-child(1) > div:nth-child(2) > div > div > p").click();
+    await this.page.locator("#dropdown-trigger > button > div").click();
+    await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Change to reject');
+    await expect(this.page.locator("#dropdown-content > .bg-white")).toContainText('Remove decision');
+    await expect(this.page.locator("#dropdown-content > .bg-white")).not.toContainText('Mark as new');
+  }
+
+  async historyNewActionsTriadmin() {
+    await this.page.locator(':nth-child(1) > :nth-child(1) > .p-4 > .whitespace-nowrap > .hover\\:opacity-60').click();
+    await expect(this.page.locator("#dropdown-content > .bg-white")).not.toBeVisible();
+  }
+
+  async navigateToNewSuggestionPage() {
+    await expect(this.page.locator(':nth-child(4) > .text-grey-600 > .text-center')).toHaveText('My Triangulator');
+    await expect(this.page.locator(':nth-child(4) > .text-grey-600 > .text-center')).toBeVisible();
+    await this.page.locator(':nth-child(4) > .text-grey-600 > .text-center').click();
+    // await expect(this.page.locator('.flex > .font-semibold')).toHaveText('New Suggestions');
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+  }
+
+  async navigateToAssignedPage() {
+    ////await this.page.locator('.px-4 > .relative > .opacity-0').click();
+    await expect(this.page.locator(':nth-child(2) > :nth-child(2) > .w-full > .flex-1')).toHaveText(' Assigned ');
+    await this.page.locator(':nth-child(2) > :nth-child(2) > .w-full > .flex-1').click();
+    await expect(this.page.locator('.flex > .font-semibold').first()).toHaveText('Assigned');
+    await expect(this.page.locator('.border-b-primary')).toContainText("My suggestions");
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+  }
+
+  async navigateToOtherAssignedSuggestions() {
+    await this.page.locator('.pt-4 > :nth-child(2)').click();
+    await expect(this.page.locator('.border-b-primary')).toContainText("Other suggestions");
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+  }
+
+  async navigateToHistoryTab() {
+    //await this.page.locator('.px-4 > .relative > .opacity-0').click();
+    await expect(this.page.locator(':nth-child(2) > :nth-child(3) > .w-full > .flex-1')).toHaveText(' History ');
+    await this.page.locator(':nth-child(2) > :nth-child(3) > .w-full > .flex-1').click();
+    await expect(this.page.locator('.flex > .font-semibold').first()).toHaveText('History');
+    // await expect(this.page.locator('.border-b-primary')).toContainText("My suggestions");
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
+  }
+
+  async navigateToHistoryTabReviewer() {
+    //await this.page.locator('.px-4 > .relative > .opacity-0').click();
+    await expect(this.page.locator('ul > :nth-child(2) > .w-full > .flex-1')).toHaveText(' History ');
+    await this.page.locator('ul > :nth-child(2) > .w-full > .flex-1').click();
+    await expect(this.page.locator('.flex > .font-semibold').nth(0)).toHaveText('History');
+  }
+
+  async newSuggestionSorting(sort) {
+    await this.page.locator(':nth-child(2) > [style="width: 26rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(3) > [style="width: 10rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(4) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    // await this.page.locator(':nth-child(5) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    // await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    // await this.page.locator(':nth-child(6) > [style="width: 12rem;"] > .max-w-full > #dropdown-trigger > .p-4').click();
+    // await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    // await this.page.locator(':nth-child(7) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    // await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    // await this.page.locator(':nth-child(8) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    // await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    // await this.page.locator(':nth-child(9) > [style="width: 12rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    // await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator('[style="width: 8rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(11) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(12) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(13) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(14) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(15) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(16) > [style="width: 26rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(17) > [style="width: 10rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(18) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(19) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(20) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(21) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(22) > [style="width: 12rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(23) > [style="width: 12rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
+  }
+
+  async historySuggestionSorting(sort) {
+    await this.page.locator(':nth-child(2) > [style="width: 26rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(3) > [style="width: 10rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(4) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(5) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(6) > [style="width: 12rem;"] > .max-w-full > #dropdown-trigger > .p-4').click();
+    await this.page.locator(':nth-child(' + sort + ') > .block').click();
+    // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
+    await this.page.locator(':nth-child(7) > [style="width: 14rem;"] > .relative > #dropdown-trigger > .p-4').click();
     await this.page.locator(':nth-child(' + sort + ') > .block').click();
     // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .relative > #dropdown-trigger > div > .rounded-full')).toBeEnabled();
     await this.page.locator(':nth-child(8) > [style="width: 16rem;"] > .relative > #dropdown-trigger > .p-4').click();
@@ -591,63 +591,60 @@ class SuggestionsPage{
     await this.page.locator('.flex-wrap > .underline').click();
     // await expect(this.page.locator(':nth-child(1) > .row-border-bottom > .row > .w-full > div > .rounded-full')).toBeEnabled();
   }
-  async coursedetailscoursedescription1553()
-  {
-  await this.page.getByRole('link', { name: 'My Triangulator' }).click();
-  await this.page.locator('.hover\\:opacity-60').first().click();
-  await expect(this.page.getByText('Course title').first()).toBeVisible();
-  //await expect(this.page.getByText('Introduction to General,')).toBeVisible();
-  await expect(this.page.getByText('Course description').first()).toBeVisible();
-  await this.page.getByText('A one-semester course to').click();
-  await expect(this.page.getByText('A one-semester course to')).toBeVisible();
-  await this.page.getByText('Course title').nth(1).click();
-  await expect(this.page.getByText('PROSEMINAR')).toBeVisible();
-  await expect(this.page.getByText('Emphasizes biochemical')).toBeVisible();
-  await expect(this.page.getByText('No data')).not.toBeVisible();
-}
-async suggestionsresults1563()
-{
-  await this.page.getByRole('link', { name: 'My Triangulator' }).click();
-  await this.page.getByRole('link', { name: 'Boost Suggestions' }).click();
-  await this.page.getByRole('button', { name: 'Find Course Boost suggestions' }).click();
-  await this.page.locator('.w-full > .px-2').first().click();
-  await this.page.getByText('At least 2 but less than 4').click();
-  await this.page.locator('div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > #dropdown-trigger > .rounded-md > .flex-1 > div').first().click();
-  await this.page.getByRole('combobox', { name: 'Source state' }).fill('ca');
-  await this.page.getByText('California').click();
-  await this.page.getByRole('combobox', { name: 'Source institution', exact: true }).click();
-  await this.page.getByRole('combobox', { name: 'Source institution', exact: true }).fill('riv');
-  await this.page.getByText('American River College').click();
-  await this.page.getByRole('textbox', { name: 'Enter subject' }).click();
-  await this.page.getByRole('textbox', { name: 'Enter subject' }).fill('soc');
-  await this.page.getByRole('textbox', { name: 'Enter course number' }).click();
-  await this.page.getByRole('textbox', { name: 'Enter course number' }).fill('300');
-  await this.page.locator('div:nth-child(2) > .rounded-md > .flex-1 > div').first().click();
-  await this.page.getByRole('textbox', { name: 'Minimum score' }).fill('68');
-  await this.page.getByRole('textbox', { name: 'Request name' }).click();
-  await this.page.getByRole('textbox', { name: 'Request name' }).fill('bug test');
-  await this.page.getByRole('button', { name: 'Submit' }).click();
-  await this.page.goto('https://qa.creditmobility.net/app/my-triangulator/requests/boost-suggestions/summary/75fbf0e5-b722-4232-abba-d1ec244c3fd9');
-  await this.page.getByRole('button', { name: 'See Suggestions' }).click();
-}
-async NoAPIerror1576()
-{
-  await this.page.getByRole('button', { name: 'Open account dropdown' }).click();
-  await this.page.getByRole('button', { name: 'Sign Out' }).click();
-  await this.page.getByRole('button', { name: 'Login' }).click();
-  await this.page.getByRole('textbox', { name: 'Email' }).click();
-  await this.page.getByRole('textbox', { name: 'Email' }).fill('creditmobility@asu.edu');
-  await this.page.locator('div:nth-child(2) > div > .rounded-md > .flex-1 > div').first().click();
-  await this.page.getByRole('textbox', { name: 'Password' }).fill('Triangulator!1');
-  await this.page.getByRole('button', { name: 'Submit' }).click();
-  await this.page.getByRole('link', { name: 'My Triangulator' }).click();
-  await this.page.getByRole('button', { name: 'Filter' }).click();
-  await this.page.getByRole('combobox', { name: 'Suggestion Type' }).locator('div').nth(1).click();
-  await this.page.getByText('Partner institution boost').click();
-  await this.page.getByRole('button', { name: 'Apply' }).click();
-  await this.page.waitForLoadState('networkidle');
-  await expect(this.page.getByText('PIMA COMMUNITY COLLEGE').nth(1)).toBeVisible(); // 10 seconds
-}
+  async coursedetailscoursedescription1553() {
+    await this.page.getByRole('link', { name: 'My Triangulator' }).click();
+    await this.page.locator('.hover\\:opacity-60').first().click();
+    await expect(this.page.getByText('Course title').first()).toBeVisible();
+    //await expect(this.page.getByText('Introduction to General,')).toBeVisible();
+    await expect(this.page.getByText('Course description').first()).toBeVisible();
+    await this.page.getByText('A one-semester course to').click();
+    await expect(this.page.getByText('A one-semester course to')).toBeVisible();
+    await this.page.getByText('Course title').nth(1).click();
+    await expect(this.page.getByText('PROSEMINAR')).toBeVisible();
+    await expect(this.page.getByText('Emphasizes biochemical')).toBeVisible();
+    await expect(this.page.getByText('No data')).not.toBeVisible();
+  }
+  async suggestionsresults1563() {
+    await this.page.getByRole('link', { name: 'My Triangulator' }).click();
+    await this.page.getByRole('link', { name: 'Boost Suggestions' }).click();
+    await this.page.getByRole('button', { name: 'Find Course Boost suggestions' }).click();
+    await this.page.locator('.w-full > .px-2').first().click();
+    await this.page.getByText('At least 2 but less than 4').click();
+    await this.page.locator('div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > #dropdown-trigger > .rounded-md > .flex-1 > div').first().click();
+    await this.page.getByRole('combobox', { name: 'Source state' }).fill('ca');
+    await this.page.getByText('California').click();
+    await this.page.getByRole('combobox', { name: 'Source institution', exact: true }).click();
+    await this.page.getByRole('combobox', { name: 'Source institution', exact: true }).fill('riv');
+    await this.page.getByText('American River College').click();
+    await this.page.getByRole('textbox', { name: 'Enter subject' }).click();
+    await this.page.getByRole('textbox', { name: 'Enter subject' }).fill('soc');
+    await this.page.getByRole('textbox', { name: 'Enter course number' }).click();
+    await this.page.getByRole('textbox', { name: 'Enter course number' }).fill('300');
+    await this.page.locator('div:nth-child(2) > .rounded-md > .flex-1 > div').first().click();
+    await this.page.getByRole('textbox', { name: 'Minimum score' }).fill('68');
+    await this.page.getByRole('textbox', { name: 'Request name' }).click();
+    await this.page.getByRole('textbox', { name: 'Request name' }).fill('bug test');
+    await this.page.getByRole('button', { name: 'Submit' }).click();
+    await this.page.goto('https://qa.creditmobility.net/app/my-triangulator/requests/boost-suggestions/summary/75fbf0e5-b722-4232-abba-d1ec244c3fd9');
+    await this.page.getByRole('button', { name: 'See Suggestions' }).click();
+  }
+  async NoAPIerror1576() {
+    await this.page.getByRole('button', { name: 'Open account dropdown' }).click();
+    await this.page.getByRole('button', { name: 'Sign Out' }).click();
+    await this.page.getByRole('button', { name: 'Login' }).click();
+    await this.page.getByRole('textbox', { name: 'Email' }).click();
+    await this.page.getByRole('textbox', { name: 'Email' }).fill('creditmobility@asu.edu');
+    await this.page.locator('div:nth-child(2) > div > .rounded-md > .flex-1 > div').first().click();
+    await this.page.getByRole('textbox', { name: 'Password' }).fill('#TransferTri1');
+    await this.page.getByRole('button', { name: 'Submit' }).click();
+    await this.page.getByRole('link', { name: 'My Triangulator' }).click();
+    await this.page.getByRole('button', { name: 'Filter' }).click();
+    await this.page.getByRole('combobox', { name: 'Suggestion Type' }).locator('div').nth(1).click();
+    await this.page.getByText('Partner institution boost').click();
+    await this.page.getByRole('button', { name: 'Apply' }).click();
+    await this.page.waitForLoadState('networkidle');
+    await expect(this.page.getByText('PIMA COMMUNITY COLLEGE').nth(1)).toBeVisible(); // 10 seconds
+  }
 
   // ─── MODERN NAVIGATION ───────────────────────────────────────────────────────
 
@@ -813,8 +810,8 @@ async NoAPIerror1576()
     const panelHeader = this.page.getByText(/Filter suggestions/i);
     const applyButton = this.page.getByRole('button', { name: 'Apply' });
     await Promise.race([
-      panelHeader.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {}),
-      applyButton.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {}),
+      panelHeader.waitFor({ state: 'visible', timeout: 5000 }).catch(() => { }),
+      applyButton.waitFor({ state: 'visible', timeout: 5000 }).catch(() => { }),
     ]);
   }
 

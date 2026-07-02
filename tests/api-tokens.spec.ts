@@ -3,7 +3,7 @@ import type { ApiTokenData } from '../pages/ApiTokensPage';
 
 test.describe('Organization API Tokens', () => {
   const triAdminEmail = process.env.TRI_ADMIN_EMAIL ?? 'creditmobility@asu.edu';
-  const triAdminPassword = process.env.TRI_ADMIN_PASSWORD ?? 'Triangulator!1';
+  const triAdminPassword = process.env.TRI_ADMIN_PASSWORD ?? '#TransferTri1';
 
   test.beforeEach(async ({ page, loginPage }) => {
     await page.goto('');
@@ -59,15 +59,15 @@ test.describe('Organization API Tokens', () => {
     test('TC7: Generate token for organization', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       // Get existing tokens to compare
       const existingTokens = await apiTokensPage.getAllTokens();
       const existingOrg = existingTokens.length > 0 ? existingTokens[0].organization : 'test-single';
-      
+
       const tokenData: ApiTokenData = {
         organization: existingOrg
       };
-      
+
       try {
         await apiTokensPage.generateToken(tokenData);
       } catch (err: any) {
@@ -79,7 +79,7 @@ test.describe('Organization API Tokens', () => {
         throw err;
       }
       await apiTokensPage.refreshTokens();
-      
+
       // Verify new token was created
       const newTokens = await apiTokensPage.getAllTokens();
       expect(newTokens.length).toBeGreaterThanOrEqual(existingTokens.length);
@@ -89,10 +89,10 @@ test.describe('Organization API Tokens', () => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
       await apiTokensPage.clickGenerateToken();
-      
+
       // Try to generate without selecting organization
       await apiTokensPage.generateButton.click({ force: true });
-      
+
       // Dialog should still be visible since organization is not selected
       await expect(apiTokensPage.generateTokenDialog).toBeVisible();
       await apiTokensPage.cancelTokenGeneration();
@@ -103,7 +103,7 @@ test.describe('Organization API Tokens', () => {
     test('TC9: View all API tokens in table', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const tokens = await apiTokensPage.getAllTokens();
       expect(tokens.length).toBeGreaterThanOrEqual(0);
     });
@@ -111,7 +111,7 @@ test.describe('Organization API Tokens', () => {
     test('TC10: Verify token data structure', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const tokens = await apiTokensPage.getAllTokens();
       if (tokens.length > 0) {
         for (const token of tokens.slice(0, 5)) {
@@ -164,7 +164,7 @@ test.describe('Organization API Tokens', () => {
     test('TC16: View active tokens', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const activeTokens = await apiTokensPage.getActiveTokens();
       // Verify all returned tokens are active
       for (const token of activeTokens) {
@@ -175,7 +175,7 @@ test.describe('Organization API Tokens', () => {
     test('TC17: View inactive tokens', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const inactiveTokens = await apiTokensPage.getInactiveTokens();
       // Verify all returned tokens are inactive
       for (const token of inactiveTokens) {
@@ -186,11 +186,11 @@ test.describe('Organization API Tokens', () => {
     test('TC18: Revoke active token', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const activeTokens = await apiTokensPage.getActiveTokens();
       if (activeTokens.length > 0) {
         await apiTokensPage.revokeToken(activeTokens[0].tokenId);
-        
+
         // Refresh to verify token was revoked
         await apiTokensPage.refreshTokens();
         const tokenInfo = await apiTokensPage.getTokenInfo(activeTokens[0].tokenId);
@@ -203,7 +203,7 @@ test.describe('Organization API Tokens', () => {
     test('TC19: Revoke token by organization', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const activeTokens = await apiTokensPage.getActiveTokens();
       if (activeTokens.length > 0) {
         await apiTokensPage.revokeTokenByOrganization(activeTokens[0].organization);
@@ -213,7 +213,7 @@ test.describe('Organization API Tokens', () => {
     test('TC20: Verify revoke button exists for active tokens', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const activeTokens = await apiTokensPage.getActiveTokens();
       if (activeTokens.length > 0) {
         const row = await apiTokensPage.getTokenRow(activeTokens[0].tokenId);
@@ -227,7 +227,7 @@ test.describe('Organization API Tokens', () => {
     test('TC21: Navigate through pagination', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const hasNextPage = await apiTokensPage.nextPageButton.isVisible().catch(() => false);
       if (hasNextPage) {
         const isEnabled = await apiTokensPage.nextPageButton.isEnabled().catch(() => false);
@@ -240,7 +240,7 @@ test.describe('Organization API Tokens', () => {
     test('TC22: Verify previous page button state on first page', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const isEnabled = await apiTokensPage.prevPageButton.isEnabled().catch(() => false);
       expect(isEnabled).toBeFalsy();
     });
@@ -250,12 +250,12 @@ test.describe('Organization API Tokens', () => {
     test('TC23: Get tokens by organization', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const allTokens = await apiTokensPage.getAllTokens();
       if (allTokens.length > 0) {
         const orgName = allTokens[0].organization;
         const orgTokens = await apiTokensPage.getTokensByOrganization(orgName);
-        
+
         // Verify all returned tokens belong to the organization
         for (const token of orgTokens) {
           expect(token.organization).toBe(orgName);
@@ -266,18 +266,18 @@ test.describe('Organization API Tokens', () => {
     test('TC24: Verify one organization can have multiple tokens', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const allTokens = await apiTokensPage.getAllTokens();
-      
+
       // Group by organization
       const orgGroups: Record<string, number> = {};
       for (const token of allTokens) {
         orgGroups[token.organization] = (orgGroups[token.organization] || 0) + 1;
       }
-      
+
       // Find organizations with multiple tokens
       const multiTokenOrgs = Object.entries(orgGroups).filter(([_, count]) => count > 1);
-      
+
       // This is a data validation test
       expect(multiTokenOrgs.length).toBeGreaterThanOrEqual(0);
     });
@@ -285,7 +285,7 @@ test.describe('Organization API Tokens', () => {
     test('TC25: Verify token expiration dates are set', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const tokens = await apiTokensPage.getAllTokens();
       for (const token of tokens) {
         expect(token.expires).toBeTruthy();
@@ -299,11 +299,11 @@ test.describe('Organization API Tokens', () => {
     test('TC26: Refresh tokens list', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const beforeTokens = await apiTokensPage.getAllTokens();
       await apiTokensPage.refreshTokens();
       const afterTokens = await apiTokensPage.getAllTokens();
-      
+
       // Token count should remain consistent after refresh
       expect(afterTokens.length).toBe(beforeTokens.length);
     });
@@ -311,16 +311,16 @@ test.describe('Organization API Tokens', () => {
     test('TC27: Verify token creation updates token list', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const beforeCount = (await apiTokensPage.getAllTokens()).length;
-      
+
       // Get existing organization
       const existingTokens = await apiTokensPage.getAllTokens();
       if (existingTokens.length > 0) {
         const tokenData: ApiTokenData = {
           organization: existingTokens[0].organization
         };
-        
+
         try {
           await apiTokensPage.generateToken(tokenData);
         } catch (err: any) {
@@ -332,7 +332,7 @@ test.describe('Organization API Tokens', () => {
           throw err;
         }
         await apiTokensPage.refreshTokens();
-        
+
         const afterCount = (await apiTokensPage.getAllTokens()).length;
         expect(afterCount).toBeGreaterThanOrEqual(beforeCount);
       }
@@ -343,7 +343,7 @@ test.describe('Organization API Tokens', () => {
     test('TC28: Verify empty state handling', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       // Table should be visible even if empty
       await expect(apiTokensPage.tokensTable).toBeVisible();
     });
@@ -352,17 +352,17 @@ test.describe('Organization API Tokens', () => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
       await apiTokensPage.clickGenerateToken();
-      
+
       // Generate button should be disabled initially
       await expect(apiTokensPage.generateButton).toBeDisabled();
-      
+
       await apiTokensPage.cancelTokenGeneration();
     });
 
     test('TC30: Verify token ID format', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
-      
+
       const tokens = await apiTokensPage.getAllTokens();
       for (const token of tokens) {
         // Token ID should be numeric

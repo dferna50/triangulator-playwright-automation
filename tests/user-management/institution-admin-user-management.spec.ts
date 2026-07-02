@@ -12,11 +12,11 @@ import { test, expect } from '../../fixtures/test';
  *
  * Login credentials:
  * - Email: testtriangulatoroo+arc3@gmail.com
- * - Password: Triangulator!1
+ * - Password: #TransferTri1
  */
 test.describe('User Management - Institution Admin', () => {
-  const instAdminEmail = process.env.INST_ADMIN_EMAIL || 'testtriangulatoroo+arc3@gmail.com';
-  const instAdminPassword = process.env.INST_ADMIN_PASSWORD || 'Triangulator!1';
+  const instAdminEmail = process.env.INST_ADMIN_EMAIL || 'testtriangulator+108@gmail.com';
+  const instAdminPassword = process.env.INST_ADMIN_PASSWORD || '#TransferTri1';
 
   test.beforeEach(async ({ page, loginPage }) => {
     // Navigate to QA environment login page
@@ -162,7 +162,7 @@ test.describe('User Management - Institution Admin', () => {
       expect(roleValue).toBeTruthy();
 
       // Verify email is displayed
-      await expect(userManagementPage.page.getByText('testtriangulatoroo+arc3@gmail.com')).toBeVisible();
+      await expect(userManagementPage.page.getByText('testtriangulator+108@gmail.com')).toBeVisible();
 
       // Verify institution is displayed
       await expect(userManagementPage.page.getByText('American River College')).toBeVisible();

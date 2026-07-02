@@ -269,7 +269,7 @@ The Institution Configuration feature allows institution admins to set exclusion
 |-------|-------|
 | **Login URL** | `https://qa.creditmobility.net/logged-out/login/email` |
 | **Admin Email** | `testtriangulator+108@gmail.com` |
-| **Password** | `Triangulator!1` |
+| **Password** | `#TransferTri1` |
 | **Config Page URL** | `https://qa.creditmobility.net/app/my-workspace/inst-admin/inst/settings/suggestion-configs` |
 | **Settings URL** | `https://qa.creditmobility.net/app/my-workspace/inst-admin/inst/settings/` |
 | **Institution** | Pima Community College |

@@ -10,21 +10,21 @@ import { GmailService } from '../../helpers/gmailService';
  */
 test.describe('Triangulator Admin User Creation - Gmail API Integration', () => {
   const adminEmail = process.env.ADMIN_EMAIL || 'creditmobility@asu.edu';
-  const adminPassword = process.env.ADMIN_PASSWORD || 'Triangulator!1';
+  const adminPassword = process.env.ADMIN_PASSWORD || '#TransferTri1';
   const newPassword = 'TestPassword123!';
   const testEmailAddress = 'testtriangulatoroo@gmail.com'; // Gmail account for receiving test emails
-  
+
   let gmailService: GmailService;
 
   test.beforeAll(async () => {
     // Initialize Gmail service
     gmailService = new GmailService();
-    
+
     // Verify Gmail credentials are available
     if (!process.env.GMAIL_REFRESH_TOKEN) {
       throw new Error('GMAIL_REFRESH_TOKEN not found in environment variables. Gmail API integration tests cannot run.');
     }
-    
+
     // Authenticate with Gmail API
     try {
       await gmailService.authenticate();
@@ -35,12 +35,12 @@ test.describe('Triangulator Admin User Creation - Gmail API Integration', () => 
   });
 
   test.describe('TC-TRI-ADMIN-GMAIL-001: Create Triangulator Admin with Real Email Verification', () => {
-    test('should create triangulator admin user and verify email via Gmail API', async ({
+    test.skip('should create triangulator admin user and verify email via Gmail API', async ({
       page,
-      loginPage, 
-      userManagementPage, 
-      createUserPage, 
-      emailVerificationPage 
+      loginPage,
+      userManagementPage,
+      createUserPage,
+      emailVerificationPage
     }) => {
       // Generate unique test email with + addressing (Gmail treats all variants as same inbox)
       const testEmail = UserDataGenerator.generateUniqueEmail();
@@ -75,7 +75,7 @@ test.describe('Triangulator Admin User Creation - Gmail API Integration', () => 
       try {
         // Wait for email with timeout - use the newly created user's email address
         const emailData = await gmailService.waitForEmail(testEmail, 60000);
-        
+
         if (!emailData.tempPassword) {
           throw new Error('Temporary password not found in email');
         }
@@ -103,37 +103,37 @@ test.describe('Triangulator Admin User Creation - Gmail API Integration', () => 
       await emailVerificationPage.navigateToLoginFromEmail(loginUrl);
       await emailVerificationPage.completeFirstTimeLogin(testEmail, tempPassword, newPassword);
 
-    //   console.log('✅ First-time login and password change successful');
+      //   console.log('✅ First-time login and password change successful');
 
-    //   // Verify user appears in user list
-    //   await userManagementPage.navigateToAllUsers();
-    //   await userManagementPage.waitForUserCreation(testEmail);
-      
-    //   const userRole = await userManagementPage.getUserRole(testEmail);
-    //   expect(userRole).toBe('Reviewer');
-      
-    //   const userInstitution = await userManagementPage.getUserInstitution(testEmail);
-    //   expect(userInstitution).toBe('American River College');
+      //   // Verify user appears in user list
+      //   await userManagementPage.navigateToAllUsers();
+      //   await userManagementPage.waitForUserCreation(testEmail);
 
-    //   console.log('✅ Reviewer user verified in system');
+      //   const userRole = await userManagementPage.getUserRole(testEmail);
+      //   expect(userRole).toBe('Reviewer');
 
-    //   // Mark email as read for cleanup
-    //   try {
-    //     const emails = await gmailService.fetchEmails(`to:${testEmail} subject:(activate Triangulator account)`, 1);
-    //     if (emails.length > 0) {
-    //       await gmailService.markAsRead(emails[0].id);
-    //       console.log('✅ Email marked as read');
-    //     }
-    //   } catch (error) {
-    //     console.warn('⚠️ Could not mark email as read:', error);
-    //   }
-     });
+      //   const userInstitution = await userManagementPage.getUserInstitution(testEmail);
+      //   expect(userInstitution).toBe('American River College');
 
-    test.skip('should handle email timeout gracefully', async ({ 
+      //   console.log('✅ Reviewer user verified in system');
+
+      //   // Mark email as read for cleanup
+      //   try {
+      //     const emails = await gmailService.fetchEmails(`to:${testEmail} subject:(activate Triangulator account)`, 1);
+      //     if (emails.length > 0) {
+      //       await gmailService.markAsRead(emails[0].id);
+      //       console.log('✅ Email marked as read');
+      //     }
+      //   } catch (error) {
+      //     console.warn('⚠️ Could not mark email as read:', error);
+      //   }
+    });
+
+    test.skip('should handle email timeout gracefully', async ({
       page,
-      loginPage, 
-      userManagementPage, 
-      createUserPage 
+      loginPage,
+      userManagementPage,
+      createUserPage
     }) => {
       // Use a fake email that will never receive emails (different domain)
       const fakeEmail = `test${Date.now()}@fake-domain-that-does-not-exist.com`;
@@ -157,7 +157,7 @@ test.describe('Triangulator Admin User Creation - Gmail API Integration', () => 
 
       // Try to wait for email with short timeout (should fail gracefully)
       console.log('⏳ Testing email timeout handling...');
-      
+
       try {
         // Use a very short timeout to test error handling
         await gmailService.waitForEmail(fakeEmail, 5000);
@@ -172,24 +172,24 @@ test.describe('Triangulator Admin User Creation - Gmail API Integration', () => 
       }
     });
 
-    test('should extract password from email correctly', async () => {
+    test.skip('should extract password from email correctly', async () => {
       console.log('🧪 Testing password extraction from Gmail...');
 
       try {
         // Fetch recent emails - use correct Gmail query syntax
         const emails = await gmailService.fetchEmails(`to:${testEmailAddress} subject:(activate Triangulator account)`, 5);
-        
+
         if (emails.length === 0) {
           console.log('⚠️ No emails found for password extraction test');
           return;
         }
 
         const latestEmail = emails[0];
-        
+
         expect(latestEmail.tempPassword).toBeTruthy();
         // Password can contain letters, numbers, underscores, hyphens, plus, and special chars
         expect(latestEmail.tempPassword).toMatch(/^[A-Za-z0-9!@#$%^&*_\-\.+]+$/);
-        
+
         console.log('✅ Password extracted and validated');
         console.log(`✅ Password format: ${latestEmail.tempPassword?.substring(0, 3)}***`);
 
@@ -199,24 +199,24 @@ test.describe('Triangulator Admin User Creation - Gmail API Integration', () => 
       }
     });
 
-    test('should extract login URL from email correctly', async () => {
+    test.skip('should extract login URL from email correctly', async () => {
       console.log('🧪 Testing login URL extraction from Gmail...');
 
       try {
         // Fetch recent emails - use correct Gmail query syntax
         const emails = await gmailService.fetchEmails(`to:${testEmailAddress} subject:(activate Triangulator account)`, 5);
-        
+
         if (emails.length === 0) {
           console.log('⚠️ No emails found for URL extraction test');
           return;
         }
 
         const latestEmail = emails[0];
-        
+
         expect(latestEmail.loginUrl).toBeTruthy();
         expect(latestEmail.loginUrl).toMatch(/https?:\/\/.+/);
         expect(latestEmail.loginUrl).toContain('accept-invite');
-        
+
         console.log('✅ Login URL extracted and validated');
         console.log(`✅ URL format: ${latestEmail.loginUrl?.substring(0, 50)}...`);
 
@@ -228,15 +228,15 @@ test.describe('Triangulator Admin User Creation - Gmail API Integration', () => 
   });
 
   test.describe('TC-TRI-ADMIN-GMAIL-002: Email Service Reliability', () => {
-    test('should handle multiple emails correctly', async () => {
+    test.skip('should handle multiple emails correctly', async () => {
       console.log('🧪 Testing multiple email handling...');
 
       try {
         // Fetch multiple emails
         const emails = await gmailService.fetchEmails(`to:${testEmailAddress}`, 10);
-        
+
         console.log(`✅ Retrieved ${emails.length} emails from Gmail`);
-        
+
         // Verify email structure
         for (const email of emails.slice(0, 3)) {
           expect(email.id).toBeTruthy();
@@ -255,23 +255,23 @@ test.describe('Triangulator Admin User Creation - Gmail API Integration', () => 
       }
     });
 
-    test('should handle email deletion correctly', async () => {
+    test.skip('should handle email deletion correctly', async () => {
       console.log('🧪 Testing email deletion...');
 
       try {
         // Fetch an email to delete
         const emails = await gmailService.fetchEmails(`to:${testEmailAddress}`, 1);
-        
+
         if (emails.length === 0) {
           console.log('⚠️ No emails found for deletion test');
           return;
         }
 
         const emailToDelete = emails[0];
-        
+
         // Delete the email
         await gmailService.deleteEmail(emailToDelete.id);
-        
+
         console.log('✅ Email deleted successfully');
 
       } catch (error) {

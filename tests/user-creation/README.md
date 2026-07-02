@@ -105,9 +105,9 @@ npx playwright test tests/user-creation/triangulator-admin-user-creation.spec.ts
 ```bash
 BASE_URL=https://qa.creditmobility.net/
 ADMIN_EMAIL=creditmobility@asu.edu
-ADMIN_PASSWORD=Triangulator!1
+ADMIN_PASSWORD=#TransferTri1
 INST_ADMIN_EMAIL=testtriangulator+109@gmail.com
-INST_ADMIN_PASSWORD=Triangulator!1
+INST_ADMIN_PASSWORD=#TransferTri1
 ```
 
 ### Required for Gmail Integration Tests

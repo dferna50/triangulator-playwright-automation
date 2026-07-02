@@ -5,7 +5,7 @@ import { SuggestionsPage } from '../pages/SuggestionsPage';
 const creds = {
     pimaadmin: process.env.REGULAR_USER_EMAIL ?? 'testtriangulator+108@gmail.com',
     triadmin: process.env.ADMIN_EMAIL ?? 'creditmobility@asu.edu',
-    password: process.env.REGULAR_USER_PASSWORD ?? 'Triangulator!1',
+    password: process.env.REGULAR_USER_PASSWORD ?? '#TransferTri1',
 };
 
 async function loginAsPimaAdmin(browser: import('@playwright/test').Browser) {
@@ -525,7 +525,7 @@ test.describe('History – Role-based Action Menus', () => {
         const page = await context.newPage();
         await page.goto('');
         const login = new LoginPage(page);
-        await login.loginUser('testtriangulatoroo+r123@gmail.com', creds.password);
+        await login.loginUser('testtriangulator+108@gmail.com', creds.password);
         const s = new SuggestionsPage(page);
         await s.navigateToNewSuggestionPage();
         await s.navigateToHistoryTabReviewer();
