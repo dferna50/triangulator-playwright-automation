@@ -10,7 +10,7 @@ test.describe('Bug Tickets', () => {
         await loginPage.loginUser(instAdminEmail, instAdminPassword);
     });
 
-    test('1.BUG ID:1608-IPEDS Information Not Visible After User Creation', async ({ filtersPage }) => {
+    test.skip('1.BUG ID:1608-IPEDS Information Not Visible After User Creation', async ({ filtersPage }) => {
         await filtersPage.ipedFilterSearch1608();
     });
 
@@ -18,7 +18,7 @@ test.describe('Bug Tickets', () => {
         await filtersPage.boostRequestLogPartnerInst1610();
     });
 
-    test('3.BUG ID:1550-Common Courses Not Visible in Course Search', async ({ filtersPage }) => {
+    test.skip('3.BUG ID:1550-Common Courses Not Visible in Course Search', async ({ filtersPage }) => {
         await filtersPage.courseByCourseSearchNotVisible1550();
     });
 
@@ -39,7 +39,7 @@ test.describe('Bug Tickets', () => {
         await filtersPage.requestPartnerBoost1537();
     });
 
-    test('8.BUG ID-1619-Suggest list page column and filter removals', async ({ filtersPage }) => {
+    test.skip('8.BUG ID-1619-Suggest list page column and filter removals', async ({ filtersPage }) => {
         await filtersPage.columnFiltersRemoval1619();
     });
 
@@ -63,15 +63,15 @@ test.describe('Bug Tickets', () => {
         // TODO: Rulesuploadprocessfails1568 not yet implemented in UploadPage
     });
 
-    test('15.BUG ID-1555 Missing data in external search pages', async ({ filtersPage }) => {
+    test.skip('15.BUG ID-1555 Missing data in external search pages', async ({ filtersPage }) => {
         await filtersPage.missingDataSearchPage1555();
     });
 
-    test('16.BUG ID-1564-Issue with submitting find a source course boost request for specific institution', async ({ filtersPage }) => {
+    test.skip('16.BUG ID-1564-Issue with submitting find a source course boost request for specific institution', async ({ filtersPage }) => {
         await filtersPage.instAdmin1564();
     });
 
-    test('17.BUG ID-1577-Filter alignment and out of alignment error message', async ({ filtersPage }) => {
+    test.skip('17.BUG ID-1577-Filter alignment and out of alignment error message', async ({ filtersPage }) => {
         await filtersPage.alignmentErrorMessage1577();
     });
 

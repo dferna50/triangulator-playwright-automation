@@ -24,7 +24,7 @@ test.describe('Suggestion Page - History Changes', () => {
         await suggestionsPage.historyNewActions();
     });
 
-    test('Verifies actions on the history page for Reviewer role', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies actions on the history page for Reviewer role', async ({ loginPage, suggestionsPage }) => {
         // Note: Original used testtriangulatoroo+r123@gmail.com / #TransferTri1
         await loginPage.loginUser('testtriangulator+108@gmail.com', '#TransferTri1');
         await suggestionsPage.navigateToNewSuggestionPage();

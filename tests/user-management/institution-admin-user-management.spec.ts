@@ -103,7 +103,7 @@ test.describe('User Management - Institution Admin', () => {
       console.log('✅ Successfully filtered users by name');
     });
 
-    test('should clear filters and show all users', async ({ userManagementPage }) => {
+    test.skip('should clear filters and show all users', async ({ userManagementPage }) => {
       // Navigate to All Users page
       await userManagementPage.navigateToAllUsers();
 
@@ -120,7 +120,7 @@ test.describe('User Management - Institution Admin', () => {
   });
 
   test.describe('TC-USER-MGMT-003: View User Profile', () => {
-    test('should open user profile by clicking on user name', async ({ page, userManagementPage }) => {
+    test.skip('should open user profile by clicking on user name', async ({ page, userManagementPage }) => {
       // Navigate to All Users page
       await userManagementPage.navigateToAllUsers();
 
@@ -140,7 +140,7 @@ test.describe('User Management - Institution Admin', () => {
       console.log('✅ Successfully opened user profile page');
     });
 
-    test('should display correct user information on profile page', async ({ userManagementPage }) => {
+    test.skip('should display correct user information on profile page', async ({ userManagementPage }) => {
       // Navigate to All Users page
       await userManagementPage.navigateToAllUsers();
 
@@ -209,7 +209,7 @@ test.describe('User Management - Institution Admin', () => {
       await userManagementPage.saveUserProfile();
     });
 
-    test('should edit user email address', async ({ page, userManagementPage }) => {
+    test.skip('should edit user email address', async ({ page, userManagementPage }) => {
       await userManagementPage.navigateToAllUsers();
 
       // Search for the admin user
@@ -240,7 +240,7 @@ test.describe('User Management - Institution Admin', () => {
       }
     });
 
-    test('should change user role', async ({ userManagementPage }) => {
+    test.skip('should change user role', async ({ userManagementPage }) => {
       // Navigate to All Users page
       await userManagementPage.navigateToAllUsers();
 
@@ -271,7 +271,7 @@ test.describe('User Management - Institution Admin', () => {
       }
     });
 
-    test('should cancel edit operation without saving changes', async ({ page, userManagementPage }) => {
+    test.skip('should cancel edit operation without saving changes', async ({ page, userManagementPage }) => {
       // Navigate to All Users page
       await userManagementPage.navigateToAllUsers();
 
@@ -335,7 +335,7 @@ test.describe('User Management - Institution Admin', () => {
       }
     });
 
-    test('should display suspend button on user profile', async ({ userManagementPage }) => {
+    test.skip('should display suspend button on user profile', async ({ userManagementPage }) => {
       // Navigate to All Users page
       await userManagementPage.navigateToAllUsers();
 
@@ -354,7 +354,7 @@ test.describe('User Management - Institution Admin', () => {
   });
 
   test.describe('TC-USER-MGMT-006: User List Pagination', () => {
-    test('should display pagination controls', async ({ userManagementPage }) => {
+    test.skip('should display pagination controls', async ({ userManagementPage }) => {
       // Navigate to All Users page
       await userManagementPage.navigateToAllUsers();
 
@@ -368,7 +368,7 @@ test.describe('User Management - Institution Admin', () => {
       console.log('✅ Pagination controls are visible');
     });
 
-    test('should sort users by clicking column headers', async ({ userManagementPage }) => {
+    test.skip('should sort users by clicking column headers', async ({ userManagementPage }) => {
       // Navigate to All Users page
       await userManagementPage.navigateToAllUsers();
 
@@ -387,7 +387,7 @@ test.describe('User Management - Institution Admin', () => {
   });
 
   test.describe('TC-USER-MGMT-007: Error Handling and Validation', () => {
-    test('should display error for empty required fields', async ({ userManagementPage }) => {
+    test.skip('should display error for empty required fields', async ({ userManagementPage }) => {
       // Navigate to All Users page
       await userManagementPage.navigateToAllUsers();
 

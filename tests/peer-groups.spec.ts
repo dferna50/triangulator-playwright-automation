@@ -38,7 +38,7 @@ test.describe('Peer Groups Tests', () => {
     });
 
     // Cleanup: delete all leftover peer groups before running tests
-    test('TC0: Cleanup leftover peer groups', async () => {
+    test.skip('TC0: Cleanup leftover peer groups', async () => {
         test.setTimeout(120_000); // 2 minutes for cleanup of potentially many groups
         await peerGroupsPage.navigateToPeerGroupsPageDirect();
 

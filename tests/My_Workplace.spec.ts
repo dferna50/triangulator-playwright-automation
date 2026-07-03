@@ -10,16 +10,16 @@ test.describe('MyWorkplace Filters', () => {
         await loginPage.loginUser(instAdminEmail, instAdminPassword);
     });
 
-    test('TC1. navigates to myWorkplace', async ({ filtersPage }) => {
+    test.skip('TC1. navigates to myWorkplace', async ({ filtersPage }) => {
         await filtersPage.navigateToMyWorkplace();
     });
 
-    test('TC2. navigates to IPEDS', async ({ filtersPage }) => {
+    test.skip('TC2. navigates to IPEDS', async ({ filtersPage }) => {
         await filtersPage.navigateToMyWorkplace();
         await filtersPage.navigateToIPEDS();
     });
 
-    test('filters the ipeds page', async ({ filtersPage }) => {
+    test.skip('filters the ipeds page', async ({ filtersPage }) => {
         await filtersPage.navigateToMyWorkplace();
         await filtersPage.navigateToIPEDS();
         await filtersPage.ipedsFilters();

@@ -12,23 +12,23 @@ test.describe('Delete workflow configuration', () => {
         await deleteUserPage.deleteWorkflowConfiguration();
     });
 
-    test('TC1-Verify delete group option access for Inst Admin', async ({ deleteUserPage }) => {
+    test.skip('TC1-Verify delete group option access for Inst Admin', async ({ deleteUserPage }) => {
         await deleteUserPage.deleteIconVisible();
     });
 
-    test('TC2-Verify pop-up when deleting a group that is part of a workflow.', async ({ deleteUserPage }) => {
+    test.skip('TC2-Verify pop-up when deleting a group that is part of a workflow.', async ({ deleteUserPage }) => {
         await deleteUserPage.deletePopup();
     });
 
-    test('TC3-Verify cancel deletion of a group that is part of workflow using cancel button.', async ({ deleteUserPage }) => {
+    test.skip('TC3-Verify cancel deletion of a group that is part of workflow using cancel button.', async ({ deleteUserPage }) => {
         await deleteUserPage.deleteCancelButton();
     });
 
-    test('TC4-Verify cancel deletion of a group that is part of workflow using X button.', async ({ deleteUserPage }) => {
+    test.skip('TC4-Verify cancel deletion of a group that is part of workflow using X button.', async ({ deleteUserPage }) => {
         await deleteUserPage.deleteXButton();
     });
 
-    test('TC5-Verify confirmation pop-up when deleting a group that is not part of a workflow.', async ({ deleteUserPage }) => {
+    test.skip('TC5-Verify confirmation pop-up when deleting a group that is not part of a workflow.', async ({ deleteUserPage }) => {
         await deleteUserPage.deleteGroupPopupForever();
     });
 

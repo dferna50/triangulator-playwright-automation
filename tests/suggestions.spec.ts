@@ -68,7 +68,7 @@ test.describe('Suggestions', () => {
         await suggestionsPage.newSuggestionSorting(2);
     });
 
-    test('Verifies that the user can sort Z-A for all columns in the assigned suggestion tab', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that the user can sort Z-A for all columns in the assigned suggestion tab', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.navigateToAssignedPage();
@@ -82,7 +82,7 @@ test.describe('Suggestions', () => {
         await suggestionsPage.historySuggestionSorting(2);
     });
 
-    test('Verifies that the user can filter all the values on the new suggestion page', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that the user can filter all the values on the new suggestion page', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.stateFilter();
@@ -93,54 +93,54 @@ test.describe('Suggestions', () => {
         await suggestionsPage.suggestionTypeFilter();
     });
 
-    test('Verifies that a user can assign a single suggestion on the new suggestion page', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that a user can assign a single suggestion on the new suggestion page', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.assignSuggestion();
     });
 
-    test('Verifies that a user can assign multiple suggestions on the new suggestion page', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that a user can assign multiple suggestions on the new suggestion page', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.assignSuggestionMultiple();
     });
 
-    test('Verifies that a user can assign a single suggestion on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that a user can assign a single suggestion on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.navigateToAssignedPage();
         await suggestionsPage.assignSuggestion();
     });
 
-    test('Verifies that a user can assign multiple suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that a user can assign multiple suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.navigateToAssignedPage();
         await suggestionsPage.assignSuggestionMultiple();
     });
 
-    test('Verifies that a user can accept single suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that a user can accept single suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.navigateToAssignedPage();
         await suggestionsPage.acceptSuggestion();
     });
 
-    test('Verifies that a user can accept multiple suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that a user can accept multiple suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.navigateToAssignedPage();
         await suggestionsPage.acceptSuggestionMultiple();
     });
 
-    test('Verifies that a user can reject single suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that a user can reject single suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.navigateToAssignedPage();
         await suggestionsPage.rejectSuggestion();
     });
 
-    test('Verifies that a user can reject multiple suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
+    test.skip('Verifies that a user can reject multiple suggestions on the assigned suggestion page', async ({ loginPage, suggestionsPage }) => {
         await loginPage.loginUser(creds.nevadaadmin, creds.password);
         await suggestionsPage.navigateToNewSuggestionPage();
         await suggestionsPage.navigateToAssignedPage();

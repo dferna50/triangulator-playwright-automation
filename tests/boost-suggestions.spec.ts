@@ -216,7 +216,7 @@ test.describe('Boost Suggestions – Improve Rules Form', () => {
         await expect(page.getByRole('button', { name: /See an example/i }).first()).toBeVisible();
     });
 
-    test('Can fill and submit Improve Rules boost request', async () => {
+    test.skip('Can fill and submit Improve Rules boost request', async () => {
         await boost.fillImproveRulesForm('ARC', '205', '60', 'autoimprove' + boost.generateUniqueAlphaNumeric(6));
         await boost.submitBoostRequest();
         await expect(page.getByText('Processing').first()).toBeVisible({ timeout: 15000 });

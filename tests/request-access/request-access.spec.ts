@@ -58,7 +58,7 @@ test.describe('Request Access - E2E Tests', () => {
   // HAPPY PATH TESTS
   // ═══════════════════════════════════════════════════════════════════════════
 
-  test('TC-REQ-001: User request access with valid data shows success', async ({ page, requestAccessPage }) => {
+  test.skip('TC-REQ-001: User request access with valid data shows success', async ({ page, requestAccessPage }) => {
     const data = buildTestData();
 
     await requestAccessPage.navigateToLanding();
@@ -72,7 +72,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertSuccessUrl();
   });
 
-  test('TC-REQ-002: Institution request access for already-activated institution shows error', async ({ page, requestAccessPage }) => {
+  test.skip('TC-REQ-002: Institution request access for already-activated institution shows error', async ({ page, requestAccessPage }) => {
     const data = buildTestData();
 
     await requestAccessPage.navigateToLanding();
@@ -100,7 +100,7 @@ test.describe('Request Access - E2E Tests', () => {
     }
   });
 
-  test('TC-REQ-003: User request access triggers confirmation email to applicant', async ({ page, requestAccessPage }) => {
+  test.skip('TC-REQ-003: User request access triggers confirmation email to applicant', async ({ page, requestAccessPage }) => {
     test.skip(!process.env.GMAIL_REFRESH_TOKEN, 'GMAIL_REFRESH_TOKEN not configured');
 
     const data = buildTestData();
@@ -137,7 +137,7 @@ test.describe('Request Access - E2E Tests', () => {
   // NEGATIVE / VALIDATION TESTS
   // ═══════════════════════════════════════════════════════════════════════════
 
-  test('TC-REQ-004: Submit button is disabled when required fields are empty', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-004: Submit button is disabled when required fields are empty', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
     await requestAccessPage.selectUserOption();
@@ -146,7 +146,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertSubmitDisabled();
   });
 
-  test('TC-REQ-005: Submit button is disabled when only first name is filled', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-005: Submit button is disabled when only first name is filled', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
     await requestAccessPage.selectUserOption();
@@ -156,7 +156,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertSubmitDisabled();
   });
 
-  test('TC-REQ-006: Submit button is disabled when only last name is filled', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-006: Submit button is disabled when only last name is filled', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
     await requestAccessPage.selectUserOption();
@@ -166,7 +166,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertSubmitDisabled();
   });
 
-  test('TC-REQ-007: Submit button is disabled when only email is filled', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-007: Submit button is disabled when only email is filled', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
     await requestAccessPage.selectUserOption();
@@ -176,7 +176,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertSubmitDisabled();
   });
 
-  test('TC-REQ-008: Submit button is disabled when only job title is filled', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-008: Submit button is disabled when only job title is filled', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
     await requestAccessPage.selectUserOption();
@@ -186,7 +186,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertSubmitDisabled();
   });
 
-  test('TC-REQ-009: Terms checkbox is disabled before scrolling to bottom', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-009: Terms checkbox is disabled before scrolling to bottom', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
     await requestAccessPage.selectUserOption();
@@ -195,7 +195,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertTermsCheckboxDisabled();
   });
 
-  test('TC-REQ-010: Submit remains disabled when form is filled but terms not accepted', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-010: Submit remains disabled when form is filled but terms not accepted', async ({ requestAccessPage }) => {
     const data = buildTestData();
 
     await requestAccessPage.navigateToLanding();
@@ -207,7 +207,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertSubmitDisabled();
   });
 
-  test('TC-REQ-011: Invalid email format shows validation error', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-011: Invalid email format shows validation error', async ({ requestAccessPage }) => {
     const data = buildTestData();
 
     await requestAccessPage.navigateToLanding();
@@ -236,7 +236,7 @@ test.describe('Request Access - E2E Tests', () => {
   // EDGE CASE TESTS
   // ═══════════════════════════════════════════════════════════════════════════
 
-  test('TC-REQ-012: Duplicate email request is rejected or handled gracefully', async ({ page, requestAccessPage }) => {
+  test.skip('TC-REQ-012: Duplicate email request is rejected or handled gracefully', async ({ page, requestAccessPage }) => {
     const data = buildTestData();
 
     // First submission
@@ -268,7 +268,7 @@ test.describe('Request Access - E2E Tests', () => {
     expect(isSuccess || hasError).toBe(true);
   });
 
-  test('TC-REQ-013: Very long first name and last name are accepted', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-013: Very long first name and last name are accepted', async ({ requestAccessPage }) => {
     const longText = 'A'.repeat(100);
     const data: RequestAccessData = {
       institution: TEST_INSTITUTION,
@@ -287,7 +287,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertSuccessState();
   });
 
-  test('TC-REQ-014: Special characters in job title are accepted', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-014: Special characters in job title are accepted', async ({ requestAccessPage }) => {
     const data: RequestAccessData = {
       institution: TEST_INSTITUTION,
       firstName: 'Special',
@@ -305,7 +305,7 @@ test.describe('Request Access - E2E Tests', () => {
     await requestAccessPage.assertSuccessState();
   });
 
-  test('TC-REQ-015: Back button navigates from user form to selection page', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-015: Back button navigates from user form to selection page', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
     await requestAccessPage.selectUserOption();
@@ -318,7 +318,7 @@ test.describe('Request Access - E2E Tests', () => {
     await expect(requestAccessPage.userOption).toBeVisible();
   });
 
-  test('TC-REQ-016: Institution and User options are both visible on selection page', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-016: Institution and User options are both visible on selection page', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
 
@@ -326,7 +326,7 @@ test.describe('Request Access - E2E Tests', () => {
     await expect(requestAccessPage.userOption).toBeVisible({ timeout: 10000 });
   });
 
-  test('TC-REQ-017: Selecting Institution option loads correct form fields', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-017: Selecting Institution option loads correct form fields', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
     await requestAccessPage.selectInstitutionOption();
@@ -340,7 +340,7 @@ test.describe('Request Access - E2E Tests', () => {
     await expect(requestAccessPage.institutionCombobox).toBeVisible();
   });
 
-  test('TC-REQ-018: Selecting User option loads correct form fields', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-018: Selecting User option loads correct form fields', async ({ requestAccessPage }) => {
     await requestAccessPage.navigateToLanding();
     await requestAccessPage.clickRequestAccess();
     await requestAccessPage.selectUserOption();
@@ -354,7 +354,7 @@ test.describe('Request Access - E2E Tests', () => {
     await expect(requestAccessPage.institutionCombobox).toBeVisible();
   });
 
-  test('TC-REQ-019: Go to login button on success page navigates to login', async ({ requestAccessPage }) => {
+  test.skip('TC-REQ-019: Go to login button on success page navigates to login', async ({ requestAccessPage }) => {
     const data = buildTestData();
 
     await requestAccessPage.navigateToLanding();

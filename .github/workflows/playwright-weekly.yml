@@ -1,9 +1,12 @@
-name: Playwright Weekly Regression Suite
+name: Playwright Automation Tests
 
 on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
   schedule:
-    # Runs every Sunday at 02:00 UTC
-    - cron: '0 2 * * 0'
+    - cron: '30 4 * * 5'
   workflow_dispatch:
     inputs:
       grep_filter:
@@ -17,7 +20,7 @@ on:
         type: boolean
 
 concurrency:
-  group: playwright-weekly-${{ github.ref }}
+  group: playwright-tests-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -27,75 +30,98 @@ permissions:
 
 jobs:
   test:
-    name: Run Shard ${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        shardIndex: [1, 2, 3, 4]
-        shardTotal: [4]
-
+    
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
+    - name: Cache Playwright Browsers
+      uses: actions/cache@v4
+      id: playwright-cache
+      with:
+        path: ~/.cache/ms-playwright
+        key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-playwright-
 
-      - name: Cache Playwright Browsers
-        uses: actions/cache@v4
-        id: playwright-cache
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-playwright-
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Install Playwright Browsers & OS Dependencies
+      if: steps.playwright-cache.outputs.cache-hit != 'true'
+      run: npx playwright install --with-deps chromium
+      
+    - name: Install Playwright OS Dependencies (Cache Hit)
+      if: steps.playwright-cache.outputs.cache-hit == 'true'
+      run: npx playwright install-deps chromium
 
-      - name: Install Dependencies
-        run: npm ci
+    - name: Run Playwright Tests
+      env:
+        CI: 'true'
+        BASE_URL: ${{ secrets.BASE_URL }}
+        TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+        TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+        GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+        GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+        GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        RUN_EXTERNAL: ${{ inputs.run_external || 'false' }}
+      run: |
+        ARGS=""
+        
+        # Exclude quota and external system tests by default unless explicitly triggered
+        if [ "${{ inputs.run_external }}" != "true" ]; then
+          ARGS="$ARGS --grep-invert '@quota|@external|@client-sys'"
+        fi
+        
+        # Append user custom grep filter if provided
+        if [ -n "${{ inputs.grep_filter }}" ]; then
+          ARGS="$ARGS --grep '${{ inputs.grep_filter }}'"
+        fi
+        
+        npx playwright test $ARGS
 
-      - name: Install Playwright Browsers & OS Dependencies
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps chromium
+    - name: Upload Test Results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: |
+          playwright-report/
+          test-results/
+        retention-days: 30
 
-      - name: Install Playwright OS Dependencies (Cache Hit)
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps chromium
+    - name: Setup Node.js for Slack Reporting
+      if: always()
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
 
-      - name: Execute Playwright Tests
-        env:
-          CI: 'true'
-          BASE_URL: ${{ secrets.BASE_URL || 'https://qa.creditmobility.net' }}
-          TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
-          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          RUN_EXTERNAL: ${{ github.event.inputs.run_external || 'false' }}
-        run: |
-          ARGS="--shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}"
-          
-          # Exclude quota and external system tests by default unless explicitly triggered
-          if [ "${{ github.event.inputs.run_external }}" != "true" ]; then
-            ARGS="$ARGS --grep-invert '@quota|@external|@client-sys'"
-          fi
-          
-          # Append user custom grep filter if provided
-          if [ -n "${{ github.event.inputs.grep_filter }}" ]; then
-            ARGS="$ARGS --grep '${{ github.event.inputs.grep_filter }}'"
-          fi
-          
-          npx playwright test $ARGS
+    - name: Install Node.js dependencies for Reporting
+      if: always()
+      run: npm install nodemailer
 
-      - name: Upload Test Report & Artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report-shard-${{ matrix.shardIndex }}
-          path: |
-            playwright-report/
-            test-results/
-          retention-days: 7
+    - name: Send Slack Notification via Email
+      if: always()
+      env:
+        SLACK_EMAIL: ${{ secrets.SLACK_EMAIL }}
+        GMAIL_USER: ${{ secrets.GMAIL_USER }}
+        GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        GITHUB_RUN_ID: ${{ github.run_id }}
+        GITHUB_SERVER_URL: ${{ github.server_url }}
+        GITHUB_REF_NAME: ${{ github.ref_name }}
+        GITHUB_ACTOR: ${{ github.actor }}
+      run: |
+        node sendReport.js
+
+    - name: Notify on Token Expiration
+      if: failure()
+      run: |
+        echo "::warning::Tests failed - check if credentials or tokens need rotation"

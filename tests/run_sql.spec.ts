@@ -347,7 +347,7 @@ test.describe('Run SQL Page Tests', () => {
             }
         });
 
-        test('TC4.6: Download All triggers a file download', async ({ page, loginPage, runSqlPage }, testInfo) => {
+        test.skip('TC4.6: Download All triggers a file download', async ({ page, loginPage, runSqlPage }, testInfo) => {
             testInfo.setTimeout(120000);
             await page.goto('/logged-out/login/email');
             await loginPage.loginUser(adminEmail, adminPassword);

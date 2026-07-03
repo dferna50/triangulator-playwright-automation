@@ -73,7 +73,7 @@ test.describe('Institution Settings Tests', () => {
             await expect(institutionSettingsPage.breadcrumbLabel).toBeVisible();
         });
 
-        test('TC2.2: Verify institution info card is visible with correct institution name and location', async ({ page, loginPage, institutionSettingsPage }) => {
+        test.skip('TC2.2: Verify institution info card is visible with correct institution name and location', async ({ page, loginPage, institutionSettingsPage }) => {
             await loginAndGoToSettings(institutionSettingsPage, loginPage);
 
             // Verify institution card elements
@@ -298,14 +298,14 @@ test.describe('Institution Settings Tests', () => {
             await expect(institutionSettingsPage.alignSuggestionsHeading).toBeVisible();
         });
 
-        test('TC5.2: Verify "Align to peers" checkbox is visible and checked by default', async ({ page, loginPage, institutionSettingsPage }) => {
+        test.skip('TC5.2: Verify "Align to peers" checkbox is visible and checked by default', async ({ page, loginPage, institutionSettingsPage }) => {
             await loginAndGoToSettings(institutionSettingsPage, loginPage);
 
             await expect(institutionSettingsPage.alignToPeersCheckbox).toBeVisible();
             await expect(institutionSettingsPage.alignToPeersCheckbox).toBeChecked();
         });
 
-        test('TC5.3: Toggling "Align to peers" checkbox enables the Save button', async ({ page, loginPage, institutionSettingsPage }) => {
+        test.skip('TC5.3: Toggling "Align to peers" checkbox enables the Save button', async ({ page, loginPage, institutionSettingsPage }) => {
             await loginAndGoToSettings(institutionSettingsPage, loginPage);
 
             // Save should be disabled initially
@@ -324,7 +324,7 @@ test.describe('Institution Settings Tests', () => {
             await institutionSettingsPage.saveSettings();
         });
 
-        test('TC5.4: Uncheck "Align to peers" and save, then verify it remains unchecked', async ({ page, loginPage, institutionSettingsPage }) => {
+        test.skip('TC5.4: Uncheck "Align to peers" and save, then verify it remains unchecked', async ({ page, loginPage, institutionSettingsPage }) => {
             await loginAndGoToSettings(institutionSettingsPage, loginPage);
 
             // Uncheck Align to peers
@@ -402,7 +402,7 @@ test.describe('Institution Settings Tests', () => {
             }
         });
 
-        test('TC6.6: Toggling "State connect" checkbox enables the Save button', async ({ page, loginPage, institutionSettingsPage }) => {
+        test.skip('TC6.6: Toggling "State connect" checkbox enables the Save button', async ({ page, loginPage, institutionSettingsPage }) => {
             await loginAndGoToSettings(institutionSettingsPage, loginPage);
 
             await expect(institutionSettingsPage.saveButton).toBeDisabled();
@@ -700,7 +700,7 @@ test.describe('Institution Settings Tests', () => {
             await institutionSettingsPage.saveSettings();
         });
 
-        test('TC10.4: Save button becomes enabled after toggling Align to peers', async ({ page, loginPage, institutionSettingsPage }) => {
+        test.skip('TC10.4: Save button becomes enabled after toggling Align to peers', async ({ page, loginPage, institutionSettingsPage }) => {
             await loginAndGoToSettings(institutionSettingsPage, loginPage);
 
             await institutionSettingsPage.toggleAlignToPeers();

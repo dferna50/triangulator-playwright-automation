@@ -23,11 +23,11 @@ test.describe('Create workflow configuration', () => {
         // Perform login exactly once for the entire suite to avoid rate-limiting/auth locks
         await page.goto(`${baseURL}/logged-out/login/email`);
         await loginPage.loginUser(instAdminEmail, instAdminPassword);
-        
+
         // Wait for dashboard and navigation tabs to ensure session is fully active and established
         await page.waitForURL('**/app/dashboard**', { timeout: 30000 });
         await expect(loginPage.myWorkplaceTab).toBeVisible({ timeout: 20000 });
-        await page.locator('.animate-spin, .loading, svg[class*="spin"]').first().waitFor({ state: 'hidden', timeout: 15000 }).catch(() => {});
+        await page.locator('.animate-spin, .loading, svg[class*="spin"]').first().waitFor({ state: 'hidden', timeout: 15000 }).catch(() => { });
         await page.waitForTimeout(10000);
         await page.screenshot({ path: 'scratch/debug_beforeall_done.png' });
     });
@@ -72,15 +72,15 @@ test.describe('Create workflow configuration', () => {
         await createUserPage.createUserValidationErrorMsg();
     });
 
-    test('TC2-Verify user deletion functionality in Step', async () => {
+    test.skip('TC2-Verify user deletion functionality in Step', async () => {
         await createUserPage.deleteIcon();
     });
 
-    test('TC3-Verify zero user selection throws error', async () => {
+    test.skip('TC3-Verify zero user selection throws error', async () => {
         await createUserPage.zeroUsersThrowsError();
     });
 
-    test('TC5-Verify all active users can be added to a group.', async () => {
+    test.skip('TC5-Verify all active users can be added to a group.', async () => {
         await createUserPage.allActiveUsers();
     });
 

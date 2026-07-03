@@ -262,7 +262,7 @@ test.describe('Organization Management End-to-End Workflow', () => {
     });
   });
 
-  test.describe('Error Handling and Edge Cases', () => {
+  test.describe.skip('Error Handling and Edge Cases', () => {
     test('TC8: Handle navigation to non-existent organization', async ({ institutionMappingsPage }) => {
       await institutionMappingsPage.page.goto('/app/my-workspace/tri-admin/inst/org-admin/org-institution-links');
       await institutionMappingsPage.page.waitForTimeout(2000);

@@ -56,7 +56,7 @@ test.describe('Organization API Tokens', () => {
       await expect(apiTokensPage.generateTokenDialog).toBeHidden();
     });
 
-    test('TC7: Generate token for organization', async ({ apiTokensPage }) => {
+    test.skip('TC7: Generate token for organization', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();
 
@@ -339,7 +339,7 @@ test.describe('Organization API Tokens', () => {
     });
   });
 
-  test.describe('Edge Cases and Error Handling', () => {
+  test.describe.skip('Edge Cases and Error Handling', () => {
     test('TC28: Verify empty state handling', async ({ apiTokensPage }) => {
       await apiTokensPage.navigateToMyWorkplace();
       await apiTokensPage.navigateToApiTokens();

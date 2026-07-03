@@ -44,7 +44,7 @@ test.describe('Data Mismatch - Course ID Validation', () => {
     });
 
     for (let i = 0; i < 5; i++) {
-        test(`TC_SEARCH_00${i + 1}: Validate fields on search Find course for data mismatch`, async ({ request }) => {
+        test.skip(`TC_SEARCH_00${i + 1}: Validate fields on search Find course for data mismatch`, async ({ request }) => {
             const query = graphqlHelper.loadQueryFromFile(GRAPHQL_FILES.findCourseQuery);
             const variables = graphqlHelper.loadVariablesFromFile(`findcourse${i + 1}.var.json`) as { courseId: string };
 

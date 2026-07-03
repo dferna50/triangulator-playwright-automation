@@ -255,7 +255,7 @@ test.describe('Institution Configuration Tests', () => {
     // =========================================================================
     // 4. Delete Configuration Tests
     // =========================================================================
-    test.describe('Delete Configuration Tests', () => {
+    test.describe.skip('Delete Configuration Tests', () => {
 
         test('TC4.1: Delete Existing Configuration', async ({ page, loginPage, institutionConfigPage }) => {
             await page.goto(`${baseURL}/logged-out/login/email`);

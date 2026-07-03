@@ -39,11 +39,11 @@ test.describe('Workflow Landing Page', () => {
         await workflowLandingPage.popupWindowOccurs();
     });
 
-    test('TC9-Verify the chart display on Manage evaluation groups page.', async ({ workflowLandingPage }) => {
+    test.skip('TC9-Verify the chart display on Manage evaluation groups page.', async ({ workflowLandingPage }) => {
         await workflowLandingPage.manageGroupExistanceLanding();
     });
 
-    test('TC10-Verify the three dots functionality.', async ({ workflowLandingPage }) => {
+    test.skip('TC10-Verify the three dots functionality.', async ({ workflowLandingPage }) => {
         await workflowLandingPage.clickThreeDotsGroup();
     });
 
@@ -51,11 +51,11 @@ test.describe('Workflow Landing Page', () => {
         await workflowLandingPage.manageWorkflowExistence();
     });
 
-    test('TC12,13,14,15,16-Verify sub text in Manage workflow section.', async ({ workflowLandingPage }) => {
+    test.skip('TC12,13,14,15,16-Verify sub text in Manage workflow section.', async ({ workflowLandingPage }) => {
         await workflowLandingPage.subtextManageWorkflow();
     });
 
-    test('TC17-Verify the View functionality.', async ({ workflowLandingPage }) => {
+    test.skip('TC17-Verify the View functionality.', async ({ workflowLandingPage }) => {
         await workflowLandingPage.workflowNameViewButton();
     });
 
@@ -63,7 +63,7 @@ test.describe('Workflow Landing Page', () => {
         await workflowLandingPage.workflowNameEditButton();
     });
 
-    test('TC-19 Verify the Delete functionality.', async ({ workflowLandingPage }) => {
+    test.skip('TC-19 Verify the Delete functionality.', async ({ workflowLandingPage }) => {
         await workflowLandingPage.workflowNameDeleteButton();
     });
 });

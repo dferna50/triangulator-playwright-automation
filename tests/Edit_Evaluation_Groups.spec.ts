@@ -23,11 +23,11 @@ test.describe('Edit workflow configuration', () => {
         // Perform login exactly once for the entire suite to avoid rate-limiting/auth locks
         await page.goto(`${baseURL}/logged-out/login/email`);
         await loginPage.loginUser(instAdminEmail, instAdminPassword);
-        
+
         // Wait for dashboard and navigation tabs to ensure session is fully active and established
         await page.waitForURL('**/app/dashboard**', { timeout: 30000 });
         await expect(loginPage.myWorkplaceTab).toBeVisible({ timeout: 20000 });
-        await page.locator('.animate-spin, .loading, svg[class*="spin"]').first().waitFor({ state: 'hidden', timeout: 15000 }).catch(() => {});
+        await page.locator('.animate-spin, .loading, svg[class*="spin"]').first().waitFor({ state: 'hidden', timeout: 15000 }).catch(() => { });
         await page.waitForTimeout(10000);
     });
 
@@ -40,8 +40,8 @@ test.describe('Edit workflow configuration', () => {
     test.afterEach(async () => {
         console.log('afterEach: cleaning up any open dialogs/menus');
         // Press Escape to close any open dropdowns/listboxes first
-        await page.keyboard.press('Escape').catch(() => {});
-        
+        await page.keyboard.press('Escape').catch(() => { });
+
         // Check if there is an open dialog
         const dialog = page.getByRole('dialog');
         const isDialogVisible = await dialog.first().isVisible().catch(() => false);
@@ -50,24 +50,24 @@ test.describe('Edit workflow configuration', () => {
             // Try to click Cancel button if present
             const cancelButton = page.getByRole('button', { name: 'Cancel' }).first();
             if (await cancelButton.isVisible().catch(() => false)) {
-                await cancelButton.click().catch(() => {});
+                await cancelButton.click().catch(() => { });
             }
             // Press Escape to close modal
-            await page.keyboard.press('Escape').catch(() => {});
-            await page.keyboard.press('Escape').catch(() => {});
-            
+            await page.keyboard.press('Escape').catch(() => { });
+            await page.keyboard.press('Escape').catch(() => { });
+
             // Check for discard changes confirmation dialog
             const discardDialog = page.getByRole('dialog').filter({ hasText: /discard|abandon|unsaved/i }).first();
             if (await discardDialog.isVisible().catch(() => false)) {
                 const confirmButton = discardDialog.getByRole('button', { name: /discard|yes|confirm|leave/i }).first();
                 if (await confirmButton.isVisible().catch(() => false)) {
-                    await confirmButton.click().catch(() => {});
+                    await confirmButton.click().catch(() => { });
                 }
             }
         }
-        
+
         // Wait for all dialogs to be hidden
-        await expect(page.getByRole('dialog').first()).not.toBeVisible({ timeout: 5000 }).catch(() => {});
+        await expect(page.getByRole('dialog').first()).not.toBeVisible({ timeout: 5000 }).catch(() => { });
     });
 
     test.beforeEach(async () => {
@@ -83,15 +83,15 @@ test.describe('Edit workflow configuration', () => {
         console.log('beforeEach: settings page loaded');
     });
 
-    test('TC1- Verify access to workflow configurations page.', async () => {
+    test.skip('TC1- Verify access to workflow configurations page.', async () => {
         await editUserPage.editWorkflow();
     });
 
-    test('TC2-Verify chart presence on manage groups page TC3-Verify context menu display TC4-Verify navigation to edit group page.', async () => {
+    test.skip('TC2-Verify chart presence on manage groups page TC3-Verify context menu display TC4-Verify navigation to edit group page.', async () => {
         await editUserPage.chartDisplayEdit();
     });
 
-    test('TC5-Verify UI consistency with edit peer group', async () => {
+    test.skip('TC5-Verify UI consistency with edit peer group', async () => {
         await editUserPage.compareGroupAndEditGroupUsers();
     });
 

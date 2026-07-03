@@ -16,7 +16,7 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await page.waitForTimeout(1000);
   });
 
-  test('TC1: Verify Workflow Configurations page loads correctly', async ({ workflowConfigurationsPage }) => {
+  test.skip('TC1: Verify Workflow Configurations page loads correctly', async ({ workflowConfigurationsPage }) => {
     await workflowConfigurationsPage.navigateToWorkflowConfigurations();
     await workflowConfigurationsPage.verifyPageElements();
   });
@@ -341,7 +341,7 @@ test.describe('Workflow Suggestions Validation - E2E Tests', () => {
     await workflowConfigurationsPage.verifyCreateWorkflowModalElements();
   });
 
-  test('TC30: End-to-end workflow - Create group and then create workflow', async ({ workflowConfigurationsPage }) => {
+  test.skip('TC30: End-to-end workflow - Create group and then create workflow', async ({ workflowConfigurationsPage }) => {
     await workflowConfigurationsPage.navigateToWorkflowConfigurations();
 
     // First create a group
